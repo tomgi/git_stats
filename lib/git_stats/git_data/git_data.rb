@@ -1,6 +1,7 @@
 require 'pathname'
-require 'git_stats/git_author'
-require 'git_stats/git_commit'
+require 'git_stats/git_data/git_activity'
+require 'git_stats/git_data/git_author'
+require 'git_stats/git_data/git_commit'
 
 class GitStats::GitData
   attr_reader :total_authors
@@ -19,10 +20,20 @@ class GitStats::GitData
   def gather_commit_data
     run('git rev-list --pretty=format:"%h|%at|%ai|%aN|%aE" HEAD | grep -v commit').split(/\r?\n/).each do |commit|
       hash, stamp, date, author_name, author_email = commit.split('|')
+
       authors[author_email] = GitStats::GitAuthor.new(name: author_name, email: author_email) unless authors[author_email]
       author = authors[author_email]
+
+      date = DateTime.parse(date)
       commits[hash] = GitStats::GitCommit.new(hash: hash, stamp: stamp, date: date, author: author)
+
+      activity.by_hour[date.hour] += 1
+      activity.by_wday[date.wday] += 1
+      activity.by_wday_hour[date.wday][date.hour] += 1
     end
+
+    require 'pry'
+    binding.pry
   end
 
   def authors
@@ -31,6 +42,10 @@ class GitStats::GitData
 
   def commits
     @commits ||= {}
+  end
+
+  def activity
+    @activity ||= GitStats::GitActivity.new
   end
 
   def project_version

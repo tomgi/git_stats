@@ -2,8 +2,12 @@ require 'pathname'
 require 'git_stats/git_data/git_activity'
 require 'git_stats/git_data/git_author'
 require 'git_stats/git_data/git_commit'
+require 'lazy_high_charts'
 
 class GitStats::GitData
+  include ActionView::Helpers::TagHelper
+  include LazyHighCharts::LayoutHelper
+
   attr_reader :total_authors
   attr_reader :total_commits
 
@@ -30,10 +34,31 @@ class GitStats::GitData
       activity.by_hour[date.hour] += 1
       activity.by_wday[date.wday] += 1
       activity.by_wday_hour[date.wday][date.hour] += 1
+
+      author.activity.by_hour[date.hour] += 1
+      author.activity.by_wday[date.wday] += 1
+      author.activity.by_wday_hour[date.wday][date.hour] += 1
     end
 
-    require 'pry'
-    binding.pry
+    @h = LazyHighCharts::HighChart.new('graph') do |f|
+      f.chart(type: "column")
+      f.title(text: "Commits")
+      f.xAxis(categories: Date::ABBR_DAYNAMES)
+      f.yAxis(min: 0, title: {text: 'Commits'})
+      f.legend(
+          layout: 'vertical',
+          backgroundColor: '#FFFFFF',
+          align: 'left',
+          verticalAlign: 'top',
+          x: 100,
+          y: 70,
+          floating: true,
+          shadow: true
+      )
+      authors.each do |email, author|
+        f.series(:name => email, :data => author.activity.by_wday.inject([]) { |acc, (k, v)| acc[k] = v; acc })
+      end
+    end
   end
 
   def authors

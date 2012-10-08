@@ -18,10 +18,12 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-
+  gem.add_dependency('activesupport')
+  gem.add_dependency('actionpack')
   gem.add_dependency('tilt')
   gem.add_dependency('haml')
   gem.add_dependency('launchy')
+  gem.add_dependency('lazy_high_charts')
 
   gem.add_development_dependency('pry')
 end

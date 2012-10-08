@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'gitstats/version'
+require 'git_stats/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "gitstats"
-  gem.version       = Gitstats::VERSION
+  gem.name          = "git_stats"
+  gem.version       = GitStats::VERSION
   gem.authors       = ["Tomasz Gieniusz"]
   gem.email         = ["tomasz.gieniusz@gmail.com"]
   gem.description   = %q{Git history statistics generator}
   gem.summary       = %q{HTML statistics generator from git repository}
-  gem.homepage      = "https://github.com/tomgi/gitstats"
-  gem.executables   = "gitstats"
+  gem.homepage      = "https://github.com/tomgi/git_stats"
+  gem.executables   = "git_stats"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

@@ -1,4 +1,4 @@
-require "gitstats"
+require "git_stats"
 require "launchy"
 
 class GitStats::CLI
@@ -17,7 +17,7 @@ class GitStats::CLI
 
   private
   def self.help
-    puts "Usage: gitstats repo_path output_path"
+    puts "Usage: git_stats repo_path output_path"
     exit 0
   end
 

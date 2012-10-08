@@ -1,4 +1,5 @@
 require "gitstats"
+require "launchy"
 
 class GitStats::CLI
 
@@ -10,6 +11,7 @@ class GitStats::CLI
       repo_path, out_path = args
       validate(repo_path, out_path)
       GitStats::Generator.new(repo_path, out_path).generate
+      Launchy.open("#{out_path}/index.html")
     end
   end
 

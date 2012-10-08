@@ -18,5 +18,10 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
+
+  gem.add_dependency('tilt')
+  gem.add_dependency('haml')
+  gem.add_dependency('launchy')
+
   gem.add_development_dependency('pry')
 end

@@ -8,6 +8,6 @@ class GitStats::Generator
     data.gather_all_data
     GitStats::Assets.prepare(@out_path)
     output = GitStats::Template.new('index').render(data)
-    File.open("#{@out_path}/index.html", 'w') { |f| f.write output }
+    File.open("#@out_path/index.html", 'w') { |f| f.write output }
   end
 end

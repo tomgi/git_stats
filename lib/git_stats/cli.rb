@@ -8,7 +8,7 @@ class GitStats::CLI
       repo_path, out_path = args
       validate(repo_path, out_path)
       GitStats::Generator.new(repo_path, out_path).generate
-      Launchy.open("#{out_path}/index.html")
+      #Launchy.open("#{out_path}/index.html")
     else
       puts "Wrong number of arguments"
       help

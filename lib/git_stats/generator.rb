@@ -1,3 +1,7 @@
+require 'git_stats/git_data'
+require 'git_stats/assets'
+require 'git_stats/template'
+
 class GitStats::Generator
   def initialize(repo_path, out_path)
     @repo_path, @out_path = repo_path, out_path

@@ -1,4 +1,4 @@
+require 'git_stats/generator'
+
 module GitStats
 end
-
-Dir['lib/**/*.rb'].each { |r| require File.expand_path(r) }

@@ -1,3 +1,4 @@
+# gem
 *.gem
 *.rbc
 .bundle
@@ -15,3 +16,6 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
+
+# rubymine
+.idea

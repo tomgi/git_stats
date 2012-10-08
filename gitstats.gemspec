@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Gitstats::VERSION
   gem.authors       = ["Tomasz Gieniusz"]
   gem.email         = ["tomasz.gieniusz@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Git history statistics generator}
+  gem.summary       = %q{HTML statistics generator from git repository}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)

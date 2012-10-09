@@ -1,6 +1,4 @@
 class GitStats::GitData
-  attr_reader :total_authors
-  attr_reader :total_commits
 
   def initialize(repo_path)
     @repo_path = repo_path
@@ -8,28 +6,27 @@ class GitStats::GitData
   end
 
   def gather_all
-    @total_authors = run('git shortlog -s HEAD | wc -l')
-
+    gather_authors
     gather_commits
   end
 
-  def gather_commits
-    run('git rev-list --pretty=format:"%h|%at|%ai|%aN|%aE" HEAD | grep -v commit').split(/\r?\n/).each do |commit|
-      hash, stamp, date, author_name, author_email = commit.split('|')
+  def gather_authors
+    run('git shortlog -se HEAD').each_line do |author|
+      name, email = author.split(/\t/)[1].strip.scan(/(.*)<(.*)>/).first.map(&:strip)
+      authors[email] = GitStats::GitAuthor.new(name: name, email: email)
+    end
+  end
 
-      authors[author_email] = GitStats::GitAuthor.new(name: author_name, email: author_email) unless authors[author_email]
+  def gather_commits
+    run('git rev-list --pretty=format:"%h|%at|%ai|%aE" HEAD | grep -v commit').each_line do |commit|
+      hash, stamp, date, author_email = commit.split('|').map(&:strip)
       author = authors[author_email]
 
       date = DateTime.parse(date)
       commits[hash] = GitStats::GitCommit.new(hash: hash, stamp: stamp, date: date, author: author)
 
-      activity.by_hour[date.hour] += 1
-      activity.by_wday[date.wday] += 1
-      activity.by_wday_hour[date.wday][date.hour] += 1
-
-      author.activity.by_hour[date.hour] += 1
-      author.activity.by_wday[date.wday] += 1
-      author.activity.by_wday_hour[date.wday][date.hour] += 1
+      activity.add_commit(date)
+      author.activity.add_commit(date)
     end
   end
 

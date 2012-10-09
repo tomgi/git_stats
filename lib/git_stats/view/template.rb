@@ -1,9 +1,7 @@
-require 'tilt'
-
 class GitStats::Template
-  def initialize(name)
+  def initialize(name, layout)
     @name = name
-    @layout = Tilt.new("templates/layout.haml")
+    @layout = layout
     @template = Tilt.new("templates/#@name.haml")
   end
 

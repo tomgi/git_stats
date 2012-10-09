@@ -1,5 +1,4 @@
 require "git_stats"
-require "launchy"
 
 class GitStats::CLI
 

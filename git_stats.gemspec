@@ -11,7 +11,6 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Git history statistics generator}
   gem.summary       = %q{HTML statistics generator from git repository}
   gem.homepage      = "https://github.com/tomgi/git_stats"
-  gem.executables   = "git_stats"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
@@ -25,5 +24,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency('launchy')
   gem.add_dependency('lazy_high_charts')
 
+  gem.add_development_dependency('rake')
   gem.add_development_dependency('pry')
 end

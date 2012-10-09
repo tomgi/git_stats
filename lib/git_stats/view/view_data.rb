@@ -2,11 +2,10 @@ class GitStats::ViewData
   include ActionView::Helpers::TagHelper
   include LazyHighCharts::LayoutHelper
 
-  attr_accessor :git_data
+  attr_reader :git_data
 
   def initialize(git_data)
-    self.git_data = git_data
-    generate_charts
+    @git_data = git_data
   end
 
   def generate_charts

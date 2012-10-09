@@ -1,8 +1,8 @@
 class GitStats::GitData
+  attr_reader :repo
 
-  def initialize(repo_path)
-    @repo_path = repo_path
-    gather_all
+  def initialize(repo)
+    @repo = repo
   end
 
   def gather_all
@@ -11,22 +11,22 @@ class GitStats::GitData
   end
 
   def gather_authors
-    run('git shortlog -se HEAD').each_line do |author|
+    GitStats::GitCommand.new(repo, 'git shortlog -se HEAD').run.each_line do |author|
       name, email = author.split(/\t/)[1].strip.scan(/(.*)<(.*)>/).first.map(&:strip)
       authors[email] = GitStats::GitAuthor.new(name: name, email: email)
     end
   end
 
   def gather_commits
-    run('git rev-list --pretty=format:"%h|%at|%ai|%aE" HEAD | grep -v commit').each_line do |commit|
-      hash, stamp, date, author_email = commit.split('|').map(&:strip)
+    GitStats::GitCommand.new(repo, 'git rev-list --pretty=format:"%h|%at|%ai|%aE" HEAD | grep -v commit').run.each_line do |commit_line|
+      hash, stamp, date, author_email = commit_line.split('|').map(&:strip)
       author = authors[author_email]
 
       date = DateTime.parse(date)
-      commits[hash] = GitStats::GitCommit.new(hash: hash, stamp: stamp, date: date, author: author)
+      commit = commits[hash] = GitStats::GitCommit.new(repo: repo, hash: hash, stamp: stamp, date: date, author: author)
 
-      activity.add_commit(date)
-      author.activity.add_commit(date)
+      activity.add_commit(commit)
+      author.activity.add_commit(commit)
     end
   end
 
@@ -43,18 +43,11 @@ class GitStats::GitData
   end
 
   def project_version
-    @project_version ||= run('git rev-parse --short HEAD')
+    @project_version ||= GitStats::GitCommand.new(repo, 'git rev-parse --short HEAD').run
   end
 
   def project_name
-    @project_name ||= Pathname(@repo_path).basename.to_s
+    @project_name ||= Pathname(repo.path).basename.to_s
   end
 
-  def run(command)
-    in_repo { %x[#{command}] }
-  end
-
-  def in_repo
-    Dir.chdir(@repo_path) { yield }
-  end
 end

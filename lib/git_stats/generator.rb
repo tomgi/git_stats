@@ -4,8 +4,13 @@ class GitStats::Generator
   end
 
   def generate
-    data = GitStats::GitData.new(@repo_path)
+    repo = GitStats::GitRepo.new(@repo_path)
+    data = GitStats::GitData.new(repo)
+    data.gather_all
+
     view_data = GitStats::ViewData.new(data)
+    view_data.generate_charts
+
     GitStats::View.render_all(view_data, @out_path)
   end
 end

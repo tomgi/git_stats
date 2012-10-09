@@ -1,14 +1,14 @@
 class GitStats::GitActivity
   def by_hour
-    @by_hour ||= Hash.new(0)
+    @by_hour ||= Array.new(24, 0)
   end
 
   def by_wday
-    @by_wday ||= Hash.new(0)
+    @by_wday ||= Array.new(7, 0)
   end
 
   def by_wday_hour
-    @by_wday_hour ||= Hash.new { |h, k| h[k] = Hash.new(0) }
+    @by_wday_hour ||= Array.new(7) { Array.new(24, 0) }
   end
 
   def add_commit(date)

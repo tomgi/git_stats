@@ -26,7 +26,7 @@ class GitStats::ViewData
           shadow: true
       )
       git_data.authors.each do |email, author|
-        f.series(:name => email, :data => author.activity.by_wday.inject([]) { |acc, (k, v)| acc[k] = v; acc })
+        f.series(:name => email, :data => author.activity.by_wday)
       end
     end
   end

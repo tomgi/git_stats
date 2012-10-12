@@ -27,10 +27,7 @@ module GitStats
       end
 
       def activity
-        @activity ||= commits.values.inject(Activity.new) do |activity, commit|
-          activity.add_commit(commit)
-          activity
-        end
+        @activity ||= Activity.new(commits)
       end
 
       def project_version

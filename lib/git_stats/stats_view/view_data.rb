@@ -10,8 +10,8 @@ module GitStats
         @repo = repo
       end
 
-      def generate_charts
-        @h = LazyHighCharts::HighChart.new('graph') do |f|
+      def h
+        @h ||= LazyHighCharts::HighChart.new('graph') do |f|
           f.chart(type: "column")
           f.title(text: "Commits")
           f.xAxis(categories: Date::ABBR_DAYNAMES)

@@ -1,0 +1,1 @@
+require 'git_stats'

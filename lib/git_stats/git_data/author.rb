@@ -5,7 +5,7 @@ module GitStats
     class Author
       include HashInitializable
 
-      attr_accessor :name, :email
+      attr_reader :repo, :name, :email
 
       def add_commit(commit)
         commits << commit
@@ -13,12 +13,16 @@ module GitStats
       end
 
       def commits
-        @commits ||= []
+        @commits ||= repo.commits.select { |hash, commit| commit.author == self }
       end
 
       def activity
-        @activity ||= Activity.new
+        @activity ||= commits.values.inject(Activity.new) do |activity, commit|
+          activity.add_commit(commit)
+          activity
+        end
       end
+
     end
   end
 end

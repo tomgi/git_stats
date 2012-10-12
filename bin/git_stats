@@ -10,6 +10,6 @@ require "git_stats/cli"
 begin
   cli = GitStats::CLI.new
   cli.start(*ARGV)
-rescue => e
+rescue ArgumentError => e
   puts e.message
 end

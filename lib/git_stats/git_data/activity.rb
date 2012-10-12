@@ -2,39 +2,20 @@ module GitStats
   module GitData
     class Activity
 
+      attr_reader :by_hour, :by_wday, :by_wday_hour, :by_month, :by_year, :by_year_week
+
       def initialize(commits)
-        commits.values.each do |commit|
-          add_commit(commit)
-        end
-      end
+        @by_hour = @by_wday = @by_month = @by_year = Hash.new(0)
+        @by_wday_hour = @by_year_week = Hash.new { |h, k| h[k] = Hash.new(0) }
 
-      def by_hour
-        @by_hour ||= Hash.new(0)
-      end
-
-      def by_wday
-        @by_wday ||= Hash.new(0)
-      end
-
-      def by_wday_hour
-        @by_wday_hour ||= Hash.new { |h, k| h[k] = Hash.new(0) }
-      end
-
-      def by_month
-        @by_month ||= Hash.new(0)
-      end
-
-      def by_year
-        @by_year ||= Hash.new(0)
-      end
-
-      def by_year_week
-        @by_year_week ||= Hash.new { |h, k| h[k] = Hash.new(0) }
+        add_commits(commits)
       end
 
       private
-      def add_commit(commit)
-        add_commit_at(commit.date)
+      def add_commits(commits)
+        commits.values.each do |commit|
+          add_commit_at(commit.date)
+        end
       end
 
       def add_commit_at(date)

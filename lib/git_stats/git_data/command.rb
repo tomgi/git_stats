@@ -9,8 +9,9 @@ module GitStats
       end
 
       def run
-        repo.git_command_observer.try(:call, @command)
-        in_repo { %x[#@command] }
+        result = in_repo { %x[#@command] }
+        repo.git_command_observer.try(:call, @command, result)
+        result
       end
 
       def in_repo

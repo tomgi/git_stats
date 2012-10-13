@@ -20,7 +20,9 @@ module GitStats
       end
 
       def lines_count
-        @lines_count ||= files.map(&:lines_count).sum
+        @lines_count ||= Command.new(repo, "git diff --shortstat `git hash-object -t tree /dev/null` #{self.hash}").run.lines.map do |line|
+          line[/(\d+) insertions?/, 1].to_i
+        end.sum
       end
 
       def short_stat

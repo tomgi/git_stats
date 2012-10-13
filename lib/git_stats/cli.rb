@@ -7,7 +7,7 @@ class GitStats::CLI
 
     repo_path, out_path = args
     GitStats::Generator.new(repo_path, out_path) { |g|
-      g.git_command_observer { |command| puts command }
+      g.git_command_observer { |command, result| puts "#{command}" }
     }.generate
   end
 

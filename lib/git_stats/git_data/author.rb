@@ -19,6 +19,10 @@ module GitStats
         "#{self.class} #@name <#@email>"
       end
 
+      def ==(other)
+        [self.repo, self.name, self.email] == [other.repo, other.name, other.email]
+      end
+
     end
   end
 end

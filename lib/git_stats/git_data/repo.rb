@@ -42,6 +42,10 @@ module GitStats
         "#{self.class} #@path"
       end
 
+      def ==(other)
+        self.path == other.path
+      end
+
     end
   end
 end

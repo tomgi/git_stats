@@ -8,7 +8,7 @@ describe GitStats::GitData::Activity do
       '15.06.2011 15:02',
       '27.09.2011 15:34'
   ] }
-  let(:commits) { dates.map { |d| double(:date => DateTime.parse(d)) } }
+  let(:commits) { dates.map { |d| GitStats::GitData::Commit.new(:date => DateTime.parse(d)) } }
   let(:activity) { GitStats::GitData::Activity.new(commits) }
 
   it 'by_hour should count commits by hour' do

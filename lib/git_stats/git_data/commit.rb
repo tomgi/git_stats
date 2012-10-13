@@ -18,6 +18,11 @@ module GitStats
       def to_s
         "#{self.class} #@hash"
       end
+
+      def ==(other)
+        [self.repo, self.hash, self.stamp, self.date, self.author] ==
+            [other.repo, other.hash, other.stamp, other.date, other.author]
+      end
     end
   end
 end

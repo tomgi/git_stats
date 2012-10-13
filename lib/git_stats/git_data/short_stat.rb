@@ -18,6 +18,10 @@ module GitStats
           @deletions = stat_line[/(\d+) deletions?/, 1].to_i
         end
       end
+
+      def to_s
+        "#{self.class} #@commit"
+      end
     end
   end
 end

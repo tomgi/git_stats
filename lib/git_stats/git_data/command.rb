@@ -13,6 +13,10 @@ module GitStats
       def in_repo
         Dir.chdir(@repo.path) { yield }
       end
+
+      def to_s
+        "#{self.class} #@command"
+      end
     end
   end
 end

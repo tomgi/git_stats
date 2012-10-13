@@ -15,6 +15,10 @@ module GitStats
         @activity ||= Activity.new(commits)
       end
 
+      def to_s
+        "#{self.class} #@name <#@email>"
+      end
+
     end
   end
 end

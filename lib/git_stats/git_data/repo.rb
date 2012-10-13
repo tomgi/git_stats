@@ -38,6 +38,10 @@ module GitStats
         @project_name ||= Pathname(path).basename.to_s
       end
 
+      def to_s
+        "#{self.class} #@path"
+      end
+
     end
   end
 end

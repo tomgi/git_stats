@@ -14,6 +14,10 @@ module GitStats
       def short_stat
         @short_stat ||= ShortStat.new(self)
       end
+
+      def to_s
+        "#{self.class} #@hash"
+      end
     end
   end
 end

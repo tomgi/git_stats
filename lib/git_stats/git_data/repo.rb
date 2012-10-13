@@ -8,22 +8,24 @@ module GitStats
       end
 
       def authors
-        @authors ||= Command.new(self, 'git shortlog -se HEAD').run.lines.inject({}) do |authors, line|
+        @authors ||= Hash[Command.new(self, 'git shortlog -se HEAD').run.lines.map do |line|
           name, email = line.split(/\t/)[1].strip.scan(/(.*)<(.*)>/).first.map(&:strip)
-          authors[email] = Author.new(repo: self, name: name, email: email)
-          authors
-        end
+          [email, Author.new(repo: self, name: name, email: email)]
+        end]
       end
 
       def commits
-        @commits ||= Command.new(self, 'git rev-list --pretty=format:"%h|%at|%ai|%aE" HEAD | grep -v commit').run.lines.inject({}) do |commits, commit_line|
+        @commits ||= Command.new(self, 'git rev-list --pretty=format:"%h|%at|%ai|%aE" HEAD | grep -v commit').run.lines.map do |commit_line|
           hash, stamp, date, author_email = commit_line.split('|').map(&:strip)
           author = authors[author_email]
 
           date = DateTime.parse(date)
-          commits[hash] = Commit.new(repo: self, hash: hash, stamp: stamp, date: date, author: author)
-          commits
-        end
+          Commit.new(repo: self, hash: hash, stamp: stamp, date: date, author: author)
+        end.sort_by! { |e| e.date }
+      end
+
+      def short_stats
+        @short_stats ||= commits.map(&:short_stat)
       end
 
       def activity

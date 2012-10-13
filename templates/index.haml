@@ -1,2 +1,28 @@
-%p= repo.project_name
-%p= repo.project_version
+%table{:class => "table table-hover table-bordered"}
+  %tr
+    %td Project name
+    %td= repo.project_name
+  %tr
+    %td Project version
+    %td= repo.project_version
+  %tr
+    %td Generated at
+    %td= DateTime.now.to_formatted_s(:long)
+  %tr
+    %td Generator
+    %td= "GitStats #{GitStats::VERSION}"
+  %tr
+    %td Report period
+    %td= repo.commits.map(&:date).minmax.map {|d| d.to_formatted_s(:long)}.join(" .. ")
+  %tr
+    %td Total files
+    %td= repo.commits.last.files_count
+  %tr
+    %td Total lines
+    %td= "#{repo.short_stats.map(&:insertions).sum} insertions, #{repo.short_stats.map(&:deletions).sum} deletions"
+  %tr
+    %td Total commits
+    %td= repo.commits.size
+  %tr
+    %td Authors
+    %td= repo.authors.size

@@ -8,7 +8,7 @@ module GitStats
       attr_reader :repo, :name, :email
 
       def commits
-        @commits ||= repo.commits.select { |hash, commit| commit.author == self }
+        @commits ||= repo.commits.select { |commit| commit.author == self }
       end
 
       def activity

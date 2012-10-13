@@ -19,7 +19,7 @@ describe GitStats::Generator do
 
   it 'should render all templates with view data for this repo' do
     repo = double('repo')
-    GitStats::GitData::Repo.should_receive(:new).with(repo_path).and_return(repo)
+    GitStats::GitData::Repo.should_receive(:new).with(path: repo_path, git_command_observer: nil).and_return(repo)
 
     view_data = double('view_data')
     GitStats::StatsView::ViewData.should_receive(:new).with(repo).and_return(view_data)

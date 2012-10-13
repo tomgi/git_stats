@@ -15,6 +15,10 @@ module GitStats
         @content ||= Command.new(repo, "git cat-file blob #{self.hash}").run
       end
 
+      def extension
+        @ext ||= File.extname(filename)
+      end
+
       def to_s
         "#{self.class} #@hash #@filename"
       end

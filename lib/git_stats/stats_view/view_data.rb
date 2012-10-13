@@ -42,6 +42,26 @@ module GitStats
         end
       end
 
+      def files_by_extension
+        @files_by_extension ||= LazyHighCharts::HighChart.new('graph') do |f|
+          f.chart(type: "column")
+          f.title(text: "files by extension")
+          f.xAxis(categories: repo.commits.last.files_by_extension.keys)
+          f.yAxis(min: 0, title: {text: 'Commits'})
+          f.series(name: "commits", data: repo.commits.last.files_by_extension.values.map(&:count))
+        end
+      end
+
+      def lines_by_extension
+        @lines_by_extension ||= LazyHighCharts::HighChart.new('graph') do |f|
+          f.chart(type: "column")
+          f.title(text: "files by extension")
+          f.xAxis(categories: repo.commits.last.lines_by_extension.keys)
+          f.yAxis(min: 0, title: {text: 'Commits'})
+          f.series(name: "commits", data: repo.commits.last.lines_by_extension.values)
+        end
+      end
+
       def files_by_date
         @files_by_date ||= LazyHighCharts::HighChart.new('graph') do |f|
           f.title(text: "Files")

@@ -15,6 +15,14 @@ module GitStats
         end
       end
 
+      def files_by_extension
+        @files_by_extension ||= files.inject({}) { |acc, f| acc[f.extension] ||= []; acc[f.extension] << f; acc }
+      end
+
+      def lines_by_extension
+        @lines_by_extension ||= Hash[files_by_extension.map { |ext, files| [ext, files.map(&:lines_count).sum] }]
+      end
+
       def files_count
         @files_count ||= Command.new(repo, "git ls-tree -r --name-only #{self.hash} | wc -l").run.to_i
       end

@@ -19,6 +19,10 @@ module GitStats
         @files_count ||= Command.new(repo, "git ls-tree -r --name-only #{self.hash} | wc -l").run.to_i
       end
 
+      def lines_count
+        @lines_count ||= files.map(&:lines_count).sum
+      end
+
       def short_stat
         @short_stat ||= ShortStat.new(self)
       end

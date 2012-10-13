@@ -17,7 +17,7 @@ module GitStats
       end
 
       def all_templates
-        @all_templates ||= (Dir["templates/*.haml"] - Dir["templates/layout.haml"]).map { |t| File.basename(t, ".haml") }
+        %w(index activity authors files)
       end
 
       def prepare_assets

@@ -10,7 +10,8 @@ module GitStats
       repo = GitData::Repo.new(@repo_path)
       view_data = StatsView::ViewData.new(repo)
 
-      StatsView::View.render_all(view_data, @out_path)
+      view = StatsView::View.new(view_data, @out_path)
+      view.render_all
     end
 
     private

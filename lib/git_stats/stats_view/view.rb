@@ -1,17 +1,29 @@
 module GitStats
   module StatsView
     class View
-      def self.render_all(data, out_path)
-        prepare_assets(out_path)
+      def initialize(view_data, out_path)
+        @view_data, @out_path = view_data, out_path
+      end
+
+      def render_all
+        prepare_assets
 
         layout = Tilt.new("templates/layout.haml")
-        output = Template.new('index', layout).render(data)
-        File.open("#{out_path}/index.html", 'w') { |f| f.write output }
+
+        all_templates.each do |template|
+          output = Template.new(template, layout).render(@view_data, all_templates)
+          File.open("#@out_path/#{template}.html", 'w') { |f| f.write output }
+        end
       end
 
-      def self.prepare_assets(out_path)
-        FileUtils.cp_r('templates/assets', out_path)
+      def all_templates
+        @all_templates ||= (Dir["templates/*.haml"] - Dir["templates/layout.haml"]).map { |t| File.basename(t, ".haml") }
       end
+
+      def prepare_assets
+        FileUtils.cp_r('templates/assets', @out_path)
+      end
+
     end
   end
 end

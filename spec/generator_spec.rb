@@ -24,7 +24,9 @@ describe GitStats::Generator do
     view_data = double('view_data')
     GitStats::StatsView::ViewData.should_receive(:new).with(repo).and_return(view_data)
 
-    GitStats::StatsView::View.should_receive(:render_all).with(view_data, out_path)
+    view = double('view')
+    GitStats::StatsView::View.should_receive(:new).with(view_data, out_path).and_return(view)
+    view.should_receive(:render_all)
 
     generator.generate
   end

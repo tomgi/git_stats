@@ -7,8 +7,8 @@ module GitStats
         @template = Tilt.new("templates/#@name.haml")
       end
 
-      def render(data)
-        @layout.render { @template.render(data) }
+      def render(data, all_templates)
+        @layout.render(data, :active_page => @name, :all_templates => all_templates) { @template.render(data) }
       end
     end
   end

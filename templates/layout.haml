@@ -2,7 +2,7 @@
 !!!
 %html
   %head
-    %title GitStats
+    %title= "GitStats - #{repo.project_name}"
     %link{:rel => "stylesheet", :href => "assets/bootstrap/css/bootstrap.min.css", :type => "text/css"}
     %style
       :plain
@@ -19,14 +19,11 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand{:href => "#"} Project name
+          %a.brand{:href => "index.html"}= "GitStats - #{repo.project_name}"
           %div.nav-collapse.collapse
             %ul.nav
-              %li.active
-                %a{:href => "#"} Home
-              %li
-                %a{:href => "#"} Home2
-              %li
-                %a{:href => "#"} Hom3
+              - all_templates.each do |link|
+                %li{:class => active_page == link ? "active" : ""}
+                  %a{:href => "#{link}.html"}= link.capitalize
     %div.container
       = yield

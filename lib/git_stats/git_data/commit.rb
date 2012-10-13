@@ -7,11 +7,6 @@ module GitStats
 
       attr_reader :repo, :hash, :stamp, :date, :author
 
-      def gather_all_data
-        files_count
-        short_stat
-      end
-
       def files_count
         @files_count ||= Command.new(repo, "git ls-tree -r --name-only #{self.hash} | wc -l").run.to_i
       end

@@ -7,9 +7,5 @@ $LOAD_PATH.unshift(lib) if File.directory?(lib) && !$LOAD_PATH.include?(lib)
 # start up the CLI
 require "git_stats/cli"
 
-begin
-  cli = GitStats::CLI.new
-  cli.start(*ARGV)
-rescue ArgumentError => e
-  puts e.message
-end
+cli = GitStats::CLI.new
+cli.start(*ARGV)

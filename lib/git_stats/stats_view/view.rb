@@ -17,7 +17,7 @@ module GitStats
       end
 
       def all_templates
-        %w(index activity authors files)
+        %w(index activity authors files lines)
       end
 
       def prepare_assets

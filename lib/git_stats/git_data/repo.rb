@@ -1,10 +1,15 @@
+require 'git_stats/hash_initializable'
+
 module GitStats
   module GitData
     class Repo
-      attr_reader :path
+      include HashInitializable
 
-      def initialize(path)
-        @path = File.expand_path(path)
+      attr_reader :path, :git_command_observer
+
+      def initialize(params)
+        super(params)
+        @path = File.expand_path(@path)
       end
 
       def authors

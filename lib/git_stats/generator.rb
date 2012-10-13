@@ -2,12 +2,17 @@ module GitStats
   class Generator
     def initialize(repo_path, out_path)
       @repo_path, @out_path = repo_path, out_path
+      yield self if block_given?
+    end
+
+    def git_command_observer(&block)
+      @git_command_observer = block
     end
 
     def generate
       validate_paths
 
-      repo = GitData::Repo.new(@repo_path)
+      repo = GitData::Repo.new(path: @repo_path, git_command_observer: @git_command_observer)
       view_data = StatsView::ViewData.new(repo)
 
       view = StatsView::View.new(view_data, @out_path)

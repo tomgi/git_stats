@@ -19,7 +19,7 @@
     %td= repo.commits.last.files_count
   %tr
     %td Total lines
-    %td= "#{repo.short_stats.map(&:insertions).sum} insertions, #{repo.short_stats.map(&:deletions).sum} deletions"
+    %td= "#{repo.commits.last.files.map(&:lines_count).sum} lines (#{repo.short_stats.map(&:insertions).sum} insertions, #{repo.short_stats.map(&:deletions).sum} deletions)"
   %tr
     %td Total commits
     %td= repo.commits.size

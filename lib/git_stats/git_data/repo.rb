@@ -4,7 +4,7 @@ module GitStats
       attr_reader :path
 
       def initialize(path)
-        @path = path
+        @path = File.expand_path(path)
       end
 
       def authors
@@ -37,7 +37,7 @@ module GitStats
       end
 
       def project_name
-        @project_name ||= Pathname(path).basename.to_s
+        @project_name ||= File.basename(path)
       end
 
       def to_s

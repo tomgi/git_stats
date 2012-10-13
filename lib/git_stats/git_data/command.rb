@@ -7,7 +7,6 @@ module GitStats
       end
 
       def run
-        puts "running #@command"
         in_repo { %x[#@command] }
       end
 

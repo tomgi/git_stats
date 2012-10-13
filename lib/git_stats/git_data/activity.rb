@@ -2,8 +2,6 @@ module GitStats
   module GitData
     class Activity
 
-      attr_reader :by_hour, :by_wday, :by_wday_hour, :by_month, :by_year, :by_year_week
-
       def initialize(commits)
         add_commits(commits)
       end

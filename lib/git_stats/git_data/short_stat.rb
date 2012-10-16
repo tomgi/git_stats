@@ -8,6 +8,11 @@ module GitStats
         calculate_stat
       end
 
+      def to_s
+        "#{self.class} #@commit"
+      end
+
+      private
       def calculate_stat
         stat_line = Command.new(commit.repo, "git show --shortstat --oneline #{commit.hash}").run.lines.to_a[1]
         if stat_line.blank?
@@ -17,10 +22,6 @@ module GitStats
           @insertions = stat_line[/(\d+) insertions?/, 1].to_i
           @deletions = stat_line[/(\d+) deletions?/, 1].to_i
         end
-      end
-
-      def to_s
-        "#{self.class} #@commit"
       end
     end
   end

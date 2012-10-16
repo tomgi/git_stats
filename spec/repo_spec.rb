@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe GitStats::GitData::Repo do
-  let(:repo) { GitStats::GitData::Repo.new(path: "repo_path") }
+  let(:repo) { build(:repo) }
 
   describe 'git output parsing' do
     before {

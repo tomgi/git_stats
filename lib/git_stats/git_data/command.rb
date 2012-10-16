@@ -9,12 +9,12 @@ module GitStats
       end
 
       def run
-        result = in_repo { %x[#@command] }
+        result = run_in_repo { %x[#@command] }
         repo.git_command_observer.try(:call, @command, result)
         result
       end
 
-      def in_repo
+      def run_in_repo
         Dir.chdir(@repo.path) { yield }
       end
 

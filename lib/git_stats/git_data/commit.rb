@@ -8,10 +8,8 @@ module GitStats
       attr_reader :repo, :hash, :stamp, :date, :author
 
       def files
-        @files ||= Command.new(repo, "git ls-tree -r #{self.hash}").run.lines.map do |line|
-          hash = line.split("\t")[0].split.last.strip
-          filename = line.split("\t")[1].strip
-          Blob.new(repo: repo, filename: filename, hash: hash)
+        @files ||= Command.new(repo, "git ls-tree -r #{self.hash}").run_and_parse.map do |file|
+          Blob.new(repo: repo, filename: file[:filename], hash: file[:hash])
         end
       end
 

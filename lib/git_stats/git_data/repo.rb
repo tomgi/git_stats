@@ -13,10 +13,10 @@ module GitStats
       end
 
       def authors
-        @authors ||= Hash[Command.new(self, 'git shortlog -se HEAD').run.lines.map do |line|
-          name, email = line.split(/\t/)[1].strip.scan(/(.*)<(.*)>/).first.map(&:strip)
-          [email, Author.new(repo: self, name: name, email: email)]
-        end]
+        @authors ||= Command.new(self, 'git shortlog -se HEAD').run_and_parse.inject({}) do |hash, author|
+          hash[author[:email]] = Author.new(repo: self, name: author[:name], email: author[:email])
+          hash
+        end
       end
 
       def commits

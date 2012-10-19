@@ -1,8 +1,8 @@
 module GitStats
   module GitData
     class CommandRunner
-      def self.run(command)
-        %x[#{command}]
+      def run(path, command)
+        Dir.chdir(path) { %x[#{command}] }
       end
     end
   end

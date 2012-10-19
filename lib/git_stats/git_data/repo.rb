@@ -59,7 +59,9 @@ module GitStats
       end
 
       def run(command)
-        in_repo_dir { CommandRunner.run(command) }
+        result = command_runner.run(path, command)
+        invoke_command_observers(command, result)
+        result
       end
 
       def run_and_parse(command)
@@ -67,12 +69,17 @@ module GitStats
         command_parser.parse(command, result)
       end
 
+      def command_runner
+        @command_runner ||= CommandRunner.new
+      end
+
       def command_parser
         @command_parser ||= CommandParser.new
       end
 
-      def in_repo_dir
-        Dir.chdir(path) { yield }
+      def add_command_observer(proc=nil, &block)
+        command_observers << block if block_given?
+        command_observers << proc if proc
       end
 
       def to_s
@@ -81,6 +88,15 @@ module GitStats
 
       def ==(other)
         self.path == other.path
+      end
+
+      private
+      def command_observers
+        @command_observers ||= []
+      end
+
+      def invoke_command_observers(command, result)
+        command_observers.each { |o| o.call(command, result) }
       end
 
     end

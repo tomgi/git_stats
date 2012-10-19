@@ -7,7 +7,7 @@ describe GitStats::CLI do
   it 'should invoke generator with console arguments given' do
     generator = double('generator')
     GitStats::Generator.should_receive(:new).with(repo_path, out_path).and_return(generator)
-    generator.should_receive(:generate)
+    generator.should_receive(:render_all)
 
     subject.start(repo_path, out_path)
   end

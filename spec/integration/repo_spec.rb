@@ -30,6 +30,14 @@ describe GitStats::GitData::Repo do
     repo.files_count.should == 6
   end
 
+  it 'should count files by date' do
+    repo.files_count_each_day.should == [0, 3, 3, 5, 5, 5, 6, 6, 6]
+  end
+
+  it 'should count lines by date' do
+    repo.lines_count_each_day.should == [0, 11, 11, 1014, 1014, 1014, 1114, 1114, 1114]
+  end
+
   it 'should count all lines in repo' do
     repo.lines_count.should == 1114
   end

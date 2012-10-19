@@ -18,7 +18,7 @@ module GitStats
       end
 
       def files_by_extension_count
-        @files_by_extension ||= Hash[files_by_extension.map { |ext, files| [ext, files.count] }]
+        @files_by_extension_count ||= Hash[files_by_extension.map { |ext, files| [ext, files.count] }]
       end
 
       def lines_by_extension

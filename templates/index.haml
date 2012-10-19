@@ -13,13 +13,13 @@
     %td= "GitStats #{GitStats::VERSION}"
   %tr
     %td Report period
-    %td= repo.commits.map(&:date).minmax.map {|d| d.to_formatted_s(:long)}.join(" .. ")
+    %td= repo.commits_period.map {|d| d.to_formatted_s(:long)}.join(" .. ")
   %tr
     %td Total files
-    %td= repo.commits.last.files_count
+    %td= repo.files_count
   %tr
     %td Total lines
-    %td= "#{repo.commits.last.lines_count} lines (#{repo.short_stats.map(&:insertions).sum} insertions, #{repo.short_stats.map(&:deletions).sum} deletions)"
+    %td= "#{repo.lines_count} lines (#{repo.short_stats.map(&:insertions).sum} insertions, #{repo.short_stats.map(&:deletions).sum} deletions)"
   %tr
     %td Total commits
     %td= repo.commits.size

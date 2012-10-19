@@ -32,6 +32,10 @@ module GitStats
         end.sort_by! { |e| e.date }.extend(ByFieldFinder)
       end
 
+      def commits_period
+        commits.map(&:date).minmax
+      end
+
       def last_commit
         commits.last
       end

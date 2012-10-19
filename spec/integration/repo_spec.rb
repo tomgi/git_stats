@@ -10,6 +10,10 @@ describe GitStats::GitData::Repo do
     ]
   end
 
+  it 'should calculate correct commits period' do
+    repo.commits_period.should == [DateTime.parse('2012-10-19 10:44:34 +0200'), DateTime.parse('2012-10-26 17:05:25 +0200')]
+  end
+
   it 'should gather all commits sorted by date' do
     repo.commits.map(&:hash).should =~ %w(b3b4f81 d60b5ec ab47ef8 2c11f5e c87ecf9 b621a5d fd66657 81e8bef 4e7d0e9 872955c)
   end

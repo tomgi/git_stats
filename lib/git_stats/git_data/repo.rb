@@ -15,13 +15,13 @@ module GitStats
       end
 
       def authors
-        @authors ||= run_and_parse('git shortlog -se HEAD').map do |author|
+        @authors ||= run_and_parse("git shortlog -se #{commit_range}").map do |author|
           Author.new(repo: self, name: author[:name], email: author[:email])
         end.extend(ByFieldFinder)
       end
 
       def commits
-        @commits ||= run('git rev-list --pretty=format:"%h|%at|%ai|%aE" HEAD | grep -v commit').lines.map do |commit_line|
+        @commits ||= run("git rev-list --pretty=format:'%h|%at|%ai|%aE' #{commit_range} | grep -v commit").lines.map do |commit_line|
           hash, stamp, date, author_email = commit_line.split('|').map(&:strip)
           author = authors.by_email(author_email)
 
@@ -35,7 +35,7 @@ module GitStats
       end
 
       def commit_range
-        @first_commit_hash ? "#{@first_commit_hash}..#{last_commit_hash}" : last_commit_hash
+        @first_commit_hash ? "#@first_commit_hash..#{last_commit_hash}" : last_commit_hash
       end
 
       def last_commit_hash
@@ -51,7 +51,7 @@ module GitStats
       end
 
       def project_version
-        @project_version ||= run('git rev-parse --short HEAD').strip
+        @project_version ||= run("git rev-parse --short #{commit_range}").strip
       end
 
       def project_name

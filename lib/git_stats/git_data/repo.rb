@@ -27,7 +27,7 @@ module GitStats
 
           date = DateTime.parse(date)
           Commit.new(repo: self, hash: hash, stamp: stamp, date: date, author: author)
-        end.sort_by! { |e| e.date }
+        end.sort_by! { |e| e.date }.extend(ByFieldFinder)
       end
 
       def last_commit

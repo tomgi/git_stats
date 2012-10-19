@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe GitStats::GitData::Activity do
-  let(:repo) { build(:test_repo, last_commit_hash: '45677ee') }
+  let(:repo) { build(:test_repo, last_commit_hash: '872955c') }
   let(:activity) { repo.activity }
 
   it 'should count commits by hour' do

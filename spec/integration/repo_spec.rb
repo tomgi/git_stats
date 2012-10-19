@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe GitStats::GitData::Repo do
-  let(:repo) { build(:test_repo, last_commit_hash: '45677ee') }
+  let(:repo) { build(:test_repo, last_commit_hash: '872955c') }
 
   it 'should gather all authors' do
     repo.authors.should =~ [
@@ -11,7 +11,7 @@ describe GitStats::GitData::Repo do
   end
 
   it 'should gather all commits sorted by date' do
-    repo.commits.map(&:hash).should =~ %w(b3b4f81 d60b5ec ab47ef8 2c11f5e c87ecf9 b621a5d fd66657 81e8bef 4e7d0e9 45677ee)
+    repo.commits.map(&:hash).should =~ %w(b3b4f81 d60b5ec ab47ef8 2c11f5e c87ecf9 b621a5d fd66657 81e8bef 4e7d0e9 872955c)
   end
 
   it 'should return project name from dir' do
@@ -19,7 +19,7 @@ describe GitStats::GitData::Repo do
   end
 
   it 'should return project version as last commit hash' do
-    repo.project_version.should == '45677ee'
+    repo.project_version.should == '872955c'
   end
 
   it 'should count files in repo' do

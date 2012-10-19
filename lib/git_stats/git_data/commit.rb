@@ -10,7 +10,7 @@ module GitStats
       def files
         @files ||= repo.run_and_parse("git ls-tree -r #{self.hash}").map do |file|
           Blob.new(repo: repo, filename: file[:filename], hash: file[:hash])
-        end
+        end.extend(ByFieldFinder)
       end
 
       def files_by_extension

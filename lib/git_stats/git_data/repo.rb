@@ -5,7 +5,9 @@ module GitStats
     class Repo
       include HashInitializable
 
-      attr_reader :path, :git_command_observer
+      attr_reader :path
+
+      delegate :files, :files_by_extension, :files_by_extension_count, :lines_by_extension, :files_count, :lines_count, to: :last_commit
 
       def initialize(params)
         super(params)
@@ -28,12 +30,16 @@ module GitStats
         end.sort_by! { |e| e.date }
       end
 
-      def commit_range
-        @first_commit ? "#{@first_commit}..#{last_commit}" : last_commit
+      def last_commit
+        commits.last
       end
 
-      def last_commit
-        @last_commit ||= 'HEAD'
+      def commit_range
+        @first_commit_hash ? "#{@first_commit_hash}..#{last_commit_hash}" : last_commit_hash
+      end
+
+      def last_commit_hash
+        @last_commit_hash ||= 'HEAD'
       end
 
       def short_stats
@@ -45,7 +51,7 @@ module GitStats
       end
 
       def project_version
-        @project_version ||= run('git rev-parse --short HEAD')
+        @project_version ||= run('git rev-parse --short HEAD').strip
       end
 
       def project_name

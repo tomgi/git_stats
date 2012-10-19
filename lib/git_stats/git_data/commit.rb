@@ -17,6 +17,10 @@ module GitStats
         @files_by_extension ||= files.inject({}) { |acc, f| acc[f.extension] ||= []; acc[f.extension] << f; acc }
       end
 
+      def files_by_extension_count
+        @files_by_extension ||= Hash[files_by_extension.map { |ext, files| [ext, files.count] }]
+      end
+
       def lines_by_extension
         @lines_by_extension ||= Hash[files_by_extension.map { |ext, files| [ext, files.map(&:lines_count).sum] }]
       end

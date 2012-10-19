@@ -8,11 +8,11 @@ module GitStats
       attr_reader :repo, :hash, :filename
 
       def lines_count
-        @lines_count ||= Command.new(repo, "git cat-file blob #{self.hash} | wc -l").run.to_i
+        @lines_count ||= repo.run("git cat-file blob #{self.hash} | wc -l").to_i
       end
 
       def content
-        @content ||= Command.new(repo, "git cat-file blob #{self.hash}").run
+        @content ||= repo.run("git cat-file blob #{self.hash}")
       end
 
       def extension

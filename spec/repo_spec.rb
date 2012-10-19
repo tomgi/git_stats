@@ -13,17 +13,17 @@ describe GitStats::GitData::Repo do
     end
 
     it 'should return last_commit if it was given' do
-      repo = build(:repo, last_commit: 'abc')
+      repo = build(:repo, last_commit_hash: 'abc')
       repo.commit_range.should == 'abc'
     end
 
     it 'should return range from first_commit to HEAD if first_commit was given' do
-      repo = build(:repo, first_commit: 'abc')
+      repo = build(:repo, first_commit_hash: 'abc')
       repo.commit_range.should == 'abc..HEAD'
     end
 
     it 'should return range from first to last commit if both were given' do
-      repo = build(:repo, first_commit: 'abc', last_commit: 'def')
+      repo = build(:repo, first_commit_hash: 'abc', last_commit_hash: 'def')
       repo.commit_range.should == 'abc..def'
     end
   end

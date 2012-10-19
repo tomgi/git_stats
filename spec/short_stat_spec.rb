@@ -13,9 +13,7 @@ describe GitStats::GitData::ShortStat do
           {content: '', expect: [0, 0, 0]},
       ].each do |test|
         it "#{test[:content]} parsing" do
-          GitStats::GitData::Command.any_instance.should_receive(:run_in_repo).and_return("abc some commit
- #{test[:content]}
-                                                                                          ")
+          commit.repo.should_receive(:run).with("git show --shortstat --oneline abc").and_return("abc some commit\n#{test[:content]}")
 
 
           commit.short_stat.should be_a(GitStats::GitData::ShortStat)

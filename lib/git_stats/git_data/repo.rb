@@ -13,13 +13,13 @@ module GitStats
       end
 
       def authors
-        @authors ||= Command.new(self, 'git shortlog -se HEAD').run_and_parse.map do |author|
+        @authors ||= run_and_parse('git shortlog -se HEAD').map do |author|
           Author.new(repo: self, name: author[:name], email: author[:email])
         end.extend(ByFieldFinder)
       end
 
       def commits
-        @commits ||= Command.new(self, 'git rev-list --pretty=format:"%h|%at|%ai|%aE" HEAD | grep -v commit').run.lines.map do |commit_line|
+        @commits ||= run('git rev-list --pretty=format:"%h|%at|%ai|%aE" HEAD | grep -v commit').lines.map do |commit_line|
           hash, stamp, date, author_email = commit_line.split('|').map(&:strip)
           author = authors.by_email(author_email)
 
@@ -45,11 +45,28 @@ module GitStats
       end
 
       def project_version
-        @project_version ||= Command.new(self, 'git rev-parse --short HEAD').run
+        @project_version ||= run('git rev-parse --short HEAD')
       end
 
       def project_name
         @project_name ||= File.basename(path)
+      end
+
+      def run(command)
+        in_repo_dir { CommandRunner.run(command) }
+      end
+
+      def run_and_parse(command)
+        result = run(command)
+        command_parser.parse(command, result)
+      end
+
+      def command_parser
+        @command_parser ||= CommandParser.new
+      end
+
+      def in_repo_dir
+        Dir.chdir(path) { yield }
       end
 
       def to_s

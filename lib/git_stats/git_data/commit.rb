@@ -8,7 +8,7 @@ module GitStats
       attr_reader :repo, :hash, :stamp, :date, :author
 
       def files
-        @files ||= Command.new(repo, "git ls-tree -r #{self.hash}").run_and_parse.map do |file|
+        @files ||= repo.run_and_parse("git ls-tree -r #{self.hash}").map do |file|
           Blob.new(repo: repo, filename: file[:filename], hash: file[:hash])
         end
       end
@@ -22,11 +22,11 @@ module GitStats
       end
 
       def files_count
-        @files_count ||= Command.new(repo, "git ls-tree -r --name-only #{self.hash} | wc -l").run.to_i
+        @files_count ||= repo.run("git ls-tree -r --name-only #{self.hash} | wc -l").to_i
       end
 
       def lines_count
-        @lines_count ||= Command.new(repo, "git diff --shortstat `git hash-object -t tree /dev/null` #{self.hash}").run.lines.map do |line|
+        @lines_count ||= repo.run("git diff --shortstat `git hash-object -t tree /dev/null` #{self.hash}").lines.map do |line|
           line[/(\d+) insertions?/, 1].to_i
         end.sum
       end

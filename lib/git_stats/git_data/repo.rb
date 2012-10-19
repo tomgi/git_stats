@@ -13,16 +13,15 @@ module GitStats
       end
 
       def authors
-        @authors ||= Command.new(self, 'git shortlog -se HEAD').run_and_parse.inject({}) do |hash, author|
-          hash[author[:email]] = Author.new(repo: self, name: author[:name], email: author[:email])
-          hash
-        end
+        @authors ||= Command.new(self, 'git shortlog -se HEAD').run_and_parse.map do |author|
+          Author.new(repo: self, name: author[:name], email: author[:email])
+        end.extend(ByFieldFinder)
       end
 
       def commits
         @commits ||= Command.new(self, 'git rev-list --pretty=format:"%h|%at|%ai|%aE" HEAD | grep -v commit').run.lines.map do |commit_line|
           hash, stamp, date, author_email = commit_line.split('|').map(&:strip)
-          author = authors[author_email]
+          author = authors.by_email(author_email)
 
           date = DateTime.parse(date)
           Commit.new(repo: self, hash: hash, stamp: stamp, date: date, author: author)

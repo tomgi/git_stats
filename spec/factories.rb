@@ -3,6 +3,9 @@ FactoryGirl.define do
 
   factory :repo, class: GitStats::GitData::Repo do
     path "repo_path"
+    factory :test_repo do
+      path 'spec/integration/test_repo'
+    end
   end
 
   factory :author, class: GitStats::GitData::Author do

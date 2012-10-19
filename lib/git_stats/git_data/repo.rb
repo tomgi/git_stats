@@ -29,6 +29,14 @@ module GitStats
         end.sort_by! { |e| e.date }
       end
 
+      def commit_range
+        @first_commit ? "#{@first_commit}..#{last_commit}" : last_commit
+      end
+
+      def last_commit
+        @last_commit ||= 'HEAD'
+      end
+
       def short_stats
         @short_stats ||= commits.map(&:short_stat)
       end

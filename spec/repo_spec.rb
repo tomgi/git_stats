@@ -7,6 +7,27 @@ describe GitStats::GitData::Repo do
       "joe.doe@gmail.com" => build(:author, repo: repo, name: "Joe Doe", email: "joe.doe@gmail.com")
   } }
 
+  describe 'commit range' do
+    it 'should return HEAD by default' do
+      repo.commit_range.should == 'HEAD'
+    end
+
+    it 'should return last_commit if it was given' do
+      repo = build(:repo, last_commit: 'abc')
+      repo.commit_range.should == 'abc'
+    end
+
+    it 'should return range from first_commit to HEAD if first_commit was given' do
+      repo = build(:repo, first_commit: 'abc')
+      repo.commit_range.should == 'abc..HEAD'
+    end
+
+    it 'should return range from first to last commit if both were given' do
+      repo = build(:repo, first_commit: 'abc', last_commit: 'def')
+      repo.commit_range.should == 'abc..def'
+    end
+  end
+
   describe 'git output parsing' do
     it 'should parse git shortlog output to authors hash' do
       GitStats::GitData::Command.any_instance.should_receive(:run_in_repo).and_return("   156	John Doe <john.doe@gmail.com>

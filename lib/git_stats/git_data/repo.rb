@@ -21,12 +21,14 @@ module GitStats
       end
 
       def commits
-        @commits ||= run("git rev-list --pretty=format:'%h|%at|%ai|%aE' #{commit_range} | grep -v commit").lines.map do |commit_line|
-          hash, stamp, date, author_email = commit_line.split('|').map(&:strip)
-          author = authors.by_email(author_email)
-
-          date = DateTime.parse(date)
-          Commit.new(repo: self, hash: hash, stamp: stamp, date: date, author: author)
+        @commits ||= run_and_parse("git rev-list --pretty=format:'%h|%at|%ai|%aE' #{commit_range} | grep -v commit").map do |commit_line|
+          Commit.new(
+              repo: self,
+              hash: commit_line[:hash],
+              stamp: commit_line[:stamp],
+              date: DateTime.parse(commit_line[:date]),
+              author: authors.by_email(commit_line[:author_email])
+          )
         end.sort_by! { |e| e.date }.extend(ByFieldFinder)
       end
 

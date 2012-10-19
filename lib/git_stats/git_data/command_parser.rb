@@ -20,6 +20,13 @@ module GitStats
         end
       end
 
+      def parse_rev_list(result, params)
+        result.lines.map do |line|
+          hash, stamp, date, author_email = line.split('|').map(&:strip)
+          {hash: hash, stamp: stamp, date: date, author_email: author_email}
+        end
+      end
+
     end
   end
 end

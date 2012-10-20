@@ -34,7 +34,7 @@ module GitStats
 
         def day_chart(params)
           common_params(params)
-          type "datetime"
+          xAxis(type: "datetime")
           series(
               type: "area",
               name: "commits",

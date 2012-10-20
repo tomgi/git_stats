@@ -22,11 +22,21 @@ module GitStats
       end
 
       def lines_by_extension
-        @lines_by_extension ||= Hash[files_by_extension.map { |ext, files| [ext, files.map(&:lines_count).sum] }]
+        @lines_by_extension ||= Hash[files_by_extension.map { |ext, files|
+          [ext, files.map(&:lines_count).sum]
+        }.delete_if { |ext, lines_count| lines_count == 0 }]
       end
 
       def files_count
         @files_count ||= repo.run("git ls-tree -r --name-only #{self.hash} | wc -l").to_i
+      end
+
+      def binary_files_count
+        files.find_all { |f| f.binary? }.size
+      end
+
+      def text_files_count
+        files_count - binary_files_count
       end
 
       def lines_count

@@ -37,10 +37,10 @@ describe GitStats::GitData::Commit do
         GitStats::GitData::Blob.should_receive(:new).and_return(
             double(lines_count: 40, extension: '.rb'),
             double(lines_count: 60, extension: '.rb'),
-            double(lines_count: 10, extension: '.haml'),
+            double(lines_count: 0, extension: '.haml'),
             double(lines_count: 20, extension: '.css'),
         )
-        commit.lines_by_extension.should == {'.rb' => 100, '.haml' => 10, '.css' => 20}
+        commit.lines_by_extension.should == {'.rb' => 100, '.css' => 20}
       end
     end
   end

@@ -7,7 +7,8 @@ module GitStats
 
       attr_reader :path
 
-      delegate :files, :files_by_extension, :files_by_extension_count, :lines_by_extension, :files_count, :lines_count, to: :last_commit
+      delegate :files, :files_by_extension, :files_by_extension_count, :lines_by_extension,
+               :files_count, :binary_files_count, :text_files_count, :lines_count, to: :last_commit
 
       def initialize(params)
         super(params)
@@ -34,6 +35,14 @@ module GitStats
 
       def commits_period
         commits.map(&:date).minmax
+      end
+
+      def lines_added_by_author
+        Hash[authors.map { |author| [author, author.lines_added] }]
+      end
+
+      def lines_deleted_by_author
+        Hash[authors.map { |author| [author, author.lines_deleted] }]
       end
 
       def files_count_each_day

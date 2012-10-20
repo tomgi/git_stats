@@ -8,7 +8,7 @@ module GitStats
       attr_reader :repo, :hash, :filename
 
       def lines_count
-        @lines_count ||= repo.run("git cat-file blob #{self.hash} | wc -l").to_i
+        @lines_count ||= binary? ? 0 : repo.run("git cat-file blob #{self.hash} | wc -l").to_i
       end
 
       def content
@@ -17,6 +17,10 @@ module GitStats
 
       def extension
         @ext ||= File.extname(filename)
+      end
+
+      def binary?
+        repo.run("git cat-file blob #{self.hash} | grep -m 1 '^'") =~ /Binary file/
       end
 
       def to_s

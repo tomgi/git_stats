@@ -11,6 +11,18 @@ module GitStats
         @commits ||= repo.commits.select { |commit| commit.author == self }
       end
 
+      def lines_added
+        short_stats.map(&:insertions).sum
+      end
+
+      def lines_deleted
+        short_stats.map(&:deletions).sum
+      end
+
+      def short_stats
+        commits.map(&:short_stat)
+      end
+
       def activity
         @activity ||= Activity.new(commits)
       end

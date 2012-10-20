@@ -48,6 +48,26 @@ module GitStats
           end
         end
 
+        def lines_added_by_author
+          Chart.new do |f|
+            f.column_hash_chart(
+                data: Hash[@repo.lines_added_by_author.map {|a, l| [a.email, l]}],
+                title: :lines_added_by_author.t,
+                y_text: :lines.t
+            )
+          end
+        end
+
+        def lines_deleted_by_author
+          Chart.new do |f|
+            f.column_hash_chart(
+                data: Hash[@repo.lines_deleted_by_author.map {|a, l| [a.email, l]}],
+                title: :lines_deleted_by_author.t,
+                y_text: :lines.t
+            )
+          end
+        end
+
       end
     end
   end

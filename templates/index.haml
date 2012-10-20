@@ -16,7 +16,7 @@
     %td= repo.commits_period.map {|d| d.to_formatted_s(:long)}.join(" .. ")
   %tr
     %td= :total_files.t
-    %td= repo.files_count
+    %td= "#{repo.files_count} (binary: #{repo.binary_files_count}, text: #{repo.text_files_count})"
   %tr
     %td= :total_lines.t
     %td= "#{repo.lines_count} lines (#{repo.short_stats.map(&:insertions).sum} insertions, #{repo.short_stats.map(&:deletions).sum} deletions)"

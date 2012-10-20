@@ -2,7 +2,8 @@ module GitStats
   module StatsView
     module Charts
       class All
-        delegate :files_by_extension, :lines_by_extension, :files_by_date, :lines_by_date, to: :repo_charts
+        delegate :files_by_extension, :lines_by_extension, :files_by_date, :lines_by_date,
+                 :lines_added_by_author, :lines_deleted_by_author, to: :repo_charts
         delegate :by_authors_wday, to: :authors_charts
         delegate :activity_by_hour, to: :activity_charts
 

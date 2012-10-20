@@ -1,2 +1,10 @@
 en:
   project_name: Project name
+  project_version: Project version
+  generated_at: Generated at
+  generator: Generator
+  report_period: Report period
+  total_files: Total files
+  total_lines: Total lines
+  total_commits: Total commits
+  authors: Authors

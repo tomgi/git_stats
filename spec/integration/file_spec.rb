@@ -8,7 +8,7 @@ describe GitStats::GitData::Repo do
   end
 
   it 'should retrieve correct file content for old file' do
-    repo.commits.by_hash('c87ecf9').files.by_filename('test.txt').content.should == "bb
+    repo.commits.by_sha('c87ecf9').files.by_filename('test.txt').content.should == "bb
 
 
 

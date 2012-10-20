@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe GitStats::GitData::ShortStat do
-  let(:commit) { build(:commit, hash: 'abc') }
+  let(:commit) { build(:commit, sha: 'abc') }
 
   describe 'git output parsing' do
     context 'parsing git show output' do

@@ -15,15 +15,15 @@ module GitStats
 
       def parse_ls_tree(result, params)
         result.lines.map do |line|
-          mode, type, hash, filename = line.scan(/(.*) (.*) (.*)\t(.*)/).first.map(&:strip)
-          {mode: mode, type: type, hash: hash, filename: filename}
+          mode, type, sha, filename = line.scan(/(.*) (.*) (.*)\t(.*)/).first.map(&:strip)
+          {mode: mode, type: type, sha: sha, filename: filename}
         end
       end
 
       def parse_rev_list(result, params)
         result.lines.map do |line|
-          hash, stamp, date, author_email = line.split('|').map(&:strip)
-          {hash: hash, stamp: stamp, date: date, author_email: author_email}
+          sha, stamp, date, author_email = line.split('|').map(&:strip)
+          {sha: sha, stamp: stamp, date: date, author_email: author_email}
         end
       end
 

@@ -15,7 +15,7 @@ FactoryGirl.define do
   end
 
   factory :commit, class: GitStats::GitData::Commit do
-    sequence(:hash) { |i| i }
+    sequence(:sha) { |i| i }
     sequence(:stamp) { |i| i }
     sequence(:date) { |i| Date.new(i) }
     association :repo, strategy: :build

@@ -5,14 +5,14 @@ module GitStats
     class Blob
       include HashInitializable
 
-      attr_reader :repo, :hash, :filename
+      attr_reader :repo, :sha, :filename
 
       def lines_count
-        @lines_count ||= binary? ? 0 : repo.run("git cat-file blob #{self.hash} | wc -l").to_i
+        @lines_count ||= binary? ? 0 : repo.run("git cat-file blob #{self.sha} | wc -l").to_i
       end
 
       def content
-        @content ||= repo.run("git cat-file blob #{self.hash}")
+        @content ||= repo.run("git cat-file blob #{self.sha}")
       end
 
       def extension
@@ -20,15 +20,15 @@ module GitStats
       end
 
       def binary?
-        repo.run("git cat-file blob #{self.hash} | grep -m 1 '^'") =~ /Binary file/
+        repo.run("git cat-file blob #{self.sha} | grep -m 1 '^'") =~ /Binary file/
       end
 
       def to_s
-        "#{self.class} #@hash #@filename"
+        "#{self.class} #@sha #@filename"
       end
 
       def ==(other)
-        [self.repo, self.hash, self.filename] == [other.repo, other.hash, other.filename]
+        [self.repo, self.sha, self.filename] == [other.repo, other.sha, other.filename]
       end
 
     end

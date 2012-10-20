@@ -8,7 +8,7 @@ module GitStats
       attr_reader :path
 
       delegate :files, :files_by_extension, :files_by_extension_count, :lines_by_extension,
-               :files_count, :binary_files_count, :text_files_count, :lines_count, to: :last_commit
+               :files_count, :binary_files, :text_files, :lines_count, to: :last_commit
 
       def initialize(params)
         super(params)
@@ -25,7 +25,7 @@ module GitStats
         @commits ||= run_and_parse("git rev-list --pretty=format:'%h|%at|%ai|%aE' #{commit_range} | grep -v commit").map do |commit_line|
           Commit.new(
               repo: self,
-              hash: commit_line[:hash],
+              sha: commit_line[:sha],
               stamp: commit_line[:stamp],
               date: DateTime.parse(commit_line[:date]),
               author: authors.by_email(commit_line[:author_email])
@@ -74,11 +74,11 @@ module GitStats
       end
 
       def commit_range
-        @first_commit_hash ? "#@first_commit_hash..#{last_commit_hash}" : last_commit_hash
+        @first_commit_sha ? "#@first_commit_sha..#{last_commit_sha}" : last_commit_sha
       end
 
-      def last_commit_hash
-        @last_commit_hash ||= 'HEAD'
+      def last_commit_sha
+        @last_commit_sha ||= 'HEAD'
       end
 
       def short_stats

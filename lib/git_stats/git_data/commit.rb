@@ -5,12 +5,20 @@ module GitStats
     class Commit
       include HashInitializable
 
-      attr_reader :repo, :hash, :stamp, :date, :author
+      attr_reader :repo, :sha, :stamp, :date, :author
 
       def files
-        @files ||= repo.run_and_parse("git ls-tree -r #{self.hash}").map do |file|
-          Blob.new(repo: repo, filename: file[:filename], hash: file[:hash])
+        @files ||= repo.run_and_parse("git ls-tree -r #{self.sha}").map do |file|
+          Blob.new(repo: repo, filename: file[:filename], sha: file[:sha])
         end.extend(ByFieldFinder)
+      end
+
+      def binary_files
+        @binary_files ||= files.select { |f| f.binary? }
+      end
+
+      def text_files
+        @text_files ||= files - binary_files
       end
 
       def files_by_extension
@@ -28,19 +36,11 @@ module GitStats
       end
 
       def files_count
-        @files_count ||= repo.run("git ls-tree -r --name-only #{self.hash} | wc -l").to_i
-      end
-
-      def binary_files_count
-        files.find_all { |f| f.binary? }.size
-      end
-
-      def text_files_count
-        files_count - binary_files_count
+        @files_count ||= repo.run("git ls-tree -r --name-only #{self.sha} | wc -l").to_i
       end
 
       def lines_count
-        @lines_count ||= repo.run("git diff --shortstat `git hash-object -t tree /dev/null` #{self.hash}").lines.map do |line|
+        @lines_count ||= repo.run("git diff --shortstat `git hash-object -t tree /dev/null` #{self.sha}").lines.map do |line|
           line[/(\d+) insertions?/, 1].to_i
         end.sum
       end
@@ -50,12 +50,12 @@ module GitStats
       end
 
       def to_s
-        "#{self.class} #@hash"
+        "#{self.class} #@sha"
       end
 
       def ==(other)
-        [self.repo, self.hash, self.stamp, self.date, self.author] ==
-            [other.repo, other.hash, other.stamp, other.date, other.author]
+        [self.repo, self.sha, self.stamp, self.date, self.author] ==
+            [other.repo, other.sha, other.stamp, other.date, other.author]
       end
     end
   end

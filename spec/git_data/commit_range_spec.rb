@@ -9,22 +9,22 @@ describe GitStats::GitData::Repo do
     end
 
     it 'should return last_commit if it was given' do
-      repo = build(:repo, last_commit_hash: 'abc')
+      repo = build(:repo, last_commit_sha: 'abc')
       repo.commit_range.should == 'abc'
     end
 
     it 'should return range from first_commit to HEAD if first_commit was given' do
-      repo = build(:repo, first_commit_hash: 'abc')
+      repo = build(:repo, first_commit_sha: 'abc')
       repo.commit_range.should == 'abc..HEAD'
     end
 
     it 'should return range from first to last commit if both were given' do
-      repo = build(:repo, first_commit_hash: 'abc', last_commit_hash: 'def')
+      repo = build(:repo, first_commit_sha: 'abc', last_commit_sha: 'def')
       repo.commit_range.should == 'abc..def'
     end
 
     context 'git commands using range' do
-      let(:repo) { build(:repo, first_commit_hash: 'abc', last_commit_hash: 'def') }
+      let(:repo) { build(:repo, first_commit_sha: 'abc', last_commit_sha: 'def') }
 
       it 'should affect authors command' do
         repo.should_receive(:run).with('git shortlog -se abc..def').and_return("")

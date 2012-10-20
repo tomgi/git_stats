@@ -8,50 +8,42 @@ module GitStats
 
         def files_by_extension
           Chart.new do |f|
-            f.type "column"
-            f.title "files by extension"
-            f.x_categories @repo.files_by_extension_count.keys
-            f.y_text 'Commits'
-            f.series(name: "commits", data: @repo.files_by_extension_count.values)
+            f.column_hash_chart(
+                data: @repo.files_by_extension_count,
+                title: "files_by_extension",
+                y_text: "files"
+            )
           end
         end
 
         def lines_by_extension
           Chart.new do |f|
-            f.type "column"
-            f.title "lines by extension"
-            f.x_categories @repo.lines_by_extension.keys
-            f.y_text 'Commits'
-            f.series(name: "commits", data: @repo.lines_by_extension.values)
+            f.column_hash_chart(
+                data: @repo.lines_by_extension,
+                title: "lines_by_extension",
+                y_text: "lines"
+            )
           end
         end
 
         def files_by_date
           Chart.new do |f|
-            f.title "Files"
-            f.type "datetime"
-            f.y_text 'Commits'
-            f.series(
-                type: "area",
-                name: "commits",
-                pointInterval: 1.day * 1000,
-                pointStart: @repo.commits.first.date.to_i * 1000,
-                data: @repo.files_count_each_day
+            f.day_chart(
+                data: @repo.files_count_each_day,
+                start_day: @repo.commits.first.date,
+                title: "files_by_date",
+                y_text: "files"
             )
           end
         end
 
         def lines_by_date
           Chart.new do |f|
-            f.title "Files"
-            f.type "datetime"
-            f.y_text 'Commits'
-            f.series(
-                type: "area",
-                name: "commits",
-                pointInterval: 1.day * 1000,
-                pointStart: @repo.commits.first.date.to_i * 1000,
-                data: @repo.lines_count_each_day
+            f.day_chart(
+                data: @repo.lines_count_each_day,
+                start_day: @repo.commits.first.date,
+                title: "lines_by_date",
+                y_text: "lines"
             )
           end
         end

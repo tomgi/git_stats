@@ -1,0 +1,1 @@
+I18n.load_path += Dir['config/locales/*.yml']

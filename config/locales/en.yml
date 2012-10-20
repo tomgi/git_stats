@@ -8,3 +8,11 @@ en:
   total_lines: Total lines
   total_commits: Total commits
   authors: Authors
+  commits: Commits
+  commits_by_hour: Commits by hour
+  files: Files
+  lines: Lines
+  files_by_date: Files by date
+  lines_by_date: Lines by date
+  files_by_extension: Files by extension
+  lines_by_extension: Lines by extension

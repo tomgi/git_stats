@@ -12,11 +12,24 @@ module GitStats
           yield self if block_given?
         end
 
+        def simple_column_chart(params)
+          column_chart(params)
+          series(name: params[:title], data: params[:data_y])
+        end
+
+        def multiple_column_chart(params)
+          column_chart(params)
+          params[:data_y].each do |s|
+            series(name: s[:name], data: s[:data])
+          end
+        end
+
         def column_hash_chart(params)
-          common_params(params)
-          type "column"
-          x_categories params[:data].keys
-          series(name: params[:title], data: params[:data].values)
+          simple_column_chart(params.merge(
+                           data_x: params[:data].keys,
+                           data_y: params[:data].values
+                       )
+          )
         end
 
         def day_chart(params)
@@ -66,6 +79,11 @@ module GitStats
           y_text params[:y_text]
         end
 
+        def column_chart(params)
+          common_params(params)
+          type "column"
+          x_categories params[:data_x]
+        end
       end
     end
   end

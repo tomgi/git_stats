@@ -8,11 +8,12 @@ module GitStats
 
         def activity_by_hour
           Chart.new do |f|
-            f.type "column"
-            f.title "Commits"
-            f.x_categories (0..23)
-            f.y_text 'Commits'
-            f.series(name: "commits", data: @activity.by_hour.to_key_indexed_array)
+            f.simple_column_chart(
+                title: :commits_by_hour.t,
+                y_text: :commits.t,
+                data_x: (0..23),
+                data_y: @activity.by_hour.to_key_indexed_array
+            )
           end
         end
       end

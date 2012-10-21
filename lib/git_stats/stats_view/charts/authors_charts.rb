@@ -19,7 +19,7 @@ module GitStats
         def lines_added_by_author_by_date(limit = 4)
           Chart.new do |f|
             f.multi_date_chart(
-                data: @authors.sort_by { |author| -author.lines_added }[0..limit].map { |author| {name: author.email, data: author.lines_added_by_date} },
+                data: @authors.sort_by { |author| -author.lines_added }[0..limit].map { |author| {name: author.email, data: author.insertions_by_date} },
                 title: :lines_by_date.t,
                 y_text: :lines.t
             )
@@ -29,7 +29,7 @@ module GitStats
         def lines_deleted_by_author_by_date(limit = 4)
           Chart.new do |f|
             f.multi_date_chart(
-                data: @authors.sort_by { |author| -author.lines_deleted }[0..limit].map { |author| {name: author.email, data: author.lines_deleted_by_date} },
+                data: @authors.sort_by { |author| -author.lines_deleted }[0..limit].map { |author| {name: author.email, data: author.deletions_by_date} },
                 title: :lines_by_date.t,
                 y_text: :lines.t
             )

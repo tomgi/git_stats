@@ -1,7 +1,7 @@
-require 'spec_helper'
+require 'integration/shared'
 
 describe GitStats::GitData::Activity do
-  let(:repo) { build(:test_repo, last_commit_hash: '872955c') }
+  include_context "shared"
 
   let(:tg) { repo.authors.by_email('tomasz.gieniusz@gmail.com') }
   let(:jd) { repo.authors.by_email('john.doe@gmail.com') }
@@ -40,6 +40,27 @@ describe GitStats::GitData::Activity do
     it 'should count commits by year and month' do
       tg.activity.by_year_month.should == {2012 => {10 => 8}}
       jd.activity.by_year_month.should == {2012 => {10 => 2}}
+    end
+
+    it 'should count commits_sum_by_date' do
+      tg.commits_sum_by_date.map { |d, s| d }.should == tg_commit_dates
+      tg.commits_sum_by_date.map { |d, s| s }.should == [1, 2, 3, 4, 5, 6, 7, 8]
+      jd.commits_sum_by_date.map { |d, s| d }.should == jd_commit_dates
+      jd.commits_sum_by_date.map { |d, s| s }.should == [1, 2]
+    end
+
+    it 'should count lines_added_by_date' do
+      tg.insertions_by_date.map { |d, s| d }.should == tg_commit_dates
+      tg.insertions_by_date.map { |d, s| s }.should == [4, 9, 14, 15, 20, 1020, 1021, 1021]
+      jd.insertions_by_date.map { |d, s| d }.should == jd_commit_dates
+      jd.insertions_by_date.map { |d, s| s }.should == [3, 103]
+    end
+
+    it 'should count lines_deleted_by_date' do
+      tg.deletions_by_date.map { |d, s| d }.should == tg_commit_dates
+      tg.deletions_by_date.map { |d, s| s }.should == [0, 0, 4, 4, 9, 9, 10, 10]
+      jd.deletions_by_date.map { |d, s| d }.should == jd_commit_dates
+      jd.deletions_by_date.map { |d, s| s }.should == [0, 0]
     end
   end
 end

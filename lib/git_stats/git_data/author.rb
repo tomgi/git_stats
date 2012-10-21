@@ -27,20 +27,14 @@ module GitStats
         }
       end
 
-      def lines_added_by_date
-        sum = 0
-        commits.map { |commit|
-          sum += commit.short_stat.insertions
-          [commit.date, sum]
-        }
-      end
-
-      def lines_deleted_by_date
-        sum = 0
-        commits.map { |commit|
-          sum += commit.short_stat.deletions
-          [commit.date, sum]
-        }
+      [:insertions, :deletions].each do |method|
+        define_method "#{method}_by_date" do
+          sum = 0
+          commits.map { |commit|
+            sum += commit.short_stat.send(method)
+            [commit.date, sum]
+          }
+        end
       end
 
       def short_stats

@@ -41,12 +41,10 @@ module GitStats
         Hash[authors.map { |author| [author, author.commits.size] }.sort_by { |author, commits| -commits }[0..limit]]
       end
 
-      def lines_added_by_author(limit = 4)
-        Hash[authors.map { |author| [author, author.lines_added] }.sort_by { |author, lines| -lines }[0..limit]]
-      end
-
-      def lines_deleted_by_author(limit = 4)
-        Hash[authors.map { |author| [author, author.lines_deleted] }.sort_by { |author, lines| -lines }[0..limit]]
+      [:lines_added, :lines_deleted].each do |method|
+        define_method "#{method}_by_author" do |limit = 4|
+          Hash[authors.map { |author| [author, author.send(method)] }.sort_by { |author, lines| -lines }[0..limit]]
+        end
       end
 
       def files_count_by_date

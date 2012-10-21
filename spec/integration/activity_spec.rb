@@ -1,7 +1,8 @@
-require 'spec_helper'
+require 'integration/shared'
 
 describe GitStats::GitData::Activity do
-  let(:repo) { build(:test_repo, last_commit_hash: '872955c') }
+  include_context "shared"
+
   let(:activity) { repo.activity }
 
   it 'should count commits by hour' do

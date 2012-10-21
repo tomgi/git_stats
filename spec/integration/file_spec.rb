@@ -1,7 +1,7 @@
-require 'spec_helper'
+require 'integration/shared'
 
 describe GitStats::GitData::Repo do
-  let(:repo) { build(:test_repo, last_commit_hash: '872955c') }
+  include_context "shared"
 
   it 'should gather all files in repo' do
     repo.files.map(&:filename).should =~ %w(long_second.haml  long.txt  second.txt  test2.rb  test.rb  test.txt)

@@ -1,25 +1,10 @@
-require 'spec_helper'
+require 'integration/shared'
 
 describe GitStats::GitData::Repo do
-  let(:repo) { build(:test_repo, last_commit_sha: '872955c') }
-  let(:commit_dates) { [
-      DateTime.parse('2012-10-19 10:44:34 +0200'),
-      DateTime.parse('2012-10-19 10:46:10 +0200'),
-      DateTime.parse('2012-10-19 10:46:56 +0200'),
-      DateTime.parse('2012-10-19 10:47:35 +0200'),
-      DateTime.parse('2012-10-20 12:49:02 +0200'),
-      DateTime.parse('2012-10-21 12:49:02 +0200'),
-      DateTime.parse('2012-10-21 12:54:02 +0200'),
-      DateTime.parse('2012-10-21 13:20:00 +0200'),
-      DateTime.parse('2012-10-24 15:49:02 +0200'),
-      DateTime.parse('2012-10-26 17:05:25 +0200'),
-  ] }
+  include_context "shared"
 
   it 'should gather all authors' do
-    repo.authors.should =~ [
-        build(:author, repo: repo, name: "Tomasz Gieniusz", email: "tomasz.gieniusz@gmail.com"),
-        build(:author, repo: repo, name: "John Doe", email: "john.doe@gmail.com"),
-    ]
+    repo.authors.should =~ expected_authors
   end
 
   it 'should calculate correct commits period' do
@@ -62,6 +47,21 @@ describe GitStats::GitData::Repo do
 
   it 'should count lines by extension in repo' do
     repo.lines_by_extension.should == {'.haml' => 100, '.txt' => 1008, '.rb' => 6}
+  end
+
+  it 'should count commits_count_by_author' do
+    repo.commits_count_by_author.keys.should == expected_authors
+    repo.commits_count_by_author.values.should == [8, 2]
+  end
+
+  it 'should count lines_added_by_author' do
+    repo.lines_added_by_author.keys.should == expected_authors
+    repo.lines_added_by_author.values.should == [1021, 103]
+  end
+
+  it 'should count lines_deleted_by_author' do
+    repo.lines_deleted_by_author.keys.should == expected_authors
+    repo.lines_deleted_by_author.values.should == [10, 0]
   end
 
 end

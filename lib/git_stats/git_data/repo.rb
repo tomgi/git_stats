@@ -56,8 +56,11 @@ module GitStats
       end
 
       def lines_count_by_date
-        @lines_count_each_day ||= Hash[commits.map { |commit|
-          [commit.date, commit.lines_count]
+        sum = 0
+        Hash[commits.map { |commit|
+          sum += commit.short_stat.insertions
+          sum -= commit.short_stat.deletions
+          [commit.date, sum]
         }]
       end
 

@@ -10,8 +10,16 @@ module GitStats
         @by_hour ||= default_hash
       end
 
+      def by_hour_array
+        by_hour.to_key_indexed_array(min_size: 24, default: 0)
+      end
+
       def by_wday
         @by_wday ||= default_hash
+      end
+
+      def by_wday_array
+        by_wday.to_key_indexed_array(min_size: 7, default: 0)
       end
 
       def by_wday_hour

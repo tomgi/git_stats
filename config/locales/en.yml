@@ -18,3 +18,6 @@ en:
   lines_by_extension: Lines by extension
   hour_of_day: Hour of day
   hour: Hour
+  percentage: Percentage
+  day: Day
+  day_of_week: Day of week

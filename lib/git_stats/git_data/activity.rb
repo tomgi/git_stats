@@ -30,6 +30,10 @@ module GitStats
         @by_month ||= default_hash
       end
 
+      def by_month_array
+        by_month.to_key_indexed_array(min_size: 12, default: 0)
+      end
+
       def by_year
         @by_year ||= default_hash
       end

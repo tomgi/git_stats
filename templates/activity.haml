@@ -1,48 +1,80 @@
-.page-header
-  %h1.pagination-centered= :hour_of_day.t
-%table{:class => "table table-bordered table-condensed"}
-  %tr
-    %th= :hour.t
-    - (0..23).each do |h|
-      %th= h
-  %tr
-    %th= :commits.t
-    - repo.activity.by_hour_array.each do |commits|
-      %td= commits
-  %tr
-    %th= :percentage.t
-    - repo.activity.by_hour_array.each do |commits|
-      %td= (commits * 100.0 / repo.activity.by_hour_array.sum).round(2)
-= high_chart("activity_by_hour", charts.activity_by_hour)
+.tabbable.tabs-left
+  %ul.nav.nav-tabs
+    %li.active
+      %a{:href => '#hour_of_day', 'data-toogle' => 'tab'}= :hour_of_day.t
+    %li
+      %a{:href => '#day_of_week', 'data-toogle' => 'tab'}= :day_of_week.t
+    %li
+      %a{:href => '#hour_of_week', 'data-toogle' => 'tab'}= :hour_of_week.t
+    %li
+      %a{:href => '#month_of_year', 'data-toogle' => 'tab'}= :month_of_year.t
+
+  .tab-content
+    .tab-pane.active{id: 'hour_of_day'}
+      .page-header
+        %h1.pagination-centered= :hour_of_day.t
+      %table{:class => "table table-bordered table-condensed"}
+        %tr
+          %th= :hour.t
+          - (0..23).each do |h|
+            %th= h
+        %tr
+          %th= :commits.t
+          - repo.activity.by_hour_array.each do |commits|
+            %td= commits
+        %tr
+          %th= :percentage.t
+          - repo.activity.by_hour_array.each do |commits|
+            %td= (commits * 100.0 / repo.activity.by_hour_array.sum).round(2)
+      = high_chart("activity_by_hour", charts.activity_by_hour)
+
+    .tab-pane{id: 'day_of_week'}
+      .page-header
+        %h1.pagination-centered= :day_of_week.t
+      %table{:class => "table table-bordered table-condensed"}
+        %tr
+          %th= :day.t
+          - Date::ABBR_DAYNAMES.each do |d|
+            %th= d
+        %tr
+          %th= :commits.t
+          - repo.activity.by_wday_array.each do |commits|
+            %td= commits
+        %tr
+          %th= :percentage.t
+          - repo.activity.by_wday_array.each do |commits|
+            %td= (commits * 100.0 / repo.activity.by_wday_array.sum).round(2)
+      = high_chart("activity_by_wday", charts.activity_by_wday)
 
 
-.page-header
-  %h1.pagination-centered= :day_of_week.t
-%table{:class => "table table-bordered table-condensed"}
-  %tr
-    %th= :day.t
-    - Date::ABBR_DAYNAMES.each do |d|
-      %th= d
-  %tr
-    %th= :commits.t
-    - repo.activity.by_wday_array.each do |commits|
-      %td= commits
-  %tr
-    %th= :percentage.t
-    - repo.activity.by_wday_array.each do |commits|
-      %td= (commits * 100.0 / repo.activity.by_wday_array.sum).round(2)
-= high_chart("activity_by_wday", charts.activity_by_wday)
+    .tab-pane{id: 'hour_of_week'}
+      .page-header
+        %h1.pagination-centered= :hour_of_week.t
+      %table{:class => "table table-bordered table-condensed"}
+        %tr
+          %th
+          - (0..23).each do |h|
+            %th= h
+        - (0..6).each do |day|
+          %tr
+            %th= Date::ABBR_DAYNAMES[day]
+            - (0..23).each do |hour|
+              %td= repo.activity.by_wday_hour[day][hour]
 
-
-.page-header
-  %h1.pagination-centered= :hour_of_week.t
-%table{:class => "table table-bordered table-condensed"}
-  %tr
-    %th
-    - (0..23).each do |h|
-      %th= h
-  - (0..6).each do |day|
-    %tr
-      %th= Date::ABBR_DAYNAMES[day]
-      - (0..23).each do |hour|
-        %td= repo.activity.by_wday_hour[day][hour]
+    .tab-pane{id: 'month_of_year'}
+      .page-header
+        %h1.pagination-centered= :month_of_year.t
+      %table{:class => "table table-bordered table-condensed"}
+        %tr
+          %th= :day.t
+          - Date::ABBR_MONTHNAMES.each do |m|
+            %th= m
+        %tr
+          %th= :commits.t
+          - repo.activity.by_month_array.each do |commits|
+            %td= commits
+        %tr
+          %th= :percentage.t
+          - repo.activity.by_month_array.each do |commits|
+            %td= (commits * 100.0 / repo.activity.by_month_array.sum).round(2)
+      = high_chart("activity_by_month", charts.activity_by_month)

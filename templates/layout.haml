@@ -11,6 +11,14 @@
     %script{:src => "assets/jquery.min.js", :type => "text/javascript"}
     %script{:src => "assets/bootstrap/js/bootstrap.min.js", :type => "text/javascript"}
     %script{:src => "assets/highstock.js", :type => "text/javascript"}
+    %script
+      :plain
+        $(function() {
+          $('.tabbable ul a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+          })
+        });
   %body
     %div.navbar.navbar-inverse.navbar-fixed-top
       %div.navbar-inner

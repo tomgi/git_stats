@@ -29,6 +29,18 @@ module GitStats
             )
           end
         end
+
+        def activity_by_month
+          Chart.new do |f|
+            f.simple_column_chart(
+                title: :commits_by_month.t,
+                y_text: :commits.t,
+                x_text: :month.t,
+                data_x: Date::ABBR_MONTHNAMES,
+                data_y: @activity.by_month_array
+            )
+          end
+        end
       end
     end
   end

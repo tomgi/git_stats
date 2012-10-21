@@ -22,3 +22,5 @@ en:
   day: Day
   day_of_week: Day of week
   hour_of_week: Hour of week
+  month: Month
+  month_of_year: Month of year

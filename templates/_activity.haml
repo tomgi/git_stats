@@ -67,11 +67,13 @@
           %th
           - (0..23).each do |h|
             %th= h
+        - max = author.activity.by_wday_hour.values.map {|h| h.values.max }.max
         - (0..6).each do |day|
           %tr
             %th= Date::ABBR_DAYNAMES[day]
             - (0..23).each do |hour|
-              %td= author.activity.by_wday_hour[day][hour]
+              - color = "%02x" % (255 - author.activity.by_wday_hour[day][hour] * 100 / max)
+              %td{style: "background-color: ##{color}#{color}#{color};"}= author.activity.by_wday_hour[day][hour]
 
 
     .tab-pane{id: "month_of_year-#{author.hash}"}

@@ -46,7 +46,7 @@
         .modal.hide{:id => "#{author.hash}-modal", :role => "dialog", :style => "width: 1140px; margin-left:-570px; top: 30%;"}
           .modal-header
             %h1.pagination-centered= "#{author.name} <#{author.email}>"
-          .modal-body{:style => "height: 650px; max-height: 800px;"}
+          .modal-body{:style => "height: 650px; max-height: 90%; max-width: 90%;"}
             = render '_activity', author: author
           .modal-footer
             %a.btn{'data-dismiss' => "modal"}= :close.t

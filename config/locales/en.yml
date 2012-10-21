@@ -24,3 +24,7 @@ en:
   hour_of_week: Hour of week
   month: Month
   month_of_year: Month of year
+  commits_by_wday: Commits by day of week
+  commits_by_month: Commits by month of year
+  year: Year
+  commits_by_year: Commits by year

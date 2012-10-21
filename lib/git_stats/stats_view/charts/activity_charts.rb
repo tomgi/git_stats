@@ -41,6 +41,17 @@ module GitStats
             )
           end
         end
+
+        def activity_by_year
+          Chart.new do |f|
+            f.column_hash_chart(
+                title: :commits_by_year.t,
+                y_text: :commits.t,
+                x_text: :year.t,
+                data: @activity.by_year
+            )
+          end
+        end
       end
     end
   end

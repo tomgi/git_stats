@@ -5,7 +5,7 @@ module GitStats
         delegate :files_by_extension, :lines_by_extension, :files_by_date, :lines_by_date,
                  :lines_added_by_author, :lines_deleted_by_author, to: :repo_charts
         delegate :by_authors_wday, to: :authors_charts
-        delegate :activity_by_hour, :activity_by_wday, :activity_by_month, to: :activity_charts
+        delegate :activity_by_hour, :activity_by_wday, :activity_by_month, :activity_by_year, to: :activity_charts
 
         attr_reader :repo
 

@@ -8,6 +8,8 @@
       %a{:href => '#hour_of_week', 'data-toogle' => 'tab'}= :hour_of_week.t
     %li
       %a{:href => '#month_of_year', 'data-toogle' => 'tab'}= :month_of_year.t
+    %li
+      %a{:href => '#year', 'data-toogle' => 'tab'}= :year.t
 
   .tab-content
     .tab-pane.active{id: 'hour_of_day'}
@@ -78,3 +80,9 @@
           - repo.activity.by_month_array.each do |commits|
             %td= (commits * 100.0 / repo.activity.by_month_array.sum).round(2)
       = high_chart("activity_by_month", charts.activity_by_month)
+
+
+    .tab-pane{id: 'year'}
+      .page-header
+        %h1.pagination-centered= :year.t
+      = high_chart("activity_by_year", charts.activity_by_year)

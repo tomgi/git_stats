@@ -45,7 +45,7 @@ module GitStats
         def date_column_chart(params)
           date_chart(params)
           data[0][:type] = 'column'
-          data[0][:dataGrouping] = {units: [['week', [1]]], forced: true}
+          data[0][:dataGrouping] = {units: [['day', [1]], ['week', [1]]], forced: true}
         end
 
         def default_legend

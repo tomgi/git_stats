@@ -43,6 +43,7 @@ module GitStats
 
         def multi_date_chart(params)
           common_options(params)
+          default_legend
           params[:data].each do |s|
             series(
                 name: s[:name],
@@ -60,6 +61,7 @@ module GitStats
 
         def default_legend
           legend(
+              enabled: true,
               layout: 'vertical',
               backgroundColor: '#FFFFFF',
               align: 'left',

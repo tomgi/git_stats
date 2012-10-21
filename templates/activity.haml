@@ -37,7 +37,7 @@
         %tr
           %th= :percentage.t
           - repo.activity.by_hour_array.each do |commits|
-            %td= (commits * 100.0 / repo.activity.by_hour_array.sum).round(2)
+            %td= (commits * 100.0 / repo.activity.by_hour_array.sum).round(1)
       = high_chart("charts.activity_by_hour", charts.activity_by_hour)
 
     .tab-pane{id: 'day_of_week'}
@@ -55,7 +55,7 @@
         %tr
           %th= :percentage.t
           - repo.activity.by_wday_array.each do |commits|
-            %td= (commits * 100.0 / repo.activity.by_wday_array.sum).round(2)
+            %td= (commits * 100.0 / repo.activity.by_wday_array.sum).round(1)
       = high_chart("charts.activity_by_wday", charts.activity_by_wday)
 
 
@@ -88,7 +88,7 @@
         %tr
           %th= :percentage.t
           - repo.activity.by_month_array.each do |commits|
-            %td= (commits * 100.0 / repo.activity.by_month_array.sum).round(2)
+            %td= (commits * 100.0 / repo.activity.by_month_array.sum).round(1)
       = high_chart("charts.activity_by_month", charts.activity_by_month)
 
 

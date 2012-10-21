@@ -6,6 +6,7 @@ module GitStats
       end
 
       def render_all
+        prepare_static_content
         prepare_assets
 
         layout = Tilt.new("templates/layout.haml")
@@ -16,8 +17,15 @@ module GitStats
         end
       end
 
+
+      private
+
       def all_templates
-        %w(index activity authors files lines)
+        %w(general activity authors files lines)
+      end
+
+      def prepare_static_content
+        FileUtils.cp_r(Dir['templates/static/*'], @out_path)
       end
 
       def prepare_assets

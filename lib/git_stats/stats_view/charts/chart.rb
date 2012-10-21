@@ -34,22 +34,14 @@ module GitStats
 
         def date_chart(params)
           common_options(params)
-          series(
-              name: params[:title],
-              type: "spline",
-              data: params[:data].map { |date, value| [date.to_i * 1000, value] }
-          )
+          date_series(name: params[:title], data: params[:data])
         end
 
         def multi_date_chart(params)
           common_options(params)
           default_legend
           params[:data].each do |s|
-            series(
-                name: s[:name],
-                type: "spline",
-                data: s[:data].map { |date, value| [date.to_i * 1000, value] }
-            )
+            date_series(s)
           end
         end
 
@@ -105,6 +97,14 @@ module GitStats
           title ""
           y_text params[:y_text]
           x_text params[:x_text]
+        end
+
+        def date_series(params)
+          series(
+              name: params[:name],
+              type: "spline",
+              data: params[:data].map { |date, value| [date.to_i * 1000, value] }
+          )
         end
 
         def column_chart(params)

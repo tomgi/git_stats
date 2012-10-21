@@ -43,10 +43,10 @@
               - else
                 = :more_data_not_available.t
       - sorted_authors[0..4].each do |author|
-        .modal.hide{:id => "#{author.hash}-modal", :role => "dialog", :style => "width: 1140px; margin-left:-570px; top: 30%;"}
+        .modal.hide{:id => "#{author.hash}-modal", :role => "dialog", :style => "width: 1140px; margin-left:-570px; top: 35%; "}
           .modal-header
             %h1.pagination-centered= "#{author.name} <#{author.email}>"
-          .modal-body{:style => "height: 650px; max-height: 90%; max-width: 90%;"}
+          .modal-body{:style => "height: 620px; max-height: 80%;"}
             = render '_activity', author: author
           .modal-footer
             %a.btn{'data-dismiss' => "modal"}= :close.t

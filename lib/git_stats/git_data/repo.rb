@@ -45,28 +45,16 @@ module GitStats
         Hash[authors.map { |author| [author, author.lines_deleted] }]
       end
 
-      def files_count_each_day
-        @files_count_each_day ||= commits_period_range.map { |day|
-          files_count_at day
-        }
+      def files_count_by_date
+        @files_count_each_day ||= Hash[commits.map { |commit|
+          [commit.date, commit.files_count]
+        }]
       end
 
-      def files_count_at(day)
-        last_commit_at(day).try(:files_count) || 0
-      end
-
-      def lines_count_each_day
-        @lines_count_each_day ||= commits_period_range.map { |day|
-          lines_count_at day
-        }
-      end
-
-      def lines_count_at(day)
-        last_commit_at(day).try(:lines_count) || 0
-      end
-
-      def last_commit_at(day)
-        commits.reverse.find { |c| c.date < day }
+      def lines_count_by_date
+        @lines_count_each_day ||= Hash[commits.map { |commit|
+          [commit.date, commit.lines_count]
+        }]
       end
 
       def last_commit
@@ -136,11 +124,6 @@ module GitStats
 
       def invoke_command_observers(command, result)
         command_observers.each { |o| o.call(command, result) }
-      end
-
-      def commits_period_range
-        period = commits_period.map(&:midnight)
-        period.first.upto (period.last + 1.day)
       end
 
     end

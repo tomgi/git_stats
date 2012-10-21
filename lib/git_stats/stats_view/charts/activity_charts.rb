@@ -11,6 +11,7 @@ module GitStats
             f.simple_column_chart(
                 title: :commits_by_hour.t,
                 y_text: :commits.t,
+                x_text: :hour.t,
                 data_x: (0..23),
                 data_y: @activity.by_hour.to_key_indexed_array
             )

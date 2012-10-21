@@ -28,9 +28,8 @@ module GitStats
 
         def files_by_date
           Chart.new do |f|
-            f.day_chart(
-                data: @repo.files_count_each_day,
-                start_day: @repo.commits.first.date,
+            f.date_chart(
+                data: @repo.files_count_by_date,
                 title: :files_by_date.t,
                 y_text: :files.t
             )
@@ -39,9 +38,8 @@ module GitStats
 
         def lines_by_date
           Chart.new do |f|
-            f.day_chart(
-                data: @repo.lines_count_each_day,
-                start_day: @repo.commits.first.date,
+            f.date_chart(
+                data: @repo.lines_count_by_date,
                 title: :lines_by_date.t,
                 y_text: :lines.t
             )

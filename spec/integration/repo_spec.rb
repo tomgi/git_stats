@@ -2,6 +2,18 @@ require 'spec_helper'
 
 describe GitStats::GitData::Repo do
   let(:repo) { build(:test_repo, last_commit_sha: '872955c') }
+  let(:commit_dates) { [
+      DateTime.parse('2012-10-19 10:44:34 +0200'),
+      DateTime.parse('2012-10-19 10:46:10 +0200'),
+      DateTime.parse('2012-10-19 10:46:56 +0200'),
+      DateTime.parse('2012-10-19 10:47:35 +0200'),
+      DateTime.parse('2012-10-20 12:49:02 +0200'),
+      DateTime.parse('2012-10-21 12:49:02 +0200'),
+      DateTime.parse('2012-10-21 12:54:02 +0200'),
+      DateTime.parse('2012-10-21 13:20:00 +0200'),
+      DateTime.parse('2012-10-24 15:49:02 +0200'),
+      DateTime.parse('2012-10-26 17:05:25 +0200'),
+  ] }
 
   it 'should gather all authors' do
     repo.authors.should =~ [
@@ -31,11 +43,13 @@ describe GitStats::GitData::Repo do
   end
 
   it 'should count files by date' do
-    repo.files_count_each_day.should == [0, 3, 3, 5, 5, 5, 6, 6, 6]
+    repo.files_count_by_date.keys.should == commit_dates
+    repo.files_count_by_date.values.should == [1, 2, 2, 3, 3, 4, 5, 5, 6, 6]
   end
 
   it 'should count lines by date' do
-    repo.lines_count_each_day.should == [0, 11, 11, 1014, 1014, 1014, 1114, 1114, 1114]
+    repo.lines_count_by_date.keys.should == commit_dates
+    repo.files_count_by_date.values.should == [1, 2, 2, 3, 3, 4, 5, 5, 6, 6]
   end
 
   it 'should count all lines in repo' do

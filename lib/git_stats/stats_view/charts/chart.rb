@@ -26,21 +26,19 @@ module GitStats
 
         def column_hash_chart(params)
           simple_column_chart(params.merge(
-                           data_x: params[:data].keys,
-                           data_y: params[:data].values
-                       )
+                                  data_x: params[:data].keys,
+                                  data_y: params[:data].values
+                              )
           )
         end
 
-        def day_chart(params)
-          common_params(params)
-          xAxis(type: "datetime")
+        def date_chart(params)
+          common_options(params)
+          rangeSelector(selected: 1)
           series(
-              type: "area",
-              name: "commits",
-              pointInterval: 1.day * 1000,
-              pointStart: params[:start_day].to_i * 1000,
-              data: params[:data]
+              name: params[:title],
+              type: "spline",
+              data: params[:data].map {|date, value| [date.to_i * 1000, value]}
           )
         end
 
@@ -57,30 +55,42 @@ module GitStats
           )
         end
 
+        def no_legend
+          legend(
+              enabled: false
+          )
+        end
+
         def type(type)
-          @chart.chart(type: type)
+          @chart.chart!(type: type)
         end
 
         def x_categories(categories)
-          @chart.xAxis(categories: categories)
+          @chart.xAxis!(categories: categories)
+        end
+
+        def x_text(text)
+          @chart.xAxis!(title: {text: text})
         end
 
         def y_text(text)
-          @chart.yAxis(min: 0, title: {text: text})
+          @chart.yAxis!(title: {text: text})
         end
 
         def title(title)
-          @chart.title(text: title)
+          @chart.title!(text: title)
         end
 
         private
-        def common_params(params)
-          title params[:title]
+        def common_options(params)
+          no_legend
+          title ""
           y_text params[:y_text]
+          x_text params[:x_text]
         end
 
         def column_chart(params)
-          common_params(params)
+          common_options(params)
           type "column"
           x_categories params[:data_x]
         end

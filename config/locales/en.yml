@@ -16,3 +16,5 @@ en:
   lines_by_date: Lines by date
   files_by_extension: Files by extension
   lines_by_extension: Lines by extension
+  hour_of_day: Hour of day
+  hour: Hour

@@ -41,3 +41,9 @@ en:
   commits_sum_by_author_by_date: Commits sum by author by date
   lines_added_by_author_by_date: Lines added by author by date
   lines_deleted_by_author_by_date: Lines deleted by author by date
+  best_authors: Best authors
+  lines_added: Lines added
+  lines_deleted: Lines deleted
+  first_commit: First_commit
+  last_commit: Last commit
+  author: Author

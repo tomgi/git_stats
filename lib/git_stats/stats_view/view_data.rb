@@ -13,6 +13,10 @@ module GitStats
         @charts ||= Charts::All.new(repo)
       end
 
+      def render(template_name, params = {})
+        Template.new(template_name).render(self, params)
+      end
+
     end
   end
 end

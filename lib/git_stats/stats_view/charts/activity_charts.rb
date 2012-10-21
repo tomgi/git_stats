@@ -2,63 +2,64 @@ module GitStats
   module StatsView
     module Charts
       class ActivityCharts
-        def initialize(activity)
-          @activity = activity
+        def initialize(repo)
+          @repo = repo
+          @activity = repo.activity
         end
 
-        def activity_by_date
+        def activity_by_date(author)
           Chart.new do |f|
             f.date_column_chart(
-                data: @activity.by_date,
+                data: author.activity.by_date,
                 title: :commits_by_date.t,
                 y_text: :commits.t
             )
           end
         end
 
-        def activity_by_hour
+        def activity_by_hour(author)
           Chart.new do |f|
             f.simple_column_chart(
                 title: :commits_by_hour.t,
                 y_text: :commits.t,
                 x_text: :hour.t,
                 data_x: (0..23),
-                data_y: @activity.by_hour_array
+                data_y: author.activity.by_hour_array
             )
           end
         end
 
-        def activity_by_wday
+        def activity_by_wday(author)
           Chart.new do |f|
             f.simple_column_chart(
                 title: :commits_by_wday.t,
                 y_text: :commits.t,
                 x_text: :day.t,
                 data_x: Date::ABBR_DAYNAMES,
-                data_y: @activity.by_wday_array
+                data_y: author.activity.by_wday_array
             )
           end
         end
 
-        def activity_by_month
+        def activity_by_month(author)
           Chart.new do |f|
             f.simple_column_chart(
                 title: :commits_by_month.t,
                 y_text: :commits.t,
                 x_text: :month.t,
                 data_x: Date::ABBR_MONTHNAMES[1..-1],
-                data_y: @activity.by_month_array
+                data_y: author.activity.by_month_array
             )
           end
         end
 
-        def activity_by_year
+        def activity_by_year(author)
           Chart.new do |f|
             f.column_hash_chart(
                 title: :commits_by_year.t,
                 y_text: :commits.t,
                 x_text: :year.t,
-                data: @activity.by_year
+                data: author.activity.by_year
             )
           end
         end

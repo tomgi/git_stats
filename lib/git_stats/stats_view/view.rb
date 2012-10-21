@@ -12,7 +12,7 @@ module GitStats
         layout = Tilt.new("templates/layout.haml")
 
         all_templates.each do |template|
-          output = Template.new(template, layout).render(@view_data, all_templates)
+          output = Template.new(template, layout).render(@view_data, all_templates: all_templates)
           File.open("#@out_path/#{template}.html", 'w') { |f| f.write output }
         end
       end

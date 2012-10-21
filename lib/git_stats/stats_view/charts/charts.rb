@@ -25,7 +25,7 @@ module GitStats
         end
 
         def activity_charts
-          @activity_charts ||= Charts::ActivityCharts.new(repo.activity)
+          @activity_charts ||= Charts::ActivityCharts.new(repo)
         end
 
       end

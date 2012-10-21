@@ -17,8 +17,9 @@
           $('.tabbable ul a').click(function (e) {
             e.preventDefault();
             $(this).tab('show');
-            $(document.body).trigger('load');
-          })
+          });
+          $('.modal').on('shown', function (e) {
+          });
         });
   %body
     %div.navbar.navbar-fixed-top

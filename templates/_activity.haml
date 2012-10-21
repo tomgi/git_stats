@@ -1,0 +1,114 @@
+.tabbable.tabs-left
+  %ul.nav.nav-tabs
+    %li.active
+      %a{:href => "#activity_by_date-#{author.hash}", 'data-toogle' => 'tab'}= :activity_by_date.t
+    %li
+      %a{:href => "#hour_of_day-#{author.hash}", 'data-toogle' => 'tab'}= :hour_of_day.t
+    %li
+      %a{:href => "#day_of_week-#{author.hash}", 'data-toogle' => 'tab'}= :day_of_week.t
+    %li
+      %a{:href => "#hour_of_week-#{author.hash}", 'data-toogle' => 'tab'}= :hour_of_week.t
+    %li
+      %a{:href => "#month_of_year-#{author.hash}", 'data-toogle' => 'tab'}= :month_of_year.t
+    %li
+      %a{:href => "#year-#{author.hash}", 'data-toogle' => 'tab'}= :year.t
+    %li
+      %a{:href => "#year_month-#{author.hash}", 'data-toogle' => 'tab'}= :year_month.t
+
+  .tab-content
+    .tab-pane.active{id: "activity_by_date-#{author.hash}"}
+      .page-header
+        %h1.pagination-centered= :activity_by_date.t
+      = high_stock("charts.activity_by_date-#{author.hash}", charts.activity_by_date(author))
+
+
+    .tab-pane{id: "hour_of_day-#{author.hash}"}
+      .page-header
+        %h1.pagination-centered= :hour_of_day.t
+      %table{:class => "table table-bordered table-condensed"}
+        %tr
+          %th= :hour.t
+          - (0..23).each do |h|
+            %th= h
+        %tr
+          %th= :commits.t
+          - author.activity.by_hour_array.each do |commits|
+            %td= commits
+        %tr
+          %th= :percentage.t
+          - author.activity.by_hour_array.each do |commits|
+            %td= (commits * 100.0 / author.activity.by_hour_array.sum).round(1)
+      = high_chart("charts.activity_by_hour-#{author.hash}", charts.activity_by_hour(author))
+
+    .tab-pane{id: "day_of_week-#{author.hash}"}
+      .page-header
+        %h1.pagination-centered= :day_of_week.t
+      %table{:class => "table table-bordered table-condensed"}
+        %tr
+          %th= :day.t
+          - Date::ABBR_DAYNAMES.each do |d|
+            %th= d
+        %tr
+          %th= :commits.t
+          - author.activity.by_wday_array.each do |commits|
+            %td= commits
+        %tr
+          %th= :percentage.t
+          - author.activity.by_wday_array.each do |commits|
+            %td= (commits * 100.0 / author.activity.by_wday_array.sum).round(1)
+      = high_chart("charts.activity_by_wday-#{author.hash}", charts.activity_by_wday(author))
+
+
+    .tab-pane{id: "hour_of_week-#{author.hash}"}
+      .page-header
+        %h1.pagination-centered= :hour_of_week.t
+      %table{:class => "table table-bordered table-condensed"}
+        %tr
+          %th
+          - (0..23).each do |h|
+            %th= h
+        - (0..6).each do |day|
+          %tr
+            %th= Date::ABBR_DAYNAMES[day]
+            - (0..23).each do |hour|
+              %td= author.activity.by_wday_hour[day][hour]
+
+
+    .tab-pane{id: "month_of_year-#{author.hash}"}
+      .page-header
+        %h1.pagination-centered= :month_of_year.t
+      %table{:class => "table table-bordered table-condensed"}
+        %tr
+          %th= :day.t
+          - Date::ABBR_MONTHNAMES[1..-1].each do |m|
+            %th= m
+        %tr
+          %th= :commits.t
+          - author.activity.by_month_array.each do |commits|
+            %td= commits
+        %tr
+          %th= :percentage.t
+          - author.activity.by_month_array.each do |commits|
+            %td= (commits * 100.0 / author.activity.by_month_array.sum).round(1)
+      = high_chart("charts.activity_by_month-#{author.hash}", charts.activity_by_month(author))
+
+
+    .tab-pane{id: "year-#{author.hash}"}
+      .page-header
+        %h1.pagination-centered= :year.t
+      = high_chart("charts.activity_by_year-#{author.hash}", charts.activity_by_year(author))
+
+
+    .tab-pane{id: "year_month-#{author.hash}"}
+      .page-header
+        %h1.pagination-centered= :year_month.t
+      %table{:class => "table table-bordered table-condensed"}
+        %tr
+          %th
+          - Date::ABBR_MONTHNAMES[1..-1].each do |h|
+            %th= h
+        - author.activity.by_year_month.each do |year, months|
+          %tr
+            %th= year
+            - (1..12).each do |month|
+              %td= months[month]

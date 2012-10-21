@@ -27,7 +27,9 @@
           %th= :lines_deleted.t
           %th= :first_commit.t
           %th= :last_commit.t
-        - repo.authors.sort_by { |a| -a.commits.size}.each do |author|
+          %th
+        - sorted_authors = repo.authors.sort_by { |a| -a.commits.size}
+        - sorted_authors.each_with_index do |author, i|
           %tr
             %th= author.name
             %td= author.commits.size
@@ -35,6 +37,19 @@
             %td= author.lines_deleted
             %td= author.commits.first.try(:date).try(:to_formatted_s, :long)
             %td= author.commits.last.try(:date).try(:to_formatted_s, :long)
+            %td
+              - if i <= 4
+                %a.btn{:href => "##{author.hash}-modal", :role => "button", 'data-toggle'=>"modal"}= :show_more.t
+              - else
+                = :more_data_not_available.t
+      - sorted_authors[0..4].each do |author|
+        .modal.hide{:id => "#{author.hash}-modal", :role => "dialog", :style => "width: 1140px; margin-left:-570px; top: 30%;"}
+          .modal-header
+            %h1.pagination-centered= "#{author.name} <#{author.email}>"
+          .modal-body{:style => "height: 650px; max-height: 800px;"}
+            = render '_activity', author: author
+          .modal-footer
+            %a.btn{'data-dismiss' => "modal"}= :close.t
 
     .tab-pane{id: 'commits_count_by_author'}
       .page-header

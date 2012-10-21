@@ -31,3 +31,6 @@ en:
   commits_by_month_of_year: Commits by month of year
   year: Year
   commits_by_year: Commits by year
+  activity: Activity
+  activity_by_date: Activity by date
+  commits_by_date: Commits by date

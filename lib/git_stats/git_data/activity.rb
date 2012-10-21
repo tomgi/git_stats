@@ -6,6 +6,10 @@ module GitStats
         add_commits(commits)
       end
 
+      def by_date
+        @by_date ||= default_hash
+      end
+
       def by_hour
         @by_hour ||= default_hash
       end
@@ -51,6 +55,7 @@ module GitStats
       end
 
       def add_commit_at(date)
+        self.by_date[date] += 1
         self.by_hour[date.hour] += 1
         self.by_wday[date.wday] += 1
         self.by_wday_hour[date.wday][date.hour] += 1

@@ -6,6 +6,16 @@ module GitStats
           @activity = activity
         end
 
+        def activity_by_date
+          Chart.new do |f|
+            f.date_column_chart(
+                data: @activity.by_date,
+                title: :commits_by_date.t,
+                y_text: :commits.t
+            )
+          end
+        end
+
         def activity_by_hour
           Chart.new do |f|
             f.simple_column_chart(

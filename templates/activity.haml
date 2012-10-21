@@ -1,6 +1,8 @@
 .tabbable.tabs-left
   %ul.nav.nav-tabs
     %li.active
+      %a{:href => '#activity_by_date', 'data-toogle' => 'tab'}= :activity_by_date.t
+    %li
       %a{:href => '#hour_of_day', 'data-toogle' => 'tab'}= :hour_of_day.t
     %li
       %a{:href => '#day_of_week', 'data-toogle' => 'tab'}= :day_of_week.t
@@ -14,7 +16,13 @@
       %a{:href => '#year_month', 'data-toogle' => 'tab'}= :year_month.t
 
   .tab-content
-    .tab-pane.active{id: 'hour_of_day'}
+    .tab-pane.active{id: 'activity_by_date'}
+      .page-header
+        %h1.pagination-centered= :activity_by_date.t
+      = high_stock("charts.activity_by_date", charts.activity_by_date)
+
+
+    .tab-pane{id: 'hour_of_day'}
       .page-header
         %h1.pagination-centered= :hour_of_day.t
       %table{:class => "table table-bordered table-condensed"}
@@ -30,7 +38,7 @@
           %th= :percentage.t
           - repo.activity.by_hour_array.each do |commits|
             %td= (commits * 100.0 / repo.activity.by_hour_array.sum).round(2)
-      = high_chart("activity_by_hour", charts.activity_by_hour)
+      = high_chart("charts.activity_by_hour", charts.activity_by_hour)
 
     .tab-pane{id: 'day_of_week'}
       .page-header
@@ -48,7 +56,7 @@
           %th= :percentage.t
           - repo.activity.by_wday_array.each do |commits|
             %td= (commits * 100.0 / repo.activity.by_wday_array.sum).round(2)
-      = high_chart("activity_by_wday", charts.activity_by_wday)
+      = high_chart("charts.activity_by_wday", charts.activity_by_wday)
 
 
     .tab-pane{id: 'hour_of_week'}
@@ -81,13 +89,13 @@
           %th= :percentage.t
           - repo.activity.by_month_array.each do |commits|
             %td= (commits * 100.0 / repo.activity.by_month_array.sum).round(2)
-      = high_chart("activity_by_month", charts.activity_by_month)
+      = high_chart("charts.activity_by_month", charts.activity_by_month)
 
 
     .tab-pane{id: 'year'}
       .page-header
         %h1.pagination-centered= :year.t
-      = high_chart("activity_by_year", charts.activity_by_year)
+      = high_chart("charts.activity_by_year", charts.activity_by_year)
 
 
     .tab-pane{id: 'year_month'}

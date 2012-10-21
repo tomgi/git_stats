@@ -38,8 +38,14 @@ module GitStats
           series(
               name: params[:title],
               type: "spline",
-              data: params[:data].map {|date, value| [date.to_i * 1000, value]}
+              data: params[:data].map { |date, value| [date.to_i * 1000, value] }
           )
+        end
+
+        def date_column_chart(params)
+          date_chart(params)
+          data[0][:type] = 'column'
+          data[0][:dataGrouping] = {units: [['week', [1]]], forced: true}
         end
 
         def default_legend

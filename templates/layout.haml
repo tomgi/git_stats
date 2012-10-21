@@ -17,8 +17,14 @@
           $('.tabbable ul a').click(function (e) {
             e.preventDefault();
             $(this).tab('show');
+            var ev = document.createEvent('Event');
+            ev.initEvent('load', true, true);
+            window.dispatchEvent(ev);
           });
           $('.modal').on('shown', function (e) {
+            var ev = document.createEvent('Event');
+            ev.initEvent('load', true, true);
+            window.dispatchEvent(ev);
           });
         });
   %body

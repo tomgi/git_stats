@@ -42,6 +42,18 @@ module GitStats
           )
         end
 
+        def multi_date_chart(params)
+          common_options(params)
+          rangeSelector(selected: 1)
+          params[:data].each do |s|
+            series(
+                name: s[:name],
+                type: "spline",
+                data: s[:data].map { |date, value| [date.to_i * 1000, value] }
+            )
+          end
+        end
+
         def date_column_chart(params)
           date_chart(params)
           data[0][:type] = 'column'

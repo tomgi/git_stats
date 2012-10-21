@@ -1,3 +1,57 @@
-= high_chart("by_authors_wday", charts.by_authors_wday)
-= high_chart("lines_added_by_author", charts.lines_added_by_author)
-= high_chart("lines_deleted_by_author", charts.lines_deleted_by_author)
+.tabbable.tabs-left
+  %ul.nav.nav-tabs
+    %li.active
+      %a{:href => '#commits_count_by_author', 'data-toogle' => 'tab'}= :commits_count_by_author.t
+    %li
+      %a{:href => '#lines_added_by_author', 'data-toogle' => 'tab'}= :lines_added_by_author.t
+    %li
+      %a{:href => '#lines_deleted_by_author', 'data-toogle' => 'tab'}= :lines_deleted_by_author.t
+    %li
+      %a{:href => '#commits_sum_by_author_by_date', 'data-toogle' => 'tab'}= :commits_sum_by_author_by_date.t
+    %li
+      %a{:href => '#lines_added_by_author_by_date', 'data-toogle' => 'tab'}= :lines_added_by_author_by_date.t
+    %li
+      %a{:href => '#lines_deleted_by_author_by_date', 'data-toogle' => 'tab'}= :lines_deleted_by_author_by_date.t
+
+  .tab-content
+    .tab-pane.active{id: 'commits_count_by_author'}
+      .page-header
+        %h1.pagination-centered= :commits_count_by_author.t
+      = high_chart("charts.commits_count_by_author", charts.commits_count_by_author)
+      %small
+        %center= "5 #{:best_authors_shown.t}"
+
+    .tab-pane{id: 'lines_added_by_author'}
+      .page-header
+        %h1.pagination-centered= :lines_added_by_author.t
+      = high_chart("charts.lines_added_by_author", charts.lines_added_by_author)
+      %small
+        %center= "5 #{:best_authors_shown.t}"
+
+    .tab-pane{id: 'lines_deleted_by_author'}
+      .page-header
+        %h1.pagination-centered= :lines_deleted_by_author.t
+      = high_chart("charts.lines_deleted_by_author", charts.lines_deleted_by_author)
+      %small
+        %center= "5 #{:best_authors_shown.t}"
+
+    .tab-pane{id: 'lines_added_by_author_by_date'}
+      .page-header
+        %h1.pagination-centered= :lines_added_by_author_by_date.t
+      = high_stock("charts.lines_added_by_author_by_date", charts.lines_added_by_author_by_date)
+      %small
+        %center= "5 #{:best_authors_shown.t}"
+
+    .tab-pane{id: 'commits_sum_by_author_by_date'}
+      .page-header
+        %h1.pagination-centered= :commits_sum_by_author_by_date.t
+      = high_stock("charts.commits_sum_by_author_by_date", charts.commits_sum_by_author_by_date)
+      %small
+        %center= "5 #{:best_authors_shown.t}"
+
+    .tab-pane{id: 'lines_deleted_by_author_by_date'}
+      .page-header
+        %h1.pagination-centered= :lines_deleted_by_author_by_date.t
+      = high_stock("charts.lines_deleted_by_author_by_date", charts.lines_deleted_by_author_by_date)
+      %small
+        %center= "5 #{:best_authors_shown.t}"

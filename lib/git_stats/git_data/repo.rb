@@ -37,12 +37,16 @@ module GitStats
         commits.map(&:date).minmax
       end
 
+      def commits_count_by_author
+        Hash[authors.map { |author| [author, author.commits.size] }.sort_by { |author, commits| -commits }[0..5]]
+      end
+
       def lines_added_by_author
-        Hash[authors.map { |author| [author, author.lines_added] }]
+        Hash[authors.map { |author| [author, author.lines_added] }.sort_by { |author, lines| -lines }[0..5]]
       end
 
       def lines_deleted_by_author
-        Hash[authors.map { |author| [author, author.lines_deleted] }]
+        Hash[authors.map { |author| [author, author.lines_deleted] }.sort_by { |author, lines| -lines }[0..5]]
       end
 
       def files_count_by_date

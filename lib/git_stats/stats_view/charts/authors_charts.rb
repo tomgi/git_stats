@@ -6,17 +6,36 @@ module GitStats
           @authors = authors
         end
 
-        def by_authors_wday
+        def commits_sum_by_author_by_date
           Chart.new do |f|
-            f.multiple_column_chart(
-                title: :by_authors_wday.t,
-                y_text: :commits.t,
-                data_x: Date::ABBR_DAYNAMES,
-                data_y: @authors.map { |author| {name: author.email, data: author.activity.by_wday.to_key_indexed_array} }
+            f.multi_date_chart(
+                data: @authors.sort_by { |author| -author.commits.size }[0..5].map { |author| {name: author.email, data: author.commits_sum_by_date} },
+                title: :lines_by_date.t,
+                y_text: :lines.t
             )
-            f.default_legend
           end
         end
+
+        def lines_added_by_author_by_date
+          Chart.new do |f|
+            f.multi_date_chart(
+                data: @authors.sort_by { |author| -author.lines_added }[0..5].map { |author| {name: author.email, data: author.lines_added_by_date} },
+                title: :lines_by_date.t,
+                y_text: :lines.t
+            )
+          end
+        end
+
+        def lines_deleted_by_author_by_date
+          Chart.new do |f|
+            f.multi_date_chart(
+                data: @authors.sort_by { |author| -author.lines_deleted }[0..5].map { |author| {name: author.email, data: author.lines_deleted_by_date} },
+                title: :lines_by_date.t,
+                y_text: :lines.t
+            )
+          end
+        end
+
       end
     end
   end

@@ -34,3 +34,10 @@ en:
   activity: Activity
   activity_by_date: Activity by date
   commits_by_date: Commits by date
+  lines_added_by_author: Lines added by author
+  lines_deleted_by_author: Lines deleted by author
+  best_authors_shown: best authors shown
+  commits_count_by_author: Commits count by author
+  commits_sum_by_author_by_date: Commits sum by author by date
+  lines_added_by_author_by_date: Lines added by author by date
+  lines_deleted_by_author_by_date: Lines deleted by author by date

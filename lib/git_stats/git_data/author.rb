@@ -19,6 +19,30 @@ module GitStats
         short_stats.map(&:deletions).sum
       end
 
+      def commits_sum_by_date
+        sum = 0
+        commits.map { |commit|
+          sum += 1
+          [commit.date, sum]
+        }
+      end
+
+      def lines_added_by_date
+        sum = 0
+        commits.map { |commit|
+          sum += commit.short_stat.insertions
+          [commit.date, sum]
+        }
+      end
+
+      def lines_deleted_by_date
+        sum = 0
+        commits.map { |commit|
+          sum += commit.short_stat.deletions
+          [commit.date, sum]
+        }
+      end
+
       def short_stats
         commits.map(&:short_stat)
       end

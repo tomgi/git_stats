@@ -1,2 +1,18 @@
-= high_stock("lines_by_date", charts.lines_by_date)
-= high_chart("lines_by_extension", charts.lines_by_extension)
+.tabbable.tabs-left
+  %ul.nav.nav-tabs
+    %li.active
+      %a{:href => '#lines_by_date', 'data-toogle' => 'tab'}= :lines_by_date.t
+    %li
+      %a{:href => '#lines_by_extension', 'data-toogle' => 'tab'}= :lines_by_extension.t
+
+  .tab-content
+    .tab-pane.active{id: 'lines_by_date'}
+      .page-header
+        %h1.pagination-centered= :lines_by_date.t
+      = high_stock("charts.lines_by_date", charts.lines_by_date)
+
+
+    .tab-pane{id: 'lines_by_extension'}
+      .page-header
+        %h1.pagination-centered= :lines_by_extension.t
+      = high_chart("charts.lines_by_extension", charts.lines_by_extension)

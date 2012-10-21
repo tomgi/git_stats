@@ -8,6 +8,10 @@ module GitStats
         calculate_stat
       end
 
+      def changed_lines
+        insertions + deletions
+      end
+
       def to_s
         "#{self.class} #@commit"
       end

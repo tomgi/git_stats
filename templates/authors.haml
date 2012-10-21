@@ -5,11 +5,15 @@
     %li
       %a{:href => '#commits_count_by_author', 'data-toogle' => 'tab'}= :commits_count_by_author.t
     %li
+      %a{:href => '#changed_lines_by_author', 'data-toogle' => 'tab'}= :changed_lines_by_author.t
+    %li
       %a{:href => '#insertions_by_author', 'data-toogle' => 'tab'}= :insertions_by_author.t
     %li
       %a{:href => '#deletions_by_author', 'data-toogle' => 'tab'}= :deletions_by_author.t
     %li
       %a{:href => '#commits_sum_by_author_by_date', 'data-toogle' => 'tab'}= :commits_sum_by_author_by_date.t
+    %li
+      %a{:href => '#changed_lines_by_author_by_date', 'data-toogle' => 'tab'}= :changed_lines_by_author_by_date.t
     %li
       %a{:href => '#insertions_by_author_by_date', 'data-toogle' => 'tab'}= :insertions_by_author_by_date.t
     %li
@@ -58,6 +62,13 @@
       %small
         %center= "5 #{:best_authors_shown.t}"
 
+    .tab-pane{id: 'changed_lines_by_author'}
+      .page-header
+        %h1.pagination-centered= :changed_lines_by_author.t
+      = high_chart("charts.changed_lines_by_author", charts.changed_lines_by_author)
+      %small
+        %center= "5 #{:best_authors_shown.t}"
+
     .tab-pane{id: 'insertions_by_author'}
       .page-header
         %h1.pagination-centered= :insertions_by_author.t
@@ -68,7 +79,7 @@
     .tab-pane{id: 'deletions_by_author'}
       .page-header
         %h1.pagination-centered= :deletions_by_author.t
-      = high_chart("charts.deletions_by_author", charts.insertions_by_author)
+      = high_chart("charts.deletions_by_author", charts.deletions_by_author)
       %small
         %center= "5 #{:best_authors_shown.t}"
 
@@ -83,6 +94,13 @@
       .page-header
         %h1.pagination-centered= :insertions_by_author_by_date.t
       = high_stock("charts.insertions_by_author_by_date", charts.insertions_by_author_by_date)
+      %small
+        %center= "5 #{:best_authors_shown.t}"
+
+    .tab-pane{id: 'changed_lines_by_author_by_date'}
+      .page-header
+        %h1.pagination-centered= :changed_lines_by_author_by_date.t
+      = high_stock("charts.changed_lines_by_author_by_date", charts.changed_lines_by_author_by_date)
       %small
         %center= "5 #{:best_authors_shown.t}"
 

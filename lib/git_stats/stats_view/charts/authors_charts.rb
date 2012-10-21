@@ -16,7 +16,7 @@ module GitStats
           end
         end
 
-        [:insertions, :deletions].each do |method|
+        [:insertions, :deletions, :changed_lines].each do |method|
           define_method "#{method}_by_author_by_date" do |limit = 4|
             Chart.new do |f|
               f.multi_date_chart(

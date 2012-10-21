@@ -17,6 +17,7 @@
           $('.tabbable ul a').click(function (e) {
             e.preventDefault();
             $(this).tab('show');
+            $(document.body).trigger('load');
           })
         });
   %body

@@ -67,7 +67,7 @@
       %table{:class => "table table-bordered table-condensed"}
         %tr
           %th= :day.t
-          - Date::ABBR_MONTHNAMES.each do |m|
+          - Date::ABBR_MONTHNAMES[1..-1].each do |m|
             %th= m
         %tr
           %th= :commits.t

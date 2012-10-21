@@ -36,7 +36,7 @@ module GitStats
                 title: :commits_by_month.t,
                 y_text: :commits.t,
                 x_text: :month.t,
-                data_x: Date::ABBR_MONTHNAMES,
+                data_x: Date::ABBR_MONTHNAMES[1..-1],
                 data_y: @activity.by_month_array
             )
           end

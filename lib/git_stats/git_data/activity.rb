@@ -31,7 +31,7 @@ module GitStats
       end
 
       def by_month_array
-        by_month.to_key_indexed_array(min_size: 12, default: 0)
+        by_month.to_key_indexed_array(min_size: 13, default: 0)[1..-1]
       end
 
       def by_year

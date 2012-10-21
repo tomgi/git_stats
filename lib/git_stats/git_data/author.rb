@@ -11,14 +11,6 @@ module GitStats
         @commits ||= repo.commits.select { |commit| commit.author == self }
       end
 
-      def lines_added
-        short_stats.map(&:insertions).sum
-      end
-
-      def lines_deleted
-        short_stats.map(&:deletions).sum
-      end
-
       def commits_sum_by_date
         sum = 0
         commits.map { |commit|
@@ -28,6 +20,10 @@ module GitStats
       end
 
       [:insertions, :deletions].each do |method|
+        define_method method do
+          short_stats.map { |s| s.send(method)} .sum
+        end
+
         define_method "#{method}_by_date" do
           sum = 0
           commits.map { |commit|

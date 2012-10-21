@@ -49,14 +49,14 @@ describe GitStats::GitData::Activity do
       jd.commits_sum_by_date.map { |d, s| s }.should == [1, 2]
     end
 
-    it 'should count lines_added_by_date' do
+    it 'should count insertions_by_date' do
       tg.insertions_by_date.map { |d, s| d }.should == tg_commit_dates
       tg.insertions_by_date.map { |d, s| s }.should == [4, 9, 14, 15, 20, 1020, 1021, 1021]
       jd.insertions_by_date.map { |d, s| d }.should == jd_commit_dates
       jd.insertions_by_date.map { |d, s| s }.should == [3, 103]
     end
 
-    it 'should count lines_deleted_by_date' do
+    it 'should count deletions_by_date' do
       tg.deletions_by_date.map { |d, s| d }.should == tg_commit_dates
       tg.deletions_by_date.map { |d, s| s }.should == [0, 0, 4, 4, 9, 9, 10, 10]
       jd.deletions_by_date.map { |d, s| d }.should == jd_commit_dates

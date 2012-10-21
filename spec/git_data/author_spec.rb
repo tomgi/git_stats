@@ -14,11 +14,11 @@ describe GitStats::GitData::Author do
   end
 
   it 'should count lines added from short stat' do
-    author.lines_added.should == 50
+    author.insertions.should == 50
   end
 
   it 'should count lines deleted from short stat' do
-    author.lines_deleted.should == 100
+    author.deletions.should == 100
   end
 
 end

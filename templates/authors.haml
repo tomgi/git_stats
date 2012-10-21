@@ -5,15 +5,15 @@
     %li
       %a{:href => '#commits_count_by_author', 'data-toogle' => 'tab'}= :commits_count_by_author.t
     %li
-      %a{:href => '#lines_added_by_author', 'data-toogle' => 'tab'}= :lines_added_by_author.t
+      %a{:href => '#insertions_by_author', 'data-toogle' => 'tab'}= :insertions_by_author.t
     %li
-      %a{:href => '#lines_deleted_by_author', 'data-toogle' => 'tab'}= :lines_deleted_by_author.t
+      %a{:href => '#deletions_by_author', 'data-toogle' => 'tab'}= :deletions_by_author.t
     %li
       %a{:href => '#commits_sum_by_author_by_date', 'data-toogle' => 'tab'}= :commits_sum_by_author_by_date.t
     %li
-      %a{:href => '#lines_added_by_author_by_date', 'data-toogle' => 'tab'}= :lines_added_by_author_by_date.t
+      %a{:href => '#insertions_by_author_by_date', 'data-toogle' => 'tab'}= :insertions_by_author_by_date.t
     %li
-      %a{:href => '#lines_deleted_by_author_by_date', 'data-toogle' => 'tab'}= :lines_deleted_by_author_by_date.t
+      %a{:href => '#deletions_by_author_by_date', 'data-toogle' => 'tab'}= :deletions_by_author_by_date.t
 
   .tab-content
     .tab-pane.active{id: 'best_authors'}
@@ -23,8 +23,8 @@
         %tr
           %th= :author.t
           %th= :commits.t
-          %th= :lines_added.t
-          %th= :lines_deleted.t
+          %th= :insertions.t
+          %th= :deletions.t
           %th= :first_commit.t
           %th= :last_commit.t
           %th
@@ -33,8 +33,8 @@
           %tr
             %th= author.name
             %td= author.commits.size
-            %td= author.lines_added
-            %td= author.lines_deleted
+            %td= author.insertions
+            %td= author.deletions
             %td= author.commits.first.try(:date).try(:to_formatted_s, :long)
             %td= author.commits.last.try(:date).try(:to_formatted_s, :long)
             %td
@@ -58,24 +58,17 @@
       %small
         %center= "5 #{:best_authors_shown.t}"
 
-    .tab-pane{id: 'lines_added_by_author'}
+    .tab-pane{id: 'insertions_by_author'}
       .page-header
-        %h1.pagination-centered= :lines_added_by_author.t
-      = high_chart("charts.lines_added_by_author", charts.lines_added_by_author)
+        %h1.pagination-centered= :insertions_by_author.t
+      = high_chart("charts.insertions_by_author", charts.insertions_by_author)
       %small
         %center= "5 #{:best_authors_shown.t}"
 
-    .tab-pane{id: 'lines_deleted_by_author'}
+    .tab-pane{id: 'deletions_by_author'}
       .page-header
-        %h1.pagination-centered= :lines_deleted_by_author.t
-      = high_chart("charts.lines_deleted_by_author", charts.lines_deleted_by_author)
-      %small
-        %center= "5 #{:best_authors_shown.t}"
-
-    .tab-pane{id: 'lines_added_by_author_by_date'}
-      .page-header
-        %h1.pagination-centered= :lines_added_by_author_by_date.t
-      = high_stock("charts.lines_added_by_author_by_date", charts.lines_added_by_author_by_date)
+        %h1.pagination-centered= :deletions_by_author.t
+      = high_chart("charts.deletions_by_author", charts.insertions_by_author)
       %small
         %center= "5 #{:best_authors_shown.t}"
 
@@ -86,9 +79,16 @@
       %small
         %center= "5 #{:best_authors_shown.t}"
 
-    .tab-pane{id: 'lines_deleted_by_author_by_date'}
+    .tab-pane{id: 'insertions_by_author_by_date'}
       .page-header
-        %h1.pagination-centered= :lines_deleted_by_author_by_date.t
-      = high_stock("charts.lines_deleted_by_author_by_date", charts.lines_deleted_by_author_by_date)
+        %h1.pagination-centered= :insertions_by_author_by_date.t
+      = high_stock("charts.insertions_by_author_by_date", charts.insertions_by_author_by_date)
+      %small
+        %center= "5 #{:best_authors_shown.t}"
+
+    .tab-pane{id: 'deletions_by_author_by_date'}
+      .page-header
+        %h1.pagination-centered= :deletions_by_author_by_date.t
+      = high_stock("charts.deletions_by_author_by_date", charts.deletions_by_author_by_date)
       %small
         %center= "5 #{:best_authors_shown.t}"

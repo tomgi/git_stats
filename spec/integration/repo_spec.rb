@@ -55,13 +55,13 @@ describe GitStats::GitData::Repo do
   end
 
   it 'should count lines_added_by_author' do
-    repo.lines_added_by_author.keys.should == expected_authors
-    repo.lines_added_by_author.values.should == [1021, 103]
+    repo.insertions_by_author.keys.should == expected_authors
+    repo.insertions_by_author.values.should == [1021, 103]
   end
 
   it 'should count lines_deleted_by_author' do
-    repo.lines_deleted_by_author.keys.should == expected_authors
-    repo.lines_deleted_by_author.values.should == [10, 0]
+    repo.deletions_by_author.keys.should == expected_authors
+    repo.deletions_by_author.values.should == [10, 0]
   end
 
 end

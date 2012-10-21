@@ -41,7 +41,7 @@ module GitStats
         Hash[authors.map { |author| [author, author.commits.size] }.sort_by { |author, commits| -commits }[0..limit]]
       end
 
-      [:lines_added, :lines_deleted].each do |method|
+      [:insertions, :deletions].each do |method|
         define_method "#{method}_by_author" do |limit = 4|
           Hash[authors.map { |author| [author, author.send(method)] }.sort_by { |author, lines| -lines }[0..limit]]
         end

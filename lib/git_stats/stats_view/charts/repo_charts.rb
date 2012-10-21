@@ -6,43 +6,25 @@ module GitStats
           @repo = repo
         end
 
-        def files_by_extension
-          Chart.new do |f|
-            f.column_hash_chart(
-                data: @repo.files_by_extension_count,
-                title: :files_by_extension.t,
-                y_text: :files.t
-            )
+        [:lines, :files].each do |type|
+          define_method "#{type}_by_extension" do
+            Chart.new do |f|
+              f.column_hash_chart(
+                  data: @repo.send("#{type}_by_extension_count"),
+                  title: "#{type}_extension".to_sym.t,
+                  y_text: type.to_sym.t
+              )
+            end
           end
-        end
 
-        def lines_by_extension
-          Chart.new do |f|
-            f.column_hash_chart(
-                data: @repo.lines_by_extension,
-                title: :lines_by_extension.t,
-                y_text: :lines.t
-            )
-          end
-        end
-
-        def files_by_date
-          Chart.new do |f|
-            f.date_chart(
-                data: @repo.files_count_by_date,
-                title: :files_by_date.t,
-                y_text: :files.t
-            )
-          end
-        end
-
-        def lines_by_date
-          Chart.new do |f|
-            f.date_chart(
-                data: @repo.lines_count_by_date,
-                title: :lines_by_date.t,
-                y_text: :lines.t
-            )
+          define_method "#{type}_by_date" do
+            Chart.new do |f|
+              f.date_chart(
+                  data: @repo.send("#{type}_count_by_date"),
+                  title: "#{type}_by_date".to_sym.t,
+                  y_text: type.to_sym.t
+              )
+            end
           end
         end
 

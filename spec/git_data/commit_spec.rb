@@ -40,7 +40,7 @@ describe GitStats::GitData::Commit do
             double(lines_count: 0, extension: '.haml'),
             double(lines_count: 20, extension: '.css'),
         )
-        commit.lines_by_extension.should == {'.rb' => 100, '.css' => 20}
+        commit.lines_by_extension_count.should == {'.rb' => 100, '.css' => 20}
       end
     end
   end

@@ -46,7 +46,7 @@ describe GitStats::GitData::Repo do
   end
 
   it 'should count lines by extension in repo' do
-    repo.lines_by_extension.should == {'.haml' => 100, '.txt' => 1008, '.rb' => 6}
+    repo.lines_by_extension_count.should == {'.haml' => 100, '.txt' => 1008, '.rb' => 6}
   end
 
   it 'should count commits_count_by_author' do

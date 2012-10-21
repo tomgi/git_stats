@@ -34,7 +34,6 @@ module GitStats
 
         def date_chart(params)
           common_options(params)
-          rangeSelector(selected: 1)
           series(
               name: params[:title],
               type: "spline",
@@ -44,7 +43,6 @@ module GitStats
 
         def multi_date_chart(params)
           common_options(params)
-          rangeSelector(selected: 1)
           params[:data].each do |s|
             series(
                 name: s[:name],

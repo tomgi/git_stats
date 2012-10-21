@@ -29,7 +29,7 @@ module GitStats
         @files_by_extension_count ||= Hash[files_by_extension.map { |ext, files| [ext, files.count] }]
       end
 
-      def lines_by_extension_count
+      def lines_by_extension
         @lines_by_extension ||= Hash[files_by_extension.map { |ext, files|
           [ext, files.map(&:lines_count).sum]
         }.delete_if { |ext, lines_count| lines_count == 0 }]

@@ -7,7 +7,7 @@ module GitStats
 
       attr_reader :path
 
-      delegate :files, :files_by_extension, :files_by_extension_count, :lines_by_extension_count,
+      delegate :files, :files_by_extension, :files_by_extension_count, :lines_by_extension,
                :files_count, :binary_files, :text_files, :lines_count, to: :last_commit
 
       def initialize(params)

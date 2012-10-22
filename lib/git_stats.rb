@@ -11,4 +11,4 @@ require 'lazy_high_charts'
 require 'launchy'
 require 'i18n'
 
-Dir['lib/**/*.rb'].each { |r| require File.expand_path(r) }
+require 'git_stats/base'

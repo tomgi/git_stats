@@ -3,7 +3,7 @@ module GitStats
     class View
       def initialize(view_data, out_path)
         @view_data, @out_path = view_data, out_path
-        @layout = Tilt.new("templates/layout.haml")
+        @layout = Tilt.new("../../../../templates/layout.haml".absolute_path)
       end
 
       def render_all
@@ -34,10 +34,10 @@ module GitStats
       end
 
       def all_templates(root = '')
-        Dir["templates/#{root}**/[^_]*.haml"].map {
+        Dir["../../../../templates/#{root}**/[^_]*.haml".absolute_path].map {
             |f| Pathname.new(f)
         }.map { |f|
-          f.relative_path_from(Pathname.new('templates')).sub_ext('')
+          f.relative_path_from(Pathname.new('../../../../templates'.absolute_path)).sub_ext('')
         }.map(&:to_s) - %w(layout)
       end
 
@@ -59,11 +59,11 @@ module GitStats
       end
 
       def prepare_static_content
-        FileUtils.cp_r(Dir['templates/static/*'], @out_path)
+        FileUtils.cp_r(Dir["../../../../templates/static/*".absolute_path], @out_path)
       end
 
       def prepare_assets
-        FileUtils.cp_r('templates/assets', @out_path)
+        FileUtils.cp_r('../../../../templates/assets'.absolute_path, @out_path)
       end
 
     end

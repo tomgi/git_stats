@@ -4,7 +4,7 @@ module GitStats
       def initialize(name, layout=nil)
         @name = name
         @layout = layout
-        @template = Tilt.new("templates/#@name.haml")
+        @template = Tilt.new("../../../../templates/#@name.haml".absolute_path)
       end
 
       def render(data, params={})

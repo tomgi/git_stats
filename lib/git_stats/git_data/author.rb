@@ -49,6 +49,10 @@ module GitStats
         @activity ||= Activity.new(commits)
       end
 
+      def dirname
+        @name.underscore.split.join '_'
+      end
+
       def to_s
         "#{self.class} #@name <#@email>"
       end

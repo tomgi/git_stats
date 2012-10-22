@@ -9,7 +9,7 @@ module GitStats
 
       def render(data, params={})
         if @layout
-          @layout.render(data, :active_page => @name, :all_templates => params[:all_templates]) { @template.render(data, params) }
+          @layout.render(data, :active_page => params[:active_page] || @name, :links => params[:links]) { @template.render(data, params) }
         else
           @template.render(data, params)
         end

@@ -3,30 +3,14 @@
 %html
   %head
     %title= "GitStats - #{repo.project_name}"
-    %link{:rel => "stylesheet", :href => "assets/bootstrap/css/bootstrap.min.css", :type => "text/css"}
+    %link{:rel => "stylesheet", :href => asset_path('bootstrap/css/bootstrap.min.css', active_page), :type => "text/css"}
     %style
       :plain
         body { padding-top: 60px; }
-    %link{:rel => "stylesheet", :href => "assets/bootstrap/css/bootstrap-responsive.min.css", :type => "text/css"}
-    %script{:src => "assets/jquery.min.js", :type => "text/javascript"}
-    %script{:src => "assets/bootstrap/js/bootstrap.min.js", :type => "text/javascript"}
-    %script{:src => "assets/highstock.js", :type => "text/javascript"}
-    %script
-      :plain
-        $(function() {
-          $('.tabbable ul a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-            var ev = document.createEvent('Event');
-            ev.initEvent('resize', true, true);
-            window.dispatchEvent(ev);
-          });
-          $('.modal').on('shown', function (e) {
-            var ev = document.createEvent('Event');
-            ev.initEvent('resize', true, true);
-            window.dispatchEvent(ev);
-          });
-        });
+    %link{:rel => "stylesheet", :href => asset_path('bootstrap/css/bootstrap-responsive.min.css', active_page), :type => "text/css"}
+    %script{:src => asset_path('jquery.min.js', active_page), :type => "text/javascript"}
+    %script{:src => asset_path('bootstrap/js/bootstrap.min.js', active_page), :type => "text/javascript"}
+    %script{:src => asset_path('highstock.js', active_page), :type => "text/javascript"}
   %body
     %div.navbar.navbar-fixed-top
       %div.navbar-inner
@@ -35,11 +19,11 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand{:href => "index.html"}= "GitStats - #{repo.project_name}"
+          %a.brand{:href => link_to("index.html", active_page)}= "GitStats - #{repo.project_name}"
           %div.nav-collapse.collapse
             %ul.nav
-              - all_templates.each do |link|
-                %li{:class => active_page == link ? "active" : ""}
-                  %a{:href => "#{link}.html"}= link.capitalize
+              - links.each do |name, href|
+                %li{:class => active_page[name.underscore] ? "active" : ""}
+                  %a{:href => link_to(href, active_page)}= name
     %div.container
       = yield

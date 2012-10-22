@@ -1,0 +1,15 @@
+.tabbable.tabs-left
+  %ul.nav.nav-tabs
+    %li{class: page == :lines_by_date ? "active" : ""}
+      %a{:href => 'by_date.html'}= :lines_by_date.t
+    %li{class: page == :lines_by_extension ? "active" : ""}
+      %a{:href => 'by_extension.html'}= :lines_by_extension.t
+
+  .tab-content
+    .tab-pane.active
+      .page-header
+        %h1.pagination-centered= page.t
+      - if page == :lines_by_date
+        = high_stock("lines_by_date", charts.lines_by_date)
+      - elsif page == :lines_by_extension
+        = high_chart("lines_by_extension", charts.lines_by_extension)

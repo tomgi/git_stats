@@ -35,7 +35,7 @@ module GitStats
                 title: :commits_by_wday.t,
                 y_text: :commits.t,
                 x_text: :day.t,
-                data_x: Date::ABBR_DAYNAMES,
+                data_x: I18n.t('date.abbr_day_names'),
                 data_y: author.activity.by_wday_array
             )
           end
@@ -47,7 +47,7 @@ module GitStats
                 title: :commits_by_month.t,
                 y_text: :commits.t,
                 x_text: :month.t,
-                data_x: Date::ABBR_MONTHNAMES[1..-1],
+                data_x: I18n.t('date.abbr_month_names')[1..-1],
                 data_y: author.activity.by_month_array
             )
           end

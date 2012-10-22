@@ -43,7 +43,7 @@
       %table{:class => "table table-bordered table-condensed"}
         %tr
           %th= :day.t
-          - Date::ABBR_DAYNAMES.each do |d|
+          - I18n.t('date.abbr_day_names').each do |d|
             %th= d
         %tr
           %th= :commits.t
@@ -64,7 +64,7 @@
         - max = author.activity.by_wday_hour.values.map {|h| h.values.empty? ? 0 : h.values.max }.max
         - (0..6).each do |day|
           %tr
-            %th= Date::ABBR_DAYNAMES[day]
+            %th= I18n.t('date.abbr_day_names')[day]
             - (0..23).each do |hour|
               - color = max ? "%02x" % (255 - author.activity.by_wday_hour[day][hour] * 100 / max) : "FF"
               %td{style: "background-color: ##{color}#{color}#{color};"}= author.activity.by_wday_hour[day][hour]
@@ -73,7 +73,7 @@
       %table{:class => "table table-bordered table-condensed"}
         %tr
           %th= :month.t
-          - Date::ABBR_MONTHNAMES[1..-1].each do |m|
+          - I18n.t('date.abbr_month_names')[1..-1].each do |m|
             %th= m
         %tr
           %th= :commits.t
@@ -92,7 +92,7 @@
       %table{:class => "table table-bordered table-condensed"}
         %tr
           %th
-          - Date::ABBR_MONTHNAMES[1..-1].each do |h|
+          - I18n.t('date.abbr_month_names')[1..-1].each do |h|
             %th= h
         - author.activity.by_year_month.each do |year, months|
           %tr

@@ -33,8 +33,8 @@
               %td= author.commits.size
               %td= author.insertions
               %td= author.deletions
-              %td= author.commits.first.try(:date).try(:to_formatted_s, :long)
-              %td= author.commits.last.try(:date).try(:to_formatted_s, :long)
+              %td= I18n.localize(author.commits.first.try(:date), format: :long) rescue ""
+              %td= I18n.localize(author.commits.last.try(:date), format: :long) rescue ""
               %td
                 %a.btn{:href => "#{author.dirname}/activity/by_date.html"}= :show_more.t
 

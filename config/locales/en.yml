@@ -51,4 +51,6 @@ en:
   author: Author
   show_more: More
   close: Close
-  more_data_not_available: More data not available
+  binary: Binary
+  text: Text
+  general: General

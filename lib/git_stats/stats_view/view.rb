@@ -50,11 +50,11 @@ module GitStats
 
       def links
         {
-            'General' => 'general.html',
-            'Activity' => 'activity/by_date.html',
-            'Authors' => 'authors/best_authors.html',
-            'Files' => 'files/by_date.html',
-            'Lines' => 'lines/by_date.html'
+            general: 'general.html',
+            activity: 'activity/by_date.html',
+            authors: 'authors/best_authors.html',
+            files: 'files/by_date.html',
+            lines: 'lines/by_date.html'
         }
       end
 

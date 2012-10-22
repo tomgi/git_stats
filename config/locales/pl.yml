@@ -1,0 +1,56 @@
+pl:
+  project_name: Nazwa projektu
+  project_version: Wersja projektu
+  generated_at: Wygenerowano
+  generator: Generator
+  report_period: Okres raportu
+  total_files: Liczba plików
+  total_lines: Liczba linii
+  total_commits: Liczba commitów
+  authors: Autorzy
+  commits: Commity
+  commits_by_hour: Commity po godzinie
+  files: Pliki
+  lines: Linie
+  files_by_date: Pliki po dacie
+  lines_by_date: Linie po dacie
+  files_by_extension: Pliki po rozszerzeniu
+  lines_by_extension: Linie po rozszerzeniu
+  hour_of_day: Godzina dnia
+  hour: Godzina
+  percentage: Procent
+  day: Dzień
+  day_of_week: Dzień tygodnia
+  hour_of_week: Godzina tygodnia
+  month: Miesiąc
+  month_of_year: Miesiąc roku
+  year_month: Rok i miesiąc
+  commits_by_wday: Commity po dniu tygodnia
+  commits_by_month: Commity po miesiącu
+  commits_by_year_month: Commity po roku i miesiącu
+  commits_by_month_of_year: Commity po miesiącu i roku
+  year: Rok
+  commits_by_year: Commity po roku
+  activity: Aktywność
+  activity_by_date: Aktywność po dacie
+  commits_by_date: Commity po dacie
+  insertions_by_author: Dodane linie
+  deletions_by_author: Usunięte linie
+  changed_lines_by_author: Zmienione linie
+  best_authors_shown: najlepszych autorów
+  commits_count_by_author: Liczba commitów
+  commits_sum_by_author_by_date: Liczba commitów po dacie
+  insertions_by_author_by_date: Dodane linie po dacie
+  deletions_by_author_by_date: Usunięte linie po dacie
+  changed_lines_by_author_by_date: Zmienione linie po dacie
+  best_authors: Najlepsi autorzy
+  insertions: Dodane linie
+  deletions: Usunięte linie
+  first_commit: Pierwszy commit
+  last_commit: Ostatni commit
+  author: Autor
+  show_more: Więcej
+  close: Zamknij
+  binary: Binarne
+  text: Tekstowe
+  general: Ogólne

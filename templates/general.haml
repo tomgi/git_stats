@@ -7,19 +7,19 @@
     %td= repo.project_version
   %tr
     %td= :generated_at.t
-    %td= DateTime.now.to_formatted_s(:long)
+    %td= I18n.localize(DateTime.now, format: :long)
   %tr
     %td= :generator.t
     %td= "GitStats #{GitStats::VERSION}"
   %tr
     %td= :report_period.t
-    %td= repo.commits_period.map {|d| d.to_formatted_s(:long)}.join(" .. ")
+    %td= repo.commits_period.map {|d| I18n.localize(d, format: :long)}.join(" .. ")
   %tr
     %td= :total_files.t
-    %td= "#{repo.files_count} (binary: #{repo.binary_files.size}, text: #{repo.text_files.size})"
+    %td= "#{repo.files_count} (#{:binary.t}: #{repo.binary_files.size}, #{:text.t}: #{repo.text_files.size})"
   %tr
     %td= :total_lines.t
-    %td= "#{repo.lines_count} lines (#{repo.short_stats.map(&:insertions).sum} insertions, #{repo.short_stats.map(&:deletions).sum} deletions)"
+    %td= "#{repo.lines_count} #{:lines.t} (#{repo.short_stats.map(&:insertions).sum} #{:insertions.t}, #{repo.short_stats.map(&:deletions).sum} #{:deletions.t})"
   %tr
     %td= :total_commits.t
     %td= repo.commits.size

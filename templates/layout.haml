@@ -23,7 +23,7 @@
           %div.nav-collapse.collapse
             %ul.nav
               - links.each do |name, href|
-                %li{:class => active_page[name.underscore] ? "active" : ""}
-                  %a{:href => link_to(href, active_page)}= name
+                %li{:class => active_page[name.to_s.underscore] ? "active" : ""}
+                  %a{:href => link_to(href, active_page)}= name.t
     %div.container
       = yield

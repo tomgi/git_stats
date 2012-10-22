@@ -46,18 +46,6 @@ module GitStats
           end
         end
 
-        [:commits_count_by_author, :insertions_by_author, :deletions_by_author, :changed_lines_by_author].each do |method|
-          define_method method do
-            Chart.new do |f|
-              f.column_hash_chart(
-                  data: Hash[@repo.send(method).map { |a, l| [a.email, l] }],
-                  title: method.t,
-                  y_text: method.to_s.split('_').first.to_sym
-              )
-            end
-          end
-        end
-
       end
     end
   end

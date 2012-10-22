@@ -22,12 +22,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency('tilt')
   gem.add_dependency('haml')
   gem.add_dependency('launchy')
-  #gem.add_dependency('lazy_high_charts')
+  gem.add_dependency('lazy_high_charts_tomgi')
   gem.add_dependency('i18n')
-
-  gem.add_development_dependency('rake')
-  gem.add_development_dependency('pry')
-  gem.add_development_dependency('rspec')
-  gem.add_development_dependency('factory_girl')
-  gem.add_development_dependency('simplecov')
 end

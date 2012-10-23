@@ -4,7 +4,11 @@ GitStats is a git repository statistics generator.
 It browses the repository and outputs html page with some statistics.
 
 ## Examples
-[]
+[devise](http://tomgi.github.com/git_stats/examples/devise/index.html)
+[devise_invitable](http://tomgi.github.com/git_stats/examples/devise_invitable/index.html)
+[jquery](http://tomgi.github.com/git_stats/examples/jquery/index.html)
+[paperclip](http://tomgi.github.com/git_stats/examples/paperclip/index.html)
+[rails](http://tomgi.github.com/git_stats/examples/rails/index.html)
 
 ## Installation
 

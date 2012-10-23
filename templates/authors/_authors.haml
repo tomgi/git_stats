@@ -19,6 +19,7 @@
       - if page == :best_authors
         %table{:class => "table table-bordered table-condensed table-hover"}
           %tr
+            %th #
             %th= :author.t
             %th= :commits.t
             %th= :insertions.t
@@ -29,6 +30,7 @@
           - sorted_authors = repo.authors.sort_by { |a| -a.commits.size}
           - sorted_authors.each_with_index do |author, i|
             %tr
+              %th= i+1
               %th= author.name
               %td= author.commits.size
               %td= author.insertions

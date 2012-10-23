@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>GitStats - rails</title>
+    <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css' />
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../../../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css' />
+    <script src='../../../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../../../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../../../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../../../index.html'>GitStats - rails</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../../../general.html'>General</a>
+              </li>
+              <li class='active'>
+                <a href='../../../activity/by_date.html'>Activity</a>
+              </li>
+              <li class='active'>
+                <a href='../../best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../../../files/by_date.html'>Files</a>
+              </li>
+              <li class=''>
+                <a href='../../../lines/by_date.html'>Lines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class='active'>
+            <a href='by_date.html'>Activity by date</a>
+          </li>
+          <li class=''>
+            <a href='hour_of_day.html'>Hour of day</a>
+          </li>
+          <li class=''>
+            <a href='day_of_week.html'>Day of week</a>
+          </li>
+          <li class=''>
+            <a href='hour_of_week.html'>Hour of week</a>
+          </li>
+          <li class=''>
+            <a href='month_of_year.html'>Month of year</a>
+          </li>
+          <li class=''>
+            <a href='year.html'>Year</a>
+          </li>
+          <li class=''>
+            <a href='year_month.html'>Year and month</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header pagination-centered'>
+              <h1>Activity by date</h1>
+              <h3>Rohit Arondekar &lt;rohit.arondekar@gmail.com&gt;</h3>
+            </div>
+          </div>
+                  <script type="text/javascript">
+                  (function() {
+                    var onload = window.onload;
+                    window.onload = function(){
+                      if (typeof onload == "function") onload();
+                              var options, chart;
+                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1270949337000,2 ],[ 1271668504000,1 ],[ 1271670890000,1 ],[ 1271671972000,1 ],[ 1271678659000,1 ],[ 1271754436000,1 ],[ 1271831012000,1 ],[ 1272171085000,1 ],[ 1272422188000,1 ],[ 1272422367000,1 ],[ 1272431286000,1 ],[ 1272431616000,1 ],[ 1272431935000,1 ],[ 1272433905000,1 ],[ 1272524401000,1 ],[ 1272605948000,1 ],[ 1272606872000,1 ],[ 1272609593000,1 ],[ 1272610289000,1 ],[ 1273203204000,1 ],[ 1273215796000,1 ],[ 1273493638000,1 ],[ 1273977164000,1 ],[ 1273995286000,1 ],[ 1274142293000,1 ],[ 1274143185000,1 ],[ 1274351001000,2 ],[ 1274450025000,2 ],[ 1275980635000,1 ],[ 1275996168000,1 ],[ 1276347949000,1 ],[ 1276423556000,1 ],[ 1276672712000,1 ],[ 1276672941000,1 ],[ 1276694450000,1 ],[ 1276999686000,1 ],[ 1277095281000,1 ],[ 1277095566000,1 ],[ 1277096616000,1 ],[ 1277108882000,1 ],[ 1277212486000,1 ],[ 1277212558000,1 ],[ 1277297522000,1 ],[ 1277352704000,1 ],[ 1277353549000,1 ],[ 1277467416000,1 ],[ 1277723461000,1 ],[ 1278566115000,1 ],[ 1280222866000,1 ],[ 1280481155000,1 ],[ 1280736755000,1 ],[ 1280833135000,1 ],[ 1283420518000,1 ],[ 1283421480000,1 ],[ 1283424322000,1 ],[ 1284350710000,1 ],[ 1284438819000,1 ],[ 1284609753000,1 ],[ 1284881982000,1 ],[ 1307163273000,1 ],[ 1327467951000,1 ],[ 1328529030000,1 ],[ 1328589591000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
+                  
+                  chart = new Highcharts.StockChart(options);
+          
+                    };
+                  })()
+                  </script>
+          <div id="charts.activity_by_date"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,2572 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>GitStats - jquery</title>
+    <link href='../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css' />
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css' />
+    <script src='../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../index.html'>GitStats - jquery</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../general.html'>General</a>
+              </li>
+              <li class=''>
+                <a href='../activity/by_date.html'>Activity</a>
+              </li>
+              <li class='active'>
+                <a href='best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../files/by_date.html'>Files</a>
+              </li>
+              <li class=''>
+                <a href='../lines/by_date.html'>Lines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+  <ul class='nav nav-tabs'>
+    <li class='active'>
+      <a href='best_authors.html'>Best authors</a>
+    </li>
+    <li class=''>
+      <a href='commits_sum_by_author_by_date.html'>Commits sum by author by date</a>
+    </li>
+    <li class=''>
+      <a href='changed_lines_by_author_by_date.html'>Changed lines by author by date</a>
+    </li>
+    <li class=''>
+      <a href='insertions_by_author_by_date.html'>Lines added by author by date</a>
+    </li>
+    <li class=''>
+      <a href='deletions_by_author_by_date.html'>Lines deleted by author by date</a>
+    </li>
+  </ul>
+  <div class='tab-content'>
+    <div class='tab-pane active'>
+      <div class='page-header'>
+        <h1 class='pagination-centered'>Best authors</h1>
+      </div>
+      <table class='table table-bordered table-condensed table-hover'>
+        <tr>
+          <th>#</th>
+          <th>Author</th>
+          <th>Commits</th>
+          <th>Lines added</th>
+          <th>Lines deleted</th>
+          <th>First_commit</th>
+          <th>Last commit</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>1</th>
+          <th>John Resig &lt;jeresig@gmail.com&gt;</th>
+          <td>1712</td>
+          <td>106556</td>
+          <td>92481</td>
+          <td>March 22, 2006 03:33</td>
+          <td>September 12, 2011 18:55</td>
+          <td>
+            <a class='btn' href='john_resig/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <th>Dave Methvin &lt;dave.methvin@gmail.com&gt;</th>
+          <td>372</td>
+          <td>5177</td>
+          <td>4229</td>
+          <td>December 19, 2006 04:31</td>
+          <td>October 21, 2012 20:19</td>
+          <td>
+            <a class='btn' href='dave_methvin/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <th>Jörn Zaefferer &lt;joern.zaefferer@gmail.com&gt;</th>
+          <td>320</td>
+          <td>22609</td>
+          <td>21096</td>
+          <td>September 04, 2006 04:51</td>
+          <td>June 18, 2012 19:25</td>
+          <td>
+            <a class='btn' href='jörn_zaefferer/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <th>Julian Aubourg &lt;j@ubourg.net&gt;</th>
+          <td>256</td>
+          <td>9371</td>
+          <td>7807</td>
+          <td>December 25, 2010 15:38</td>
+          <td>October 19, 2012 01:13</td>
+          <td>
+            <a class='btn' href='julian_aubourg/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <th>Brandon Aaron &lt;brandon.aaron@gmail.com&gt;</th>
+          <td>250</td>
+          <td>11102</td>
+          <td>5408</td>
+          <td>October 07, 2006 20:06</td>
+          <td>October 28, 2010 11:58</td>
+          <td>
+            <a class='btn' href='brandon_aaron/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>6</th>
+          <th>Rick Waldron &lt;waldron.rick@gmail.com&gt;</th>
+          <td>240</td>
+          <td>5170</td>
+          <td>10771</td>
+          <td>January 05, 2010 19:48</td>
+          <td>October 20, 2012 21:02</td>
+          <td>
+            <a class='btn' href='rick_waldron/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>7</th>
+          <th>Timmy Willison &lt;timmywillisn@gmail.com&gt;</th>
+          <td>214</td>
+          <td>2679</td>
+          <td>1727</td>
+          <td>June 28, 2011 11:46</td>
+          <td>October 16, 2012 17:28</td>
+          <td>
+            <a class='btn' href='timmy_willison/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>8</th>
+          <th>Ariel Flesler &lt;aflesler@gmail.com&gt;</th>
+          <td>200</td>
+          <td>18053</td>
+          <td>3317</td>
+          <td>April 22, 2008 23:07</td>
+          <td>September 16, 2009 02:19</td>
+          <td>
+            <a class='btn' href='ariel_flesler/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>9</th>
+          <th>Timmy Willison &lt;tim.willison@thisismedium.com&gt;</th>
+          <td>151</td>
+          <td>2440</td>
+          <td>1847</td>
+          <td>January 24, 2011 16:18</td>
+          <td>June 19, 2011 18:58</td>
+          <td>
+            <a class='btn' href='timmy_willison/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>10</th>
+          <th>Mike Sherov &lt;mike.sherov@gmail.com&gt;</th>
+          <td>75</td>
+          <td>8492</td>
+          <td>9220</td>
+          <td>June 06, 2011 23:13</td>
+          <td>October 22, 2012 13:28</td>
+          <td>
+            <a class='btn' href='mike_sherov/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>11</th>
+          <th>Colin Snover &lt;github.com@zetafleet.com&gt;</th>
+          <td>69</td>
+          <td>11235</td>
+          <td>7768</td>
+          <td>October 05, 2010 13:23</td>
+          <td>February 14, 2011 16:30</td>
+          <td>
+            <a class='btn' href='colin_snover/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>12</th>
+          <th>David Serduke &lt;davidserduke@gmail.com&gt;</th>
+          <td>67</td>
+          <td>10293</td>
+          <td>5833</td>
+          <td>November 05, 2007 18:49</td>
+          <td>January 23, 2008 03:54</td>
+          <td>
+            <a class='btn' href='david_serduke/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>13</th>
+          <th>Yehuda Katz &lt;wycats@gmail.com&gt;</th>
+          <td>51</td>
+          <td>1717</td>
+          <td>535</td>
+          <td>July 13, 2006 04:21</td>
+          <td>April 15, 2012 17:53</td>
+          <td>
+            <a class='btn' href='yehuda_katz/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>14</th>
+          <th>Richard Gibson &lt;richard.gibson@gmail.com&gt;</th>
+          <td>42</td>
+          <td>1746</td>
+          <td>1473</td>
+          <td>December 06, 2011 15:25</td>
+          <td>October 19, 2012 17:08</td>
+          <td>
+            <a class='btn' href='richard_gibson/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>15</th>
+          <th>louisremi &lt;louisremi@louisremi-laptop.(none)&gt;</th>
+          <td>39</td>
+          <td>1348</td>
+          <td>1261</td>
+          <td>December 09, 2010 10:23</td>
+          <td>March 21, 2012 20:04</td>
+          <td>
+            <a class='btn' href='louisremi/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>16</th>
+          <th>Corey Frang &lt;gnarf@gnarf.net&gt;</th>
+          <td>38</td>
+          <td>1800</td>
+          <td>1080</td>
+          <td>January 26, 2011 16:12</td>
+          <td>August 15, 2012 14:31</td>
+          <td>
+            <a class='btn' href='corey_frang/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>17</th>
+          <th>jaubourg &lt;aubourg.julian@gmail.com&gt;</th>
+          <td>33</td>
+          <td>4040</td>
+          <td>1880</td>
+          <td>December 09, 2010 13:34</td>
+          <td>December 21, 2010 17:04</td>
+          <td>
+            <a class='btn' href='jaubourg/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>18</th>
+          <th>Anton M &lt;obhvsbypqghgc@gmail.com&gt;</th>
+          <td>27</td>
+          <td>321</td>
+          <td>14215</td>
+          <td>November 24, 2010 23:35</td>
+          <td>February 17, 2011 19:12</td>
+          <td>
+            <a class='btn' href='anton_m/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>19</th>
+          <th>Gilles van den Hoven &lt;gilles0181@gmail.com&gt;</th>
+          <td>27</td>
+          <td>754</td>
+          <td>330</td>
+          <td>May 11, 2006 05:50</td>
+          <td>October 11, 2006 12:51</td>
+          <td>
+            <a class='btn' href='gilles_van_den_hoven/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>20</th>
+          <th>Robert Katic &lt;robert.katic@gmail.com&gt;</th>
+          <td>22</td>
+          <td>201</td>
+          <td>92</td>
+          <td>November 08, 2009 00:04</td>
+          <td>March 05, 2012 22:57</td>
+          <td>
+            <a class='btn' href='robert_katic/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>21</th>
+          <th>Dan Heberden &lt;danheberden@gmail.com&gt;</th>
+          <td>17</td>
+          <td>284</td>
+          <td>184</td>
+          <td>October 25, 2010 14:07</td>
+          <td>April 05, 2011 08:33</td>
+          <td>
+            <a class='btn' href='dan_heberden/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>22</th>
+          <th>Scott González &lt;scott.gonzalez@gmail.com&gt;</th>
+          <td>17</td>
+          <td>547</td>
+          <td>538</td>
+          <td>February 05, 2008 19:32</td>
+          <td>June 15, 2012 08:22</td>
+          <td>
+            <a class='btn' href='scott_gonzález/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>23</th>
+          <th>Oleg &lt;markelog@gmail.com&gt;</th>
+          <td>17</td>
+          <td>480</td>
+          <td>244</td>
+          <td>November 13, 2011 12:10</td>
+          <td>October 21, 2012 22:17</td>
+          <td>
+            <a class='btn' href='oleg/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>24</th>
+          <th>Azatoth &lt;azatoth@gmail.com&gt;</th>
+          <td>14</td>
+          <td>146</td>
+          <td>46</td>
+          <td>March 04, 2011 23:33</td>
+          <td>April 12, 2011 00:17</td>
+          <td>
+            <a class='btn' href='azatoth/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>25</th>
+          <th>unknown &lt;Julian@.(none)&gt;</th>
+          <td>13</td>
+          <td>234</td>
+          <td>412</td>
+          <td>December 24, 2010 13:03</td>
+          <td>December 25, 2010 12:52</td>
+          <td>
+            <a class='btn' href='unknown/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>26</th>
+          <th>Ben Alman &lt;cowboy@rj3.net&gt;</th>
+          <td>12</td>
+          <td>312</td>
+          <td>157</td>
+          <td>December 04, 2009 12:28</td>
+          <td>May 29, 2012 12:04</td>
+          <td>
+            <a class='btn' href='ben_alman/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>27</th>
+          <th>Mike Alsup &lt;malsup@gmail.com&gt;</th>
+          <td>11</td>
+          <td>83</td>
+          <td>38</td>
+          <td>November 29, 2006 23:25</td>
+          <td>April 29, 2010 11:45</td>
+          <td>
+            <a class='btn' href='mike_alsup/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>28</th>
+          <th>Jordan Boesch &lt;jboesch26@gmail.com&gt;</th>
+          <td>10</td>
+          <td>180</td>
+          <td>161</td>
+          <td>February 27, 2011 12:47</td>
+          <td>April 23, 2011 17:58</td>
+          <td>
+            <a class='btn' href='jordan_boesch/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>29</th>
+          <th>Mathias Bynens &lt;mathias@qiwi.be&gt;</th>
+          <td>9</td>
+          <td>44</td>
+          <td>27</td>
+          <td>January 18, 2011 23:14</td>
+          <td>August 12, 2012 11:34</td>
+          <td>
+            <a class='btn' href='mathias_bynens/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>30</th>
+          <th>Paul Bakaus &lt;paul.bakaus@googlemail.com&gt;</th>
+          <td>9</td>
+          <td>342</td>
+          <td>21</td>
+          <td>September 08, 2006 09:37</td>
+          <td>November 07, 2008 15:44</td>
+          <td>
+            <a class='btn' href='paul_bakaus/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>31</th>
+          <th>Anton M &lt;haskell_noob-github@yahoo.de&gt;</th>
+          <td>8</td>
+          <td>152</td>
+          <td>88</td>
+          <td>October 19, 2010 11:14</td>
+          <td>November 21, 2010 04:31</td>
+          <td>
+            <a class='btn' href='anton_m/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>32</th>
+          <th>Krinkle &lt;krinklemail@gmail.com&gt;</th>
+          <td>8</td>
+          <td>54</td>
+          <td>129</td>
+          <td>July 12, 2011 17:12</td>
+          <td>October 10, 2012 01:48</td>
+          <td>
+            <a class='btn' href='krinkle/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>33</th>
+          <th>Ed Engelhardt &lt;edengelhardt@gmail.com&gt;</th>
+          <td>8</td>
+          <td>28</td>
+          <td>24</td>
+          <td>May 22, 2007 07:05</td>
+          <td>May 11, 2008 10:17</td>
+          <td>
+            <a class='btn' href='ed_engelhardt/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>34</th>
+          <th>Karl Swedberg &lt;karl@englishrules.com&gt;</th>
+          <td>8</td>
+          <td>201</td>
+          <td>148</td>
+          <td>November 28, 2009 03:28</td>
+          <td>January 21, 2010 23:18</td>
+          <td>
+            <a class='btn' href='karl_swedberg/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>35</th>
+          <th>Richard D. Worth &lt;rdworth@gmail.com&gt;</th>
+          <td>7</td>
+          <td>676</td>
+          <td>609</td>
+          <td>December 18, 2007 03:13</td>
+          <td>March 24, 2011 19:55</td>
+          <td>
+            <a class='btn' href='richard_d._worth/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>36</th>
+          <th>Douglas Neiner &lt;doug@pixelgraphics.us&gt;</th>
+          <td>7</td>
+          <td>201</td>
+          <td>63</td>
+          <td>June 12, 2010 23:55</td>
+          <td>June 14, 2010 15:03</td>
+          <td>
+            <a class='btn' href='douglas_neiner/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>37</th>
+          <th>James Huston &lt;james@jameshuston.net&gt;</th>
+          <td>7</td>
+          <td>120</td>
+          <td>18</td>
+          <td>October 15, 2012 12:11</td>
+          <td>October 16, 2012 14:51</td>
+          <td>
+            <a class='btn' href='james_huston/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>38</th>
+          <th>Gianni Chiappetta &lt;gianni@runlevel6.org&gt;</th>
+          <td>7</td>
+          <td>88</td>
+          <td>44</td>
+          <td>December 14, 2010 21:53</td>
+          <td>January 21, 2011 10:33</td>
+          <td>
+            <a class='btn' href='gianni_chiappetta/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>39</th>
+          <th>Stefan Petre &lt;stefan.petre@gmail.com&gt;</th>
+          <td>7</td>
+          <td>1783</td>
+          <td>1761</td>
+          <td>June 16, 2006 14:23</td>
+          <td>January 05, 2007 22:00</td>
+          <td>
+            <a class='btn' href='stefan_petre/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>40</th>
+          <th>Sindre Sorhus &lt;sindresorhus@gmail.com&gt;</th>
+          <td>7</td>
+          <td>75</td>
+          <td>22</td>
+          <td>February 09, 2012 15:45</td>
+          <td>August 29, 2012 01:14</td>
+          <td>
+            <a class='btn' href='sindre_sorhus/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>41</th>
+          <th>Xavi &lt;xavi.rmz@gmail.com&gt;</th>
+          <td>7</td>
+          <td>62</td>
+          <td>55</td>
+          <td>January 09, 2011 19:11</td>
+          <td>January 18, 2011 12:40</td>
+          <td>
+            <a class='btn' href='xavi/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>42</th>
+          <th>scottjehl &lt;scott@scottjehl.com&gt;</th>
+          <td>6</td>
+          <td>9</td>
+          <td>6</td>
+          <td>December 22, 2010 15:24</td>
+          <td>August 02, 2011 18:38</td>
+          <td>
+            <a class='btn' href='scottjehl/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>43</th>
+          <th>unknown &lt;JZA@.(none)&gt;</th>
+          <td>6</td>
+          <td>33</td>
+          <td>36</td>
+          <td>December 08, 2009 20:59</td>
+          <td>December 08, 2009 22:09</td>
+          <td>
+            <a class='btn' href='unknown/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>44</th>
+          <th>adam j. sontag &lt;ajpiano@ajpiano.com&gt;</th>
+          <td>6</td>
+          <td>21</td>
+          <td>8</td>
+          <td>June 21, 2010 13:50</td>
+          <td>January 17, 2011 17:20</td>
+          <td>
+            <a class='btn' href='adam_j._sontag/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>45</th>
+          <th>Klaus Hartl &lt;klaus.hartl@googlemail.com&gt;</th>
+          <td>6</td>
+          <td>273</td>
+          <td>267</td>
+          <td>September 01, 2006 16:04</td>
+          <td>January 25, 2007 14:06</td>
+          <td>
+            <a class='btn' href='klaus_hartl/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>46</th>
+          <th>Corey Jewett &lt;cj@syntheticplayground.com&gt;</th>
+          <td>6</td>
+          <td>44</td>
+          <td>15</td>
+          <td>August 31, 2006 21:44</td>
+          <td>April 30, 2007 17:38</td>
+          <td>
+            <a class='btn' href='corey_jewett/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>47</th>
+          <th>Alex Sexton &lt;AlexSexton@gmail.com&gt;</th>
+          <td>5</td>
+          <td>41</td>
+          <td>35</td>
+          <td>October 11, 2010 11:54</td>
+          <td>February 17, 2011 18:01</td>
+          <td>
+            <a class='btn' href='alex_sexton/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>48</th>
+          <th>Sean Catchpole &lt;littlecooldude@gmail.com&gt;</th>
+          <td>5</td>
+          <td>8</td>
+          <td>5</td>
+          <td>July 26, 2007 00:27</td>
+          <td>April 08, 2008 16:40</td>
+          <td>
+            <a class='btn' href='sean_catchpole/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>49</th>
+          <th>Dave Reed &lt;dareed@microsoft.com&gt;</th>
+          <td>5</td>
+          <td>159</td>
+          <td>83</td>
+          <td>July 20, 2010 07:22</td>
+          <td>September 29, 2010 06:46</td>
+          <td>
+            <a class='btn' href='dave_reed/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>50</th>
+          <th>cmcnulty &lt;cmcnulty@kznf.com&gt;</th>
+          <td>5</td>
+          <td>48</td>
+          <td>23</td>
+          <td>February 25, 2011 11:40</td>
+          <td>April 05, 2012 12:12</td>
+          <td>
+            <a class='btn' href='cmcnulty/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>51</th>
+          <th>Erick Ruiz &lt;erickrdch@gmail.com&gt;</th>
+          <td>5</td>
+          <td>2688</td>
+          <td>2379</td>
+          <td>October 15, 2012 15:53</td>
+          <td>October 16, 2012 17:25</td>
+          <td>
+            <a class='btn' href='erick_ruiz/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>52</th>
+          <th>jrburke &lt;jrburke@gmail.com&gt;</th>
+          <td>5</td>
+          <td>215</td>
+          <td>49</td>
+          <td>December 27, 2010 13:01</td>
+          <td>November 14, 2011 12:13</td>
+          <td>
+            <a class='btn' href='jrburke/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>53</th>
+          <th>Yehuda Katz &lt;wycats@Yehuda-Katz.local&gt;</th>
+          <td>5</td>
+          <td>163</td>
+          <td>82</td>
+          <td>November 30, 2009 10:21</td>
+          <td>December 09, 2009 21:15</td>
+          <td>
+            <a class='btn' href='yehuda_katz/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>54</th>
+          <th>Jephte CLAIN &lt;Jephte.Clain@univ-reunion.fr&gt;</th>
+          <td>4</td>
+          <td>8</td>
+          <td>4</td>
+          <td>October 19, 2010 09:29</td>
+          <td>November 22, 2010 08:31</td>
+          <td>
+            <a class='btn' href='jephte_clain/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>55</th>
+          <th>Michael Bensoussan &lt;mickey@seesmic.com&gt;</th>
+          <td>4</td>
+          <td>127</td>
+          <td>126</td>
+          <td>November 03, 2009 05:36</td>
+          <td>November 03, 2009 06:58</td>
+          <td>
+            <a class='btn' href='michael_bensoussan/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>56</th>
+          <th>Justin Meyer &lt;justinbmeyer@gmail.com&gt;</th>
+          <td>4</td>
+          <td>453</td>
+          <td>63</td>
+          <td>December 04, 2009 11:28</td>
+          <td>October 13, 2010 10:38</td>
+          <td>
+            <a class='btn' href='justin_meyer/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>57</th>
+          <th>Irae Brasil &lt;irae@irae.pro.br&gt;</th>
+          <td>4</td>
+          <td>96</td>
+          <td>13</td>
+          <td>January 23, 2010 11:12</td>
+          <td>February 10, 2010 16:40</td>
+          <td>
+            <a class='btn' href='irae_brasil/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>58</th>
+          <th>Henri Wiechers &lt;hwiechers@gmail.com&gt;</th>
+          <td>4</td>
+          <td>257</td>
+          <td>256</td>
+          <td>November 12, 2010 07:40</td>
+          <td>November 12, 2010 07:45</td>
+          <td>
+            <a class='btn' href='henri_wiechers/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>59</th>
+          <th>Karl Swedberg &lt;kswedberg@gmail.com&gt;</th>
+          <td>4</td>
+          <td>69</td>
+          <td>51</td>
+          <td>December 10, 2009 14:44</td>
+          <td>October 26, 2010 14:37</td>
+          <td>
+            <a class='btn' href='karl_swedberg/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>60</th>
+          <th>Paul Irish &lt;paul.irish@gmail.com&gt;</th>
+          <td>3</td>
+          <td>32</td>
+          <td>4</td>
+          <td>January 12, 2010 10:30</td>
+          <td>October 17, 2010 14:26</td>
+          <td>
+            <a class='btn' href='paul_irish/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>61</th>
+          <th>Franck Marcia &lt;franck.marcia@gmail.com&gt;</th>
+          <td>3</td>
+          <td>653</td>
+          <td>321</td>
+          <td>September 02, 2006 11:47</td>
+          <td>September 04, 2006 19:58</td>
+          <td>
+            <a class='btn' href='franck_marcia/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>62</th>
+          <th>Sai Wong &lt;sai.wong@huffingtonpost.com&gt;</th>
+          <td>3</td>
+          <td>130</td>
+          <td>60</td>
+          <td>October 15, 2012 14:20</td>
+          <td>October 20, 2012 10:01</td>
+          <td>
+            <a class='btn' href='sai_wong/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>63</th>
+          <th>Elijah Manor &lt;elijah.manor@gmail.com&gt;</th>
+          <td>3</td>
+          <td>79</td>
+          <td>14</td>
+          <td>July 24, 2012 14:34</td>
+          <td>August 22, 2012 21:23</td>
+          <td>
+            <a class='btn' href='elijah_manor/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>64</th>
+          <th>lrbabe &lt;lrbabe@lrbabe-laptop&gt;</th>
+          <td>3</td>
+          <td>12</td>
+          <td>11</td>
+          <td>November 06, 2009 19:59</td>
+          <td>June 25, 2010 16:24</td>
+          <td>
+            <a class='btn' href='lrbabe/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>65</th>
+          <th>Merrifield, Jay &lt;jmerrifiel@gannett.com&gt;</th>
+          <td>3</td>
+          <td>69</td>
+          <td>53</td>
+          <td>October 15, 2012 11:54</td>
+          <td>October 17, 2012 13:40</td>
+          <td>
+            <a class='btn' href='merrifield,_jay/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>66</th>
+          <th>Scott Gonzalez &lt;sgonzale@sgonzale-laptop.local&gt;</th>
+          <td>3</td>
+          <td>9</td>
+          <td>3</td>
+          <td>November 13, 2009 06:27</td>
+          <td>November 13, 2009 07:08</td>
+          <td>
+            <a class='btn' href='scott_gonzalez/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>67</th>
+          <th>David Petersen &lt;public@petersendidit.com&gt;</th>
+          <td>3</td>
+          <td>11</td>
+          <td>2</td>
+          <td>December 08, 2009 07:43</td>
+          <td>October 07, 2010 20:55</td>
+          <td>
+            <a class='btn' href='david_petersen/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>68</th>
+          <th>Michael Geary &lt;mike@geary.com&gt;</th>
+          <td>3</td>
+          <td>7</td>
+          <td>5</td>
+          <td>June 10, 2006 19:04</td>
+          <td>July 02, 2006 02:11</td>
+          <td>
+            <a class='btn' href='michael_geary/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>69</th>
+          <th>Daniel Herman &lt;daniel.c.herman@gmail.com&gt;</th>
+          <td>3</td>
+          <td>4</td>
+          <td>4</td>
+          <td>November 07, 2011 18:04</td>
+          <td>June 15, 2012 20:44</td>
+          <td>
+            <a class='btn' href='daniel_herman/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>70</th>
+          <th>JessThrysoee &lt;jess@thrysoee.dk&gt;</th>
+          <td>2</td>
+          <td>3</td>
+          <td>3</td>
+          <td>March 11, 2011 00:17</td>
+          <td>March 11, 2011 17:46</td>
+          <td>
+            <a class='btn' href='jess_thrysoee/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>71</th>
+          <th>Damian Janowski &lt;damian.janowski@gmail.com&gt;</th>
+          <td>2</td>
+          <td>1</td>
+          <td>1</td>
+          <td>November 10, 2009 05:19</td>
+          <td>November 10, 2009 05:25</td>
+          <td>
+            <a class='btn' href='damian_janowski/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>72</th>
+          <th>Neeraj Singh &lt;neerajdotname@gmail.com&gt;</th>
+          <td>2</td>
+          <td>12</td>
+          <td>2</td>
+          <td>January 07, 2010 03:23</td>
+          <td>February 01, 2010 21:53</td>
+          <td>
+            <a class='btn' href='neeraj_singh/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>73</th>
+          <th>Jason Moon &lt;jmoon@socialcast.com&gt;</th>
+          <td>2</td>
+          <td>71</td>
+          <td>9</td>
+          <td>May 18, 2012 16:30</td>
+          <td>May 21, 2012 18:01</td>
+          <td>
+            <a class='btn' href='jason_moon/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>74</th>
+          <th>Colin Snover &lt;colin@alpha.zetafleet.com&gt;</th>
+          <td>2</td>
+          <td>23</td>
+          <td>6</td>
+          <td>September 30, 2010 11:24</td>
+          <td>October 09, 2010 10:42</td>
+          <td>
+            <a class='btn' href='colin_snover/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>75</th>
+          <th>Trey Hunner &lt;treyhunner@gmail.com&gt;</th>
+          <td>2</td>
+          <td>687</td>
+          <td>651</td>
+          <td>May 18, 2012 13:24</td>
+          <td>May 18, 2012 13:28</td>
+          <td>
+            <a class='btn' href='trey_hunner/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>76</th>
+          <th>Daniel Chatfield &lt;chatfielddaniel@googlemail.com&gt;</th>
+          <td>2</td>
+          <td>31</td>
+          <td>9</td>
+          <td>July 25, 2012 09:32</td>
+          <td>July 25, 2012 22:23</td>
+          <td>
+            <a class='btn' href='daniel_chatfield/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>77</th>
+          <th>Uri Gilad &lt;antishok@gmail.com&gt;</th>
+          <td>2</td>
+          <td>24</td>
+          <td>6</td>
+          <td>July 09, 2012 23:06</td>
+          <td>July 10, 2012 10:14</td>
+          <td>
+            <a class='btn' href='uri_gilad/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>78</th>
+          <th>John Resig &lt;jeresig@Archimedes.local&gt;</th>
+          <td>2</td>
+          <td>15</td>
+          <td>13</td>
+          <td>November 25, 2009 13:24</td>
+          <td>November 25, 2009 13:29</td>
+          <td>
+            <a class='btn' href='john_resig/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>79</th>
+          <th>Brian Brennan &lt;me@brianlovesthings.com&gt;</th>
+          <td>2</td>
+          <td>40</td>
+          <td>6</td>
+          <td>April 17, 2011 11:58</td>
+          <td>April 17, 2011 11:58</td>
+          <td>
+            <a class='btn' href='brian_brennan/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>80</th>
+          <th>David Murdoch &lt;musicisair@yahoo.com&gt;</th>
+          <td>2</td>
+          <td>5</td>
+          <td>6</td>
+          <td>February 12, 2011 03:05</td>
+          <td>February 12, 2011 03:09</td>
+          <td>
+            <a class='btn' href='david_murdoch/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>81</th>
+          <th>Yehuda Katz &lt;wycats@mobile005.mycingular.net&gt;</th>
+          <td>2</td>
+          <td>20</td>
+          <td>1</td>
+          <td>December 01, 2009 14:11</td>
+          <td>December 01, 2009 14:34</td>
+          <td>
+            <a class='btn' href='yehuda_katz/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>82</th>
+          <th>Ish &lt;ismail.khair@gmail.com&gt;</th>
+          <td>2</td>
+          <td>8</td>
+          <td>10</td>
+          <td>October 16, 2012 10:58</td>
+          <td>October 16, 2012 12:21</td>
+          <td>
+            <a class='btn' href='ish/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>83</th>
+          <th>aFarkas &lt;info@corrupt-system.de&gt;</th>
+          <td>2</td>
+          <td>7</td>
+          <td>17</td>
+          <td>April 23, 2011 11:29</td>
+          <td>April 23, 2011 21:57</td>
+          <td>
+            <a class='btn' href='a_farkas/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>84</th>
+          <th>Ben Truyman &lt;bentruyman@gmail.com&gt;</th>
+          <td>2</td>
+          <td>51</td>
+          <td>6</td>
+          <td>October 15, 2012 11:45</td>
+          <td>October 16, 2012 11:37</td>
+          <td>
+            <a class='btn' href='ben_truyman/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>85</th>
+          <th>Arne de Bree &lt;arne@bukkie.nl&gt;</th>
+          <td>2</td>
+          <td>32</td>
+          <td>4</td>
+          <td>February 09, 2012 20:48</td>
+          <td>April 03, 2012 00:37</td>
+          <td>
+            <a class='btn' href='arne_de_bree/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>86</th>
+          <th>Anton Ryzhov &lt;anton@ryzhov.me&gt;</th>
+          <td>2</td>
+          <td>15</td>
+          <td>2</td>
+          <td>August 17, 2011 15:30</td>
+          <td>August 17, 2011 18:56</td>
+          <td>
+            <a class='btn' href='anton_ryzhov/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>87</th>
+          <th>Sam Bisbee &lt;sam@sbisbee.com&gt;</th>
+          <td>2</td>
+          <td>12</td>
+          <td>9</td>
+          <td>April 15, 2011 16:36</td>
+          <td>April 15, 2011 16:45</td>
+          <td>
+            <a class='btn' href='sam_bisbee/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>88</th>
+          <th>lrbabe &lt;lrbabe@lrbabe-laptop.(none)&gt;</th>
+          <td>2</td>
+          <td>4</td>
+          <td>4</td>
+          <td>October 11, 2010 16:08</td>
+          <td>October 25, 2010 17:19</td>
+          <td>
+            <a class='btn' href='lrbabe/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>89</th>
+          <th>lrbabe &lt;lrbabe@gmail.com&gt;</th>
+          <td>2</td>
+          <td>26</td>
+          <td>6</td>
+          <td>November 09, 2009 12:59</td>
+          <td>November 11, 2009 15:15</td>
+          <td>
+            <a class='btn' href='lrbabe/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>90</th>
+          <th>Alexander Farkas &lt;a.farkas.pm@googlemail.com&gt;</th>
+          <td>2</td>
+          <td>225</td>
+          <td>168</td>
+          <td>December 21, 2009 15:32</td>
+          <td>December 21, 2009 16:24</td>
+          <td>
+            <a class='btn' href='alexander_farkas/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>91</th>
+          <th>Rob Morgan &lt;robbym@gmail.com&gt;</th>
+          <td>2</td>
+          <td>5</td>
+          <td>5</td>
+          <td>April 11, 2011 12:24</td>
+          <td>April 11, 2011 12:32</td>
+          <td>
+            <a class='btn' href='rob_morgan/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>92</th>
+          <th>Kim Dalsgaard &lt;kim@kimdalsgaard.com&gt;</th>
+          <td>1</td>
+          <td>3</td>
+          <td>0</td>
+          <td>November 14, 2009 05:26</td>
+          <td>November 14, 2009 05:26</td>
+          <td>
+            <a class='btn' href='kim_dalsgaard/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>93</th>
+          <th>Jörn Zaefferer &lt;joern.zaefferer@googlemail.com&gt;</th>
+          <td>1</td>
+          <td>39</td>
+          <td>17</td>
+          <td>December 21, 2009 16:10</td>
+          <td>December 21, 2009 16:10</td>
+          <td>
+            <a class='btn' href='jörn_zaefferer/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>94</th>
+          <th>Justin &lt;drakefjustin@gmail.com&gt;</th>
+          <td>1</td>
+          <td>3</td>
+          <td>3</td>
+          <td>November 06, 2011 22:54</td>
+          <td>November 06, 2011 22:54</td>
+          <td>
+            <a class='btn' href='justin/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>95</th>
+          <th>MONTILLET Xavier &lt;xavierm02.net@gmail.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>April 28, 2011 14:56</td>
+          <td>April 28, 2011 14:56</td>
+          <td>
+            <a class='btn' href='montillet_xavier/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>96</th>
+          <th>MORGAN &lt;morgan@morgangraphics.com&gt;</th>
+          <td>1</td>
+          <td>10</td>
+          <td>1</td>
+          <td>October 16, 2012 10:25</td>
+          <td>October 16, 2012 10:25</td>
+          <td>
+            <a class='btn' href='morgan/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>97</th>
+          <th>Marcel Greter &lt;mgr@rtp.ch&gt;</th>
+          <td>1</td>
+          <td>10</td>
+          <td>2</td>
+          <td>July 19, 2012 17:54</td>
+          <td>July 19, 2012 17:54</td>
+          <td>
+            <a class='btn' href='marcel_greter/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>98</th>
+          <th>Mark Gibson &lt;jollytoad@gmail.com&gt;</th>
+          <td>1</td>
+          <td>590</td>
+          <td>590</td>
+          <td>November 25, 2009 12:09</td>
+          <td>November 25, 2009 12:09</td>
+          <td>
+            <a class='btn' href='mark_gibson/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>99</th>
+          <th>Markus Staab &lt;markus.staab@redaxo.de&gt;</th>
+          <td>1</td>
+          <td>15</td>
+          <td>3</td>
+          <td>September 09, 2012 22:00</td>
+          <td>September 09, 2012 22:00</td>
+          <td>
+            <a class='btn' href='markus_staab/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>100</th>
+          <th>Jordan Boesch &lt;jordan@boedesign.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>March 14, 2011 14:17</td>
+          <td>March 14, 2011 14:17</td>
+          <td>
+            <a class='btn' href='jordan_boesch/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>101</th>
+          <th>Matt Curry &lt;matt@pseudocoder.com&gt;</th>
+          <td>1</td>
+          <td>9</td>
+          <td>4</td>
+          <td>January 23, 2010 12:52</td>
+          <td>January 23, 2010 12:52</td>
+          <td>
+            <a class='btn' href='matt_curry/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>102</th>
+          <th>Matt Farmer &lt;matt@frmr.me&gt;</th>
+          <td>1</td>
+          <td>11</td>
+          <td>8</td>
+          <td>May 14, 2012 14:12</td>
+          <td>May 14, 2012 14:12</td>
+          <td>
+            <a class='btn' href='matt_farmer/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>103</th>
+          <th>Matt Mueller &lt;mattmuelle@gmail.com&gt;</th>
+          <td>1</td>
+          <td>0</td>
+          <td>2</td>
+          <td>October 14, 2011 02:41</td>
+          <td>October 14, 2011 02:41</td>
+          <td>
+            <a class='btn' href='matt_mueller/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>104</th>
+          <th>Matthias Jäggli &lt;matthias.jaeggli@scout24.ch&gt;</th>
+          <td>1</td>
+          <td>10</td>
+          <td>1</td>
+          <td>August 28, 2012 16:26</td>
+          <td>August 28, 2012 16:26</td>
+          <td>
+            <a class='btn' href='matthias_jäggli/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>105</th>
+          <th>Jonathan Sampson &lt;jjdsampson@gmail.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>October 11, 2012 15:30</td>
+          <td>October 11, 2012 15:30</td>
+          <td>
+            <a class='btn' href='jonathan_sampson/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>106</th>
+          <th>Jonas Pfenniger &lt;jonas@pfenniger.name&gt;</th>
+          <td>1</td>
+          <td>28</td>
+          <td>3</td>
+          <td>December 30, 2010 01:38</td>
+          <td>December 30, 2010 01:38</td>
+          <td>
+            <a class='btn' href='jonas_pfenniger/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>107</th>
+          <th>Jon Evans &lt;jon@springyweb.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>October 23, 2009 18:13</td>
+          <td>October 23, 2009 18:13</td>
+          <td>
+            <a class='btn' href='jon_evans/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>108</th>
+          <th>Michael Monteleone &lt;michael@michaelmonteleone.net&gt;</th>
+          <td>1</td>
+          <td>41</td>
+          <td>5</td>
+          <td>January 25, 2010 18:43</td>
+          <td>January 25, 2010 18:43</td>
+          <td>
+            <a class='btn' href='michael_monteleone/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>109</th>
+          <th>Michael Murray &lt;mmurray.wa@gmail.com&gt;</th>
+          <td>1</td>
+          <td>18</td>
+          <td>3</td>
+          <td>March 24, 2011 19:02</td>
+          <td>March 24, 2011 19:02</td>
+          <td>
+            <a class='btn' href='michael_murray/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>110</th>
+          <th>John Firebaugh &lt;john_firebaugh@bigfix.com&gt;</th>
+          <td>1</td>
+          <td>10</td>
+          <td>2</td>
+          <td>April 12, 2011 16:48</td>
+          <td>April 12, 2011 16:48</td>
+          <td>
+            <a class='btn' href='john_firebaugh/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>111</th>
+          <th>tsinha &lt;tsinha@Anthonys-MacBook-Pro.local&gt;</th>
+          <td>1</td>
+          <td>10</td>
+          <td>7</td>
+          <td>April 05, 2012 11:06</td>
+          <td>April 05, 2012 11:06</td>
+          <td>
+            <a class='btn' href='tsinha/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>112</th>
+          <th>Mike Pennisi &lt;mike@mikepennisi.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>August 22, 2012 17:40</td>
+          <td>August 22, 2012 17:40</td>
+          <td>
+            <a class='btn' href='mike_pennisi/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>113</th>
+          <th>Mike Petrovich &lt;michael.c.petrovich@gmail.com&gt;</th>
+          <td>1</td>
+          <td>30</td>
+          <td>2</td>
+          <td>October 16, 2012 12:22</td>
+          <td>October 16, 2012 12:22</td>
+          <td>
+            <a class='btn' href='mike_petrovich/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>114</th>
+          <th>Jeffery To &lt;jeffery.to@gmail.com&gt;</th>
+          <td>1</td>
+          <td>42</td>
+          <td>6</td>
+          <td>June 11, 2012 14:17</td>
+          <td>June 11, 2012 14:17</td>
+          <td>
+            <a class='btn' href='jeffery_to/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>115</th>
+          <th>Mr Speaker &lt;mrspeaker@gmail.com&gt;</th>
+          <td>1</td>
+          <td>20</td>
+          <td>3</td>
+          <td>November 11, 2009 09:46</td>
+          <td>November 11, 2009 09:46</td>
+          <td>
+            <a class='btn' href='mr_speaker/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>116</th>
+          <th>Jared Grippe &lt;jared@deadlyicon.com&gt;</th>
+          <td>1</td>
+          <td>98</td>
+          <td>5</td>
+          <td>October 09, 2010 17:32</td>
+          <td>October 09, 2010 17:32</td>
+          <td>
+            <a class='btn' href='jared_grippe/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>117</th>
+          <th>Nikita Govorov &lt;nikita.govorov@gmail.com&gt;</th>
+          <td>1</td>
+          <td>25</td>
+          <td>1</td>
+          <td>August 19, 2012 20:19</td>
+          <td>August 19, 2012 20:19</td>
+          <td>
+            <a class='btn' href='nikita_govorov/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>118</th>
+          <th>Noah Sloan &lt;noah.sloan@gmail.com&gt;</th>
+          <td>1</td>
+          <td>13</td>
+          <td>6</td>
+          <td>February 01, 2010 21:48</td>
+          <td>February 01, 2010 21:48</td>
+          <td>
+            <a class='btn' href='noah_sloan/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>119</th>
+          <th>Nowres Rafid &lt;nowres.rafed@gmail.com&gt;</th>
+          <td>1</td>
+          <td>8</td>
+          <td>2</td>
+          <td>July 06, 2012 09:58</td>
+          <td>July 06, 2012 09:58</td>
+          <td>
+            <a class='btn' href='nowres_rafid/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>120</th>
+          <th>James Padolsey &lt;jamespadolsey@gmail.com&gt;</th>
+          <td>1</td>
+          <td>42</td>
+          <td>1</td>
+          <td>December 07, 2009 00:37</td>
+          <td>December 07, 2009 00:37</td>
+          <td>
+            <a class='btn' href='james_padolsey/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>121</th>
+          <th>tomviner &lt;github@viner.tv&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>February 06, 2010 01:31</td>
+          <td>February 06, 2010 01:31</td>
+          <td>
+            <a class='btn' href='tomviner/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>122</th>
+          <th>Oskari &lt;admin@o-programs.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>March 06, 2012 17:25</td>
+          <td>March 06, 2012 17:25</td>
+          <td>
+            <a class='btn' href='oskari/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>123</th>
+          <th>Jacob Wright &lt;jacwright@gmail.com&gt;</th>
+          <td>1</td>
+          <td>18</td>
+          <td>15</td>
+          <td>September 07, 2010 10:51</td>
+          <td>September 07, 2010 10:51</td>
+          <td>
+            <a class='btn' href='jacob_wright/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>124</th>
+          <th>Jacob Thornton &lt;jacobthornton@gmail.com&gt;</th>
+          <td>1</td>
+          <td>5</td>
+          <td>1</td>
+          <td>June 19, 2012 17:11</td>
+          <td>June 19, 2012 17:11</td>
+          <td>
+            <a class='btn' href='jacob_thornton/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>125</th>
+          <th>Paul Mclanahan &lt;pmclanahan@gmail.com&gt;</th>
+          <td>1</td>
+          <td>5</td>
+          <td>5</td>
+          <td>September 12, 2007 15:45</td>
+          <td>September 12, 2007 15:45</td>
+          <td>
+            <a class='btn' href='paul_mclanahan/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>126</th>
+          <th>Pinhook &lt;contact@pinhooklabs.com&gt;</th>
+          <td>1</td>
+          <td>4</td>
+          <td>4</td>
+          <td>October 13, 2010 10:30</td>
+          <td>October 13, 2010 10:30</td>
+          <td>
+            <a class='btn' href='pinhook/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>127</th>
+          <th>RafaC3ABl Blais Masson &lt;rafbmasson@gmail.com&gt;</th>
+          <td>1</td>
+          <td>4</td>
+          <td>5</td>
+          <td>December 06, 2011 16:17</td>
+          <td>December 06, 2011 16:17</td>
+          <td>
+            <a class='btn' href='rafa_c3_a_bl_blais_masson/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>128</th>
+          <th>Ralph Whitbeck &lt;ralph.whitbeck@gmail.com&gt;</th>
+          <td>1</td>
+          <td>3</td>
+          <td>3</td>
+          <td>September 17, 2010 12:40</td>
+          <td>September 17, 2010 12:40</td>
+          <td>
+            <a class='btn' href='ralph_whitbeck/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>129</th>
+          <th>J. Ryan Stinnett &lt;jryans@gmail.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>May 17, 2010 16:48</td>
+          <td>May 17, 2010 16:48</td>
+          <td>
+            <a class='btn' href='j._ryan_stinnett/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>130</th>
+          <th>J Bruni &lt;joaohbruni@yahoo.com.br&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>March 06, 2012 17:56</td>
+          <td>March 06, 2012 17:56</td>
+          <td>
+            <a class='btn' href='j_bruni/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>131</th>
+          <th>unknown &lt;Igen005@.upcorp.ad.uprr.com&gt;</th>
+          <td>1</td>
+          <td>2</td>
+          <td>2</td>
+          <td>September 24, 2010 09:37</td>
+          <td>September 24, 2010 09:37</td>
+          <td>
+            <a class='btn' href='unknown/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>132</th>
+          <th>temp01 &lt;temp01irc@gmail.com&gt;</th>
+          <td>1</td>
+          <td>15</td>
+          <td>5</td>
+          <td>September 24, 2010 16:57</td>
+          <td>September 24, 2010 16:57</td>
+          <td>
+            <a class='btn' href='temp01/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>133</th>
+          <th>Rick Waldon &lt;rick@bocoup.com&gt;</th>
+          <td>1</td>
+          <td>5</td>
+          <td>2</td>
+          <td>April 11, 2011 11:32</td>
+          <td>April 11, 2011 11:32</td>
+          <td>
+            <a class='btn' href='rick_waldon/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>134</th>
+          <th>Heungsub Lee &lt;lee@heungsub.net&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>July 07, 2010 12:38</td>
+          <td>July 07, 2010 12:38</td>
+          <td>
+            <a class='btn' href='heungsub_lee/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>135</th>
+          <th>Greg Lavallee &lt;greglavallee@wapolabs.com&gt;</th>
+          <td>1</td>
+          <td>79</td>
+          <td>49</td>
+          <td>October 16, 2012 14:36</td>
+          <td>October 16, 2012 14:36</td>
+          <td>
+            <a class='btn' href='greg_lavallee/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>136</th>
+          <th>Greg Hazel &lt;ghazel@gmail.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>June 14, 2011 15:51</td>
+          <td>June 14, 2011 15:51</td>
+          <td>
+            <a class='btn' href='greg_hazel/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>137</th>
+          <th>Gilmore Davidson &lt;gilmoreorless@gmail.com&gt;</th>
+          <td>1</td>
+          <td>5</td>
+          <td>0</td>
+          <td>April 17, 2011 10:34</td>
+          <td>April 17, 2011 10:34</td>
+          <td>
+            <a class='btn' href='gilmore_davidson/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>138</th>
+          <th>rjgotten &lt;r.j.g.otten@gmail.com&gt;</th>
+          <td>1</td>
+          <td>18</td>
+          <td>16</td>
+          <td>October 17, 2010 08:30</td>
+          <td>October 17, 2010 08:30</td>
+          <td>
+            <a class='btn' href='rjgotten/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>139</th>
+          <th>Roland Eckl &lt;eckl.roland@googlemail.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>October 17, 2012 09:29</td>
+          <td>October 17, 2012 09:29</td>
+          <td>
+            <a class='btn' href='roland_eckl/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>140</th>
+          <th>Russell Holbrook &lt;russell.holbrook@patch.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>November 22, 2010 18:26</td>
+          <td>November 22, 2010 18:26</td>
+          <td>
+            <a class='btn' href='russell_holbrook/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>141</th>
+          <th>Ryan W Tenney &lt;ryan@10e.us&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>October 11, 2010 00:37</td>
+          <td>October 11, 2010 00:37</td>
+          <td>
+            <a class='btn' href='ryan_w_tenney/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>142</th>
+          <th>Sahab Yazdani &lt;sahab.yazdani+github@gmail.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>May 10, 2011 11:20</td>
+          <td>May 10, 2011 11:20</td>
+          <td>
+            <a class='btn' href='sahab_yazdani/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>143</th>
+          <th>Filipe Fortes &lt;filipe@fortes.com&gt;</th>
+          <td>1</td>
+          <td>11</td>
+          <td>6</td>
+          <td>January 05, 2010 05:25</td>
+          <td>January 05, 2010 05:25</td>
+          <td>
+            <a class='btn' href='filipe_fortes/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>144</th>
+          <th>Dominik D. Geyer &lt;dominik.geyer@gmail.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>April 07, 2012 10:13</td>
+          <td>April 07, 2012 10:13</td>
+          <td>
+            <a class='btn' href='dominik_d._geyer/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>145</th>
+          <th>Schalk Neethling &lt;schalk@ossreleasefeed.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>June 14, 2011 16:01</td>
+          <td>June 14, 2011 16:01</td>
+          <td>
+            <a class='btn' href='schalk_neethling/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>146</th>
+          <th>Digitalxero &lt;digitalxero&gt;</th>
+          <td>1</td>
+          <td>52</td>
+          <td>1</td>
+          <td>January 27, 2011 13:35</td>
+          <td>January 27, 2011 13:35</td>
+          <td>
+            <a class='btn' href='digitalxero/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>147</th>
+          <th>Denis Knauf &lt;Denis.Knauf@gmail.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>July 07, 2011 12:13</td>
+          <td>July 07, 2011 12:13</td>
+          <td>
+            <a class='btn' href='denis_knauf/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>148</th>
+          <th>Scott Hughes &lt;hi@scott-hughes.me&gt;</th>
+          <td>1</td>
+          <td>2</td>
+          <td>0</td>
+          <td>May 25, 2011 15:18</td>
+          <td>May 25, 2011 15:18</td>
+          <td>
+            <a class='btn' href='scott_hughes/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>149</th>
+          <th>David Bonner &lt;dbonner@cogolabs.com&gt;</th>
+          <td>1</td>
+          <td>127</td>
+          <td>129</td>
+          <td>October 15, 2012 17:20</td>
+          <td>October 15, 2012 17:20</td>
+          <td>
+            <a class='btn' href='david_bonner/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>150</th>
+          <th>Shi Chuan &lt;shichuanr@gmail.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>October 04, 2011 23:09</td>
+          <td>October 04, 2011 23:09</td>
+          <td>
+            <a class='btn' href='shi_chuan/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>151</th>
+          <th>David Benjamin &lt;davidben@mit.edu&gt;</th>
+          <td>1</td>
+          <td>6</td>
+          <td>3</td>
+          <td>July 07, 2012 17:24</td>
+          <td>July 07, 2012 17:24</td>
+          <td>
+            <a class='btn' href='david_benjamin/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>152</th>
+          <th>Steen Nielsen &lt;swinedk@gmail.com&gt;</th>
+          <td>1</td>
+          <td>4</td>
+          <td>3</td>
+          <td>July 15, 2011 22:21</td>
+          <td>July 15, 2011 22:21</td>
+          <td>
+            <a class='btn' href='steen_nielsen/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>153</th>
+          <th>Dave Riddle &lt;david@joyvuu.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>September 15, 2012 16:19</td>
+          <td>September 15, 2012 16:19</td>
+          <td>
+            <a class='btn' href='dave_riddle/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>154</th>
+          <th>Sylvester Keil &lt;sylvester@keil.or.at&gt;</th>
+          <td>1</td>
+          <td>31</td>
+          <td>3</td>
+          <td>January 15, 2011 13:56</td>
+          <td>January 15, 2011 13:56</td>
+          <td>
+            <a class='btn' href='sylvester_keil/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>155</th>
+          <th>Daniel Pihlstrom &lt;sciolist.se@gmail.com&gt;</th>
+          <td>1</td>
+          <td>18</td>
+          <td>7</td>
+          <td>May 04, 2011 01:07</td>
+          <td>May 04, 2011 01:07</td>
+          <td>
+            <a class='btn' href='daniel_pihlstrom/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>156</th>
+          <th>Daniel Galvez &lt;dgalvez@editablething.com&gt;</th>
+          <td>1</td>
+          <td>54</td>
+          <td>3</td>
+          <td>October 16, 2012 14:59</td>
+          <td>October 16, 2012 14:59</td>
+          <td>
+            <a class='btn' href='daniel_galvez/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>157</th>
+          <th>presbrey &lt;presbrey+jwp@gmail.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>January 22, 2012 14:53</td>
+          <td>January 22, 2012 14:53</td>
+          <td>
+            <a class='btn' href='presbrey/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>158</th>
+          <th>Toby Brain &lt;tobyb@freshview.com&gt;</th>
+          <td>1</td>
+          <td>32</td>
+          <td>3</td>
+          <td>November 06, 2011 16:59</td>
+          <td>November 06, 2011 16:59</td>
+          <td>
+            <a class='btn' href='toby_brain/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>159</th>
+          <th>Tom Fuertes &lt;TomFuertes@gmail.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>October 16, 2012 17:19</td>
+          <td>October 16, 2012 17:19</td>
+          <td>
+            <a class='btn' href='tom_fuertes/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>160</th>
+          <th>Chris Faulkner &lt;thefaulkner@gmail.com&gt;</th>
+          <td>1</td>
+          <td>19</td>
+          <td>19</td>
+          <td>July 11, 2012 09:46</td>
+          <td>July 11, 2012 09:46</td>
+          <td>
+            <a class='btn' href='chris_faulkner/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>161</th>
+          <th>Chad Killingsworth &lt;chadkillingsworth@missouristate.edu&gt;</th>
+          <td>1</td>
+          <td>587</td>
+          <td>576</td>
+          <td>July 05, 2012 15:52</td>
+          <td>July 05, 2012 15:52</td>
+          <td>
+            <a class='btn' href='chad_killingsworth/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>162</th>
+          <th>Vladimir Zhuravlev &lt;private.face@gmail.com&gt;</th>
+          <td>1</td>
+          <td>71</td>
+          <td>37</td>
+          <td>June 15, 2012 21:37</td>
+          <td>June 15, 2012 21:37</td>
+          <td>
+            <a class='btn' href='vladimir_zhuravlev/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>163</th>
+          <th>Vladislav Zarakovsky &lt;vlad.zar@gmail.com&gt;</th>
+          <td>1</td>
+          <td>19</td>
+          <td>21</td>
+          <td>February 13, 2012 17:52</td>
+          <td>February 13, 2012 17:52</td>
+          <td>
+            <a class='btn' href='vladislav_zarakovsky/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>164</th>
+          <th>Wesley Walser &lt;wwalser@atlassian.com&gt;</th>
+          <td>1</td>
+          <td>10</td>
+          <td>4</td>
+          <td>August 19, 2012 22:28</td>
+          <td>August 19, 2012 22:28</td>
+          <td>
+            <a class='btn' href='wesley_walser/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>165</th>
+          <th>Carl Fürstenberg &lt;carl@excito.com&gt;</th>
+          <td>1</td>
+          <td>45</td>
+          <td>20</td>
+          <td>August 07, 2010 00:21</td>
+          <td>August 07, 2010 00:21</td>
+          <td>
+            <a class='btn' href='carl_fürstenberg/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>166</th>
+          <th>Yehuda Katz &lt;wycats@12-189-125-93.att-inc.com&gt;</th>
+          <td>1</td>
+          <td>0</td>
+          <td>5</td>
+          <td>January 14, 2010 00:45</td>
+          <td>January 14, 2010 00:45</td>
+          <td>
+            <a class='btn' href='yehuda_katz/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>167</th>
+          <th>visionmedia &lt;tj@vision-media.ca&gt;</th>
+          <td>1</td>
+          <td>4</td>
+          <td>4</td>
+          <td>October 23, 2009 23:52</td>
+          <td>October 23, 2009 23:52</td>
+          <td>
+            <a class='btn' href='visionmedia/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>168</th>
+          <th>Callum Macrae &lt;callum@lynxphp.com&gt;</th>
+          <td>1</td>
+          <td>5</td>
+          <td>6</td>
+          <td>September 25, 2012 16:19</td>
+          <td>September 25, 2012 16:19</td>
+          <td>
+            <a class='btn' href='callum_macrae/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>169</th>
+          <th>Brandon Sterne &lt;bsterne@mozilla.com&gt;</th>
+          <td>1</td>
+          <td>34</td>
+          <td>24</td>
+          <td>January 17, 2011 16:31</td>
+          <td>January 17, 2011 16:31</td>
+          <td>
+            <a class='btn' href='brandon_sterne/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>170</th>
+          <th>Berker Peksag &lt;berker.peksag@gmail.com&gt;</th>
+          <td>1</td>
+          <td>2</td>
+          <td>7</td>
+          <td>November 06, 2011 16:38</td>
+          <td>November 06, 2011 16:38</td>
+          <td>
+            <a class='btn' href='berker_peksag/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>171</th>
+          <th>Batiste Bieler &lt;batiste.bieler@gmail.com&gt;</th>
+          <td>1</td>
+          <td>25</td>
+          <td>9</td>
+          <td>December 14, 2009 16:24</td>
+          <td>December 14, 2009 16:24</td>
+          <td>
+            <a class='btn' href='batiste_bieler/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>172</th>
+          <th>avaly &lt;github-com@agachi.name&gt;</th>
+          <td>1</td>
+          <td>54</td>
+          <td>2</td>
+          <td>May 13, 2011 12:09</td>
+          <td>May 13, 2011 12:09</td>
+          <td>
+            <a class='btn' href='avaly/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>173</th>
+          <th>awgy &lt;josh.varner@gmail.com&gt;</th>
+          <td>1</td>
+          <td>10</td>
+          <td>2</td>
+          <td>February 12, 2011 03:35</td>
+          <td>February 12, 2011 03:35</td>
+          <td>
+            <a class='btn' href='awgy/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>174</th>
+          <th>Anton Kovalyov &lt;anton@kovalyov.net&gt;</th>
+          <td>1</td>
+          <td>7</td>
+          <td>2</td>
+          <td>February 02, 2011 00:32</td>
+          <td>February 02, 2011 00:32</td>
+          <td>
+            <a class='btn' href='anton_kovalyov/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>175</th>
+          <th>carldanley &lt;carldanley@gmail.com&gt;</th>
+          <td>1</td>
+          <td>177</td>
+          <td>166</td>
+          <td>October 16, 2012 11:15</td>
+          <td>October 16, 2012 11:15</td>
+          <td>
+            <a class='btn' href='carldanley/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>176</th>
+          <th>carpie &lt;elcarpie@gmail.com&gt;</th>
+          <td>1</td>
+          <td>20</td>
+          <td>2</td>
+          <td>January 19, 2011 17:37</td>
+          <td>January 19, 2011 17:37</td>
+          <td>
+            <a class='btn' href='carpie/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>177</th>
+          <th>cmc3cn &lt;59194618@qq.com&gt;</th>
+          <td>1</td>
+          <td>3</td>
+          <td>3</td>
+          <td>January 11, 2012 22:11</td>
+          <td>January 11, 2012 22:11</td>
+          <td>
+            <a class='btn' href='cmc3cn/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>178</th>
+          <th>Andy Monat &lt;amonat@gmail.com&gt;</th>
+          <td>1</td>
+          <td>0</td>
+          <td>6</td>
+          <td>March 04, 2012 12:54</td>
+          <td>March 04, 2012 12:54</td>
+          <td>
+            <a class='btn' href='andy_monat/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>179</th>
+          <th>Andrea Giammarchi &lt;andrea.giammarchi@gmail.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>November 17, 2009 10:45</td>
+          <td>November 17, 2009 10:45</td>
+          <td>
+            <a class='btn' href='andrea_giammarchi/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>180</th>
+          <th>Allen J Schmidt Jr &lt;cobrasoft@gmail.com&gt;</th>
+          <td>1</td>
+          <td>40</td>
+          <td>2</td>
+          <td>October 15, 2012 20:22</td>
+          <td>October 15, 2012 20:22</td>
+          <td>
+            <a class='btn' href='allen_j_schmidt_jr/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>181</th>
+          <th>Alexis Abril &lt;alexis.abril@gmail.com&gt;</th>
+          <td>1</td>
+          <td>26</td>
+          <td>5</td>
+          <td>April 10, 2011 15:17</td>
+          <td>April 10, 2011 15:17</td>
+          <td>
+            <a class='btn' href='alexis_abril/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>182</th>
+          <th>Akintayo Akinwunmi &lt;aakinwunmi@judge.com&gt;</th>
+          <td>1</td>
+          <td>10</td>
+          <td>4</td>
+          <td>October 16, 2012 09:51</td>
+          <td>October 16, 2012 09:51</td>
+          <td>
+            <a class='btn' href='akintayo_akinwunmi/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>183</th>
+          <th>kborchers &lt;kris.borchers@gmail.com&gt;</th>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>June 12, 2012 11:01</td>
+          <td>June 12, 2012 11:01</td>
+          <td>
+            <a class='btn' href='kborchers/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>184</th>
+          <th>Rich Dougherty &lt;rich@rd.gen.nz&gt;</th>
+          <td>1</td>
+          <td>8</td>
+          <td>3</td>
+          <td>November 11, 2009 13:56</td>
+          <td>November 11, 2009 13:56</td>
+          <td>
+            <a class='btn' href='rich_dougherty/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>185</th>
+          <th>jeresig &lt;jeresig@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='jeresig/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>186</th>
+          <th>jzaefferer &lt;joern.zaefferer@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='jzaefferer/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>187</th>
+          <th>jaubourg &lt;j@ubourg.net&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='jaubourg/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>188</th>
+          <th>gnarf &lt;gnarf@gnarf.net&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='gnarf/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>189</th>
+          <th>dmethvin &lt;dave.methvin@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='dmethvin/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>190</th>
+          <th>danheberden &lt;danheberden@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='danheberden/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>191</th>
+          <th>brandonaaron &lt;brandon.aaron@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='brandonaaron/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>192</th>
+          <th>malsup &lt;malsup@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='malsup/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>193</th>
+          <th>Timo Tijhof &lt;krinklemail@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='timo_tijhof/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>194</th>
+          <th>Robert Katić &lt;robert.katic@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='robert_katić/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>195</th>
+          <th>rkatic &lt;robert.katic@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='rkatic/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>196</th>
+          <th>rwldrn &lt;waldron.rick@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='rwldrn/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>197</th>
+          <th>Rick Waldron waldron.rick@gmail.com &lt;waldron.rick@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='rick_waldron_waldron.rick@gmail.com/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>198</th>
+          <th>Richard Worth &lt;rdworth@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='richard_worth/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>199</th>
+          <th>timmywil &lt;tim.willison@thisismedium.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='timmywil/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>200</th>
+          <th>timmywil &lt;timmywillisn@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='timmywil/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>201</th>
+          <th>Oleg Gaidarenko &lt;markelog@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='oleg_gaidarenko/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>202</th>
+          <th>Mike Alup &lt;malsup@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='mike_alup/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>203</th>
+          <th>Iraê Carvalho &lt;irae@irae.pro.br&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='iraê_carvalho/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>204</th>
+          <th>InfinitiesLoop &lt;dareed@microsoft.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='infinities_loop/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>205</th>
+          <th>Erick Ruiz de Chavez &lt;erickrdch@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='erick_ruiz_de_chavez/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>206</th>
+          <th>Carl Fürstenberg &lt;azatoth@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='carl_fürstenberg/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+        <tr>
+          <th>207</th>
+          <th>wycats &lt;wycats@gmail.com&gt;</th>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td></td>
+          <td></td>
+          <td>
+            <a class='btn' href='wycats/activity/by_date.html'>More</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+    </div>
+  </body>
+</html>

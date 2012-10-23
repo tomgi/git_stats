@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>GitStats - rails</title>
+    <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css' />
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../../../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css' />
+    <script src='../../../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../../../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../../../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../../../index.html'>GitStats - rails</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../../../general.html'>General</a>
+              </li>
+              <li class='active'>
+                <a href='../../../activity/by_date.html'>Activity</a>
+              </li>
+              <li class='active'>
+                <a href='../../best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../../../files/by_date.html'>Files</a>
+              </li>
+              <li class=''>
+                <a href='../../../lines/by_date.html'>Lines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class='active'>
+            <a href='by_date.html'>Activity by date</a>
+          </li>
+          <li class=''>
+            <a href='hour_of_day.html'>Hour of day</a>
+          </li>
+          <li class=''>
+            <a href='day_of_week.html'>Day of week</a>
+          </li>
+          <li class=''>
+            <a href='hour_of_week.html'>Hour of week</a>
+          </li>
+          <li class=''>
+            <a href='month_of_year.html'>Month of year</a>
+          </li>
+          <li class=''>
+            <a href='year.html'>Year</a>
+          </li>
+          <li class=''>
+            <a href='year_month.html'>Year and month</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header pagination-centered'>
+              <h1>Activity by date</h1>
+              <h3>Sebastian Martinez &lt;sebastian@wyeworks.com&gt;</h3>
+            </div>
+          </div>
+                  <script type="text/javascript">
+                  (function() {
+                    var onload = window.onload;
+                    window.onload = function(){
+                      if (typeof onload == "function") onload();
+                              var options, chart;
+                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1268921475000,1 ],[ 1268929512000,1 ],[ 1268934822000,1 ],[ 1269022873000,1 ],[ 1269350443000,1 ],[ 1269355204000,1 ],[ 1301092485000,1 ],[ 1301094433000,1 ],[ 1301150546000,1 ],[ 1301152419000,1 ],[ 1301262741000,1 ],[ 1301263948000,1 ],[ 1301318381000,1 ],[ 1301363173000,1 ],[ 1301363383000,1 ],[ 1301402442000,1 ],[ 1302563362000,1 ],[ 1302572607000,1 ],[ 1302645521000,1 ],[ 1302649850000,1 ],[ 1302699541000,1 ],[ 1302720164000,1 ],[ 1302735271000,1 ],[ 1302748685000,1 ],[ 1302784582000,1 ],[ 1302786250000,1 ],[ 1302786308000,1 ],[ 1302786691000,1 ],[ 1302789588000,1 ],[ 1302799500000,1 ],[ 1302824232000,1 ],[ 1302827180000,1 ],[ 1302887317000,1 ],[ 1302887590000,1 ],[ 1302980525000,1 ],[ 1302984886000,1 ],[ 1302985924000,1 ],[ 1302989204000,1 ],[ 1302989395000,1 ],[ 1302995394000,1 ],[ 1303056408000,1 ],[ 1303079816000,1 ],[ 1303079912000,1 ],[ 1303079980000,1 ],[ 1303080173000,1 ],[ 1303080274000,1 ],[ 1303080466000,1 ],[ 1303081959000,1 ],[ 1303082573000,1 ],[ 1303083530000,1 ],[ 1303083633000,1 ],[ 1303129980000,1 ],[ 1303130091000,1 ],[ 1303131775000,1 ],[ 1303180647000,1 ],[ 1303266100000,1 ],[ 1303485263000,1 ],[ 1303485773000,1 ],[ 1303486553000,1 ],[ 1303487146000,1 ],[ 1303487582000,1 ],[ 1303487945000,1 ],[ 1303512270000,1 ],[ 1303514004000,1 ],[ 1303514425000,1 ],[ 1303514780000,1 ],[ 1303515540000,1 ],[ 1303515566000,1 ],[ 1303516215000,1 ],[ 1303516682000,1 ],[ 1303516889000,1 ],[ 1303516969000,1 ],[ 1303517615000,1 ],[ 1303517871000,1 ],[ 1303518630000,1 ],[ 1303685052000,1 ],[ 1303840686000,1 ],[ 1303871170000,1 ],[ 1303871351000,1 ],[ 1303871831000,1 ],[ 1304122729000,1 ],[ 1304122953000,1 ],[ 1304206525000,1 ],[ 1304263696000,1 ],[ 1304274807000,1 ],[ 1304275561000,1 ],[ 1304275853000,1 ],[ 1304276367000,1 ],[ 1304306136000,1 ],[ 1304343454000,1 ],[ 1304374068000,1 ],[ 1304379031000,1 ],[ 1304467877000,1 ],[ 1304468738000,1 ],[ 1304468762000,1 ],[ 1304469499000,1 ],[ 1304532454000,1 ],[ 1304532820000,1 ],[ 1304535107000,1 ],[ 1304560151000,1 ],[ 1304702605000,1 ],[ 1304865116000,1 ],[ 1304989564000,1 ],[ 1304990460000,1 ],[ 1305057332000,1 ],[ 1305066517000,1 ],[ 1305066899000,1 ],[ 1305066960000,1 ],[ 1305067174000,1 ],[ 1305069587000,1 ],[ 1305071731000,1 ],[ 1305071916000,1 ],[ 1305506029000,1 ],[ 1305674495000,1 ],[ 1305848803000,1 ],[ 1305849093000,1 ],[ 1305939368000,1 ],[ 1305994495000,1 ],[ 1306007465000,1 ],[ 1306008659000,1 ],[ 1306155832000,1 ],[ 1306192198000,1 ],[ 1306192953000,1 ],[ 1306193044000,1 ],[ 1306193950000,1 ],[ 1306194798000,1 ],[ 1306195105000,1 ],[ 1306195245000,1 ],[ 1306197900000,1 ],[ 1306364586000,1 ],[ 1306364946000,1 ],[ 1306365229000,1 ],[ 1306443080000,1 ],[ 1306617572000,1 ],[ 1307493914000,1 ],[ 1307585623000,1 ],[ 1307585639000,1 ],[ 1307751006000,1 ],[ 1307831521000,1 ],[ 1308059618000,1 ],[ 1308060060000,1 ],[ 1313108937000,1 ],[ 1313450428000,1 ],[ 1313793955000,1 ],[ 1314903728000,1 ],[ 1328186057000,1 ],[ 1348761681000,1 ],[ 1348851487000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
+                  
+                  chart = new Highcharts.StockChart(options);
+          
+                    };
+                  })()
+                  </script>
+          <div id="charts.activity_by_date"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

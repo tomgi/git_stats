@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'git_stats/core_extensions/hash'
 require 'git_stats/core_extensions/string'
 require 'git_stats/core_extensions/symbol'

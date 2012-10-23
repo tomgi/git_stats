@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module GitStats
   module GitData
     class CommandRunner

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'git_stats/hash_initializable'
 
 module GitStats

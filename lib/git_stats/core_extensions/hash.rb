@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Hash
   def to_key_indexed_array(params = {})
     raise ArgumentError.new('all the keys must be numbers to convert to key indexed array') unless all? { |k, v| k.is_a? Numeric }

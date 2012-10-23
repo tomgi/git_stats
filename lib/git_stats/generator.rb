@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module GitStats
   class Generator
     delegate :add_command_observer, to: :@repo

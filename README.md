@@ -1,4 +1,4 @@
-# GitStats
+# GitStats [![Build Status](https://secure.travis-ci.org/tomgi/git_stats.png)](https://secure.travis-ci.org/tomgi/git_stats) [![Build Status](https://codeclimate.com/badge.png)](https://codeclimate.com/github/tomgi/git_stats)
 
 GitStats is a git repository statistics generator.
 It browses the repository and outputs html page with statistics.
@@ -31,8 +31,6 @@ It browses the repository and outputs html page with statistics.
     > commit.files
     => [...]
 
-## Build Status
-[![Build Status](https://secure.travis-ci.org/tomgi/git_stats.png)](https://secure.travis-ci.org/tomgi/git_stats)
 
 ## Contributing
 

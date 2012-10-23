@@ -1,29 +1,40 @@
-# Gitstats
+# GitStats
 
-TODO: Write a gem description
+GitStats is a git repository statistics generator.
+It browses the repository and outputs html page with some statistics.
+
+## Examples
+[]
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'git_stats'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install git_stats
 
 ## Usage
 
-TODO: Write usage instructions here
+# Generator
+
+    $ git_stats repo_path output_directory
+    $ favorite_browser output_directory/index.html
+
+# API usage example
+
+    > repo = GitStats::GitData::Repo.new(path: '.')
+    > repo.authors
+    => [...]
+    > repo.commits
+    => [...]
+    > commit.files
+    => [...]
+
+## Build Status
+[![Build Status](https://secure.travis-ci.org/tomgi/git_stats.png)](https://secure.travis-ci.org/tomgi/git_stats)
 
 ## Contributing
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+3. Commit your changes (`git commit -am 'Added some feature'`)
+4. Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+5. Push to the branch (`git push origin my-new-feature`)
+6. Create new Pull Request

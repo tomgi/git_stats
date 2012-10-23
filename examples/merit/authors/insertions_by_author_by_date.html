@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>GitStats - merit</title>
+    <link href='../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css' />
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css' />
+    <script src='../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../index.html'>GitStats - merit</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../general.html'>General</a>
+              </li>
+              <li class=''>
+                <a href='../activity/by_date.html'>Activity</a>
+              </li>
+              <li class='active'>
+                <a href='best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../files/by_date.html'>Files</a>
+              </li>
+              <li class=''>
+                <a href='../lines/by_date.html'>Lines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class=''>
+            <a href='best_authors.html'>Best authors</a>
+          </li>
+          <li class=''>
+            <a href='commits_sum_by_author_by_date.html'>Commits sum by author by date</a>
+          </li>
+          <li class=''>
+            <a href='changed_lines_by_author_by_date.html'>Changed lines by author by date</a>
+          </li>
+          <li class='active'>
+            <a href='insertions_by_author_by_date.html'>Lines added by author by date</a>
+          </li>
+          <li class=''>
+            <a href='deletions_by_author_by_date.html'>Lines deleted by author by date</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header'>
+              <h1 class='pagination-centered'>Lines added by author by date</h1>
+            </div>
+                    <script type="text/javascript">
+                    (function() {
+                      var onload = window.onload;
+                      window.onload = function(){
+                        if (typeof onload == "function") onload();
+                                var options, chart;
+                    options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.insertions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Tute Costa","type": "spline","data": [ [ 1303419378000,10556 ],[ 1304618242000,10575 ],[ 1304624710000,10584 ],[ 1304646090000,10598 ],[ 1304650513000,10677 ],[ 1304654901000,10727 ],[ 1304655389000,10748 ],[ 1305386537000,10787 ],[ 1305388436000,10833 ],[ 1305391788000,10901 ],[ 1305393127000,10940 ],[ 1305500553000,10998 ],[ 1305505966000,11035 ],[ 1305506877000,11054 ],[ 1305845047000,11080 ],[ 1305847224000,11134 ],[ 1305853109000,11165 ],[ 1305859605000,11195 ],[ 1305893703000,11213 ],[ 1305894545000,11246 ],[ 1306283594000,11329 ],[ 1306513194000,11371 ],[ 1307038108000,11404 ],[ 1307040027000,11425 ],[ 1307294220000,11449 ],[ 1307464604000,11495 ],[ 1307465701000,11525 ],[ 1307468448000,11544 ],[ 1307468876000,11550 ],[ 1307471104000,11574 ],[ 1307635199000,11586 ],[ 1307715094000,11608 ],[ 1307909041000,11630 ],[ 1307925295000,11644 ],[ 1308071599000,12087 ],[ 1308080689000,12235 ],[ 1308081663000,12242 ],[ 1308852170000,12588 ],[ 1308857118000,12669 ],[ 1308858721000,12711 ],[ 1308863518000,12836 ],[ 1308865134000,12870 ],[ 1309878298000,12950 ],[ 1310439833000,13010 ],[ 1310440612000,13011 ],[ 1310762160000,13014 ],[ 1312212759000,13043 ],[ 1312533515000,13054 ],[ 1312814795000,13068 ],[ 1312820272000,13073 ],[ 1313020450000,13086 ],[ 1313638244000,13136 ],[ 1313638705000,13143 ],[ 1313722917000,13160 ],[ 1315316942000,13168 ],[ 1315317733000,13172 ],[ 1315319610000,13178 ],[ 1315320318000,13179 ],[ 1315324773000,13187 ],[ 1315332543000,13189 ],[ 1315522381000,13201 ],[ 1316198577000,13228 ],[ 1316808325000,13235 ],[ 1320424291000,13238 ],[ 1322247006000,13259 ],[ 1328534484000,13312 ],[ 1328800748000,13328 ],[ 1328804084000,13331 ],[ 1328809533000,13343 ],[ 1330479470000,13531 ],[ 1330480109000,13539 ],[ 1330480608000,13561 ],[ 1330481034000,13574 ],[ 1330481485000,13580 ],[ 1330481685000,13581 ],[ 1330555406000,13585 ],[ 1331299522000,13680 ],[ 1331301978000,13724 ],[ 1331303973000,13783 ],[ 1331304598000,13801 ],[ 1331307946000,13850 ],[ 1331323349000,13951 ],[ 1331578796000,13960 ],[ 1331925234000,13965 ],[ 1331925394000,13972 ],[ 1331929004000,13977 ],[ 1332037380000,14052 ],[ 1332423298000,14073 ],[ 1332643327000,14123 ],[ 1333288718000,14133 ],[ 1333984823000,14137 ],[ 1334026331000,14183 ],[ 1334026698000,14193 ],[ 1334067660000,14216 ],[ 1334068398000,14221 ],[ 1334068819000,14241 ],[ 1334069198000,14250 ],[ 1334076799000,14404 ],[ 1334086764000,14407 ],[ 1334086869000,14408 ],[ 1334269714000,14409 ],[ 1334653716000,14410 ],[ 1334807548000,14412 ],[ 1335104273000,14458 ],[ 1335106396000,14620 ],[ 1335480616000,14666 ],[ 1335524587000,14670 ],[ 1335654110000,14761 ],[ 1337639492000,14787 ],[ 1337642060000,14814 ],[ 1337642739000,14821 ],[ 1338042900000,14862 ],[ 1338047831000,14900 ],[ 1338758697000,14904 ],[ 1338929421000,14946 ],[ 1338935230000,14946 ],[ 1338988455000,14953 ],[ 1338991196000,14957 ],[ 1339356273000,14960 ],[ 1339380099000,14960 ],[ 1339380564000,14969 ],[ 1339905204000,14971 ],[ 1340128351000,14974 ],[ 1340155439000,14974 ],[ 1340769438000,14974 ],[ 1340769736000,14976 ],[ 1341168827000,14981 ],[ 1341494609000,14989 ],[ 1342365515000,15015 ],[ 1342366559000,15034 ],[ 1342367215000,15038 ],[ 1342367344000,15041 ],[ 1342450707000,15042 ],[ 1342451117000,15044 ],[ 1343797165000,15050 ],[ 1343799130000,15050 ],[ 1343799191000,15052 ],[ 1343933353000,15100 ],[ 1343936503000,15103 ],[ 1344208756000,15121 ],[ 1344208865000,15123 ],[ 1344217251000,15129 ],[ 1344957948000,15131 ],[ 1345210788000,15135 ],[ 1347023707000,15138 ],[ 1350142493000,15138 ],[ 1350147109000,15145 ],[ 1350147109000,15272 ],[ 1350302437000,15272 ],[ 1350302572000,15272 ],[ 1350745922000,15300 ],[ 1350871395000,15336 ],[ 1350878294000,15354 ],[ 1350878695000,15366 ] ] },{ "name": "Jason Lee","type": "spline","data": [ [ 1338371404000,38 ],[ 1338372599000,45 ],[ 1338794337000,51 ],[ 1338794374000,10296 ],[ 1338794496000,10296 ],[ 1338862744000,10302 ],[ 1338863321000,10302 ],[ 1338864744000,10302 ],[ 1339379136000,10368 ] ] },{ "name": "Mark Borcherding","type": "spline","data": [ [ 1343422338000,35 ],[ 1343422607000,36 ],[ 1344033139000,69 ] ] },{ "name": "Tomasz Gieniusz","type": "spline","data": [ [ 1343671119000,18 ],[ 1343671157000,20 ],[ 1343746944000,50 ],[ 1343747204000,52 ],[ 1343799088000,52 ] ] },{ "name": "Raison Dsouza","type": "spline","data": [ [ 1350300617000,9 ] ] }] };
+                    
+                    chart = new Highcharts.StockChart(options);
+            
+                      };
+                    })()
+                    </script>
+            <div id="charts.insertions_by_author_by_date"></div>
+            <small>
+              <center>5 best authors shown</center>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

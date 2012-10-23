@@ -16,12 +16,12 @@ It browses the repository and outputs html page with some statistics.
 
 ## Usage
 
-# Generator
+### Generator
 
     $ git_stats repo_path output_directory
     $ favorite_browser output_directory/index.html
 
-# API usage example
+### API usage example
 
     > repo = GitStats::GitData::Repo.new(path: '.')
     > repo.authors

@@ -10,7 +10,7 @@ module GitStats
         def commits_sum_by_author_by_date(limit = 4)
           Chart.new do |f|
             f.multi_date_chart(
-                data: @authors.sort_by { |author| -author.commits.size }[0..limit].map { |author| {name: author.email, data: author.commits_sum_by_date} },
+                data: @authors.sort_by { |author| -author.commits.size }[0..limit].map { |author| {name: author.name, data: author.commits_sum_by_date} },
                 title: :lines_by_date.t,
                 y_text: :lines.t
             )
@@ -21,7 +21,7 @@ module GitStats
           define_method "#{method}_by_author_by_date" do |limit = 4|
             Chart.new do |f|
               f.multi_date_chart(
-                  data: @authors.sort_by { |author| -author.send(method) }[0..limit].map { |author| {name: author.email, data: author.send("#{method}_by_date")} },
+                  data: @authors.sort_by { |author| -author.send(method) }[0..limit].map { |author| {name: author.name, data: author.send("#{method}_by_date")} },
                   title: :lines_by_date.t,
                   y_text: :lines.t
               )

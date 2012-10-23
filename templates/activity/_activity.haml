@@ -19,7 +19,7 @@
     .tab-pane.active
       .page-header.pagination-centered
         %h1= page.t
-        %h3= author.respond_to?(:name) ? author.name : ""
+        %h3= "#{author.respond_to?(:name) ? author.name : ""} #{author.respond_to?(:email) ? "&lt;#{author.email}&gt;" : ""}"
     - if page == :activity_by_date
       = high_stock("charts.activity_by_date", charts.activity_by_date(author))
 

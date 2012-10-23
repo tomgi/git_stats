@@ -1,7 +1,7 @@
 # GitStats
 
 GitStats is a git repository statistics generator.
-It browses the repository and outputs html page with some statistics.
+It browses the repository and outputs html page with statistics.
 
 ## Examples
 * [devise](http://tomgi.github.com/git_stats/examples/devise/index.html)

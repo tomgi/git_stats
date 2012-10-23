@@ -7,6 +7,7 @@ It browses the repository and outputs html page with statistics.
 * [devise](http://tomgi.github.com/git_stats/examples/devise/index.html)
 * [devise_invitable](http://tomgi.github.com/git_stats/examples/devise_invitable/index.html)
 * [jquery](http://tomgi.github.com/git_stats/examples/jquery/index.html)
+* [merit](http://tomgi.github.com/git_stats/examples/merit/index.html)
 * [paperclip](http://tomgi.github.com/git_stats/examples/paperclip/index.html)
 * [rails](http://tomgi.github.com/git_stats/examples/rails/index.html)
 

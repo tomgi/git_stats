@@ -21,7 +21,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency('actionpack')
   gem.add_dependency('tilt')
   gem.add_dependency('haml')
-  gem.add_dependency('launchy')
   gem.add_dependency('lazy_high_charts_tomgi')
   gem.add_dependency('i18n')
 end

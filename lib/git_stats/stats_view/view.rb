@@ -60,7 +60,12 @@ module GitStats
       end
 
       def prepare_static_content
+        create_out_dir
         FileUtils.cp_r(Dir["../../../../templates/static/*".absolute_path], @out_path)
+      end
+
+      def create_out_dir
+        FileUtils.mkdir_p(@out_path) unless Dir.exists?(@out_path)
       end
 
       def prepare_assets

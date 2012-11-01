@@ -13,11 +13,6 @@ describe GitStats::Generator do
     expect { generator }.to raise_error(ArgumentError)
   end
 
-  it "should raise exception if given out directory doesn't exist" do
-    Dir.should_receive(:exists?).with(out_path).and_return(false)
-    expect { generator }.to raise_error(ArgumentError)
-  end
-
   it 'should pass command observer to repo' do
     repo = double('repo')
     GitStats::GitData::Repo.should_receive(:new).with(path: repo_path).and_return(repo)

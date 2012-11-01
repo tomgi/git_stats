@@ -17,6 +17,8 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
+  gem.required_ruby_version = Gem::Requirement.new(">= 1.9.2")
+
   gem.add_dependency('activesupport')
   gem.add_dependency('actionpack')
   gem.add_dependency('tilt')

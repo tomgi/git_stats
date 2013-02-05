@@ -81,10 +81,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1214902340000,1 ],[ 1230252719000,1 ],[ 1230452817000,1 ],[ 1230459670000,1 ],[ 1230489708000,1 ],[ 1230491127000,1 ],[ 1230491883000,1 ],[ 1230497249000,1 ],[ 1230497275000,1 ],[ 1230498952000,1 ],[ 1230501006000,1 ],[ 1230582717000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1214902340000,1 ],[ 1230252719000,1 ],[ 1230452817000,1 ],[ 1230459670000,1 ],[ 1230489708000,1 ],[ 1230491127000,1 ],[ 1230491883000,1 ],[ 1230497249000,1 ],[ 1230497275000,1 ],[ 1230498952000,1 ],[ 1230501006000,1 ],[ 1230582717000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
                   
-                  chart = new Highcharts.StockChart(options);
+                  window.chart_charts.activity_by_date = new Highcharts.StockChart(options);
           
                     };
                   })()

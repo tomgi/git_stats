@@ -81,10 +81,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1211534140000,1 ],[ 1211534899000,1 ],[ 1211535877000,1 ],[ 1211725024000,1 ],[ 1218123813000,1 ],[ 1219919964000,1 ],[ 1236721006000,1 ],[ 1236839397000,1 ],[ 1265440788000,1 ],[ 1265456882000,1 ],[ 1332961546000,1 ],[ 1345905685000,1 ],[ 1347790956000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1211534140000,1 ],[ 1211534899000,1 ],[ 1211535877000,1 ],[ 1211725024000,1 ],[ 1218123813000,1 ],[ 1219919964000,1 ],[ 1236721006000,1 ],[ 1236839397000,1 ],[ 1265440788000,1 ],[ 1265456882000,1 ],[ 1332961546000,1 ],[ 1345905685000,1 ],[ 1347790956000,1 ],[ 1351165532000,1 ],[ 1351442884000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
                   
-                  chart = new Highcharts.StockChart(options);
+                  window.chart_charts.activity_by_date = new Highcharts.StockChart(options);
           
                     };
                   })()

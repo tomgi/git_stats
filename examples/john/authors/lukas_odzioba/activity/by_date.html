@@ -73,7 +73,7 @@
           <div class='tab-pane active'>
             <div class='page-header pagination-centered'>
               <h1>Activity by date</h1>
-              <h3>Lukas Odzioba &lt;lukas.odzioba@gmail.com&gt;</h3>
+              <h3>Lukas Odzioba &lt;ukasz@openwall.net&gt;</h3>
             </div>
           </div>
                   <script type="text/javascript">
@@ -81,10 +81,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1327367229000,1 ],[ 1329577161000,1 ],[ 1330624666000,1 ],[ 1331301209000,1 ],[ 1331384453000,1 ],[ 1333275912000,1 ],[ 1334280872000,1 ],[ 1335752474000,1 ],[ 1335753298000,1 ],[ 1335764704000,1 ],[ 1338551567000,1 ],[ 1338624743000,1 ],[ 1339524868000,1 ],[ 1339620652000,1 ],[ 1340322486000,1 ],[ 1340575492000,1 ],[ 1340575706000,1 ],[ 1340608566000,1 ],[ 1340608721000,1 ],[ 1340674357000,1 ],[ 1340695202000,1 ],[ 1340733797000,1 ],[ 1341000859000,1 ],[ 1341990708000,1 ],[ 1343000609000,1 ],[ 1343004245000,1 ],[ 1344465536000,1 ],[ 1344733890000,1 ],[ 1350029704000,1 ],[ 1350030631000,1 ],[ 1350031208000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1327367229000,1 ],[ 1329577161000,1 ],[ 1330624666000,1 ],[ 1331301209000,1 ],[ 1331384453000,1 ],[ 1333275912000,1 ],[ 1334280872000,1 ],[ 1335752474000,1 ],[ 1335753298000,1 ],[ 1335764704000,1 ],[ 1338551567000,1 ],[ 1338624743000,1 ],[ 1339524868000,1 ],[ 1339620652000,1 ],[ 1340322486000,1 ],[ 1340575492000,1 ],[ 1340575706000,1 ],[ 1340608566000,1 ],[ 1340608721000,1 ],[ 1340674357000,1 ],[ 1340695202000,1 ],[ 1340733797000,1 ],[ 1341000859000,1 ],[ 1341990708000,1 ],[ 1343000609000,1 ],[ 1343004245000,1 ],[ 1344465536000,1 ],[ 1344733890000,1 ],[ 1350029704000,1 ],[ 1350030631000,1 ],[ 1350031208000,1 ],[ 1357062575000,1 ],[ 1357238576000,1 ],[ 1357321156000,1 ],[ 1357340217000,1 ],[ 1358049012000,1 ],[ 1358328465000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
                   
-                  chart = new Highcharts.StockChart(options);
+                  window.chart_charts.activity_by_date = new Highcharts.StockChart(options);
           
                     };
                   })()

@@ -106,7 +106,7 @@
             </tr>
             <tr>
               <th>Commits</th>
-              <td>28</td>
+              <td>29</td>
               <td>15</td>
               <td>8</td>
               <td>3</td>
@@ -115,48 +115,48 @@
               <td>0</td>
               <td>0</td>
               <td>3</td>
-              <td>3</td>
-              <td>11</td>
-              <td>24</td>
-              <td>28</td>
-              <td>16</td>
+              <td>4</td>
+              <td>13</td>
+              <td>27</td>
+              <td>31</td>
+              <td>19</td>
+              <td>19</td>
+              <td>21</td>
+              <td>25</td>
               <td>12</td>
-              <td>17</td>
-              <td>23</td>
-              <td>9</td>
               <td>11</td>
-              <td>12</td>
-              <td>6</td>
-              <td>9</td>
+              <td>19</td>
+              <td>11</td>
+              <td>11</td>
               <td>32</td>
-              <td>34</td>
+              <td>36</td>
             </tr>
             <tr>
               <th>Percentage</th>
-              <td>9.2</td>
-              <td>4.9</td>
-              <td>2.6</td>
-              <td>1.0</td>
+              <td>8.3</td>
+              <td>4.3</td>
+              <td>2.3</td>
+              <td>0.9</td>
               <td>0.0</td>
               <td>0.3</td>
               <td>0.0</td>
               <td>0.0</td>
-              <td>1.0</td>
-              <td>1.0</td>
-              <td>3.6</td>
-              <td>7.9</td>
-              <td>9.2</td>
-              <td>5.2</td>
-              <td>3.9</td>
-              <td>5.6</td>
-              <td>7.5</td>
-              <td>3.0</td>
-              <td>3.6</td>
-              <td>3.9</td>
-              <td>2.0</td>
-              <td>3.0</td>
-              <td>10.5</td>
-              <td>11.1</td>
+              <td>0.9</td>
+              <td>1.1</td>
+              <td>3.7</td>
+              <td>7.7</td>
+              <td>8.9</td>
+              <td>5.4</td>
+              <td>5.4</td>
+              <td>6.0</td>
+              <td>7.1</td>
+              <td>3.4</td>
+              <td>3.1</td>
+              <td>5.4</td>
+              <td>3.1</td>
+              <td>3.1</td>
+              <td>9.1</td>
+              <td>10.3</td>
             </tr>
           </table>
                   <script type="text/javascript">
@@ -164,10 +164,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Hour" },"categories": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_hour","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by hour","data": [ 28,15,8,3,0,1,0,0,3,3,11,24,28,16,12,17,23,9,11,12,6,9,32,34 ] }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Hour" },"categories": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_hour","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by hour","data": [ 29,15,8,3,0,1,0,0,3,4,13,27,31,19,19,21,25,12,11,19,11,11,32,36 ] }] };
                   
-                  chart = new Highcharts.Chart(options);
+                  window.chart_charts.activity_by_hour = new Highcharts.Chart(options);
           
                     };
                   })()

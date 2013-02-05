@@ -64,10 +64,9 @@
                       var onload = window.onload;
                       window.onload = function(){
                         if (typeof onload == "function") onload();
-                                var options, chart;
-                    options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null },"categories": [ "",".yml",".md",".rdoc",".gemspec",".rb",".erb",".haml",".erb~",".bak",".rxml",".html",".builder",".sql",".txt",".raw",".js",".css",".html\"",".ruby",".rake",".log",".csv",".ru",".yaml",".tt" ] },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "lines_by_extension","type": "column" },"subtitle": {  },"series": [{ "name": "Lines by extension","data": [ 2901,2417,36632,1354,214,216340,1049,10,10,1,1,400,31,48,11,2,1790,4877,1,2,1030,1,1,8,171,292 ] }] };
+                                var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null },"categories": [ "",".yml",".md",".rdoc",".gemspec",".rb",".erb",".haml",".erb~",".bak",".rxml",".y",".css",".js",".html",".builder",".sql",".txt",".raw",".html\"",".ruby",".rake",".log",".csv",".lock",".coffee",".scss",".ru",".yaml",".tt" ] },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "lines_by_extension","type": "column" },"subtitle": {  },"series": [{ "name": "Lines by extension","data": [ 2591,2503,36500,1185,228,224558,1712,10,10,1,1,47,4919,1925,161,31,48,11,2,1,2,1044,1,1,150,9,9,8,179,283 ] }] };
                     
-                    chart = new Highcharts.Chart(options);
+                    window.chart_lines_by_extension = new Highcharts.Chart(options);
             
                       };
                     })()

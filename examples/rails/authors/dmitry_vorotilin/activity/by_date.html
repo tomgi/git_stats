@@ -81,10 +81,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1335712592000,1 ],[ 1336142432000,1 ],[ 1338879780000,1 ],[ 1338890778000,1 ],[ 1339793542000,1 ],[ 1341994732000,1 ],[ 1343297072000,1 ],[ 1343487341000,1 ],[ 1346317757000,1 ],[ 1346500704000,1 ],[ 1347310728000,1 ],[ 1347352762000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1335712592000,1 ],[ 1336142432000,1 ],[ 1338879780000,1 ],[ 1338890778000,1 ],[ 1339793542000,1 ],[ 1341994732000,1 ],[ 1343297072000,1 ],[ 1343487341000,1 ],[ 1346317757000,1 ],[ 1346500704000,1 ],[ 1347310728000,1 ],[ 1347352762000,1 ],[ 1348650281000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
                   
-                  chart = new Highcharts.StockChart(options);
+                  window.chart_charts.activity_by_date = new Highcharts.StockChart(options);
           
                     };
                   })()

@@ -81,10 +81,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1220822068000,1 ],[ 1220902564000,1 ],[ 1221069686000,1 ],[ 1221069772000,1 ],[ 1221071200000,1 ],[ 1221071258000,1 ],[ 1221078190000,1 ],[ 1222011154000,1 ],[ 1222011765000,1 ],[ 1233935074000,1 ],[ 1233935302000,1 ],[ 1233935471000,1 ],[ 1233935854000,1 ],[ 1233935942000,1 ],[ 1233936141000,1 ],[ 1233938721000,1 ],[ 1233939125000,1 ],[ 1264613022000,1 ],[ 1264614706000,1 ],[ 1265182484000,1 ],[ 1265239647000,1 ],[ 1265310719000,1 ],[ 1265389403000,1 ],[ 1270589239000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1220822068000,1 ],[ 1220902564000,1 ],[ 1221069686000,1 ],[ 1221069772000,1 ],[ 1221071200000,1 ],[ 1221071258000,1 ],[ 1221078190000,1 ],[ 1222011154000,1 ],[ 1222011765000,1 ],[ 1233935074000,1 ],[ 1233935302000,1 ],[ 1233935471000,1 ],[ 1233935854000,1 ],[ 1233935942000,1 ],[ 1233936141000,1 ],[ 1233938721000,1 ],[ 1233939125000,1 ],[ 1264613022000,1 ],[ 1264614706000,1 ],[ 1265182484000,1 ],[ 1265239647000,1 ],[ 1265310719000,1 ],[ 1265389403000,1 ],[ 1270589239000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
                   
-                  chart = new Highcharts.StockChart(options);
+                  window.chart_charts.activity_by_date = new Highcharts.StockChart(options);
           
                     };
                   })()

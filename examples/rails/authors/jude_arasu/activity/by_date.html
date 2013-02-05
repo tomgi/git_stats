@@ -73,7 +73,7 @@
           <div class='tab-pane active'>
             <div class='page-header pagination-centered'>
               <h1>Activity by date</h1>
-              <h3>JudeArasu &lt;judearasu@gmail.com&gt;</h3>
+              <h3>Jude Arasu &lt;judearasu@gmail.com&gt;</h3>
             </div>
           </div>
                   <script type="text/javascript">
@@ -81,10 +81,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [  ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1299174628000,2 ],[ 1299285501000,2 ],[ 1299285635000,1 ],[ 1299286157000,1 ],[ 1299389024000,1 ],[ 1299391698000,1 ],[ 1299396203000,1 ],[ 1299396356000,1 ],[ 1306170802000,1 ],[ 1308073565000,1 ],[ 1308200660000,1 ],[ 1308201353000,1 ],[ 1308465840000,1 ],[ 1309886384000,1 ],[ 1311019425000,1 ],[ 1311037880000,1 ],[ 1311269261000,1 ],[ 1311272530000,1 ],[ 1311274591000,1 ],[ 1311274704000,1 ],[ 1311616596000,1 ],[ 1312392624000,2 ],[ 1312588287000,1 ],[ 1358048259000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
                   
-                  chart = new Highcharts.StockChart(options);
+                  window.chart_charts.activity_by_date = new Highcharts.StockChart(options);
           
                     };
                   })()

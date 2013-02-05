@@ -89,23 +89,23 @@
       </tr>
       <tr>
         <th>Commits</th>
-        <td>278</td>
-        <td>197</td>
-        <td>225</td>
-        <td>224</td>
-        <td>165</td>
-        <td>192</td>
-        <td>252</td>
+        <td>282</td>
+        <td>215</td>
+        <td>238</td>
+        <td>235</td>
+        <td>170</td>
+        <td>199</td>
+        <td>260</td>
       </tr>
       <tr>
         <th>Percentage</th>
-        <td>18.1</td>
-        <td>12.9</td>
+        <td>17.6</td>
+        <td>13.4</td>
+        <td>14.9</td>
         <td>14.7</td>
-        <td>14.6</td>
-        <td>10.8</td>
-        <td>12.5</td>
-        <td>16.4</td>
+        <td>10.6</td>
+        <td>12.4</td>
+        <td>16.3</td>
       </tr>
     </table>
             <script type="text/javascript">
@@ -113,10 +113,9 @@
                 var onload = window.onload;
                 window.onload = function(){
                   if (typeof onload == "function") onload();
-                          var options, chart;
-              options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Day" },"categories": [ "Sun","Mon","Tue","Wed","Thu","Fri","Sat" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_wday","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by day of week","data": [ 278,197,225,224,165,192,252 ] }] };
+                          var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Day" },"categories": [ "Sun","Mon","Tue","Wed","Thu","Fri","Sat" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_wday","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by day of week","data": [ 282,215,238,235,170,199,260 ] }] };
               
-              chart = new Highcharts.Chart(options);
+              window.chart_charts.activity_by_wday = new Highcharts.Chart(options);
       
                 };
               })()

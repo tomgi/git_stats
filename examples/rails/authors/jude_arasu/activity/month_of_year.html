@@ -73,7 +73,7 @@
           <div class='tab-pane active'>
             <div class='page-header pagination-centered'>
               <h1>Month of year</h1>
-              <h3>JudeArasu &lt;judearasu@gmail.com&gt;</h3>
+              <h3>Jude Arasu &lt;judearasu@gmail.com&gt;</h3>
             </div>
           </div>
           <table class='table table-bordered table-condensed'>
@@ -94,14 +94,14 @@
             </tr>
             <tr>
               <th>Commits</th>
+              <td>1</td>
               <td>0</td>
+              <td>10</td>
               <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
+              <td>1</td>
+              <td>4</td>
+              <td>8</td>
+              <td>3</td>
               <td>0</td>
               <td>0</td>
               <td>0</td>
@@ -109,18 +109,18 @@
             </tr>
             <tr>
               <th>Percentage</th>
-              <td>NaN</td>
-              <td>NaN</td>
-              <td>NaN</td>
-              <td>NaN</td>
-              <td>NaN</td>
-              <td>NaN</td>
-              <td>NaN</td>
-              <td>NaN</td>
-              <td>NaN</td>
-              <td>NaN</td>
-              <td>NaN</td>
-              <td>NaN</td>
+              <td>3.7</td>
+              <td>0.0</td>
+              <td>37.0</td>
+              <td>0.0</td>
+              <td>3.7</td>
+              <td>14.8</td>
+              <td>29.6</td>
+              <td>11.1</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
             </tr>
           </table>
                   <script type="text/javascript">
@@ -128,10 +128,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Month" },"categories": [ "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_month","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by month","data": [ 0,0,0,0,0,0,0,0,0,0,0,0 ] }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Month" },"categories": [ "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_month","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by month","data": [ 1,0,10,0,1,4,8,3,0,0,0,0 ] }] };
                   
-                  chart = new Highcharts.Chart(options);
+                  window.chart_charts.activity_by_month = new Highcharts.Chart(options);
           
                     };
                   })()

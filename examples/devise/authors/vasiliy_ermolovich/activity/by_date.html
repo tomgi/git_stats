@@ -81,10 +81,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1320583654000,1 ],[ 1320585317000,1 ],[ 1320870348000,1 ],[ 1323371169000,1 ],[ 1325330578000,1 ],[ 1327259548000,1 ],[ 1337540471000,1 ],[ 1339702052000,1 ],[ 1339703317000,1 ],[ 1345212347000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1320583654000,1 ],[ 1320585317000,1 ],[ 1320870348000,1 ],[ 1323371169000,1 ],[ 1325330578000,1 ],[ 1327259548000,1 ],[ 1337540471000,1 ],[ 1339702052000,1 ],[ 1339703317000,1 ],[ 1345212347000,1 ],[ 1351375104000,1 ],[ 1352061260000,1 ],[ 1352098462000,1 ],[ 1352225117000,1 ],[ 1352402523000,1 ],[ 1352568932000,1 ],[ 1357989125000,1 ],[ 1358708871000,1 ],[ 1358788499000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
                   
-                  chart = new Highcharts.StockChart(options);
+                  window.chart_charts.activity_by_date = new Highcharts.StockChart(options);
           
                     };
                   })()

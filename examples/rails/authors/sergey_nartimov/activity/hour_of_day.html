@@ -120,9 +120,9 @@
               <td>4</td>
               <td>3</td>
               <td>3</td>
-              <td>7</td>
+              <td>8</td>
               <td>6</td>
-              <td>5</td>
+              <td>6</td>
               <td>3</td>
               <td>9</td>
               <td>12</td>
@@ -143,20 +143,20 @@
               <td>0.0</td>
               <td>0.7</td>
               <td>1.5</td>
-              <td>6.7</td>
-              <td>3.0</td>
+              <td>6.6</td>
+              <td>2.9</td>
               <td>2.2</td>
               <td>2.2</td>
-              <td>5.2</td>
-              <td>4.5</td>
-              <td>3.7</td>
+              <td>5.9</td>
+              <td>4.4</td>
+              <td>4.4</td>
               <td>2.2</td>
-              <td>6.7</td>
-              <td>9.0</td>
-              <td>6.0</td>
-              <td>9.7</td>
-              <td>14.9</td>
-              <td>11.2</td>
+              <td>6.6</td>
+              <td>8.8</td>
+              <td>5.9</td>
+              <td>9.6</td>
+              <td>14.7</td>
+              <td>11.0</td>
             </tr>
           </table>
                   <script type="text/javascript">
@@ -164,10 +164,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Hour" },"categories": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_hour","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by hour","data": [ 5,5,2,0,0,2,0,0,1,2,9,4,3,3,7,6,5,3,9,12,8,13,20,15 ] }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Hour" },"categories": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_hour","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by hour","data": [ 5,5,2,0,0,2,0,0,1,2,9,4,3,3,8,6,6,3,9,12,8,13,20,15 ] }] };
                   
-                  chart = new Highcharts.Chart(options);
+                  window.chart_charts.activity_by_hour = new Highcharts.Chart(options);
           
                     };
                   })()

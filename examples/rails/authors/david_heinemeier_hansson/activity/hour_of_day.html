@@ -106,30 +106,30 @@
             </tr>
             <tr>
               <th>Commits</th>
-              <td>154</td>
+              <td>155</td>
               <td>111</td>
-              <td>96</td>
+              <td>97</td>
               <td>68</td>
               <td>68</td>
               <td>95</td>
               <td>103</td>
               <td>70</td>
               <td>99</td>
-              <td>93</td>
-              <td>93</td>
+              <td>94</td>
+              <td>95</td>
               <td>116</td>
-              <td>148</td>
-              <td>171</td>
-              <td>165</td>
-              <td>162</td>
-              <td>240</td>
-              <td>275</td>
-              <td>213</td>
+              <td>150</td>
               <td>172</td>
-              <td>160</td>
+              <td>165</td>
+              <td>163</td>
+              <td>247</td>
+              <td>277</td>
+              <td>216</td>
+              <td>178</td>
+              <td>162</td>
               <td>147</td>
               <td>150</td>
-              <td>193</td>
+              <td>195</td>
             </tr>
             <tr>
               <th>Percentage</th>
@@ -139,23 +139,23 @@
               <td>2.0</td>
               <td>2.0</td>
               <td>2.8</td>
-              <td>3.1</td>
+              <td>3.0</td>
               <td>2.1</td>
               <td>2.9</td>
               <td>2.8</td>
               <td>2.8</td>
-              <td>3.5</td>
+              <td>3.4</td>
               <td>4.4</td>
               <td>5.1</td>
               <td>4.9</td>
               <td>4.8</td>
-              <td>7.1</td>
+              <td>7.3</td>
               <td>8.2</td>
-              <td>6.3</td>
-              <td>5.1</td>
+              <td>6.4</td>
+              <td>5.2</td>
               <td>4.8</td>
+              <td>4.3</td>
               <td>4.4</td>
-              <td>4.5</td>
               <td>5.7</td>
             </tr>
           </table>
@@ -164,10 +164,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Hour" },"categories": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_hour","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by hour","data": [ 154,111,96,68,68,95,103,70,99,93,93,116,148,171,165,162,240,275,213,172,160,147,150,193 ] }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Hour" },"categories": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_hour","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by hour","data": [ 155,111,97,68,68,95,103,70,99,94,95,116,150,172,165,163,247,277,216,178,162,147,150,195 ] }] };
                   
-                  chart = new Highcharts.Chart(options);
+                  window.chart_charts.activity_by_hour = new Highcharts.Chart(options);
           
                     };
                   })()

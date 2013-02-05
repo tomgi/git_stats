@@ -81,10 +81,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1301215249000,1 ],[ 1301218442000,1 ],[ 1301295051000,1 ],[ 1301384373000,1 ],[ 1301388600000,1 ],[ 1318000593000,1 ],[ 1318001165000,1 ],[ 1318064337000,1 ],[ 1318071553000,1 ],[ 1318139131000,1 ],[ 1318140153000,1 ],[ 1318150253000,1 ],[ 1318178179000,1 ],[ 1318200961000,1 ],[ 1318201650000,1 ],[ 1318339621000,1 ],[ 1318681933000,1 ],[ 1318719566000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1301215249000,1 ],[ 1301218442000,1 ],[ 1301295051000,1 ],[ 1301384373000,1 ],[ 1301388600000,1 ],[ 1318000593000,1 ],[ 1318001165000,1 ],[ 1318064337000,1 ],[ 1318071553000,1 ],[ 1318139131000,1 ],[ 1318140153000,1 ],[ 1318150253000,1 ],[ 1318178179000,1 ],[ 1318200961000,1 ],[ 1318201650000,1 ],[ 1318339621000,1 ],[ 1318681933000,1 ],[ 1318719566000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
                   
-                  chart = new Highcharts.StockChart(options);
+                  window.chart_charts.activity_by_date = new Highcharts.StockChart(options);
           
                     };
                   })()

@@ -106,53 +106,53 @@
             </tr>
             <tr>
               <th>Commits</th>
-              <td>1548</td>
-              <td>1180</td>
-              <td>820</td>
-              <td>703</td>
-              <td>550</td>
-              <td>576</td>
-              <td>539</td>
-              <td>513</td>
-              <td>788</td>
-              <td>1262</td>
-              <td>1606</td>
-              <td>1916</td>
-              <td>1758</td>
-              <td>1720</td>
-              <td>1850</td>
-              <td>1945</td>
-              <td>2166</td>
-              <td>1982</td>
-              <td>1726</td>
-              <td>1563</td>
-              <td>1575</td>
-              <td>1574</td>
-              <td>1698</td>
-              <td>1958</td>
+              <td>1627</td>
+              <td>1239</td>
+              <td>872</td>
+              <td>736</td>
+              <td>599</td>
+              <td>620</td>
+              <td>573</td>
+              <td>553</td>
+              <td>846</td>
+              <td>1353</td>
+              <td>1708</td>
+              <td>2015</td>
+              <td>1873</td>
+              <td>1853</td>
+              <td>1989</td>
+              <td>2091</td>
+              <td>2265</td>
+              <td>2102</td>
+              <td>1798</td>
+              <td>1645</td>
+              <td>1668</td>
+              <td>1666</td>
+              <td>1800</td>
+              <td>2069</td>
             </tr>
             <tr>
               <th>Percentage</th>
               <td>4.6</td>
               <td>3.5</td>
-              <td>2.4</td>
+              <td>2.5</td>
               <td>2.1</td>
-              <td>1.6</td>
+              <td>1.7</td>
               <td>1.7</td>
               <td>1.6</td>
-              <td>1.5</td>
+              <td>1.6</td>
               <td>2.4</td>
               <td>3.8</td>
               <td>4.8</td>
               <td>5.7</td>
+              <td>5.3</td>
               <td>5.2</td>
-              <td>5.1</td>
-              <td>5.5</td>
-              <td>5.8</td>
-              <td>6.5</td>
+              <td>5.6</td>
+              <td>5.9</td>
+              <td>6.4</td>
               <td>5.9</td>
               <td>5.1</td>
-              <td>4.7</td>
+              <td>4.6</td>
               <td>4.7</td>
               <td>4.7</td>
               <td>5.1</td>
@@ -164,10 +164,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Hour" },"categories": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_hour","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by hour","data": [ 1548,1180,820,703,550,576,539,513,788,1262,1606,1916,1758,1720,1850,1945,2166,1982,1726,1563,1575,1574,1698,1958 ] }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Hour" },"categories": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_hour","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by hour","data": [ 1627,1239,872,736,599,620,573,553,846,1353,1708,2015,1873,1853,1989,2091,2265,2102,1798,1645,1668,1666,1800,2069 ] }] };
                   
-                  chart = new Highcharts.Chart(options);
+                  window.chart_charts.activity_by_hour = new Highcharts.Chart(options);
           
                     };
                   })()

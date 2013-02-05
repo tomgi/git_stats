@@ -64,10 +64,9 @@
                       var onload = window.onload;
                       window.onload = function(){
                         if (typeof onload == "function") onload();
-                                var options, chart;
-                    options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null },"categories": [ "",".git",".README",".mpi",".bash-completion",".gpg",".mozilla",".opencl",".pwsafe",".txt",".Manifest",".py",".chr",".rfc2865",".conf",".rb",".bash_completion",".pl",".lst",".c",".h",".S",".sh",".cu",".cuh",".cpp",".asm",".com",".cl",".db",".TXT",".original",".key",".uaf" ] },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "lines_by_extension","type": "column" },"subtitle": {  },"series": [{ "name": "Lines by extension","data": [ 14231,1019,33,160,613,13,20,156,12,151,93,3983,471,137,4824,78,734,3224,3557,133503,19868,35740,131,3178,25,1263,197,2,13074,1,9,688,45,1928 ] }] };
+                                var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null },"categories": [ "",".git",".mpi",".bash-completion",".format-epi",".gpg",".keychain",".keyring",".mozilla",".pwsafe",".ssh",".txt",".Manifest",".py",".rfc2865",".conf",".rb",".bash_completion",".zsh_completion",".pl",".lst",".c",".h",".S",".sh",".cu",".cuh",".cpp",".asm",".cl",".TXT",".original",".key" ] },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "lines_by_extension","type": "column" },"subtitle": {  },"series": [{ "name": "Lines by extension","data": [ 14704,2430,160,609,25,13,12,12,20,12,18,151,93,5162,137,4961,78,791,80,3224,3557,143533,21584,35794,131,3820,25,1263,197,14385,9,688,45 ] }] };
                     
-                    chart = new Highcharts.Chart(options);
+                    window.chart_lines_by_extension = new Highcharts.Chart(options);
             
                       };
                     })()

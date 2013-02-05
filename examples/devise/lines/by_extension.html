@@ -64,10 +64,9 @@
                       var onload = window.onload;
                       window.onload = function(){
                         if (typeof onload == "function") onload();
-                                var options, chart;
-                    options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null },"categories": [ "",".yml",".rdoc",".md",".lock",".rb",".erb",".gemspec",".x",".markerb",".ru",".html" ] },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "lines_by_extension","type": "column" },"subtitle": {  },"series": [{ "name": "Lines by extension","data": [ 150,96,876,400,322,12753,306,25,35,20,4,78 ] }] };
+                                var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null },"categories": [ "",".yml",".rdoc",".md",".lock",".rb",".erb",".gemspec",".x",".markerb",".ru",".html" ] },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "lines_by_extension","type": "column" },"subtitle": {  },"series": [{ "name": "Lines by extension","data": [ 150,116,919,410,323,12989,317,25,34,20,4,78 ] }] };
                     
-                    chart = new Highcharts.Chart(options);
+                    window.chart_lines_by_extension = new Highcharts.Chart(options);
             
                       };
                     })()

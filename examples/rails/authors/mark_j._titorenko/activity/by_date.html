@@ -81,10 +81,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1307927658000,1 ],[ 1315301664000,1 ],[ 1317645770000,1 ],[ 1317751326000,1 ],[ 1317751348000,1 ],[ 1317765901000,1 ],[ 1317766211000,1 ],[ 1317766971000,1 ],[ 1317767249000,1 ],[ 1317767273000,1 ],[ 1336141139000,1 ],[ 1336144292000,1 ],[ 1336388691000,1 ],[ 1336388855000,1 ],[ 1336389880000,1 ],[ 1336487838000,1 ],[ 1336566949000,1 ],[ 1336567208000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1307927658000,1 ],[ 1315301664000,1 ],[ 1317645770000,1 ],[ 1317751326000,1 ],[ 1317751348000,1 ],[ 1317765901000,1 ],[ 1317766211000,1 ],[ 1317766971000,1 ],[ 1317767249000,1 ],[ 1317767273000,1 ],[ 1336141139000,1 ],[ 1336144292000,1 ],[ 1336388691000,1 ],[ 1336388855000,1 ],[ 1336389880000,1 ],[ 1336487838000,1 ],[ 1336566949000,1 ],[ 1336567208000,1 ],[ 1357639574000,1 ],[ 1357639624000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
                   
-                  chart = new Highcharts.StockChart(options);
+                  window.chart_charts.activity_by_date = new Highcharts.StockChart(options);
           
                     };
                   })()

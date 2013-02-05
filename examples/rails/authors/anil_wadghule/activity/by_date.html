@@ -81,10 +81,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1270744285000,1 ],[ 1271091055000,1 ],[ 1271096124000,1 ],[ 1271100394000,1 ],[ 1271141744000,1 ],[ 1271186818000,1 ],[ 1272295507000,1 ],[ 1273089385000,1 ],[ 1273742361000,1 ],[ 1273934911000,1 ],[ 1274266521000,1 ],[ 1286387148000,1 ],[ 1287508734000,1 ],[ 1307282797000,1 ],[ 1333704045000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1270744285000,1 ],[ 1271091055000,1 ],[ 1271096124000,1 ],[ 1271100394000,1 ],[ 1271141744000,1 ],[ 1271186818000,1 ],[ 1272295507000,1 ],[ 1273089385000,1 ],[ 1273742361000,1 ],[ 1273934911000,1 ],[ 1274266521000,1 ],[ 1286387148000,1 ],[ 1287508734000,1 ],[ 1307282797000,1 ],[ 1333704045000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
                   
-                  chart = new Highcharts.StockChart(options);
+                  window.chart_charts.activity_by_date = new Highcharts.StockChart(options);
           
                     };
                   })()

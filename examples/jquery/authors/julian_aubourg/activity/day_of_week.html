@@ -89,23 +89,23 @@
             </tr>
             <tr>
               <th>Commits</th>
-              <td>30</td>
-              <td>33</td>
-              <td>35</td>
-              <td>56</td>
-              <td>50</td>
-              <td>25</td>
+              <td>32</td>
+              <td>38</td>
+              <td>44</td>
+              <td>62</td>
+              <td>53</td>
+              <td>26</td>
               <td>27</td>
             </tr>
             <tr>
               <th>Percentage</th>
-              <td>11.7</td>
-              <td>12.9</td>
-              <td>13.7</td>
-              <td>21.9</td>
-              <td>19.5</td>
-              <td>9.8</td>
-              <td>10.5</td>
+              <td>11.3</td>
+              <td>13.5</td>
+              <td>15.6</td>
+              <td>22.0</td>
+              <td>18.8</td>
+              <td>9.2</td>
+              <td>9.6</td>
             </tr>
           </table>
                   <script type="text/javascript">
@@ -113,10 +113,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Day" },"categories": [ "Sun","Mon","Tue","Wed","Thu","Fri","Sat" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_wday","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by day of week","data": [ 30,33,35,56,50,25,27 ] }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Day" },"categories": [ "Sun","Mon","Tue","Wed","Thu","Fri","Sat" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_wday","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by day of week","data": [ 32,38,44,62,53,26,27 ] }] };
                   
-                  chart = new Highcharts.Chart(options);
+                  window.chart_charts.activity_by_wday = new Highcharts.Chart(options);
           
                     };
                   })()

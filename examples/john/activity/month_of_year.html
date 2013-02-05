@@ -94,8 +94,8 @@
             </tr>
             <tr>
               <th>Commits</th>
-              <td>129</td>
-              <td>157</td>
+              <td>447</td>
+              <td>184</td>
               <td>106</td>
               <td>125</td>
               <td>189</td>
@@ -103,24 +103,24 @@
               <td>339</td>
               <td>213</td>
               <td>247</td>
-              <td>161</td>
-              <td>135</td>
-              <td>143</td>
+              <td>173</td>
+              <td>243</td>
+              <td>447</td>
             </tr>
             <tr>
               <th>Percentage</th>
-              <td>5.5</td>
-              <td>6.7</td>
-              <td>4.5</td>
-              <td>5.3</td>
-              <td>8.0</td>
-              <td>17.5</td>
-              <td>14.4</td>
-              <td>9.0</td>
-              <td>10.5</td>
+              <td>14.3</td>
+              <td>5.9</td>
+              <td>3.4</td>
+              <td>4.0</td>
+              <td>6.0</td>
+              <td>13.2</td>
+              <td>10.8</td>
               <td>6.8</td>
-              <td>5.7</td>
-              <td>6.1</td>
+              <td>7.9</td>
+              <td>5.5</td>
+              <td>7.8</td>
+              <td>14.3</td>
             </tr>
           </table>
                   <script type="text/javascript">
@@ -128,10 +128,9 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options, chart;
-                  options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Month" },"categories": [ "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_month","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by month","data": [ 129,157,106,125,189,413,339,213,247,161,135,143 ] }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Month" },"categories": [ "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_month","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by month","data": [ 447,184,106,125,189,413,339,213,247,173,243,447 ] }] };
                   
-                  chart = new Highcharts.Chart(options);
+                  window.chart_charts.activity_by_month = new Highcharts.Chart(options);
           
                     };
                   })()

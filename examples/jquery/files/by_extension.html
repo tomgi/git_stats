@@ -64,10 +64,9 @@
                       var onload = window.onload;
                       window.onload = function(){
                         if (typeof onload == "function") onload();
-                                var options, chart;
-                    options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null },"categories": [ "",".txt",".md",".js",".json",".css",".html",".php",".jpg",".xml" ] },"yAxis": { "title": { "text": "Files" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "files_by_extension","type": "column" },"subtitle": {  },"series": [{ "name": "Files by extension","data": [ 9,4,2,57,1,2,36,21,1,2 ] }] };
+                                var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null },"categories": [ "",".txt",".md",".js",".json",".css",".html",".php",".jpg",".xml" ] },"yAxis": { "title": { "text": "Files" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "files_by_extension","type": "column" },"subtitle": {  },"series": [{ "name": "Files by extension","data": [ 10,3,2,59,1,2,39,22,1,2 ] }] };
                     
-                    chart = new Highcharts.Chart(options);
+                    window.chart_files_by_extension = new Highcharts.Chart(options);
             
                       };
                     })()

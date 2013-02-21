@@ -54,3 +54,7 @@ en:
   binary: Binary
   text: Text
   general: General
+  details: Details
+  insertions_by_date: Lines added by date
+  deletions_by_date: Lines deleted by date
+  changed_lines_by_date: Changed lines by date

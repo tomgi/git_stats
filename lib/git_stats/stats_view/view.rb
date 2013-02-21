@@ -11,20 +11,20 @@ module GitStats
         prepare_static_content
         prepare_assets
 
-        all_templates.each do |template|
+        all_templates.reject {|t| t =~ /author_details/}.each do |template|
           output = Template.new(template, @layout).render(@view_data, author: @view_data.repo, links: links)
           write(output, "#@out_path/#{template}.html")
         end
 
-        render_authors_activity
+        render_authors
       end
 
-      def render_authors_activity
+      def render_authors
         done = []
         @view_data.repo.authors.sort_by { |a| -a.commits.size }.each do |author|
           next if done.include? author.dirname
           done << author.dirname
-          all_templates('activity/').each do |template|
+          (all_templates('activity/') + all_templates('author_details')).each do |template|
             output = Template.new(template, @layout).render(@view_data,
                                                             author: author,
                                                             links: links,
@@ -35,11 +35,11 @@ module GitStats
       end
 
       def all_templates(root = '')
-        Dir["../../../../templates/#{root}**/[^_]*.haml".absolute_path].map {
+        (Dir["../../../../templates/#{root}**/[^_]*.haml".absolute_path].map {
             |f| Pathname.new(f)
         }.map { |f|
           f.relative_path_from(Pathname.new('../../../../templates'.absolute_path)).sub_ext('')
-        }.map(&:to_s) - %w(layout)
+        }.map(&:to_s) - %w(layout))
       end
 
       private

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitStats - rails</title>
+    <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../../../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css'>
+    <script src='../../../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../../../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../../../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../../../index.html'>GitStats - rails</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../../../general.html'>General</a>
+              </li>
+              <li class=''>
+                <a href='../../../activity/by_date.html'>Activity</a>
+              </li>
+              <li class='active'>
+                <a href='../../best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../../../files/by_date.html'>Files</a>
+              </li>
+              <li class='active'>
+                <a href='../../../lines/by_date.html'>Lines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class=''>
+            <a href='commits_by_date.html'>Commits by date</a>
+          </li>
+          <li class='active'>
+            <a href='changed_lines_by_date.html'>Changed lines by date</a>
+          </li>
+          <li class=''>
+            <a href='insertions_by_date.html'>Lines added by date</a>
+          </li>
+          <li class=''>
+            <a href='deletions_by_date.html'>Lines deleted by date</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header'>
+              <h1 class='pagination-centered'>Changed lines by date</h1>
+            </div>
+                    <script type="text/javascript">
+                    (function() {
+                      var onload = window.onload;
+                      window.onload = function(){
+                        if (typeof onload == "function") onload();
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.changed_lines_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Hongli Lai (Phusion","type": "spline","data": [ [ 1209667629000,8 ],[ 1215603160000,10 ],[ 1215688868000,49 ],[ 1216406865000,67 ],[ 1216406898000,125 ],[ 1216410123000,129 ],[ 1216410140000,192 ],[ 1216412102000,325 ],[ 1216461916000,604 ],[ 1216462760000,633 ],[ 1216462796000,642 ],[ 1216521619000,2276 ],[ 1216569327000,4147 ],[ 1216569976000,4157 ],[ 1216589908000,4165 ],[ 1216639686000,4169 ],[ 1216931393000,4266 ],[ 1216988645000,4403 ],[ 1218196110000,4403 ],[ 1219759143000,4417 ],[ 1219829946000,4417 ],[ 1219833728000,4800 ],[ 1219844894000,5113 ],[ 1220562100000,5113 ],[ 1220625305000,5113 ],[ 1220626167000,5135 ],[ 1220719051000,5185 ],[ 1220722994000,5263 ],[ 1220783907000,5266 ],[ 1220872829000,5267 ],[ 1220872981000,5404 ],[ 1220873735000,5424 ],[ 1220954665000,5428 ],[ 1220962221000,5466 ],[ 1220964906000,5468 ],[ 1221212839000,5476 ],[ 1221302326000,5500 ],[ 1221303285000,5506 ],[ 1221303686000,5510 ],[ 1221303710000,5514 ],[ 1221561681000,5517 ],[ 1221561746000,5555 ],[ 1221562234000,5573 ],[ 1221563700000,5601 ],[ 1221563878000,5603 ],[ 1221612819000,5630 ],[ 1221657452000,5655 ],[ 1221658132000,5679 ],[ 1221658739000,5697 ],[ 1221659373000,5704 ],[ 1221661450000,5736 ],[ 1221662392000,5761 ],[ 1221664005000,5784 ],[ 1221735829000,5794 ],[ 1221735928000,5794 ],[ 1221736088000,100084 ],[ 1221737223000,100092 ],[ 1221737259000,100111 ],[ 1221908302000,100201 ],[ 1221910635000,100224 ],[ 1221912611000,100226 ],[ 1221912632000,100294 ],[ 1221912764000,100298 ],[ 1221912884000,100304 ],[ 1221913228000,100306 ],[ 1221940789000,100360 ],[ 1222023448000,100384 ],[ 1222023573000,100405 ],[ 1222023616000,100411 ],[ 1222029557000,100414 ],[ 1222030892000,100456 ],[ 1222033862000,100493 ],[ 1222036177000,100514 ],[ 1222071366000,100518 ],[ 1223555483000,100598 ],[ 1223555742000,100665 ],[ 1223556463000,100703 ],[ 1223556722000,100706 ],[ 1223559716000,100728 ],[ 1223562255000,100797 ],[ 1223567869000,100861 ],[ 1225056352000,101023 ],[ 1225809148000,101044 ],[ 1225811147000,101054 ],[ 1225813550000,101068 ],[ 1226609363000,101084 ],[ 1226953723000,101094 ],[ 1227037555000,101097 ],[ 1228329035000,101097 ],[ 1228783097000,101097 ],[ 1229373393000,101115 ],[ 1229374039000,101116 ],[ 1231858904000,101141 ],[ 1234090378000,101189 ],[ 1237910721000,101191 ],[ 1240762923000,101193 ],[ 1240762990000,101195 ],[ 1243159401000,101199 ],[ 1243454463000,101204 ],[ 1246780765000,101224 ],[ 1276782083000,101289 ],[ 1276782457000,101290 ] ] }] };
+                    
+                    window.chart_charts.changed_lines_by_author_by_date = new Highcharts.StockChart(options);
+            
+                      };
+                    })()
+                    </script>
+            <div id="charts.changed_lines_by_author_by_date"></div>
+            <small>
+              <center>5 best authors shown</center>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

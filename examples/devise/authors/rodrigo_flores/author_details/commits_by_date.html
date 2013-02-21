@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitStats - devise</title>
+    <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../../../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css'>
+    <script src='../../../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../../../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../../../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../../../index.html'>GitStats - devise</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../../../general.html'>General</a>
+              </li>
+              <li class=''>
+                <a href='../../../activity/by_date.html'>Activity</a>
+              </li>
+              <li class='active'>
+                <a href='../../best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../../../files/by_date.html'>Files</a>
+              </li>
+              <li class=''>
+                <a href='../../../lines/by_date.html'>Lines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class='active'>
+            <a href='commits_by_date.html'>Commits by date</a>
+          </li>
+          <li class=''>
+            <a href='changed_lines_by_date.html'>Changed lines by date</a>
+          </li>
+          <li class=''>
+            <a href='insertions_by_date.html'>Lines added by date</a>
+          </li>
+          <li class=''>
+            <a href='deletions_by_date.html'>Lines deleted by date</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header'>
+              <h1 class='pagination-centered'>Commits by date</h1>
+            </div>
+                    <script type="text/javascript">
+                    (function() {
+                      var onload = window.onload;
+                      window.onload = function(){
+                        if (typeof onload == "function") onload();
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.commits_sum_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Rodrigo Flores","type": "spline","data": [ [ 1303131314000,1 ],[ 1303133280000,2 ],[ 1303133969000,3 ],[ 1305927731000,4 ],[ 1305931286000,5 ],[ 1305931300000,6 ],[ 1305931793000,7 ],[ 1308234447000,8 ],[ 1308251453000,9 ],[ 1308619796000,10 ],[ 1308619825000,11 ],[ 1308621703000,12 ],[ 1308621781000,13 ],[ 1308692678000,14 ],[ 1308692722000,15 ],[ 1308756808000,16 ],[ 1308757097000,17 ],[ 1308757183000,18 ],[ 1308757481000,19 ],[ 1308758257000,20 ],[ 1308787490000,21 ],[ 1308788792000,22 ],[ 1308788840000,23 ],[ 1308794415000,24 ],[ 1308794695000,25 ],[ 1308833585000,26 ],[ 1309563441000,27 ],[ 1309581214000,28 ],[ 1320617926000,29 ],[ 1320773246000,30 ],[ 1320773945000,31 ],[ 1320774131000,32 ],[ 1320957278000,33 ],[ 1320957451000,34 ],[ 1320957478000,35 ],[ 1320959934000,36 ],[ 1321218981000,37 ],[ 1321974741000,38 ],[ 1322644447000,39 ],[ 1322644632000,40 ],[ 1323167702000,41 ],[ 1323170646000,42 ],[ 1328236768000,43 ],[ 1329164678000,44 ],[ 1329342759000,45 ],[ 1329352316000,46 ],[ 1329391396000,47 ],[ 1329410434000,48 ],[ 1329411142000,49 ],[ 1329412127000,50 ],[ 1329412930000,51 ],[ 1329413106000,52 ],[ 1329413412000,53 ],[ 1329413681000,54 ],[ 1329414556000,55 ],[ 1329414802000,56 ],[ 1329415319000,57 ],[ 1329415630000,58 ],[ 1329496664000,59 ],[ 1329497562000,60 ],[ 1329497596000,61 ],[ 1329498860000,62 ],[ 1329499860000,63 ],[ 1329501015000,64 ],[ 1329507795000,65 ],[ 1329612659000,66 ],[ 1329736008000,67 ],[ 1329736446000,68 ],[ 1329736819000,69 ],[ 1329737787000,70 ],[ 1329738885000,71 ],[ 1329739946000,72 ],[ 1329740252000,73 ],[ 1329827498000,74 ],[ 1329923010000,75 ],[ 1329925721000,76 ],[ 1330015857000,77 ],[ 1330124164000,78 ],[ 1330173520000,79 ],[ 1330748717000,80 ],[ 1330774698000,81 ],[ 1330774883000,82 ],[ 1330782059000,83 ],[ 1330783950000,84 ],[ 1330785178000,85 ],[ 1330795853000,86 ],[ 1330795900000,87 ],[ 1330796482000,88 ],[ 1330796999000,89 ],[ 1330798217000,90 ],[ 1330798567000,91 ],[ 1330799107000,92 ],[ 1331321886000,93 ],[ 1331324376000,94 ],[ 1331329057000,95 ],[ 1331331560000,96 ],[ 1331659461000,97 ],[ 1331664613000,98 ],[ 1331664837000,99 ],[ 1331820971000,100 ],[ 1331821381000,101 ],[ 1331946403000,102 ],[ 1332187762000,103 ],[ 1332188132000,104 ],[ 1332190953000,105 ],[ 1333537795000,106 ],[ 1333571261000,107 ],[ 1334000550000,108 ],[ 1335560264000,109 ],[ 1335562122000,110 ],[ 1335792245000,111 ],[ 1335978655000,112 ],[ 1335980973000,113 ],[ 1335981061000,114 ],[ 1336418495000,115 ],[ 1336420235000,116 ],[ 1336563757000,117 ],[ 1336585795000,118 ],[ 1336585967000,119 ],[ 1336586292000,120 ],[ 1336597480000,121 ],[ 1336597514000,122 ],[ 1336603976000,123 ],[ 1336604018000,124 ],[ 1336604049000,125 ],[ 1336656574000,126 ],[ 1336657238000,127 ],[ 1337001990000,128 ],[ 1337002533000,129 ],[ 1337028814000,130 ],[ 1337028832000,131 ],[ 1337101950000,132 ],[ 1337102056000,133 ],[ 1341587005000,134 ],[ 1341592608000,135 ],[ 1342988270000,136 ] ] }] };
+                    
+                    window.chart_charts.commits_sum_by_author_by_date = new Highcharts.StockChart(options);
+            
+                      };
+                    })()
+                    </script>
+            <div id="charts.commits_sum_by_author_by_date"></div>
+            <small>
+              <center>5 best authors shown</center>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitStats - rails</title>
+    <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../../../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css'>
+    <script src='../../../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../../../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../../../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../../../index.html'>GitStats - rails</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../../../general.html'>General</a>
+              </li>
+              <li class=''>
+                <a href='../../../activity/by_date.html'>Activity</a>
+              </li>
+              <li class='active'>
+                <a href='../../best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../../../files/by_date.html'>Files</a>
+              </li>
+              <li class=''>
+                <a href='../../../lines/by_date.html'>Lines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class=''>
+            <a href='commits_by_date.html'>Commits by date</a>
+          </li>
+          <li class=''>
+            <a href='changed_lines_by_date.html'>Changed lines by date</a>
+          </li>
+          <li class=''>
+            <a href='insertions_by_date.html'>Lines added by date</a>
+          </li>
+          <li class='active'>
+            <a href='deletions_by_date.html'>Lines deleted by date</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header'>
+              <h1 class='pagination-centered'>Lines deleted by date</h1>
+            </div>
+                    <script type="text/javascript">
+                    (function() {
+                      var onload = window.onload;
+                      window.onload = function(){
+                        if (typeof onload == "function") onload();
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.deletions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Tarmo T\u00e4nav","type": "spline","data": [ [ 1210115303000,128 ],[ 1210115337000,130 ],[ 1210604283000,133 ],[ 1210688765000,135 ],[ 1210699252000,137 ],[ 1211754536000,142 ],[ 1212414486000,143 ],[ 1213389550000,143 ],[ 1213498556000,159 ],[ 1215096552000,161 ],[ 1216017605000,162 ],[ 1216017740000,169 ],[ 1216076579000,170 ],[ 1216085003000,172 ],[ 1216088226000,175 ],[ 1216088664000,175 ],[ 1217521578000,176 ],[ 1217523155000,177 ],[ 1217530310000,179 ],[ 1217531894000,206 ],[ 1217537993000,214 ],[ 1217540183000,214 ],[ 1217540388000,230 ],[ 1218597481000,232 ],[ 1218814751000,237 ],[ 1218842669000,244 ],[ 1218921655000,244 ],[ 1219339565000,251 ],[ 1219387478000,254 ],[ 1219388039000,256 ],[ 1219438411000,260 ],[ 1219502416000,260 ],[ 1219503952000,270 ],[ 1219507934000,270 ],[ 1219510269000,280 ],[ 1219514324000,280 ],[ 1219517683000,281 ],[ 1219708884000,281 ],[ 1219715757000,287 ],[ 1219731252000,290 ],[ 1219736926000,291 ],[ 1219740353000,293 ],[ 1219744653000,298 ],[ 1219745209000,302 ],[ 1219747301000,303 ],[ 1219749344000,306 ],[ 1219766447000,308 ],[ 1219768156000,309 ],[ 1220051296000,309 ],[ 1220515388000,313 ],[ 1221042188000,314 ],[ 1221043190000,321 ],[ 1222451876000,322 ],[ 1223303721000,337 ],[ 1223378585000,340 ],[ 1225385130000,341 ],[ 1233315479000,372 ],[ 1244640272000,373 ] ] }] };
+                    
+                    window.chart_charts.deletions_by_author_by_date = new Highcharts.StockChart(options);
+            
+                      };
+                    })()
+                    </script>
+            <div id="charts.deletions_by_author_by_date"></div>
+            <small>
+              <center>5 best authors shown</center>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

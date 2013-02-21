@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitStats - rails</title>
+    <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../../../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css'>
+    <script src='../../../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../../../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../../../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../../../index.html'>GitStats - rails</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../../../general.html'>General</a>
+              </li>
+              <li class=''>
+                <a href='../../../activity/by_date.html'>Activity</a>
+              </li>
+              <li class='active'>
+                <a href='../../best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../../../files/by_date.html'>Files</a>
+              </li>
+              <li class=''>
+                <a href='../../../lines/by_date.html'>Lines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class=''>
+            <a href='commits_by_date.html'>Commits by date</a>
+          </li>
+          <li class=''>
+            <a href='changed_lines_by_date.html'>Changed lines by date</a>
+          </li>
+          <li class='active'>
+            <a href='insertions_by_date.html'>Lines added by date</a>
+          </li>
+          <li class=''>
+            <a href='deletions_by_date.html'>Lines deleted by date</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header'>
+              <h1 class='pagination-centered'>Lines added by date</h1>
+            </div>
+                    <script type="text/javascript">
+                    (function() {
+                      var onload = window.onload;
+                      window.onload = function(){
+                        if (typeof onload == "function") onload();
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.insertions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Leon Breedt","type": "spline","data": [ [ 1108723120000,0 ],[ 1108761772000,279 ],[ 1108770929000,2806 ],[ 1108801782000,4344 ],[ 1108804055000,4373 ],[ 1108861674000,4382 ],[ 1109298276000,4383 ],[ 1109374779000,6775 ],[ 1109539300000,7173 ],[ 1109540342000,7174 ],[ 1109630544000,7185 ],[ 1109760445000,7187 ],[ 1109804100000,7200 ],[ 1109885444000,7217 ],[ 1109930873000,7440 ],[ 1110436195000,7441 ],[ 1110455609000,7687 ],[ 1110920868000,7688 ],[ 1111302852000,7689 ],[ 1111303910000,7694 ],[ 1111796419000,7728 ],[ 1111980013000,8160 ],[ 1111992930000,8167 ],[ 1112087071000,8173 ],[ 1112099499000,8624 ],[ 1112260330000,8626 ],[ 1112266021000,8639 ],[ 1112475816000,9729 ],[ 1112479516000,9738 ],[ 1112487131000,9750 ],[ 1112489312000,9753 ],[ 1112505810000,9791 ],[ 1112569954000,9797 ],[ 1112655482000,9819 ],[ 1112679585000,10045 ],[ 1112715664000,10066 ],[ 1112716828000,10081 ],[ 1112718347000,10085 ],[ 1112737068000,10148 ],[ 1112740141000,10175 ],[ 1113104179000,10180 ],[ 1113679782000,10202 ],[ 1113688795000,10203 ],[ 1113758444000,10240 ],[ 1113937206000,10243 ],[ 1114631008000,10248 ],[ 1114651192000,10265 ],[ 1114710934000,10316 ],[ 1114924057000,10377 ],[ 1115309226000,10385 ],[ 1115309509000,10389 ],[ 1115312347000,10439 ],[ 1115506628000,10511 ],[ 1115509785000,10523 ],[ 1115580894000,10524 ],[ 1115582295000,10537 ],[ 1116552962000,10546 ],[ 1117507802000,10567 ],[ 1118631524000,10580 ],[ 1118632921000,10596 ],[ 1119680859000,10708 ],[ 1119722812000,10721 ],[ 1119725853000,10751 ],[ 1120686627000,10759 ],[ 1120687835000,10764 ],[ 1121234713000,10821 ],[ 1121235945000,10823 ],[ 1121236072000,10827 ],[ 1121548107000,10839 ],[ 1123864722000,10859 ],[ 1123887323000,10872 ],[ 1124040448000,10875 ],[ 1124045019000,10889 ],[ 1124171103000,10996 ],[ 1124171652000,11011 ],[ 1124912771000,11014 ],[ 1131514148000,11033 ] ] }] };
+                    
+                    window.chart_charts.insertions_by_author_by_date = new Highcharts.StockChart(options);
+            
+                      };
+                    })()
+                    </script>
+            <div id="charts.insertions_by_author_by_date"></div>
+            <small>
+              <center>5 best authors shown</center>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitStats - rails</title>
+    <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../../../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css'>
+    <script src='../../../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../../../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../../../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../../../index.html'>GitStats - rails</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../../../general.html'>General</a>
+              </li>
+              <li class=''>
+                <a href='../../../activity/by_date.html'>Activity</a>
+              </li>
+              <li class='active'>
+                <a href='../../best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../../../files/by_date.html'>Files</a>
+              </li>
+              <li class=''>
+                <a href='../../../lines/by_date.html'>Lines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class=''>
+            <a href='commits_by_date.html'>Commits by date</a>
+          </li>
+          <li class=''>
+            <a href='changed_lines_by_date.html'>Changed lines by date</a>
+          </li>
+          <li class='active'>
+            <a href='insertions_by_date.html'>Lines added by date</a>
+          </li>
+          <li class=''>
+            <a href='deletions_by_date.html'>Lines deleted by date</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header'>
+              <h1 class='pagination-centered'>Lines added by date</h1>
+            </div>
+                    <script type="text/javascript">
+                    (function() {
+                      var onload = window.onload;
+                      window.onload = function(){
+                        if (typeof onload == "function") onload();
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.insertions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Alexey Vakhov","type": "spline","data": [ [ 1314955860000,2 ],[ 1314973210000,18 ],[ 1315077220000,24 ],[ 1316068915000,46 ],[ 1316892426000,47 ],[ 1316929249000,52 ],[ 1317059185000,54 ],[ 1317059536000,56 ],[ 1317152392000,57 ],[ 1317621712000,58 ],[ 1317622755000,88 ],[ 1317623773000,89 ],[ 1317625462000,125 ],[ 1317629125000,147 ],[ 1317883177000,149 ],[ 1318054378000,150 ],[ 1318057291000,151 ],[ 1318321887000,153 ],[ 1318322883000,157 ],[ 1318664073000,159 ],[ 1318708466000,160 ],[ 1318964275000,161 ],[ 1319481490000,165 ],[ 1320042998000,166 ],[ 1320123303000,167 ],[ 1320295408000,170 ],[ 1320296531000,172 ],[ 1320565588000,174 ],[ 1320760879000,175 ],[ 1320903957000,177 ],[ 1320910002000,182 ],[ 1321683599000,183 ],[ 1322375020000,187 ],[ 1322716336000,188 ],[ 1329029532000,189 ],[ 1329285867000,203 ],[ 1329286198000,204 ],[ 1329287483000,237 ],[ 1329551933000,239 ],[ 1329552179000,240 ],[ 1329637659000,241 ],[ 1329979939000,242 ],[ 1329981931000,249 ],[ 1329982580000,249 ],[ 1330118940000,263 ],[ 1330412248000,279 ],[ 1331291896000,287 ],[ 1331306918000,289 ],[ 1331358313000,290 ],[ 1331359070000,292 ],[ 1331661342000,293 ],[ 1332587677000,295 ],[ 1332595344000,296 ],[ 1332834885000,297 ],[ 1332923001000,298 ],[ 1333139453000,298 ],[ 1333140267000,298 ],[ 1333227168000,314 ],[ 1333259089000,337 ],[ 1333261831000,339 ],[ 1333435393000,341 ],[ 1333521639000,342 ],[ 1333606050000,343 ],[ 1333788895000,344 ],[ 1334122099000,357 ],[ 1334123751000,374 ],[ 1334126728000,404 ],[ 1334252544000,404 ],[ 1334289695000,405 ],[ 1334294420000,406 ],[ 1334660501000,407 ],[ 1334662786000,410 ],[ 1334845780000,419 ],[ 1334992477000,420 ],[ 1335086422000,423 ],[ 1335087530000,441 ],[ 1335242942000,445 ],[ 1335245154000,446 ],[ 1335340293000,447 ],[ 1335449760000,451 ],[ 1335450721000,455 ],[ 1335511733000,617 ],[ 1335589095000,620 ],[ 1335590230000,627 ],[ 1335591030000,633 ],[ 1335617105000,634 ],[ 1335936050000,635 ],[ 1335936523000,636 ],[ 1336120355000,637 ],[ 1336121660000,649 ],[ 1336154693000,675 ],[ 1336972439000,676 ],[ 1337144426000,677 ],[ 1337144761000,678 ],[ 1337636223000,679 ],[ 1337672759000,680 ],[ 1337678766000,692 ],[ 1337927024000,693 ],[ 1337950020000,706 ],[ 1337950851000,707 ],[ 1337953613000,718 ],[ 1337956256000,719 ],[ 1340045535000,720 ] ] }] };
+                    
+                    window.chart_charts.insertions_by_author_by_date = new Highcharts.StockChart(options);
+            
+                      };
+                    })()
+                    </script>
+            <div id="charts.insertions_by_author_by_date"></div>
+            <small>
+              <center>5 best authors shown</center>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

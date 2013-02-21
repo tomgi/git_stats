@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitStats - JohnTheRipper</title>
+    <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../../../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css'>
+    <script src='../../../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../../../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../../../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../../../index.html'>GitStats - JohnTheRipper</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../../../general.html'>General</a>
+              </li>
+              <li class=''>
+                <a href='../../../activity/by_date.html'>Activity</a>
+              </li>
+              <li class='active'>
+                <a href='../../best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../../../files/by_date.html'>Files</a>
+              </li>
+              <li class=''>
+                <a href='../../../lines/by_date.html'>Lines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class=''>
+            <a href='commits_by_date.html'>Commits by date</a>
+          </li>
+          <li class=''>
+            <a href='changed_lines_by_date.html'>Changed lines by date</a>
+          </li>
+          <li class=''>
+            <a href='insertions_by_date.html'>Lines added by date</a>
+          </li>
+          <li class='active'>
+            <a href='deletions_by_date.html'>Lines deleted by date</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header'>
+              <h1 class='pagination-centered'>Lines deleted by date</h1>
+            </div>
+                    <script type="text/javascript">
+                    (function() {
+                      var onload = window.onload;
+                      window.onload = function(){
+                        if (typeof onload == "function") onload();
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.deletions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "JimF","type": "spline","data": [ [ 1324148656000,1 ],[ 1324148656000,3 ],[ 1324180509000,4 ],[ 1324284021000,27 ],[ 1324592525000,854 ],[ 1324592664000,858 ],[ 1324592768000,873 ],[ 1324592872000,1190 ],[ 1324658748000,1195 ],[ 1324663026000,1199 ],[ 1329328737000,1219 ],[ 1331146249000,1222 ],[ 1334259469000,1276 ],[ 1334260110000,1279 ],[ 1334340754000,1286 ],[ 1335905577000,1287 ],[ 1335905675000,1304 ],[ 1335919866000,1305 ],[ 1336938542000,1306 ],[ 1337507646000,1309 ],[ 1338116928000,1469 ],[ 1338189332000,1480 ],[ 1338230738000,1482 ],[ 1338834122000,1485 ],[ 1338996019000,1486 ],[ 1339013100000,1486 ],[ 1339543086000,1508 ],[ 1340088087000,1555 ],[ 1340149868000,1556 ],[ 1340228627000,1694 ],[ 1340296488000,1701 ],[ 1340428748000,1701 ],[ 1340551459000,1709 ],[ 1340846962000,1710 ],[ 1340908046000,1712 ],[ 1340912192000,1721 ],[ 1341072752000,1721 ],[ 1341077463000,1745 ],[ 1341179678000,1783 ],[ 1341301525000,1883 ],[ 1341301798000,7911 ],[ 1341327102000,7912 ],[ 1341327102000,7913 ],[ 1341388879000,7949 ],[ 1341389678000,7953 ],[ 1341426702000,7960 ],[ 1341427165000,8020 ],[ 1341437780000,8021 ],[ 1341437826000,8022 ],[ 1341757939000,8026 ],[ 1341759079000,8026 ],[ 1341827791000,8099 ],[ 1341867283000,8100 ],[ 1341867283000,8101 ],[ 1341989399000,8102 ],[ 1341989460000,8207 ],[ 1342092860000,8224 ],[ 1342092923000,8226 ],[ 1342217856000,8240 ],[ 1342217891000,8276 ],[ 1342233035000,8285 ],[ 1342234338000,8567 ],[ 1342306816000,8569 ],[ 1343100893000,8571 ],[ 1343695055000,10850 ],[ 1343920604000,10853 ],[ 1343922981000,10853 ],[ 1344021867000,10864 ],[ 1344064795000,11768 ],[ 1344069263000,11790 ],[ 1344097537000,11893 ],[ 1344548471000,11914 ],[ 1344973256000,12008 ],[ 1344976548000,12048 ],[ 1344976608000,12048 ],[ 1344977399000,12063 ],[ 1344984209000,12632 ],[ 1345050856000,12761 ],[ 1345081643000,12762 ],[ 1345493513000,12762 ],[ 1345911289000,12763 ],[ 1345931199000,13053 ],[ 1345931250000,13053 ],[ 1345988827000,13053 ],[ 1345989170000,13063 ],[ 1345994360000,13064 ],[ 1346863670000,13067 ],[ 1356932276000,13085 ],[ 1357433817000,14628 ],[ 1357434298000,14636 ],[ 1357506281000,14727 ],[ 1357506437000,14841 ],[ 1357510975000,14842 ],[ 1357569690000,14846 ],[ 1358674198000,14848 ],[ 1358897968000,14880 ],[ 1359568268000,14883 ],[ 1359735964000,14883 ],[ 1359805886000,14887 ],[ 1360014153000,15075 ],[ 1360014242000,15075 ],[ 1360014321000,15075 ],[ 1360018727000,15078 ],[ 1360022919000,15078 ] ] }] };
+                    
+                    window.chart_charts.deletions_by_author_by_date = new Highcharts.StockChart(options);
+            
+                      };
+                    })()
+                    </script>
+            <div id="charts.deletions_by_author_by_date"></div>
+            <small>
+              <center>5 best authors shown</center>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitStats - rails</title>
+    <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../../../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css'>
+    <script src='../../../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../../../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../../../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../../../index.html'>GitStats - rails</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../../../general.html'>General</a>
+              </li>
+              <li class=''>
+                <a href='../../../activity/by_date.html'>Activity</a>
+              </li>
+              <li class='active'>
+                <a href='../../best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../../../files/by_date.html'>Files</a>
+              </li>
+              <li class=''>
+                <a href='../../../lines/by_date.html'>Lines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class=''>
+            <a href='commits_by_date.html'>Commits by date</a>
+          </li>
+          <li class=''>
+            <a href='changed_lines_by_date.html'>Changed lines by date</a>
+          </li>
+          <li class='active'>
+            <a href='insertions_by_date.html'>Lines added by date</a>
+          </li>
+          <li class=''>
+            <a href='deletions_by_date.html'>Lines deleted by date</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header'>
+              <h1 class='pagination-centered'>Lines added by date</h1>
+            </div>
+                    <script type="text/javascript">
+                    (function() {
+                      var onload = window.onload;
+                      window.onload = function(){
+                        if (typeof onload == "function") onload();
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.insertions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Sam Stephenson","type": "spline","data": [ [ 1113790573000,384 ],[ 1113909410000,392 ],[ 1119848868000,827 ],[ 1119853989000,838 ],[ 1119888310000,850 ],[ 1119892252000,852 ],[ 1120022451000,911 ],[ 1120454608000,979 ],[ 1120455372000,981 ],[ 1121050679000,1031 ],[ 1121053582000,1081 ],[ 1127818067000,1084 ],[ 1128971380000,1086 ],[ 1128976513000,1104 ],[ 1129157259000,1147 ],[ 1129176752000,1210 ],[ 1129226967000,1220 ],[ 1129390449000,1230 ],[ 1129433140000,2074 ],[ 1129473917000,2656 ],[ 1129603713000,2663 ],[ 1130364447000,2684 ],[ 1130535892000,2694 ],[ 1131137918000,2735 ],[ 1131141289000,2740 ],[ 1131159811000,2764 ],[ 1131159881000,2766 ],[ 1131165873000,2911 ],[ 1131201047000,2947 ],[ 1131213892000,3124 ],[ 1131241172000,3198 ],[ 1131323852000,3238 ],[ 1131330380000,3241 ],[ 1131336365000,3280 ],[ 1131377703000,3283 ],[ 1131423994000,3640 ],[ 1132007327000,4587 ],[ 1132275191000,4777 ],[ 1132337025000,4782 ],[ 1132383547000,4824 ],[ 1132538076000,4832 ],[ 1132553965000,4840 ],[ 1132560268000,4843 ],[ 1132648624000,4885 ],[ 1132649992000,4886 ],[ 1133378335000,4897 ],[ 1133829177000,4900 ],[ 1134496277000,4954 ],[ 1134677003000,5027 ],[ 1135038033000,5087 ],[ 1135653063000,5306 ],[ 1137110264000,5320 ],[ 1137114632000,5321 ],[ 1137626087000,5641 ],[ 1137626387000,5643 ],[ 1137794647000,5703 ],[ 1137794921000,5707 ],[ 1137795519000,5822 ],[ 1137887560000,5828 ],[ 1137998443000,5868 ],[ 1137999146000,5929 ],[ 1138001244000,5945 ],[ 1138033777000,5950 ],[ 1138034200000,5955 ],[ 1138036155000,6017 ],[ 1138825527000,6022 ],[ 1139431575000,6045 ],[ 1139707813000,6128 ],[ 1141666405000,6238 ],[ 1142183073000,6247 ],[ 1142204428000,6250 ],[ 1142215919000,6298 ],[ 1143438437000,6364 ],[ 1144299434000,6432 ],[ 1144479861000,6445 ],[ 1144905163000,6490 ],[ 1145470095000,6532 ],[ 1149098810000,6535 ],[ 1149269295000,6569 ],[ 1150843732000,6599 ],[ 1157429826000,7309 ],[ 1158783252000,7314 ],[ 1161295407000,7379 ],[ 1163269526000,7423 ],[ 1163269751000,7426 ],[ 1163303075000,7908 ],[ 1167961046000,8112 ],[ 1168898531000,8124 ],[ 1169010089000,8556 ],[ 1174201558000,8899 ],[ 1179608231000,11099 ],[ 1192568909000,16407 ],[ 1194362230000,16533 ],[ 1196296799000,16711 ],[ 1196824109000,16805 ],[ 1228430113000,16834 ] ] }] };
+                    
+                    window.chart_charts.insertions_by_author_by_date = new Highcharts.StockChart(options);
+            
+                      };
+                    })()
+                    </script>
+            <div id="charts.insertions_by_author_by_date"></div>
+            <small>
+              <center>5 best authors shown</center>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

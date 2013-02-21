@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitStats - paperclip</title>
+    <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../../../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css'>
+    <script src='../../../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../../../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../../../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../../../index.html'>GitStats - paperclip</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../../../general.html'>General</a>
+              </li>
+              <li class=''>
+                <a href='../../../activity/by_date.html'>Activity</a>
+              </li>
+              <li class='active'>
+                <a href='../../best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../../../files/by_date.html'>Files</a>
+              </li>
+              <li class=''>
+                <a href='../../../lines/by_date.html'>Lines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class='active'>
+            <a href='commits_by_date.html'>Commits by date</a>
+          </li>
+          <li class=''>
+            <a href='changed_lines_by_date.html'>Changed lines by date</a>
+          </li>
+          <li class=''>
+            <a href='insertions_by_date.html'>Lines added by date</a>
+          </li>
+          <li class=''>
+            <a href='deletions_by_date.html'>Lines deleted by date</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header'>
+              <h1 class='pagination-centered'>Commits by date</h1>
+            </div>
+                    <script type="text/javascript">
+                    (function() {
+                      var onload = window.onload;
+                      window.onload = function(){
+                        if (typeof onload == "function") onload();
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.commits_sum_by_author_by_date" },"subtitle": {  },"series": [{ "name": "jyurek","type": "spline","data": [ [ 1186288361000,1 ],[ 1186289086000,2 ],[ 1186289270000,3 ],[ 1187386884000,4 ],[ 1187401218000,5 ],[ 1187484266000,6 ],[ 1187484436000,7 ],[ 1187496863000,8 ],[ 1187718264000,9 ],[ 1187719374000,10 ],[ 1187807817000,11 ],[ 1187809531000,12 ],[ 1187809687000,13 ],[ 1187810496000,14 ],[ 1187810894000,15 ],[ 1187811165000,16 ],[ 1187897701000,17 ],[ 1188226344000,18 ],[ 1188227190000,19 ],[ 1188236456000,20 ],[ 1189110354000,21 ],[ 1189111986000,22 ],[ 1189112105000,23 ],[ 1189439758000,24 ],[ 1189442790000,25 ],[ 1189445647000,26 ],[ 1189544870000,27 ],[ 1189545591000,28 ],[ 1189545654000,29 ],[ 1189545908000,30 ],[ 1189633513000,31 ],[ 1189711767000,32 ],[ 1189711883000,33 ],[ 1189715286000,34 ],[ 1190731505000,35 ],[ 1190732134000,36 ],[ 1190732940000,37 ],[ 1193349980000,38 ],[ 1193415418000,39 ],[ 1193423699000,40 ],[ 1193423754000,41 ],[ 1193849288000,42 ],[ 1194624121000,43 ],[ 1194624169000,44 ],[ 1194624284000,45 ],[ 1194625078000,46 ],[ 1194877114000,47 ],[ 1195157755000,48 ],[ 1195281665000,49 ],[ 1195366952000,50 ],[ 1195419335000,51 ],[ 1195419657000,52 ],[ 1195425558000,53 ],[ 1196118645000,54 ],[ 1197328280000,55 ],[ 1201896339000,56 ],[ 1202410836000,57 ],[ 1202422081000,58 ],[ 1204323558000,59 ],[ 1205360090000,60 ],[ 1205863144000,61 ],[ 1205879092000,62 ],[ 1205879295000,63 ],[ 1205879635000,64 ],[ 1205880716000,65 ],[ 1205935394000,66 ],[ 1205935556000,67 ],[ 1206028727000,68 ],[ 1206076786000,69 ],[ 1206107354000,70 ],[ 1206120556000,71 ],[ 1206124702000,72 ],[ 1206363278000,73 ],[ 1206502782000,74 ],[ 1206973013000,75 ],[ 1206973058000,76 ],[ 1206974881000,77 ],[ 1206998652000,78 ],[ 1207063563000,79 ],[ 1207071685000,80 ],[ 1207072501000,81 ],[ 1207168299000,82 ],[ 1207171559000,83 ],[ 1207236502000,84 ],[ 1207536949000,85 ],[ 1207540350000,86 ],[ 1207541840000,87 ],[ 1207577220000,88 ],[ 1208352317000,89 ],[ 1208352322000,90 ],[ 1208352327000,91 ],[ 1208352332000,92 ],[ 1208352339000,93 ],[ 1208352347000,94 ],[ 1208352351000,95 ],[ 1208352355000,96 ],[ 1208383773000,97 ],[ 1208441169000,98 ],[ 1208534913000,99 ],[ 1208534919000,100 ],[ 1208534926000,101 ],[ 1208534934000,102 ] ] }] };
+                    
+                    window.chart_charts.commits_sum_by_author_by_date = new Highcharts.StockChart(options);
+            
+                      };
+                    })()
+                    </script>
+            <div id="charts.commits_sum_by_author_by_date"></div>
+            <small>
+              <center>5 best authors shown</center>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

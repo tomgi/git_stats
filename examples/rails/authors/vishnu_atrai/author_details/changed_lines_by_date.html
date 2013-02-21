@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitStats - rails</title>
+    <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../../../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css'>
+    <script src='../../../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../../../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../../../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../../../index.html'>GitStats - rails</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../../../general.html'>General</a>
+              </li>
+              <li class=''>
+                <a href='../../../activity/by_date.html'>Activity</a>
+              </li>
+              <li class='active'>
+                <a href='../../best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../../../files/by_date.html'>Files</a>
+              </li>
+              <li class='active'>
+                <a href='../../../lines/by_date.html'>Lines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class=''>
+            <a href='commits_by_date.html'>Commits by date</a>
+          </li>
+          <li class='active'>
+            <a href='changed_lines_by_date.html'>Changed lines by date</a>
+          </li>
+          <li class=''>
+            <a href='insertions_by_date.html'>Lines added by date</a>
+          </li>
+          <li class=''>
+            <a href='deletions_by_date.html'>Lines deleted by date</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header'>
+              <h1 class='pagination-centered'>Changed lines by date</h1>
+            </div>
+                    <script type="text/javascript">
+                    (function() {
+                      var onload = window.onload;
+                      window.onload = function(){
+                        if (typeof onload == "function") onload();
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.changed_lines_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Vishnu Atrai","type": "spline","data": [ [ 1303759442000,59 ],[ 1304614298000,65 ],[ 1305048114000,71 ],[ 1305053116000,93 ],[ 1305654393000,117 ],[ 1306036771000,118 ],[ 1306043252000,123 ],[ 1306064783000,126 ],[ 1306082285000,130 ],[ 1306867994000,136 ],[ 1310754418000,140 ],[ 1311268349000,142 ],[ 1311272202000,144 ],[ 1311272731000,146 ],[ 1311336810000,151 ],[ 1311699803000,153 ],[ 1311699803000,155 ],[ 1311703757000,157 ],[ 1311703757000,159 ],[ 1311704634000,161 ],[ 1311704634000,163 ],[ 1318755546000,167 ],[ 1324664461000,174 ],[ 1324751988000,180 ],[ 1324806592000,182 ],[ 1324839888000,207 ],[ 1324844465000,224 ],[ 1324922576000,338 ],[ 1324924222000,353 ],[ 1324924650000,367 ],[ 1325268957000,368 ],[ 1325270721000,370 ],[ 1325274173000,372 ],[ 1325274760000,376 ],[ 1325319757000,388 ],[ 1325437823000,400 ],[ 1325875766000,423 ],[ 1325919138000,428 ],[ 1326571398000,445 ],[ 1327836637000,446 ],[ 1329033950000,447 ],[ 1329035544000,448 ],[ 1329042788000,453 ],[ 1329155670000,455 ],[ 1329845916000,459 ],[ 1330260109000,463 ],[ 1330798709000,475 ],[ 1330876836000,476 ],[ 1331145442000,478 ],[ 1334595156000,479 ] ] }] };
+                    
+                    window.chart_charts.changed_lines_by_author_by_date = new Highcharts.StockChart(options);
+            
+                      };
+                    })()
+                    </script>
+            <div id="charts.changed_lines_by_author_by_date"></div>
+            <small>
+              <center>5 best authors shown</center>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitStats - rails</title>
+    <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../../../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css'>
+    <script src='../../../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../../../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../../../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../../../index.html'>GitStats - rails</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../../../general.html'>General</a>
+              </li>
+              <li class=''>
+                <a href='../../../activity/by_date.html'>Activity</a>
+              </li>
+              <li class='active'>
+                <a href='../../best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../../../files/by_date.html'>Files</a>
+              </li>
+              <li class=''>
+                <a href='../../../lines/by_date.html'>Lines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class=''>
+            <a href='commits_by_date.html'>Commits by date</a>
+          </li>
+          <li class=''>
+            <a href='changed_lines_by_date.html'>Changed lines by date</a>
+          </li>
+          <li class=''>
+            <a href='insertions_by_date.html'>Lines added by date</a>
+          </li>
+          <li class='active'>
+            <a href='deletions_by_date.html'>Lines deleted by date</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header'>
+              <h1 class='pagination-centered'>Lines deleted by date</h1>
+            </div>
+                    <script type="text/javascript">
+                    (function() {
+                      var onload = window.onload;
+                      window.onload = function(){
+                        if (typeof onload == "function") onload();
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.deletions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Steve Klabnik","type": "spline","data": [ [ 1330978223000,3 ],[ 1336954949000,9 ],[ 1337884574000,10 ],[ 1339692862000,97 ],[ 1339751980000,865 ],[ 1339840955000,869 ],[ 1341553155000,872 ],[ 1342196804000,872 ],[ 1343031198000,875 ],[ 1343940401000,875 ],[ 1344105776000,877 ],[ 1344959320000,880 ],[ 1346380789000,1196 ],[ 1346437193000,1197 ],[ 1346438165000,1199 ],[ 1347634335000,1211 ],[ 1347696027000,1211 ],[ 1347697913000,1213 ],[ 1347711735000,1213 ],[ 1347717683000,1213 ],[ 1347902109000,1214 ],[ 1347908614000,1214 ],[ 1347927967000,1217 ],[ 1347976416000,1218 ],[ 1347990474000,1218 ],[ 1348142961000,1219 ],[ 1348221494000,1220 ],[ 1348284674000,1225 ],[ 1348671558000,1227 ],[ 1349028491000,1229 ],[ 1349033879000,1234 ],[ 1349059317000,1234 ],[ 1349471259000,1237 ],[ 1349712363000,1245 ],[ 1349720977000,1246 ],[ 1350675822000,1257 ],[ 1351116252000,1258 ],[ 1351817897000,1259 ],[ 1351889216000,1260 ],[ 1352468471000,1267 ],[ 1352469176000,1269 ],[ 1352470398000,1269 ],[ 1352470780000,1272 ],[ 1352471045000,1275 ],[ 1353156297000,1275 ],[ 1353955496000,1275 ],[ 1353955868000,1276 ],[ 1354035096000,1278 ],[ 1354035405000,1278 ],[ 1354135389000,1278 ],[ 1354139796000,1282 ],[ 1354139827000,1288 ],[ 1354190038000,1289 ],[ 1354190273000,1290 ],[ 1354190571000,1301 ],[ 1354191003000,1302 ],[ 1354192049000,1312 ],[ 1354192513000,1318 ],[ 1354192582000,1319 ],[ 1354192660000,1321 ],[ 1354192834000,1325 ],[ 1354192945000,1327 ],[ 1354193071000,1329 ],[ 1354194473000,1331 ],[ 1354194848000,1457 ],[ 1354195290000,1466 ],[ 1354195629000,1468 ],[ 1354195732000,1470 ],[ 1354195831000,1472 ],[ 1354195932000,1474 ],[ 1354196040000,1476 ],[ 1354216389000,1841 ],[ 1354227902000,1869 ],[ 1354229158000,3179 ],[ 1354231448000,3526 ],[ 1354819413000,3526 ],[ 1354951235000,3585 ],[ 1354951371000,3587 ],[ 1354951573000,3587 ],[ 1354951877000,3587 ],[ 1354994654000,3722 ],[ 1355166081000,3723 ],[ 1355370647000,3723 ],[ 1355416251000,3723 ],[ 1355517897000,3774 ],[ 1355518272000,3775 ],[ 1355674021000,3775 ],[ 1355689460000,3775 ],[ 1355819842000,3775 ],[ 1356132310000,3775 ],[ 1356134053000,3775 ],[ 1356553462000,3776 ],[ 1356717467000,3776 ],[ 1357419765000,3776 ],[ 1357569616000,3776 ],[ 1357659546000,3776 ],[ 1358091804000,3778 ],[ 1358102076000,3779 ],[ 1358111719000,3779 ],[ 1358194716000,3779 ],[ 1358828085000,3779 ],[ 1358829726000,3787 ],[ 1358829964000,3791 ],[ 1358831549000,4155 ],[ 1358862268000,4155 ],[ 1359746188000,4155 ],[ 1359747211000,4156 ] ] }] };
+                    
+                    window.chart_charts.deletions_by_author_by_date = new Highcharts.StockChart(options);
+            
+                      };
+                    })()
+                    </script>
+            <div id="charts.deletions_by_author_by_date"></div>
+            <small>
+              <center>5 best authors shown</center>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

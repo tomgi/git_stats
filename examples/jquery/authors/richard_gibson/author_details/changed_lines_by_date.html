@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitStats - jquery</title>
+    <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../../../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css'>
+    <script src='../../../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../../../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../../../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../../../index.html'>GitStats - jquery</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../../../general.html'>General</a>
+              </li>
+              <li class=''>
+                <a href='../../../activity/by_date.html'>Activity</a>
+              </li>
+              <li class='active'>
+                <a href='../../best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../../../files/by_date.html'>Files</a>
+              </li>
+              <li class='active'>
+                <a href='../../../lines/by_date.html'>Lines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class=''>
+            <a href='commits_by_date.html'>Commits by date</a>
+          </li>
+          <li class='active'>
+            <a href='changed_lines_by_date.html'>Changed lines by date</a>
+          </li>
+          <li class=''>
+            <a href='insertions_by_date.html'>Lines added by date</a>
+          </li>
+          <li class=''>
+            <a href='deletions_by_date.html'>Lines deleted by date</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header'>
+              <h1 class='pagination-centered'>Changed lines by date</h1>
+            </div>
+                    <script type="text/javascript">
+                    (function() {
+                      var onload = window.onload;
+                      window.onload = function(){
+                        if (typeof onload == "function") onload();
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.changed_lines_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Richard Gibson","type": "spline","data": [ [ 1323203138000,477 ],[ 1323394010000,499 ],[ 1323452495000,511 ],[ 1326336978000,546 ],[ 1326389948000,554 ],[ 1329506240000,567 ],[ 1329888078000,572 ],[ 1333386777000,589 ],[ 1333594858000,804 ],[ 1335109004000,910 ],[ 1335109202000,912 ],[ 1335120816000,915 ],[ 1335470897000,934 ],[ 1336767632000,1045 ],[ 1337910755000,1258 ],[ 1338258304000,2012 ],[ 1338265861000,2015 ],[ 1338478273000,2231 ],[ 1339435466000,2320 ],[ 1339808504000,2453 ],[ 1340300459000,2532 ],[ 1340732911000,2590 ],[ 1340736596000,2595 ],[ 1341420018000,2597 ],[ 1341580964000,2734 ],[ 1341817002000,2741 ],[ 1342041467000,2745 ],[ 1342042433000,2749 ],[ 1343008179000,2919 ],[ 1343010212000,2971 ],[ 1343062109000,2996 ],[ 1344523329000,3000 ],[ 1345553991000,3013 ],[ 1347724621000,3028 ],[ 1348004384000,3073 ],[ 1348242783000,3113 ],[ 1349052868000,3126 ],[ 1349267161000,3147 ],[ 1349483503000,3149 ],[ 1350414146000,3151 ],[ 1350501615000,3155 ],[ 1350680930000,3219 ],[ 1351744198000,3260 ],[ 1351744827000,3302 ],[ 1351805528000,3377 ],[ 1351822959000,3383 ],[ 1351915610000,3669 ],[ 1352154084000,3807 ],[ 1352213580000,3903 ],[ 1352387110000,4390 ],[ 1352522626000,4411 ],[ 1352772376000,4559 ],[ 1353099463000,4584 ],[ 1353336619000,5221 ],[ 1353363468000,5223 ],[ 1353470261000,5295 ],[ 1353684548000,5916 ],[ 1353918043000,6139 ],[ 1353918043000,6362 ],[ 1354027566000,6423 ],[ 1354028010000,6427 ],[ 1354309911000,6429 ],[ 1354509136000,6551 ],[ 1354513780000,6557 ],[ 1354552339000,6609 ],[ 1354596214000,6611 ],[ 1354689796000,6786 ],[ 1354763383000,6788 ],[ 1354768253000,6790 ],[ 1354769253000,6792 ],[ 1354831296000,6914 ],[ 1355002090000,7061 ],[ 1355007853000,7173 ],[ 1355030784000,7384 ],[ 1355235937000,7386 ],[ 1355260343000,7419 ],[ 1355285118000,7421 ],[ 1355361558000,7431 ],[ 1355420455000,7493 ],[ 1355552778000,7495 ],[ 1355632944000,7500 ],[ 1355672359000,7513 ],[ 1355679440000,7517 ],[ 1356058613000,7519 ],[ 1356104043000,7521 ],[ 1356123097000,7523 ],[ 1357744208000,7527 ],[ 1357851272000,7529 ],[ 1357927316000,7531 ],[ 1358028667000,7758 ],[ 1358124799000,7869 ],[ 1358127434000,7876 ],[ 1358131120000,7894 ],[ 1358135960000,7902 ],[ 1358313484000,7904 ],[ 1358357447000,7994 ],[ 1358358956000,8010 ],[ 1358364984000,8014 ],[ 1358460029000,8018 ],[ 1358980948000,8062 ],[ 1359001529000,8077 ],[ 1359087107000,8079 ],[ 1359089144000,8095 ],[ 1359912416000,8097 ],[ 1359988529000,8099 ] ] }] };
+                    
+                    window.chart_charts.changed_lines_by_author_by_date = new Highcharts.StockChart(options);
+            
+                      };
+                    })()
+                    </script>
+            <div id="charts.changed_lines_by_author_by_date"></div>
+            <small>
+              <center>5 best authors shown</center>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

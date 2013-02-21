@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitStats - rails</title>
+    <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <style>
+      body { padding-top: 60px; }
+    </style>
+    <link href='../../../assets/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css'>
+    <script src='../../../assets/jquery.min.js' type='text/javascript'></script>
+    <script src='../../../assets/bootstrap/js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../../../assets/highstock.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='../../../index.html'>GitStats - rails</a>
+          <div class='nav-collapse collapse'>
+            <ul class='nav'>
+              <li class=''>
+                <a href='../../../general.html'>General</a>
+              </li>
+              <li class=''>
+                <a href='../../../activity/by_date.html'>Activity</a>
+              </li>
+              <li class='active'>
+                <a href='../../best_authors.html'>Authors</a>
+              </li>
+              <li class=''>
+                <a href='../../../files/by_date.html'>Files</a>
+              </li>
+              <li class=''>
+                <a href='../../../lines/by_date.html'>Lines</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='tabbable tabs-left'>
+        <ul class='nav nav-tabs'>
+          <li class='active'>
+            <a href='commits_by_date.html'>Commits by date</a>
+          </li>
+          <li class=''>
+            <a href='changed_lines_by_date.html'>Changed lines by date</a>
+          </li>
+          <li class=''>
+            <a href='insertions_by_date.html'>Lines added by date</a>
+          </li>
+          <li class=''>
+            <a href='deletions_by_date.html'>Lines deleted by date</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header'>
+              <h1 class='pagination-centered'>Commits by date</h1>
+            </div>
+                    <script type="text/javascript">
+                    (function() {
+                      var onload = window.onload;
+                      window.onload = function(){
+                        if (typeof onload == "function") onload();
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.commits_sum_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Oscar Del Ben","type": "spline","data": [ [ 1321286165000,1 ],[ 1321552187000,2 ],[ 1333374103000,3 ],[ 1333521958000,4 ],[ 1333542493000,5 ],[ 1333543964000,6 ],[ 1334388944000,7 ],[ 1334393333000,8 ],[ 1334393650000,9 ],[ 1334668375000,10 ],[ 1334671058000,11 ],[ 1334754602000,12 ],[ 1334755386000,13 ],[ 1334824395000,14 ],[ 1334824623000,15 ],[ 1334825440000,16 ],[ 1334826975000,17 ],[ 1334828005000,18 ],[ 1334830055000,19 ],[ 1334833947000,20 ],[ 1334908770000,21 ],[ 1334911430000,22 ],[ 1334911658000,23 ],[ 1334916407000,24 ],[ 1334919198000,25 ],[ 1334919223000,26 ],[ 1334998238000,27 ],[ 1335002493000,28 ],[ 1335003471000,29 ],[ 1335003499000,30 ],[ 1335263424000,31 ],[ 1335270067000,32 ],[ 1335270139000,33 ],[ 1335287039000,34 ],[ 1335287337000,35 ],[ 1335287761000,36 ],[ 1335346029000,37 ],[ 1335347207000,38 ],[ 1335348019000,39 ],[ 1335348848000,40 ],[ 1335349135000,41 ],[ 1335352739000,42 ],[ 1335361390000,43 ],[ 1335361409000,44 ],[ 1335425726000,45 ],[ 1335427752000,46 ],[ 1335429291000,47 ],[ 1335529262000,48 ],[ 1335529276000,49 ],[ 1335606290000,50 ],[ 1335606315000,51 ],[ 1335731033000,52 ],[ 1335769712000,53 ],[ 1335778095000,54 ],[ 1335862696000,55 ],[ 1335862711000,56 ],[ 1335866890000,57 ],[ 1335946862000,58 ],[ 1335948179000,59 ],[ 1335950000000,60 ],[ 1335951576000,61 ],[ 1335954875000,62 ],[ 1335955448000,63 ],[ 1336046299000,64 ],[ 1336113390000,65 ],[ 1336219928000,66 ],[ 1336386321000,67 ],[ 1336922466000,68 ],[ 1336927483000,69 ],[ 1337028986000,70 ],[ 1337030099000,71 ],[ 1337052634000,72 ],[ 1337136400000,73 ],[ 1337138730000,74 ],[ 1337139521000,75 ],[ 1337140131000,76 ],[ 1337290493000,77 ],[ 1337355387000,78 ],[ 1337355687000,79 ],[ 1337355903000,80 ],[ 1337446936000,81 ],[ 1337448882000,82 ],[ 1337450032000,83 ],[ 1337700732000,84 ],[ 1337700949000,85 ],[ 1337701394000,86 ],[ 1337701726000,87 ],[ 1337702159000,88 ],[ 1337787948000,89 ],[ 1337788388000,90 ],[ 1337788881000,91 ],[ 1337873219000,92 ],[ 1337873373000,93 ],[ 1337873705000,94 ],[ 1337874209000,95 ],[ 1337874692000,96 ],[ 1337874766000,97 ],[ 1337961540000,98 ],[ 1337962531000,99 ],[ 1339269647000,100 ],[ 1339269977000,101 ],[ 1339601688000,102 ],[ 1339602525000,103 ],[ 1339603154000,104 ],[ 1339689910000,105 ],[ 1339956682000,106 ],[ 1339956859000,107 ],[ 1339957168000,108 ],[ 1339957428000,109 ],[ 1339957820000,110 ] ] }] };
+                    
+                    window.chart_charts.commits_sum_by_author_by_date = new Highcharts.StockChart(options);
+            
+                      };
+                    })()
+                    </script>
+            <div id="charts.commits_sum_by_author_by_date"></div>
+            <small>
+              <center>5 best authors shown</center>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -18,18 +18,18 @@ module GitStats
 
       def authors
         @authors ||= run_and_parse("git shortlog -se #{commit_range}").map do |author|
-          Author.new(repo: self, name: author[:name], email: author[:email])
+          Author.new(repo: self, name: author[:name])
         end.extend(ByFieldFinder)
       end
 
       def commits
-        @commits ||= run_and_parse("git rev-list --pretty=format:'%h|%at|%ai|%aE' #{commit_range} | grep -v commit").map do |commit_line|
+        @commits ||= run_and_parse("git rev-list --pretty=format:'%h|%at|%ai|%aN' #{commit_range} | grep -v commit").map do |commit_line|
           Commit.new(
               repo: self,
               sha: commit_line[:sha],
               stamp: commit_line[:stamp],
               date: DateTime.parse(commit_line[:date]),
-              author: authors.by_email(commit_line[:author_email])
+              author: authors.by_name(commit_line[:author_name])
           )
         end.sort_by! { |e| e.date }.extend(ByFieldFinder)
       end

@@ -59,7 +59,7 @@ module GitStats
       end
 
       def ==(other)
-        self.name == other.name
+        [self.repo, self.name] == [other.repo, other.name]
       end
 
     end

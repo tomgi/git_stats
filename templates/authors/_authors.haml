@@ -31,7 +31,7 @@
           - sorted_authors.each_with_index do |author, i|
             %tr
               %th= i+1
-              %th= "#{author.name} &lt;#{author.email}&gt;"
+              %th= "#{author.name}"
               %td= author.commits.size
               %td= author.insertions
               %td= author.deletions

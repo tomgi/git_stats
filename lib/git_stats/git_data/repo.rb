@@ -17,7 +17,7 @@ module GitStats
       end
 
       def authors
-        @authors ||= run_and_parse("git shortlog -se #{commit_range}").map do |author|
+        @authors ||= run_and_parse("git shortlog -s #{commit_range}").map do |author|
           Author.new(repo: self, name: author[:name])
         end.extend(ByFieldFinder)
       end

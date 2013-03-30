@@ -9,8 +9,8 @@ module GitStats
 
       def parse_shortlog(result, params)
         result.lines.map do |line|
-          commits, name, email = line.scan(/(.*)\t(.*)<(.*)>/).first.map(&:strip)
-          {commits: commits.to_i, name: name, email: email}
+          commits, name = line.scan(/(.*)\t(.*)/).first.map(&:strip)
+          {commits: commits.to_i, name: name}
         end
       end
 

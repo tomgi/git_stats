@@ -6,7 +6,7 @@ module GitStats
     class Repo
       include HashInitializable
 
-      attr_reader :path
+      attr_reader :path, :first_commit_sha, :last_commit_sha
 
       delegate :files, :files_by_extension, :files_by_extension_count, :lines_by_extension,
                :files_count, :binary_files, :text_files, :lines_count, to: :last_commit

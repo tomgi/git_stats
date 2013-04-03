@@ -20,12 +20,12 @@ It browses the repository and outputs html page with statistics.
 
 ### Generator
 
-    $ git_stats repo_path output_directory
+    $ git_stats repo_path output_directory language_code first_commit_sha last_commit_sha 
     $ favorite_browser output_directory/index.html
 
 ### API usage example
 
-    > repo = GitStats::GitData::Repo.new(path: '.')
+    > repo = GitStats::GitData::Repo.new(path: '.', first_commit_sha: 'abcd1234', last_commit_sha: 'HEAD')
     > repo.authors
     => [...]
     > repo.commits

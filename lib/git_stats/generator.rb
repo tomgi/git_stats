@@ -4,10 +4,10 @@ module GitStats
     delegate :add_command_observer, to: :@repo
     delegate :render_all, to: :@view
 
-    def initialize(repo_path, out_path)
+    def initialize(repo_path, out_path, first_commit_sha, last_commit_sha)
       validate_repo_path(repo_path)
 
-      @repo = GitData::Repo.new(path: repo_path)
+      @repo = GitData::Repo.new(path: repo_path, first_commit_sha: first_commit_sha, last_commit_sha: last_commit_sha)
       view_data = StatsView::ViewData.new(@repo)
       @view = StatsView::View.new(view_data, out_path)
 

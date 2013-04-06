@@ -20,8 +20,8 @@ It browses the repository and outputs html page with statistics.
 
 ### Generator
 
-    $ git_stats repo_path output_directory language_code first_commit_sha last_commit_sha 
-    $ favorite_browser output_directory/index.html
+    $ git_stats
+    <follow instructions on the screen>
 
 ### API usage example
 

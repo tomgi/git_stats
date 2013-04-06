@@ -4,7 +4,7 @@ module GitStats
     delegate :add_command_observer, to: :@repo
     delegate :render_all, to: :@view
 
-    def initialize(repo_path, out_path, first_commit_sha, last_commit_sha)
+    def initialize(repo_path, out_path, first_commit_sha = nil, last_commit_sha = "HEAD")
       validate_repo_path(repo_path)
 
       @repo = GitData::Repo.new(path: repo_path, first_commit_sha: first_commit_sha, last_commit_sha: last_commit_sha)
@@ -18,7 +18,7 @@ module GitStats
 
 
     def validate_repo_path(repo_path)
-      raise ArgumentError, "#{repo_path} is not a git repository" unless (Dir.exists?("#{repo_path}/.git") || File.exists?("#{repo_path}/HEAD"))
+      raise ArgumentError, "#{repo_path} is not a git repository" unless Validator.new.valid_repo_path?(repo_path)
     end
 
   end

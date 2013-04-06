@@ -8,6 +8,7 @@ require 'git_stats/i18n'
 require 'git_stats/by_field_finder'
 require 'git_stats/cli'
 require 'git_stats/generator'
+require 'git_stats/validator'
 
 require 'git_stats/git_data/activity'
 require 'git_stats/git_data/author'

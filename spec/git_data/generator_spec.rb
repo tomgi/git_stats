@@ -15,7 +15,7 @@ describe GitStats::Generator do
 
   it 'should pass command observer to repo' do
     repo = double('repo')
-    GitStats::GitData::Repo.should_receive(:new).with(path: repo_path).and_return(repo)
+    GitStats::GitData::Repo.should_receive(:new).with(path: repo_path, first_commit_sha: nil, last_commit_sha: "HEAD").and_return(repo)
 
     generator = GitStats::Generator.new(repo_path, out_path)
 
@@ -27,7 +27,7 @@ describe GitStats::Generator do
 
   it 'should render all templates with view data for this repo' do
     repo = double('repo')
-    GitStats::GitData::Repo.should_receive(:new).with(path: repo_path).and_return(repo)
+    GitStats::GitData::Repo.should_receive(:new).with(path: repo_path, first_commit_sha: nil, last_commit_sha: "HEAD").and_return(repo)
 
     view_data = double('view_data')
     GitStats::StatsView::ViewData.should_receive(:new).with(repo).and_return(view_data)

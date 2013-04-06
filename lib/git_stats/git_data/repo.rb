@@ -68,7 +68,7 @@ module GitStats
       end
 
       def commit_range
-        @first_commit_sha ? "#@first_commit_sha..#{last_commit_sha}" : last_commit_sha
+        @first_commit_sha.blank? ? last_commit_sha : "#@first_commit_sha..#{last_commit_sha}"
       end
 
       def last_commit_sha

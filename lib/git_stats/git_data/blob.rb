@@ -22,7 +22,7 @@ module GitStats
       end
 
       def binary?
-        repo.run("git cat-file blob #{self.sha} | grep -m 1 '^'") =~ /Binary file/
+        repo.run("git cat-file blob #{self.sha} | grep '^' | head -1") =~ /Binary file/
       end
 
       def to_s

@@ -23,7 +23,7 @@ module GitStats
 
       def parse_rev_list(result, params)
         result.lines.map do |line|
-          sha, stamp, date, author_email = line.split('|').map(&:strip)
+          sha, stamp, date, author_email = line.split('~').map(&:strip)
           {sha: sha, stamp: stamp, date: date, author_email: author_email}
         end
       end

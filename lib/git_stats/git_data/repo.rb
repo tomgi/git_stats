@@ -23,7 +23,9 @@ module GitStats
       end
 
       def commits
-        @commits ||= run_and_parse("git rev-list --pretty=format:'%h|%at|%ai|%aE' #{commit_range} | grep -v commit").map do |commit_line|
+        return @commits if @commits
+        command = "git rev-list --pretty=format:%h~%at~%ai~%aE #{commit_range} | grep -v commit"
+        @commits ||= run_and_parse(command).map do |commit_line|
           Commit.new(
               repo: self,
               sha: commit_line[:sha],

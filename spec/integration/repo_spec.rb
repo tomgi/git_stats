@@ -29,13 +29,11 @@ describe GitStats::GitData::Repo do
   end
 
   it 'should count files by date' do
-    repo.files_count_by_date.keys.should == commit_dates
-    repo.files_count_by_date.values.should == [1, 2, 2, 3, 3, 4, 5, 5, 6, 6]
+    repo.files_count_by_date.keys == Hash[commit_dates_with_empty.zip [1, 2, 2, 3, 3, 4, 5, 5, 6, 6]]
   end
 
   it 'should count lines by date' do
-    repo.lines_count_by_date.keys.should == commit_dates
-    repo.files_count_by_date.values.should == [1, 2, 2, 3, 3, 4, 5, 5, 6, 6]
+    repo.files_count_by_date.values == Hash[commit_dates_with_empty.zip [1, 2, 2, 3, 3, 4, 5, 5, 6, 6]]
   end
 
   it 'should count all lines in repo' do

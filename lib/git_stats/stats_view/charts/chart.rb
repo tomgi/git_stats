@@ -104,7 +104,7 @@ module GitStats
           series(
               name: params[:name],
               type: "spline",
-              data: params[:data].map { |date, value| [date.to_i * 1000, value] }
+              data: Hash[params[:data]].fill_empty_days!.map { |date, value| [date.to_datetime.to_i * 1000, value] }.sort_by { |d| d[0] }
           )
         end
 
@@ -113,6 +113,7 @@ module GitStats
           type "column"
           x_categories params[:data_x]
         end
+
       end
     end
   end

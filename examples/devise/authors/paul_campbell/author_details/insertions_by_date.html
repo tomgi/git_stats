@@ -69,7 +69,7 @@
                       var onload = window.onload;
                       window.onload = function(){
                         if (typeof onload == "function") onload();
-                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.insertions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Paul Campbell","type": "spline","data": [ [ 1266242981000,2 ],[ 1266483388000,15 ] ] }] };
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.insertions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Paul Campbell","type": "spline","data": [ [ 1266242981000,2 ],[ 1266278400000,0 ],[ 1266364800000,0 ],[ 1266483388000,15 ] ] }] };
                     
                     window.chart_charts.insertions_by_author_by_date = new Highcharts.StockChart(options);
             

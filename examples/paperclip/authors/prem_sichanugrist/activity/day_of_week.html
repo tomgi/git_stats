@@ -45,83 +45,83 @@
     </div>
     <div class='container'>
       <div class='tabbable tabs-left'>
-  <ul class='nav nav-tabs'>
-    <li class=''>
-      <a href='by_date.html'>Activity by date</a>
-    </li>
-    <li class=''>
-      <a href='hour_of_day.html'>Hour of day</a>
-    </li>
-    <li class='active'>
-      <a href='day_of_week.html'>Day of week</a>
-    </li>
-    <li class=''>
-      <a href='hour_of_week.html'>Hour of week</a>
-    </li>
-    <li class=''>
-      <a href='month_of_year.html'>Month of year</a>
-    </li>
-    <li class=''>
-      <a href='year.html'>Year</a>
-    </li>
-    <li class=''>
-      <a href='year_month.html'>Year and month</a>
-    </li>
-  </ul>
-  <div class='tab-content'>
-    <div class='tab-pane active'>
-      <div class='page-header pagination-centered'>
-        <h1>Day of week</h1>
-        <h3>Prem Sichanugrist &lt;s@sikachu.com&gt;</h3>
+        <ul class='nav nav-tabs'>
+          <li class=''>
+            <a href='by_date.html'>Activity by date</a>
+          </li>
+          <li class=''>
+            <a href='hour_of_day.html'>Hour of day</a>
+          </li>
+          <li class='active'>
+            <a href='day_of_week.html'>Day of week</a>
+          </li>
+          <li class=''>
+            <a href='hour_of_week.html'>Hour of week</a>
+          </li>
+          <li class=''>
+            <a href='month_of_year.html'>Month of year</a>
+          </li>
+          <li class=''>
+            <a href='year.html'>Year</a>
+          </li>
+          <li class=''>
+            <a href='year_month.html'>Year and month</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header pagination-centered'>
+              <h1>Day of week</h1>
+              <h3>Prem Sichanugrist &lt;s@sikachu.com&gt;</h3>
+            </div>
+          </div>
+          <table class='table table-bordered table-condensed'>
+            <tr>
+              <th>Day</th>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+            </tr>
+            <tr>
+              <th>Commits</th>
+              <td>8</td>
+              <td>24</td>
+              <td>27</td>
+              <td>12</td>
+              <td>20</td>
+              <td>128</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <th>Percentage</th>
+              <td>3.3</td>
+              <td>10.0</td>
+              <td>11.3</td>
+              <td>5.0</td>
+              <td>8.4</td>
+              <td>53.6</td>
+              <td>8.4</td>
+            </tr>
+          </table>
+                  <script type="text/javascript">
+                  (function() {
+                    var onload = window.onload;
+                    window.onload = function(){
+                      if (typeof onload == "function") onload();
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Day" },"categories": [ "Sun","Mon","Tue","Wed","Thu","Fri","Sat" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_wday","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by day of week","data": [ 8,24,27,12,20,128,20 ] }] };
+                  
+                  window.chart_charts.activity_by_wday = new Highcharts.Chart(options);
+          
+                    };
+                  })()
+                  </script>
+          <div id="charts.activity_by_wday"></div>
+        </div>
       </div>
-    </div>
-    <table class='table table-bordered table-condensed'>
-      <tr>
-        <th>Day</th>
-        <th>Sun</th>
-        <th>Mon</th>
-        <th>Tue</th>
-        <th>Wed</th>
-        <th>Thu</th>
-        <th>Fri</th>
-        <th>Sat</th>
-      </tr>
-      <tr>
-        <th>Commits</th>
-        <td>8</td>
-        <td>24</td>
-        <td>27</td>
-        <td>12</td>
-        <td>20</td>
-        <td>128</td>
-        <td>20</td>
-      </tr>
-      <tr>
-        <th>Percentage</th>
-        <td>3.3</td>
-        <td>10.0</td>
-        <td>11.3</td>
-        <td>5.0</td>
-        <td>8.4</td>
-        <td>53.6</td>
-        <td>8.4</td>
-      </tr>
-    </table>
-            <script type="text/javascript">
-              (function() {
-                var onload = window.onload;
-                window.onload = function(){
-                  if (typeof onload == "function") onload();
-                          var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Day" },"categories": [ "Sun","Mon","Tue","Wed","Thu","Fri","Sat" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_wday","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by day of week","data": [ 8,24,27,12,20,128,20 ] }] };
-              
-              window.chart_charts.activity_by_wday = new Highcharts.Chart(options);
-      
-                };
-              })()
-              </script>
-      <div id="charts.activity_by_wday"></div>
-  </div>
-</div>
     </div>
   </body>
 </html>

@@ -69,7 +69,7 @@
                       var onload = window.onload;
                       window.onload = function(){
                         if (typeof onload == "function") onload();
-                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.commits_sum_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Micha\u0142 Szajbe","type": "spline","data": [ [ 1233685152000,1 ],[ 1233694796000,2 ],[ 1233928430000,3 ],[ 1233931364000,4 ] ] }] };
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.commits_sum_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Michał Szajbe","type": "spline","data": [ [ 1233685152000,1 ],[ 1233694796000,2 ],[ 1233705600000,0 ],[ 1233792000000,0 ],[ 1233928430000,3 ],[ 1233931364000,4 ] ] }] };
                     
                     window.chart_charts.commits_sum_by_author_by_date = new Highcharts.StockChart(options);
             

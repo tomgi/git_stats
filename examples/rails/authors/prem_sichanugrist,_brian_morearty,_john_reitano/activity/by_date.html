@@ -45,51 +45,51 @@
     </div>
     <div class='container'>
       <div class='tabbable tabs-left'>
-  <ul class='nav nav-tabs'>
-    <li class='active'>
-      <a href='by_date.html'>Activity by date</a>
-    </li>
-    <li class=''>
-      <a href='hour_of_day.html'>Hour of day</a>
-    </li>
-    <li class=''>
-      <a href='day_of_week.html'>Day of week</a>
-    </li>
-    <li class=''>
-      <a href='hour_of_week.html'>Hour of week</a>
-    </li>
-    <li class=''>
-      <a href='month_of_year.html'>Month of year</a>
-    </li>
-    <li class=''>
-      <a href='year.html'>Year</a>
-    </li>
-    <li class=''>
-      <a href='year_month.html'>Year and month</a>
-    </li>
-  </ul>
-  <div class='tab-content'>
-    <div class='tab-pane active'>
-      <div class='page-header pagination-centered'>
-        <h1>Activity by date</h1>
-        <h3>Prem Sichanugrist, Brian Morearty, John Reitano &lt;s@sikachu.com, github2@morearty.org, john_reitano@yahoo.com&gt;</h3>
+        <ul class='nav nav-tabs'>
+          <li class='active'>
+            <a href='by_date.html'>Activity by date</a>
+          </li>
+          <li class=''>
+            <a href='hour_of_day.html'>Hour of day</a>
+          </li>
+          <li class=''>
+            <a href='day_of_week.html'>Day of week</a>
+          </li>
+          <li class=''>
+            <a href='hour_of_week.html'>Hour of week</a>
+          </li>
+          <li class=''>
+            <a href='month_of_year.html'>Month of year</a>
+          </li>
+          <li class=''>
+            <a href='year.html'>Year</a>
+          </li>
+          <li class=''>
+            <a href='year_month.html'>Year and month</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header pagination-centered'>
+              <h1>Activity by date</h1>
+              <h3>Prem Sichanugrist, Brian Morearty, John Reitano &lt;s@sikachu.com, github2@morearty.org, john_reitano@yahoo.com&gt;</h3>
+            </div>
+          </div>
+                  <script type="text/javascript">
+                  (function() {
+                    var onload = window.onload;
+                    window.onload = function(){
+                      if (typeof onload == "function") onload();
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1302438428000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
+                  
+                  window.chart_charts.activity_by_date = new Highcharts.StockChart(options);
+          
+                    };
+                  })()
+                  </script>
+          <div id="charts.activity_by_date"></div>
+        </div>
       </div>
-    </div>
-            <script type="text/javascript">
-              (function() {
-                var onload = window.onload;
-                window.onload = function(){
-                  if (typeof onload == "function") onload();
-                          var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_date" },"subtitle": {  },"series": [{ "name": "Commits by date","type": "column","data": [ [ 1302438428000,1 ] ],"dataGrouping": { "units": [ [ "day",[ 1 ] ],[ "week",[ 1 ] ] ],"forced": true } }] };
-              
-              window.chart_charts.activity_by_date = new Highcharts.StockChart(options);
-      
-                };
-              })()
-              </script>
-      <div id="charts.activity_by_date"></div>
-  </div>
-</div>
     </div>
   </body>
 </html>

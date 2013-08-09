@@ -69,7 +69,7 @@
                       var onload = window.onload;
                       window.onload = function(){
                         if (typeof onload == "function") onload();
-                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.deletions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Matt Jones + Scott Walker","type": "spline","data": [ [ 1325083993000,1 ],[ 1325620356000,10 ] ] }] };
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.deletions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Matt Jones + Scott Walker","type": "spline","data": [ [ 1325083993000,1 ],[ 1325116800000,0 ],[ 1325203200000,0 ],[ 1325289600000,0 ],[ 1325376000000,0 ],[ 1325462400000,0 ],[ 1325620356000,10 ] ] }] };
                     
                     window.chart_charts.deletions_by_author_by_date = new Highcharts.StockChart(options);
             

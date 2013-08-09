@@ -45,44 +45,44 @@
     </div>
     <div class='container'>
       <div class='tabbable tabs-left'>
-  <ul class='nav nav-tabs'>
-    <li class='active'>
-      <a href='commits_by_date.html'>Commits by date</a>
-    </li>
-    <li class=''>
-      <a href='changed_lines_by_date.html'>Changed lines by date</a>
-    </li>
-    <li class=''>
-      <a href='insertions_by_date.html'>Lines added by date</a>
-    </li>
-    <li class=''>
-      <a href='deletions_by_date.html'>Lines deleted by date</a>
-    </li>
-  </ul>
-  <div class='tab-content'>
-    <div class='tab-pane active'>
-      <div class='page-header'>
-        <h1 class='pagination-centered'>Commits by date</h1>
+        <ul class='nav nav-tabs'>
+          <li class='active'>
+            <a href='commits_by_date.html'>Commits by date</a>
+          </li>
+          <li class=''>
+            <a href='changed_lines_by_date.html'>Changed lines by date</a>
+          </li>
+          <li class=''>
+            <a href='insertions_by_date.html'>Lines added by date</a>
+          </li>
+          <li class=''>
+            <a href='deletions_by_date.html'>Lines deleted by date</a>
+          </li>
+        </ul>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <div class='page-header'>
+              <h1 class='pagination-centered'>Commits by date</h1>
+            </div>
+                    <script type="text/javascript">
+                    (function() {
+                      var onload = window.onload;
+                      window.onload = function(){
+                        if (typeof onload == "function") onload();
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.commits_sum_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Stefan Sprenger","type": "spline","data": [ [ 1306218145000,1 ],[ 1306222223000,2 ],[ 1306233245000,3 ],[ 1306233835000,4 ],[ 1306238256000,5 ],[ 1306328587000,6 ],[ 1306328622000,7 ],[ 1306329174000,8 ],[ 1306404119000,9 ],[ 1306404377000,10 ],[ 1306425271000,11 ],[ 1306425466000,12 ],[ 1306425540000,13 ],[ 1306477556000,14 ],[ 1306478792000,15 ],[ 1306489965000,16 ],[ 1306491179000,17 ],[ 1306495535000,18 ],[ 1306496650000,19 ],[ 1306497042000,20 ],[ 1306497399000,21 ],[ 1306540800000,0 ],[ 1306627200000,0 ],[ 1306713600000,0 ],[ 1306800000000,0 ],[ 1306886400000,0 ],[ 1306972800000,0 ],[ 1307059200000,0 ],[ 1307145600000,0 ],[ 1307232000000,0 ],[ 1307318400000,0 ],[ 1307430975000,22 ],[ 1307431867000,23 ],[ 1307431997000,24 ],[ 1307435025000,25 ],[ 1307438498000,26 ],[ 1307438798000,27 ],[ 1307439371000,28 ],[ 1307441765000,29 ],[ 1307448452000,30 ] ] }] };
+                    
+                    window.chart_charts.commits_sum_by_author_by_date = new Highcharts.StockChart(options);
+            
+                      };
+                    })()
+                    </script>
+            <div id="charts.commits_sum_by_author_by_date"></div>
+            <small>
+              <center>5 best authors shown</center>
+            </small>
+          </div>
+        </div>
       </div>
-              <script type="text/javascript">
-        (function() {
-          var onload = window.onload;
-          window.onload = function(){
-            if (typeof onload == "function") onload();
-                    var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.commits_sum_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Stefan Sprenger","type": "spline","data": [ [ 1306218145000,1 ],[ 1306222223000,2 ],[ 1306233245000,3 ],[ 1306233835000,4 ],[ 1306238256000,5 ],[ 1306328587000,6 ],[ 1306328622000,7 ],[ 1306329174000,8 ],[ 1306404119000,9 ],[ 1306404377000,10 ],[ 1306425271000,11 ],[ 1306425466000,12 ],[ 1306425540000,13 ],[ 1306477556000,14 ],[ 1306478792000,15 ],[ 1306489965000,16 ],[ 1306491179000,17 ],[ 1306495535000,18 ],[ 1306496650000,19 ],[ 1306497042000,20 ],[ 1306497399000,21 ],[ 1307430975000,22 ],[ 1307431867000,23 ],[ 1307431997000,24 ],[ 1307435025000,25 ],[ 1307438498000,26 ],[ 1307438798000,27 ],[ 1307439371000,28 ],[ 1307441765000,29 ],[ 1307448452000,30 ] ] }] };
-        
-        window.chart_charts.commits_sum_by_author_by_date = new Highcharts.StockChart(options);
-
-          };
-        })()
-        </script>
-<div id="charts.commits_sum_by_author_by_date"></div>
-      <small>
-        <center>5 best authors shown</center>
-      </small>
-    </div>
-  </div>
-</div>
     </div>
   </body>
 </html>

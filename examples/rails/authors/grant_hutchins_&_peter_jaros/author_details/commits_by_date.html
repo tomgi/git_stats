@@ -69,7 +69,7 @@
                       var onload = window.onload;
                       window.onload = function(){
                         if (typeof onload == "function") onload();
-                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.commits_sum_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Grant Hutchins & Peter Jaros","type": "spline","data": [ [ 1310161900000,1 ],[ 1310162055000,2 ],[ 1310162055000,3 ] ] }] };
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.commits_sum_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Grant Hutchins \u0026 Peter Jaros","type": "spline","data": [ [ 1310161900000,1 ],[ 1310162055000,3 ] ] }] };
                     
                     window.chart_charts.commits_sum_by_author_by_date = new Highcharts.StockChart(options);
             

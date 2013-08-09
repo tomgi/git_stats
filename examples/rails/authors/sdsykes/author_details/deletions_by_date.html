@@ -69,7 +69,7 @@
                       var onload = window.onload;
                       window.onload = function(){
                         if (typeof onload == "function") onload();
-                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.deletions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "sdsykes","type": "spline","data": [ [ 1252318939000,1 ],[ 1252662837000,3 ] ] }] };
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.deletions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "sdsykes","type": "spline","data": [ [ 1252318939000,1 ],[ 1252368000000,0 ],[ 1252454400000,0 ],[ 1252540800000,0 ],[ 1252662837000,3 ] ] }] };
                     
                     window.chart_charts.deletions_by_author_by_date = new Highcharts.StockChart(options);
             

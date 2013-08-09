@@ -69,7 +69,7 @@
                       var onload = window.onload;
                       window.onload = function(){
                         if (typeof onload == "function") onload();
-                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.deletions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Mathieu Ravaux","type": "spline","data": [ [ 1311435945000,0 ],[ 1311577825000,3 ] ] }] };
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.deletions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Mathieu Ravaux","type": "spline","data": [ [ 1311435945000,0 ],[ 1311465600000,0 ],[ 1311577825000,3 ] ] }] };
                     
                     window.chart_charts.deletions_by_author_by_date = new Highcharts.StockChart(options);
             

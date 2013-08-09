@@ -15,6 +15,15 @@ shared_context "shared" do
       DateTime.parse('2012-10-24 15:49:02 +0200'),
       DateTime.parse('2012-10-26 17:05:25 +0200'),
   ] }
+  let(:commit_dates_with_empty) {[
+      Date.new(2012, 10, 19),
+      Date.new(2012, 10, 20),
+      Date.new(2012, 10, 21),
+      Date.new(2012, 10, 22),
+      Date.new(2012, 10, 23),
+      Date.new(2012, 10, 24),
+      Date.new(2012, 10, 25),
+  ]}
   let(:tg_commit_dates) { [
       DateTime.parse('2012-10-19 10:44:34 +0200'),
       DateTime.parse('2012-10-19 10:46:10 +0200'),

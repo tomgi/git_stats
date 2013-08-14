@@ -1,0 +1,60 @@
+de:
+  project_name: Projektname
+  project_version: Generiert aus commit
+  generated_at: Generiert am
+  generator: Generiert durch
+  report_period: Berichtsperiode
+  total_files: Gesamtanzahl der Dateien
+  total_lines: Gesamtanzahl der Zeilen
+  total_commits: Gesamtanzahl der Commits
+  authors: Autoren
+  commits: Commits
+  commits_by_hour: Commits in der Stunde
+  files: Dateien
+  lines: Zeilen
+  files_by_date: Dateien nach Datum
+  lines_by_date: Zeilen nach Datum
+  files_by_extension: Dateien nach Erweiterungen
+  lines_by_extension: Zeilen nach Erweiterungen
+  hour_of_day: Tagesstunden
+  hour: Stunde
+  percentage: Prozent
+  day: Tag
+  day_of_week: Wochentagen
+  hour_of_week: Tagesstunden und Woche
+  month: Monat
+  month_of_year: Monaten im Jahr
+  year_month: Monaten und Jahr
+  commits_by_wday: Commits am Wochentag
+  commits_by_month: Commits im Monat
+  commits_by_year_month: Commits nach Jahr und Monat
+  commits_by_month_of_year: Commits pro Monat des Jahres
+  year: Jahr
+  commits_by_year: Commits im Jahr
+  activity: Aktivit&auml;ten
+  activity_by_date: Datum
+  commits_by_date: Commits am Datum
+  insertions_by_author: Zeilen hinzuf&uuml;gt von Autor
+  deletions_by_author: Zeilen gel&ouml;scht von Autor
+  changed_lines_by_author: Ge&auml;nderte Zeilen von Autor
+  best_authors_shown: aktivsten Autoren werden angezeigt
+  commits_count_by_author: Commits eines Autors
+  commits_sum_by_author_by_date: Commits nach Autor und Datum
+  insertions_by_author_by_date: Hinzugef&uuml;gte Zeilen pro Autor und Datum
+  deletions_by_author_by_date: Gel&ouml;schte Zeilen pro Autor und Datum
+  changed_lines_by_author_by_date: Ge&auml;nderte Zeilen pro Autor und Datum
+  best_authors: Aktivste Autoren
+  insertions: Zeilen hinzugef&uuml;gt
+  deletions: Zeilen gel&ouml;scht
+  first_commit: Erster commit
+  last_commit: Letzter commit
+  author: Autor
+  show_more: Mehr
+  close: Schliessen
+  binary: Bin&auml;r
+  text: Text
+  general: Allgemein
+  details: Details
+  insertions_by_date: Zeilen hinzugef&uuml;gt pro Datum
+  deletions_by_date: Zeilen gel&ouml;scht pro Datum
+  changed_lines_by_date: Ge&auml;nderte Zeilen pro Datum

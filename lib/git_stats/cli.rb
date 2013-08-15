@@ -1,27 +1,18 @@
 # -*- encoding : utf-8 -*-
 require "git_stats"
-require "highline/import"
+require "thor"
 
-class GitStats::CLI
+class GitStats::CLI < Thor
+  option :path, :aliases => :p, :default => '.', :desc => 'Path to repository from which statistics should be generated.'
+  option :output, :aliases => :o, :default => './git_stats', :desc => 'Output path where statistics should be written.'
+  option :language, :aliases => :l, :default => 'en', :desc => 'Language of written statistics.'
+  option :from, :aliases => :f, :desc => 'Commit from where statistics should start.'
+  option :to, :aliases => :t, :default => 'HEAD', :desc => 'Commit where statistics should stop.'
 
-  def start
-
-    repo_path = ask("Repo path?  ") { |q|
-      q.default = "."
-      q.validate = lambda { |p| GitStats::Validator.new.valid_repo_path?(p) }
-      q.responses[:not_valid] = "Given path is not a git repository, try again"
-    }
-
-    out_path = ask("Output dir?  ") { |q| q.default = "./git_stats" }
-    I18n.locale = ask("Language?  ") { |q| q.default = "en"; q.answer_type = Symbol }
-    specify_range = agree("Want to specify commits range?  ") { |q| q.default = "no" }
-
-    if specify_range
-      first_commit_sha = ask("Starting commit sha?  ") { |q| q.default = nil }
-      last_commit_sha = ask("Ending commit sha?  ") { |q| q.default = "HEAD" }
-    end
-
-    GitStats::Generator.new(repo_path, out_path, first_commit_sha, last_commit_sha) { |g|
+  desc 'generate', 'Generates the statistics of a repository'
+  def generate
+    I18n.locale = options[:language]
+    GitStats::Generator.new(options[:path], options[:output], options[:from], options[:to]) { |g|
       g.add_command_observer { |command, result| puts "#{command}" }
     }.render_all
   end

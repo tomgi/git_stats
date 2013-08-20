@@ -25,5 +25,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency('haml')
   gem.add_dependency('lazy_high_charts')
   gem.add_dependency('i18n')
-  gem.add_dependency('highline')
+  gem.add_dependency('thor')
 end

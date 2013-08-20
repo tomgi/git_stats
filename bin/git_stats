@@ -7,5 +7,4 @@ $LOAD_PATH.unshift(lib) if File.directory?(lib) && !$LOAD_PATH.include?(lib)
 # start up the CLI
 require "git_stats/cli"
 
-cli = GitStats::CLI.new
-cli.start
+GitStats::CLI.start(ARGV)

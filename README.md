@@ -20,8 +20,43 @@ It browses the repository and outputs html page with statistics.
 
 ### Generator
 
+#### Print help
+
     $ git_stats
-    <follow instructions on the screen>
+    Commands:
+      git_stats generate        # Generates the statistics of a repository
+      git_stats help [COMMAND]  # Describe available commands or one specific command
+
+#### Print help of the generate command
+
+    $ git_stats help generate
+    Usage:
+      git_stats generate
+
+    Options:
+      p, [--path=PATH]          # Path to repository from which statistics should be generated.
+                                # Default: .
+      o, [--output=OUTPUT]      # Output path where statistics should be written.
+                                # Default: ./git_stats
+      l, [--language=LANGUAGE]  # Language of written statistics.
+                                # Default: en
+      f, [--from=FROM]          # Commit from where statistics should start.
+      t, [--to=TO]              # Commit where statistics should stop.
+                                # Default: HEAD
+
+#### Start generator with default settings
+
+    $ git_stats generate
+      git rev-list --pretty=format:'%h|%at|%ai|%aE' HEAD | grep -v commit
+      git shortlog -se HEAD
+      ...
+
+#### Start generator with some parameters in long and short form.
+
+    $ git_stats generate -o stats --langugage de
+      git rev-list --pretty=format:'%h|%at|%ai|%aE' HEAD | grep -v commit
+      git shortlog -se HEAD
+      ...
 
 ### API usage example
 

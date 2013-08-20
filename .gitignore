@@ -19,3 +19,8 @@ tmp
 
 # rubymine
 .idea
+
+# rvm or rbenv related files
+.rvmrc
+.ruby-version
+.ruby-gemset

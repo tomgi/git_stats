@@ -19,11 +19,11 @@ Gem::Specification.new do |gem|
 
   gem.required_ruby_version = Gem::Requirement.new(">= 1.9.2")
 
-  gem.add_dependency('activesupport')
-  gem.add_dependency('actionpack')
-  gem.add_dependency('tilt')
-  gem.add_dependency('haml')
-  gem.add_dependency('lazy_high_charts')
+  gem.add_dependency('activesupport', '>= 4.0')
+  gem.add_dependency('actionpack', '>= 4.0')
+  gem.add_dependency('tilt', '>= 1.4')
+  gem.add_dependency('haml', '>= 4.0')
+  gem.add_dependency('lazy_high_charts', '>= 1.4')
   gem.add_dependency('i18n')
   gem.add_dependency('thor')
 end

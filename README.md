@@ -43,6 +43,7 @@ It browses the repository and outputs html page with statistics.
       f, [--from=FROM]          # Commit from where statistics should start.
       t, [--to=TO]              # Commit where statistics should stop.
                                 # Default: HEAD
+      s, [--silent]             # Silent mode. Don't output anything.
 
 #### Start generator with default settings
 

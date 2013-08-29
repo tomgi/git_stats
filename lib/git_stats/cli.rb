@@ -14,11 +14,7 @@ class GitStats::CLI < Thor
   def generate
     I18n.locale = options[:language]
     GitStats::Generator.new(options[:path], options[:output], options[:from], options[:to]) { |g|
-      if options[:silent]
-        g.add_command_observer { |command, result| }
-      else
-        g.add_command_observer { |command, result| puts "#{command}" }
-      end
+      g.add_command_observer { |command, result| puts "#{command}" } unless options[:silent]
     }.render_all
   end
 

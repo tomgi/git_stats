@@ -35,21 +35,25 @@ module GitStats
 
         def date_chart(params)
           common_options(params)
-          date_series(name: params[:title], data: params[:data])
+          series(date_series(name: params[:title], data: params[:data]))
         end
 
         def multi_date_chart(params)
           common_options(params)
           default_legend
           params[:data].each do |s|
-            date_series(s)
+            series(date_series(s))
           end
         end
 
         def date_column_chart(params)
-          date_chart(params)
-          data[0][:type] = 'column'
-          data[0][:dataGrouping] = {units: [['day', [1]], ['week', [1]]], forced: true}
+          common_options(params)
+          series(date_series(name: params[:title], data: params[:data]).merge(
+            {
+              type: 'column',
+              dataGrouping: {units: [['day', [1]], ['week', [1]]], forced: true}
+            }
+          ))
         end
 
         def default_legend
@@ -101,11 +105,11 @@ module GitStats
         end
 
         def date_series(params)
-          series(
+          {
               name: params[:name],
               type: "spline",
               data: Hash[params[:data]].fill_empty_days!.map { |date, value| [date.to_datetime.to_i * 1000, value] }.sort_by { |d| d[0] }
-          )
+          }
         end
 
         def column_chart(params)

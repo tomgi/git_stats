@@ -12,8 +12,10 @@ en:
   commits_by_hour: Commits by hour
   files: Files
   lines: Lines
+  comments: Comments
   files_by_date: Files by date
   lines_by_date: Lines by date
+  comments_by_date: Comments by date
   files_by_extension: Files by extension
   lines_by_extension: Lines by extension
   hour_of_day: Hour of day

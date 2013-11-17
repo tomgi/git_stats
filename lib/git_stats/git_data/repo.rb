@@ -9,7 +9,7 @@ module GitStats
       attr_reader :path, :first_commit_sha, :last_commit_sha
 
       delegate :files, :files_by_extension, :files_by_extension_count, :lines_by_extension,
-               :files_count, :binary_files, :text_files, :lines_count, to: :last_commit
+               :files_count, :binary_files, :text_files, :lines_count, :comments_count, to: :last_commit
 
       def initialize(params)
         super(params)
@@ -63,6 +63,15 @@ module GitStats
         }].fill_empty_days!(aggregated: true)
       end
 
+      def comments_count_by_date
+        sum = 0
+        @comment_count_each_day ||= Hash[commits.map { |commit|
+          sum += commit.comment_stat.insertions
+          sum -= commit.comment_stat.deletions
+          [commit.date.to_date, sum]
+        }].fill_empty_days!(aggregated: true)
+      end
+
       def last_commit
         commits.last
       end
@@ -77,6 +86,10 @@ module GitStats
 
       def short_stats
         @short_stats ||= commits.map(&:short_stat)
+      end
+
+      def comment_stats
+        @comment_stats ||= commits.map(&:comment_stat)
       end
 
       def activity

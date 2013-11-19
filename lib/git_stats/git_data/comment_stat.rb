@@ -17,9 +17,15 @@ module GitStats
         "#{self.class} #@commit"
       end
 
+      def escape_characters_in_string(string)
+      	pattern = /(\'|\"|\.|\*|\/|\-|\\)/
+      	string.gsub(pattern){|match|"\\"  + match}
+      end
+      
       private
       def calculate_stat
-        stat_line = commit.repo.run("git show #{commit.sha} | awk 'BEGIN {adds=0; dels=0} {if ($0 ~ /^\\+\\/\\/\\//) adds++; if ($0 ~ /^\-\\/\\/\\//) dels++} END {print adds \" insertions \" dels \" deletes\"}'").lines.to_a[0]
+        escaped_string = escape_characters_in_string(commit.repo.comment_string)
+        stat_line = commit.repo.run("git show #{commit.sha} | awk 'BEGIN {adds=0; dels=0} {if ($0 ~ /^\\+#{escaped_string}/) adds++; if ($0 ~ /^\-#{escaped_string}/) dels++} END {print adds \" insertions \" dels \" deletes\"}'").lines.to_a[0]
         if stat_line.blank?
           @insertions = @deletions = 0
         else

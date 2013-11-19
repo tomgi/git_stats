@@ -9,11 +9,12 @@ class GitStats::CLI < Thor
   option :from, :aliases => :f, :desc => 'Commit from where statistics should start.'
   option :to, :aliases => :t, :default => 'HEAD', :desc => 'Commit where statistics should stop.'
   option :silent, :aliases => :s, :type => :boolean, :desc => 'Silent mode. Don\'t output anything.'
+  option :comment, :aliases => :c, :default => '///', :desc => 'The string which is used for comments.'
 
   desc 'generate', 'Generates the statistics of a repository'
   def generate
     I18n.locale = options[:language]
-    GitStats::Generator.new(options[:path], options[:output], options[:from], options[:to]) { |g|
+    GitStats::Generator.new(options[:path], options[:output], options[:from], options[:to], options[:comment]) { |g|
       g.add_command_observer { |command, result| puts "#{command}" } unless options[:silent]
     }.render_all
   end

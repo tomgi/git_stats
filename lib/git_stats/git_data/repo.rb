@@ -51,7 +51,7 @@ module GitStats
       def files_count_by_date
         @files_count_each_day ||= Hash[commits.map { |commit|
           [commit.date.to_date, commit.files_count]
-        }].fill_empty_days!(aggregated: true)
+        }]
       end
 
       def lines_count_by_date
@@ -60,7 +60,7 @@ module GitStats
           sum += commit.short_stat.insertions
           sum -= commit.short_stat.deletions
           [commit.date.to_date, sum]
-        }].fill_empty_days!(aggregated: true)
+        }]
       end
 
       def last_commit

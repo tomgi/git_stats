@@ -7,14 +7,16 @@ class Hash
     inject(Array.new(min_size, default)) { |acc, (k, v)| acc[k] = v; acc }.map { |e| e || default }
   end
 
-  def fill_empty_days!(params = {:aggregated => false})
+  def fill_empty_days!(params = {:aggregated => true})
     return self if self.empty?
 
-    days_with_data = self.keys.map(&:to_date).sort.uniq
+    self_with_date_keys = Hash[self.map { |k, v| [k.to_date, v] }]
+    days_with_data = self_with_date_keys.keys.sort.uniq
     prev = 0
+
     days_with_data.first.upto(days_with_data.last) do |day|
       if days_with_data.include? day
-        prev = self[day]
+        prev = self_with_date_keys[day]
       else
         self[day] = params[:aggregated] ? prev : 0
       end

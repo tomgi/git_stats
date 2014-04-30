@@ -48,7 +48,7 @@ module GitStats
 
         def date_column_chart(params)
           common_options(params)
-          series(date_series(name: params[:title], data: params[:data]).merge(
+          series(date_series({name: params[:title], data: params[:data]}, false).merge(
             {
               type: 'column',
               dataGrouping: {units: [['day', [1]], ['week', [1]]], forced: true}
@@ -104,11 +104,11 @@ module GitStats
           x_text params[:x_text]
         end
 
-        def date_series(params)
+        def date_series(params, aggregated = true)
           {
               name: params[:name],
               type: "spline",
-              data: Hash[params[:data]].fill_empty_days!.map { |date, value| [date.to_datetime.to_i * 1000, value] }.sort_by { |d| d[0] }
+              data: Hash[params[:data]].fill_empty_days!(aggregated: aggregated).map { |date, value| [date.to_datetime.to_i * 1000, value] }.sort_by { |d| d[0] }
           }
         end
 

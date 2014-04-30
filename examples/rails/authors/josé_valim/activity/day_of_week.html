@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>GitStats - rails</title>
+    <meta charset='utf-8'>
     <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <style>
       body { padding-top: 60px; }
@@ -88,22 +89,22 @@
             </tr>
             <tr>
               <th>Commits</th>
-              <td>25</td>
-              <td>25</td>
-              <td>38</td>
-              <td>27</td>
-              <td>16</td>
-              <td>18</td>
+              <td>22</td>
+              <td>14</td>
+              <td>34</td>
               <td>23</td>
+              <td>13</td>
+              <td>17</td>
+              <td>19</td>
             </tr>
             <tr>
               <th>Percentage</th>
-              <td>14.5</td>
-              <td>14.5</td>
-              <td>22.1</td>
-              <td>15.7</td>
-              <td>9.3</td>
-              <td>10.5</td>
+              <td>15.5</td>
+              <td>9.9</td>
+              <td>23.9</td>
+              <td>16.2</td>
+              <td>9.2</td>
+              <td>12.0</td>
               <td>13.4</td>
             </tr>
           </table>
@@ -112,7 +113,7 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Day" },"categories": [ "Sun","Mon","Tue","Wed","Thu","Fri","Sat" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_wday","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by day of week","data": [ 25,25,38,27,16,18,23 ] }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Day" },"categories": [ "Sun","Mon","Tue","Wed","Thu","Fri","Sat" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_wday","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by day of week","data": [ 22,14,34,23,13,17,19 ] }] };
                   
                   window.chart_charts.activity_by_wday = new Highcharts.Chart(options);
           

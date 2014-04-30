@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>GitStats - jquery</title>
+    <meta charset='utf-8'>
     <link href='../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <style>
       body { padding-top: 60px; }
@@ -93,33 +94,33 @@
             </tr>
             <tr>
               <th>Commits</th>
-              <td>738</td>
-              <td>365</td>
-              <td>318</td>
-              <td>444</td>
-              <td>388</td>
-              <td>292</td>
-              <td>394</td>
-              <td>312</td>
+              <td>735</td>
+              <td>332</td>
+              <td>283</td>
+              <td>383</td>
+              <td>349</td>
+              <td>282</td>
+              <td>374</td>
+              <td>309</td>
               <td>470</td>
               <td>448</td>
               <td>370</td>
-              <td>727</td>
+              <td>726</td>
             </tr>
             <tr>
               <th>Percentage</th>
-              <td>14.0</td>
+              <td>14.5</td>
+              <td>6.6</td>
+              <td>5.6</td>
+              <td>7.6</td>
               <td>6.9</td>
-              <td>6.0</td>
-              <td>8.4</td>
+              <td>5.6</td>
               <td>7.4</td>
-              <td>5.5</td>
-              <td>7.5</td>
-              <td>5.9</td>
+              <td>6.1</td>
+              <td>9.3</td>
               <td>8.9</td>
-              <td>8.5</td>
-              <td>7.0</td>
-              <td>13.8</td>
+              <td>7.3</td>
+              <td>14.3</td>
             </tr>
           </table>
                   <script type="text/javascript">
@@ -127,7 +128,7 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Month" },"categories": [ "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_month","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by month","data": [ 738,365,318,444,388,292,394,312,470,448,370,727 ] }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Month" },"categories": [ "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_month","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by month","data": [ 735,332,283,383,349,282,374,309,470,448,370,726 ] }] };
                   
                   window.chart_charts.activity_by_month = new Highcharts.Chart(options);
           

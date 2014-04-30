@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>GitStats - jquery</title>
+    <meta charset='utf-8'>
     <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <style>
       body { padding-top: 60px; }
@@ -69,7 +70,7 @@
                       var onload = window.onload;
                       window.onload = function(){
                         if (typeof onload == "function") onload();
-                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.deletions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "unknown","type": "spline","data": [ [ 1285339023000,2 ] ] }] };
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.deletions_by_author_by_date" },"subtitle": {  },"series": [{ "name": "unknown","type": "spline","data": [ [ 1293192186000,0 ],[ 1293210120000,0 ],[ 1293210165000,60 ],[ 1293213235000,116 ],[ 1293236860000,120 ],[ 1293236944000,350 ],[ 1293277973000,412 ] ] }] };
                     
                     window.chart_charts.deletions_by_author_by_date = new Highcharts.StockChart(options);
             

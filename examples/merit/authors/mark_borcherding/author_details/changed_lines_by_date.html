@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>GitStats - merit</title>
+    <meta charset='utf-8'>
     <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <style>
       body { padding-top: 60px; }
@@ -69,7 +70,7 @@
                       var onload = window.onload;
                       window.onload = function(){
                         if (typeof onload == "function") onload();
-                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.changed_lines_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Mark Borcherding","type": "spline","data": [ [ 1343422338000,42 ],[ 1343422607000,44 ],[ 1343433600000,0 ],[ 1343520000000,0 ],[ 1343606400000,0 ],[ 1343692800000,0 ],[ 1343779200000,0 ],[ 1343865600000,0 ],[ 1344033139000,94 ] ] }] };
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.changed_lines_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Mark Borcherding","type": "spline","data": [ [ 1343422338000,42 ],[ 1343422607000,44 ],[ 1343433600000,44 ],[ 1343520000000,44 ],[ 1343606400000,44 ],[ 1343692800000,44 ],[ 1343779200000,44 ],[ 1343865600000,44 ],[ 1344033139000,94 ] ] }] };
                     
                     window.chart_charts.changed_lines_by_author_by_date = new Highcharts.StockChart(options);
             

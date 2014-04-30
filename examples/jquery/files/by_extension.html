@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>GitStats - jquery</title>
+    <meta charset='utf-8'>
     <link href='../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <style>
       body { padding-top: 60px; }
@@ -63,7 +64,7 @@
                       var onload = window.onload;
                       window.onload = function(){
                         if (typeof onload == "function") onload();
-                                var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null },"categories": [ "",".txt",".md",".js",".json",".css",".html",".jpg",".php",".xml" ] },"yAxis": { "title": { "text": "Files" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "files_by_extension","type": "column" },"subtitle": {  },"series": [{ "name": "Files by extension","data": [ 8,3,2,63,2,2,42,1,23,2 ] }] };
+                                var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": null },"categories": [ "",".txt",".md",".js",".json",".css",".html",".php",".jpg",".xml" ] },"yAxis": { "title": { "text": "Files" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "files_by_extension","type": "column" },"subtitle": {  },"series": [{ "name": "Files by extension","data": [ 10,3,2,59,1,2,39,22,1,2 ] }] };
                     
                     window.chart_files_by_extension = new Highcharts.Chart(options);
             

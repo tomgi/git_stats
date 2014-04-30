@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>GitStats - devise</title>
+    <meta charset='utf-8'>
     <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <style>
       body { padding-top: 60px; }
@@ -69,7 +70,7 @@
                       var onload = window.onload;
                       window.onload = function(){
                         if (typeof onload == "function") onload();
-                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.commits_sum_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Derek Kastner","type": "spline","data": [ [ 1318624436000,1 ],[ 1318636800000,0 ],[ 1318723200000,0 ],[ 1318860587000,2 ],[ 1318873360000,3 ] ] }] };
+                                var options = { "title": { "text": "" },"legend": { "enabled": true,"layout": "vertical","backgroundColor": "#FFFFFF","align": "left","verticalAlign": "top","x": 100,"y": 70,"floating": true,"shadow": true },"xAxis": { "title": { "text": null } },"yAxis": { "title": { "text": "Lines" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.commits_sum_by_author_by_date" },"subtitle": {  },"series": [{ "name": "Derek Kastner","type": "spline","data": [ [ 1318624436000,1 ],[ 1318636800000,1 ],[ 1318723200000,1 ],[ 1318860587000,2 ],[ 1318873360000,3 ] ] }] };
                     
                     window.chart_charts.commits_sum_by_author_by_date = new Highcharts.StockChart(options);
             

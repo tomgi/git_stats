@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>GitStats - jquery</title>
+    <meta charset='utf-8'>
     <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <style>
       body { padding-top: 60px; }
@@ -96,7 +97,7 @@
               <td>4</td>
               <td>2</td>
               <td>0</td>
-              <td>2</td>
+              <td>1</td>
               <td>4</td>
               <td>4</td>
               <td>10</td>
@@ -108,17 +109,17 @@
             </tr>
             <tr>
               <th>Percentage</th>
-              <td>8.0</td>
-              <td>4.0</td>
+              <td>8.2</td>
+              <td>4.1</td>
               <td>0.0</td>
-              <td>4.0</td>
-              <td>8.0</td>
-              <td>8.0</td>
-              <td>20.0</td>
-              <td>6.0</td>
-              <td>14.0</td>
-              <td>8.0</td>
-              <td>20.0</td>
+              <td>2.0</td>
+              <td>8.2</td>
+              <td>8.2</td>
+              <td>20.4</td>
+              <td>6.1</td>
+              <td>14.3</td>
+              <td>8.2</td>
+              <td>20.4</td>
               <td>0.0</td>
             </tr>
           </table>
@@ -127,7 +128,7 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Month" },"categories": [ "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_month","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by month","data": [ 4,2,0,2,4,4,10,3,7,4,10,0 ] }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Month" },"categories": [ "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_month","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by month","data": [ 4,2,0,1,4,4,10,3,7,4,10,0 ] }] };
                   
                   window.chart_charts.activity_by_month = new Highcharts.Chart(options);
           

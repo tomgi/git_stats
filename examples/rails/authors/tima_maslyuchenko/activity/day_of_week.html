@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>GitStats - rails</title>
+    <meta charset='utf-8'>
     <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <style>
       body { padding-top: 60px; }
@@ -72,7 +73,7 @@
           <div class='tab-pane active'>
             <div class='page-header pagination-centered'>
               <h1>Day of week</h1>
-              <h3>Tima Maslyuchenko &lt;dudapip3@gmail.com&gt;</h3>
+              <h3>Tima Maslyuchenko &lt;n3imo0o@gmail.com&gt;</h3>
             </div>
           </div>
           <table class='table table-bordered table-condensed'>
@@ -88,22 +89,22 @@
             </tr>
             <tr>
               <th>Commits</th>
-              <td>3</td>
               <td>0</td>
               <td>0</td>
+              <td>1</td>
+              <td>1</td>
               <td>0</td>
-              <td>0</td>
-              <td>0</td>
+              <td>1</td>
               <td>0</td>
             </tr>
             <tr>
               <th>Percentage</th>
-              <td>100.0</td>
               <td>0.0</td>
               <td>0.0</td>
+              <td>33.3</td>
+              <td>33.3</td>
               <td>0.0</td>
-              <td>0.0</td>
-              <td>0.0</td>
+              <td>33.3</td>
               <td>0.0</td>
             </tr>
           </table>
@@ -112,7 +113,7 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Day" },"categories": [ "Sun","Mon","Tue","Wed","Thu","Fri","Sat" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_wday","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by day of week","data": [ 3,0,0,0,0,0,0 ] }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Day" },"categories": [ "Sun","Mon","Tue","Wed","Thu","Fri","Sat" ] },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_wday","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by day of week","data": [ 0,0,1,1,0,1,0 ] }] };
                   
                   window.chart_charts.activity_by_wday = new Highcharts.Chart(options);
           

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>GitStats - rails</title>
+    <meta charset='utf-8'>
     <link href='../../../assets/bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <style>
       body { padding-top: 60px; }
@@ -72,7 +73,7 @@
           <div class='tab-pane active'>
             <div class='page-header pagination-centered'>
               <h1>Hour of day</h1>
-              <h3>RSL &lt;sconds@gmail.com&gt;</h3>
+              <h3>rsl &lt;rsl@luckysneaks.com&gt;</h3>
             </div>
           </div>
           <table class='table table-bordered table-condensed'>
@@ -105,6 +106,7 @@
             </tr>
             <tr>
               <th>Commits</th>
+              <td>1</td>
               <td>0</td>
               <td>0</td>
               <td>0</td>
@@ -114,10 +116,6 @@
               <td>0</td>
               <td>0</td>
               <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>2</td>
               <td>0</td>
               <td>0</td>
               <td>0</td>
@@ -129,9 +127,13 @@
               <td>0</td>
               <td>0</td>
               <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
             </tr>
             <tr>
               <th>Percentage</th>
+              <td>50.0</td>
               <td>0.0</td>
               <td>0.0</td>
               <td>0.0</td>
@@ -144,12 +146,11 @@
               <td>0.0</td>
               <td>0.0</td>
               <td>0.0</td>
-              <td>66.7</td>
+              <td>0.0</td>
+              <td>50.0</td>
               <td>0.0</td>
               <td>0.0</td>
               <td>0.0</td>
-              <td>0.0</td>
-              <td>33.3</td>
               <td>0.0</td>
               <td>0.0</td>
               <td>0.0</td>
@@ -163,7 +164,7 @@
                     var onload = window.onload;
                     window.onload = function(){
                       if (typeof onload == "function") onload();
-                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Hour" },"categories": "0..23" },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_hour","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by hour","data": [ 0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,1,0,0,0,0,0,0 ] }] };
+                              var options = { "title": { "text": "" },"legend": { "enabled": false },"xAxis": { "title": { "text": "Hour" },"categories": "0..23" },"yAxis": { "title": { "text": "Commits" },"labels": {  } },"tooltip": { "enabled": true },"credits": { "enabled": false },"plotOptions": { "areaspline": {  } },"chart": { "defaultSeriesType": "line","renderTo": "charts.activity_by_hour","type": "column" },"subtitle": {  },"series": [{ "name": "Commits by hour","data": [ 1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0 ] }] };
                   
                   window.chart_charts.activity_by_hour = new Highcharts.Chart(options);
           

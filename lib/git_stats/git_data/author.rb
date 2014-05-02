@@ -6,7 +6,7 @@ module GitStats
     class Author
       include HashInitializable
 
-      attr_reader :repo, :name, :email
+      attr_reader :repo, :name
 
       def commits
         @commits ||= repo.commits.select { |commit| commit.author == self }
@@ -55,11 +55,11 @@ module GitStats
       end
 
       def to_s
-        "#{self.class} #@name <#@email>"
+        "#{self.class} #@name"
       end
 
       def ==(other)
-        [self.repo, self.name, self.email] == [other.repo, other.name, other.email]
+        [self.repo, self.name] == [other.repo, other.name]
       end
 
     end

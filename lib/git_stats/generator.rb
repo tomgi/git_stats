@@ -5,7 +5,6 @@ module GitStats
     delegate :render_all, to: :@view
 
     def initialize(options)
-      
       validate_repo_path(options[:path])
 
       @repo = GitData::Repo.new(options)

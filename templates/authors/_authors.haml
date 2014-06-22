@@ -43,26 +43,26 @@
                 %a.btn{:href => "#{author.dirname}/author_details/commits_by_date.html"}= :details.t
 
       -elsif page == :commits_count_by_author
-        = high_chart("charts.commits_count_by_author", charts.commits_count_by_author(4))
+        = high_chart("charts.commits_count_by_author", charts.commits_count_by_author)
         %small
           %center= "5 #{:best_authors_shown.t}"
 
       -elsif page == :commits_sum_by_author_by_date
-        = high_stock("charts.commits_sum_by_author_by_date", charts.commits_sum_by_author_by_date(4))
+        = high_stock("charts.commits_sum_by_author_by_date", charts.commits_sum_by_author_by_date)
         %small
           %center= "5 #{:best_authors_shown.t}"
 
       -elsif page == :changed_lines_by_author_by_date
-        = high_stock("charts.changed_lines_by_author_by_date", charts.changed_lines_by_author_by_date(4))
+        = high_stock("charts.changed_lines_by_author_by_date", charts.changed_lines_by_author_by_date)
         %small
           %center= "5 #{:best_authors_shown.t}"
 
       -elsif page == :insertions_by_author_by_date
-        = high_stock("charts.insertions_by_author_by_date", charts.insertions_by_author_by_date(4))
+        = high_stock("charts.insertions_by_author_by_date", charts.insertions_by_author_by_date)
         %small
           %center= "5 #{:best_authors_shown.t}"
 
       -elsif page == :deletions_by_author_by_date
-        = high_stock("charts.deletions_by_author_by_date", charts.deletions_by_author_by_date(4))
+        = high_stock("charts.deletions_by_author_by_date", charts.deletions_by_author_by_date)
         %small
           %center= "5 #{:best_authors_shown.t}"

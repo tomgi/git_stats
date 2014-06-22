@@ -1,0 +1,11 @@
+.tabbable.tabs-left
+  %ul.nav.nav-tabs
+    %li{class: page == :comments_by_date ? "active" : ""}
+      %a{:href => 'by_date.html'}= :comments_by_date.t
+
+  .tab-content
+    .tab-pane.active
+      .page-header
+        %h1.pagination-centered= page.t
+      - if page == :comments_by_date
+        = high_stock("comments_by_date", charts.comments_by_date)

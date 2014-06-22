@@ -46,6 +46,8 @@ It browses the repository and outputs html page with statistics.
       s, [--silent], [--no-silent]  # Silent mode. Don't output anything.
       d, [--tree=TREE]              # Tree where statistics should be generated.
                                     # Default: .
+      c, [--comment=COMMENT]        # The string which is used for comments.
+                                    # Default: ///
 
 
 

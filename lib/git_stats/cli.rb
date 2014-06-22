@@ -4,18 +4,18 @@ require "thor"
 
 class GitStats::CLI < Thor
   option :path, :aliases => :p, :default => '.', :desc => 'Path to repository from which statistics should be generated.'
-  option :output, :aliases => :o, :default => './git_stats', :desc => 'Output path where statistics should be written.'
+  option :out_path, :aliases => :o, :default => './git_stats', :desc => 'Output path where statistics should be written.'
   option :language, :aliases => :l, :default => 'en', :desc => 'Language of written statistics.'
   option :from, :aliases => :f, :desc => 'Commit from where statistics should start.'
   option :to, :aliases => :t, :default => 'HEAD', :desc => 'Commit where statistics should stop.'
   option :silent, :aliases => :s, :type => :boolean, :desc => 'Silent mode. Don\'t output anything.'
   option :tree, :aliases => :d, :default => '.', :desc => 'Tree where statistics should be generated.'
-  option :comment, :aliases => :c, :default => '///', :desc => 'The string which is used for comments.'
+  option :comment, :aliases => :c, :default => '//', :desc => 'The string which is used for comments.'
   
   desc 'generate', 'Generates the statistics of a repository'
   def generate
     I18n.locale = options[:language]
-    GitStats::Generator.new(options[:path], options[:output], options[:from], options[:to], options[:tree], options[:comment]) { |g|
+    GitStats::Generator.new(options) { |g|
       g.add_command_observer { |command, result| puts "#{command}" } unless options[:silent]
     }.render_all
   end

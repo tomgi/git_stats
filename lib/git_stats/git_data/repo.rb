@@ -6,8 +6,6 @@ module GitStats
     class Repo
       include HashInitializable
 
-      attr_reader :path, :first_commit_sha, :last_commit_sha, :tree_path, :comment_string
-
       delegate :files, :files_by_extension, :files_by_extension_count, :lines_by_extension,
                :files_count, :binary_files, :text_files, :lines_count, :comments_count, to: :last_commit
 
@@ -15,6 +13,26 @@ module GitStats
         super(params)
         @path = File.expand_path(@path)
         @tree_path ||= "."
+      end
+
+      def path
+        @path ||= '.'
+      end
+
+      def first_commit_sha
+        @first_commit_sha
+      end
+
+      def last_commit_sha
+        @last_commit_sha ||= 'HEAD'
+      end
+
+      def tree_path
+        @tree_path ||= '.'
+      end
+
+      def comment_string
+        @comment_string ||= '//'
       end
 
       def authors
@@ -81,10 +99,6 @@ module GitStats
         @first_commit_sha.blank? ? last_commit_sha : "#@first_commit_sha..#{last_commit_sha}"
       end
 
-      def last_commit_sha
-        @last_commit_sha ||= 'HEAD'
-      end
-
       def short_stats
         @short_stats ||= commits.map(&:short_stat)
       end
@@ -106,7 +120,6 @@ module GitStats
       end
 
       def project_name
-        # @project_name ||= File.basename(path)
         @project_name ||= (File.expand_path(File.join(path, tree_path)).sub(File.dirname(File.expand_path(path))+File::SEPARATOR,"") || File.basename(path))
       end
 

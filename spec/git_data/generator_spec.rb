@@ -4,7 +4,7 @@ require 'spec_helper'
 describe GitStats::Generator do
   let(:repo_path) { 'repo_path' }
   let(:out_path) { 'out_path' }
-  let(:generator) { GitStats::Generator.new(repo_path, out_path) }
+  let(:generator) { GitStats::Generator.new(path: repo_path, out_path: out_path) }
 
   before { Dir.stub(:exists? => true) }
 
@@ -15,10 +15,8 @@ describe GitStats::Generator do
 
   it 'should pass command observer to repo' do
     repo = double('repo')
-    GitStats::GitData::Repo.should_receive(:new).with(path: repo_path, first_commit_sha: nil, last_commit_sha: "HEAD", tree_path: ".", :comment_string=>"///").and_return(repo)
-
-    generator = GitStats::Generator.new(repo_path, out_path)
-
+    GitStats::GitData::Repo.should_receive(:new).with(path: repo_path, out_path: out_path).and_return(repo)
+    
     observer = double('observer')
     repo.should_receive(:add_command_observer).with(observer)
 
@@ -27,7 +25,7 @@ describe GitStats::Generator do
 
   it 'should render all templates with view data for this repo' do
     repo = double('repo')
-    GitStats::GitData::Repo.should_receive(:new).with(path: repo_path, first_commit_sha: nil, last_commit_sha: "HEAD", tree_path: ".", :comment_string=>"///").and_return(repo)
+    GitStats::GitData::Repo.should_receive(:new).with(path: repo_path, out_path: out_path).and_return(repo)
 
     view_data = double('view_data')
     GitStats::StatsView::ViewData.should_receive(:new).with(repo).and_return(view_data)

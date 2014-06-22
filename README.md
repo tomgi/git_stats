@@ -36,7 +36,7 @@ It browses the repository and outputs html page with statistics.
     Options:
       p, [--path=PATH]              # Path to repository from which statistics should be generated.
                                     # Default: .
-      o, [--output=OUTPUT]          # Output path where statistics should be written.
+      o, [--out-path=OUT_PATH]      # Output path where statistics should be written.
                                     # Default: ./git_stats
       l, [--language=LANGUAGE]      # Language of written statistics.
                                     # Default: en
@@ -47,7 +47,7 @@ It browses the repository and outputs html page with statistics.
       d, [--tree=TREE]              # Tree where statistics should be generated.
                                     # Default: .
       c, [--comment=COMMENT]        # The string which is used for comments.
-                                    # Default: ///
+                                    # Default: //
 
 
 

@@ -5,10 +5,8 @@ module GitStats
   module GitData
     class Tree
       include HashInitializable
+      
       attr_reader :repo, :relative_path
-      def initialize(params)
-        super(params)
-      end
 
       def authors
         @authors ||= run_and_parse("git shortlog -se #{commit_range}").map do |author|

@@ -34,16 +34,20 @@ It browses the repository and outputs html page with statistics.
       git_stats generate
 
     Options:
-      p, [--path=PATH]          # Path to repository from which statistics should be generated.
-                                # Default: .
-      o, [--output=OUTPUT]      # Output path where statistics should be written.
-                                # Default: ./git_stats
-      l, [--language=LANGUAGE]  # Language of written statistics.
-                                # Default: en
-      f, [--from=FROM]          # Commit from where statistics should start.
-      t, [--to=TO]              # Commit where statistics should stop.
-                                # Default: HEAD
-      s, [--silent]             # Silent mode. Don't output anything.
+      p, [--path=PATH]              # Path to repository from which statistics should be generated.
+                                    # Default: .
+      o, [--output=OUTPUT]          # Output path where statistics should be written.
+                                    # Default: ./git_stats
+      l, [--language=LANGUAGE]      # Language of written statistics.
+                                    # Default: en
+      f, [--from=FROM]              # Commit from where statistics should start.
+      t, [--to=TO]                  # Commit where statistics should stop.
+                                    # Default: HEAD
+      s, [--silent], [--no-silent]  # Silent mode. Don't output anything.
+      d, [--tree=TREE]              # Tree where statistics should be generated.
+                                    # Default: .
+
+
 
 #### Start generator with default settings
 

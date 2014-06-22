@@ -1,6 +1,7 @@
 en:
   project_name: Project name
   project_version: Project version
+  tree_path: Tree path
   generated_at: Generated at
   generator: Generator
   report_period: Report period

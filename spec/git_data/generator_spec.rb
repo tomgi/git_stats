@@ -6,7 +6,7 @@ describe GitStats::Generator do
   let(:out_path) { 'out_path' }
   let(:generator) { GitStats::Generator.new(repo_path, out_path) }
 
-  before { Dir.stub!(:exists? => true) }
+  before { Dir.stub(:exists? => true) }
 
   it 'should raise exception if given repo path is not a git repository' do
     Dir.should_receive(:exists?).with("#{repo_path}/.git").and_return(false)

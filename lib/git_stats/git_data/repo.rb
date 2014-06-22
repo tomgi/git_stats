@@ -38,7 +38,7 @@ module GitStats
       def authors
         @authors ||= run_and_parse("git shortlog -se #{commit_range} #{tree_path}").map do |author|
           Author.new(repo: self, name: author[:name], email: author[:email])
-        end.extend(ByFieldFinder)
+        end
       end
 
       def commits
@@ -48,9 +48,9 @@ module GitStats
               sha: commit_line[:sha],
               stamp: commit_line[:stamp],
               date: DateTime.parse(commit_line[:date]),
-              author: authors.by_email(commit_line[:author_email])
+              author: authors.first! { |a| a.email == commit_line[:author_email] }
           )
-        end.sort_by! { |e| e.date }.extend(ByFieldFinder)
+        end.sort_by! { |e| e.date }
       end
 
       def commits_period

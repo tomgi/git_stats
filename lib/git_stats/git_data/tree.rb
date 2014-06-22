@@ -5,13 +5,13 @@ module GitStats
   module GitData
     class Tree
       include HashInitializable
-      
+
       attr_reader :repo, :relative_path
 
       def authors
         @authors ||= run_and_parse("git shortlog -se #{commit_range}").map do |author|
           Author.new(repo: self, name: author[:name], email: author[:email])
-        end.extend(ByFieldFinder)
+        end
       end
       
       def ==(other)

@@ -2,10 +2,10 @@
 require 'git_stats/core_extensions/hash'
 require 'git_stats/core_extensions/string'
 require 'git_stats/core_extensions/symbol'
+require 'git_stats/core_extensions/enumerable'
 
 require 'git_stats/version'
 require 'git_stats/i18n'
-require 'git_stats/by_field_finder'
 require 'git_stats/cli'
 require 'git_stats/generator'
 require 'git_stats/validator'

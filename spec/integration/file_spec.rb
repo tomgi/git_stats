@@ -9,7 +9,7 @@ describe GitStats::GitData::Repo do
   end
 
   it 'should retrieve correct file content for old file' do
-    repo.commits.by_sha('c87ecf9').files.by_filename('test.txt').content.should == "bb
+    repo.commits.first! { |c| c.sha == 'c87ecf9' }.files.first! { |f| f.filename == 'test.txt' }.content.should == "bb
 
 
 
@@ -18,7 +18,7 @@ test
   end
 
   it 'should retrieve correct file content for the newest file' do
-    file = repo.files.by_filename('test.txt')
+    file = repo.files.first! { |f| f.filename == 'test.txt' }
     file.content.should == "bb
 
 testtest

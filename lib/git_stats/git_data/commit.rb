@@ -11,7 +11,7 @@ module GitStats
       def files
         @files ||= repo.run_and_parse("git ls-tree -r #{self.sha} -- #{repo.tree_path}").map do |file|
           Blob.new(repo: repo, filename: file[:filename], sha: file[:sha])
-        end.extend(ByFieldFinder)
+        end
       end
 
       def binary_files

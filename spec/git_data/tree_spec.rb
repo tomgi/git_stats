@@ -34,7 +34,7 @@ describe GitStats::GitData::Tree do
         repo_tree.commits.should ==
           [ GitStats::GitData::Commit.new( repo: repo, sha: "10d1814", stamp: "1395407506",
                                            date: DateTime.parse("2014-03-21 14:11:46 +0100"),
-                                           author: repo.authors.by_email("israelrevert@gmail.com"))]
+                                           author: repo.authors.first! { |a| a.email == "israelrevert@gmail.com" })]
       end
     end
   end

@@ -1,3 +1,6 @@
 [submodule "spec/integration/test_repo"]
 	path = spec/integration/test_repo
 	url = git://github.com/tomgi/git_stats_test_repo.git
+[submodule "spec/integration/test_repo_tree"]
+	path = spec/integration/test_repo_tree
+	url = git://github.com/irevert/git_stats_test_repo_tree

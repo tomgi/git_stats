@@ -18,6 +18,7 @@ require 'git_stats/git_data/command_runner'
 require 'git_stats/git_data/commit'
 require 'git_stats/git_data/repo'
 require 'git_stats/git_data/short_stat'
+require 'git_stats/git_data/tree'
 
 require 'git_stats/stats_view/template'
 require 'git_stats/stats_view/view'

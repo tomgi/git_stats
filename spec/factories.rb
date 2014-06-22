@@ -7,6 +7,9 @@ FactoryGirl.define do
     factory :test_repo do
       path 'spec/integration/test_repo'
     end
+    factory :test_repo_tree do
+      path 'spec/integration/test_repo_tree'
+    end
   end
 
   factory :author, class: GitStats::GitData::Author do
@@ -22,4 +25,9 @@ FactoryGirl.define do
     association :repo, strategy: :build
     association :author, strategy: :build
   end
+
+  factory :tree, class: GitStats::GitData::Tree do
+    association :repo, strategy: :build
+  end
+
 end

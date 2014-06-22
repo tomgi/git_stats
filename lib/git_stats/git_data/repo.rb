@@ -6,7 +6,7 @@ module GitStats
     class Repo
       include HashInitializable
 
-      attr_reader :path, :first_commit_sha, :last_commit_sha
+      attr_reader :path, :first_commit_sha, :last_commit_sha, :tree_path
 
       delegate :files, :files_by_extension, :files_by_extension_count, :lines_by_extension,
                :files_count, :binary_files, :text_files, :lines_count, to: :last_commit
@@ -14,16 +14,17 @@ module GitStats
       def initialize(params)
         super(params)
         @path = File.expand_path(@path)
+        @tree_path ||= "."
       end
 
       def authors
-        @authors ||= run_and_parse("git shortlog -se #{commit_range}").map do |author|
+        @authors ||= run_and_parse("git shortlog -se #{commit_range} #{tree_path}").map do |author|
           Author.new(repo: self, name: author[:name], email: author[:email])
         end.extend(ByFieldFinder)
       end
 
       def commits
-        @commits ||= run_and_parse("git rev-list --pretty=format:'%h|%at|%ai|%aE' #{commit_range} | grep -v commit").map do |commit_line|
+        @commits ||= run_and_parse("git rev-list --pretty=format:'%h|%at|%ai|%aE' #{commit_range} #{tree_path} | grep -v commit").map do |commit_line|
           Commit.new(
               repo: self,
               sha: commit_line[:sha],
@@ -87,8 +88,13 @@ module GitStats
         @project_version ||= run("git rev-parse --short #{commit_range}").strip
       end
 
+      def tree
+        @tree ||= Tree.new(repo: self, relative_path: @tree_path)
+      end
+
       def project_name
-        @project_name ||= File.basename(path)
+        # @project_name ||= File.basename(path)
+        @project_name ||= (File.expand_path(File.join(path, tree_path)).sub(File.dirname(File.expand_path(path))+File::SEPARATOR,"") || File.basename(path))
       end
 
       def run(command)
@@ -131,6 +137,7 @@ module GitStats
       def invoke_command_observers(command, result)
         command_observers.each { |o| o.call(command, result) }
       end
+
 
     end
   end

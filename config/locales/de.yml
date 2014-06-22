@@ -12,8 +12,10 @@ de:
   commits_by_hour: Commits in der Stunde
   files: Dateien
   lines: Zeilen
+  comments: Kommentare
   files_by_date: Dateien nach Datum
   lines_by_date: Zeilen nach Datum
+  comments_by_date: Kommentare nach Datum
   files_by_extension: Dateien nach Erweiterungen
   lines_by_extension: Zeilen nach Erweiterungen
   hour_of_day: Tagesstunden

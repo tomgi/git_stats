@@ -50,6 +50,10 @@ module GitStats
         @short_stat ||= ShortStat.new(self)
       end
 
+      def comment_stat
+        @comment_stat ||= CommentStat.new(self)
+      end
+
       def to_s
         "#{self.class} #@sha"
       end

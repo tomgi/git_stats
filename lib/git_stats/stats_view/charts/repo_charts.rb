@@ -47,6 +47,16 @@ module GitStats
           end
         end
 
+        def comments_by_date
+          Chart.new do |f|
+            f.date_chart(
+                data: @repo.comments_count_by_date,
+                title: :comments_by_date.t,
+                y_text: :comments.t
+            )
+          end
+        end
+
       end
     end
   end

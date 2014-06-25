@@ -35,6 +35,10 @@ module GitStats
         @comment_string ||= '//'
       end
 
+      def tree
+        @tree ||= Tree.new(repo: self, relative_path: @tree_path)
+      end
+
       def authors
         @authors ||= run_and_parse("git shortlog -se #{commit_range} #{tree_path}").map do |author|
           Author.new(repo: self, name: author[:name], email: author[:email])
@@ -113,10 +117,6 @@ module GitStats
 
       def project_version
         @project_version ||= run("git rev-parse --short #{commit_range}").strip
-      end
-
-      def tree
-        @tree ||= Tree.new(repo: self, relative_path: @tree_path)
       end
 
       def project_name

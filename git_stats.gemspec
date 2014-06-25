@@ -26,4 +26,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency('lazy_high_charts', '>= 1.4')
   gem.add_dependency('i18n')
   gem.add_dependency('thor')
+  gem.add_dependency('json_pure')
 end

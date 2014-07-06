@@ -18,7 +18,12 @@ module GitStats
 
 
     def validate_repo_path(repo_path)
-      raise ArgumentError, "#{repo_path} is not a git repository" unless Validator.new.valid_repo_path?(repo_path)
+      raise ArgumentError, "#{repo_path} is not a git repository" unless valid_repo_path?(repo_path)
+    end
+
+
+    def valid_repo_path?(repo_path)
+      Dir.exists?("#{repo_path}/.git") || File.exists?("#{repo_path}/.git") || File.exists?("#{repo_path}/HEAD")
     end
 
   end

@@ -46,7 +46,7 @@ module GitStats
       end
 
       def commits
-        @commits ||= run_and_parse("git rev-list --pretty=format:'%h|%at|%ai|%aE' #{commit_range} #{tree_path} | grep -v commit").map do |commit_line|
+        @commits ||= run_and_parse("git rev-list --pretty=format:%h^|%at^|%ai^|%aE #{commit_range} #{tree_path} | grep -v commit").map do |commit_line|
           Commit.new(
               repo: self,
               sha: commit_line[:sha],
@@ -75,6 +75,10 @@ module GitStats
         @files_count_each_day ||= Hash[commits.map { |commit|
           [commit.date.to_date, commit.files_count]
         }]
+      end
+
+      def files_by_extension_count
+        Hash.new
       end
 
       def lines_count_by_date

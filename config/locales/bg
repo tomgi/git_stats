@@ -1,0 +1,63 @@
+bg:
+  project_name: Име на проекта
+  project_version: Версия на проекта
+  tree_path: Пътека
+  generated_at: Генерирана на
+  generator: Генератор
+  report_period: Период на справката
+  total_files: Общо файлове
+  total_lines: Общо редове
+  total_commits: Общо качвания
+  authors: Автори
+  commits: Качвания
+  commits_by_hour: Качвания по часове
+  files: Файлове
+  lines: Редове
+  comments: Коментари
+  files_by_date: Файлове за период
+  lines_by_date: Редове за период
+  comments_by_date:Коментари за период
+  files_by_extension: Файлове по разширения
+  lines_by_extension: Редове по разширения
+  hour_of_day: Час на ден
+  hour: Час
+  percentage: Процент
+  day: Ден
+  day_of_week: Ден от седмицата
+  hour_of_week: Час от седмицата
+  month: Месец
+  month_of_year: Месец от годината
+  year_month: Година и месец
+  commits_by_wday: Качвания по ден от седмицата
+  commits_by_month: Качвания по месеци
+  commits_by_year_month:Качвания по месеци и година
+  commits_by_month_of_year: Качвания по месеци от тази година
+  year: Година
+  commits_by_year: Качвания на година
+  activity: Активност
+  activity_by_date: Активност за период
+  commits_by_date: Качвания за период
+  insertions_by_author: Редове добавени от потребител
+  deletions_by_author: Редове изтрити от потребител
+  changed_lines_by_author: Редактирани редове от потребител
+  best_authors_shown: Най-добрите потребители
+  commits_count_by_author: Общо брой качвания на потребител
+  commits_sum_by_author_by_date: Общ брой качвания от потребител за период
+  insertions_by_author_by_date: Добавени редове за автор за период
+  deletions_by_author_by_date: Изтрити редове за автор за период
+  changed_lines_by_author_by_date: Променени редове за автор за период
+  best_authors: Най-добри потребители
+  insertions: Добавени редове
+  deletions: Изтрити редове
+  first_commit: Първо качване
+  last_commit: Последно качване
+  author: Автор
+  show_more: Още
+  close: Затвори
+  binary: Медия
+  text: Текст
+  general: Основна
+  details: Информация
+  insertions_by_date: Добавени редове за период
+  deletions_by_date: Изтрити редове за период
+  changed_lines_by_date: Променени редове за период

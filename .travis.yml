@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+  - "1.9"
+  - "2.1.5"
+  - ruby-head
+script:
+  - bundle exec rspec -fd
+matrix:
+ allow_failures:
+   - rvm: ruby-head

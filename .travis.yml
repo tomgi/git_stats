@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+  - "1.9"
+  - "2.1.0"
+  - "2.2.0"
+  - ruby-head
+script:
+  - bundle exec rake
+matrix:
+ allow_failures:
+   - rvm: ruby-head

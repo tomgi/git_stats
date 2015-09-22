@@ -1,0 +1,63 @@
+tr:
+  project_name: Proje Adı
+  project_version: Proje Sürümü
+  tree_path: Tree yolu
+  generated_at: Oluşturulma zamanı
+  generator: Oluşturan
+  report_period: Raporlama Aralığı
+  total_files: Toplam dosya sayısı
+  total_lines: Toplam satır sayısı
+  total_commits: Toplam gönderim sayısı
+  authors: Geliştiriciler
+  commits: Gönderim sayısı
+  commits_by_hour: Saatlik gönderim sayısı
+  files: Dosyalar
+  lines: Satırlar
+  comments: Yorumlar
+  files_by_date: Tarihe göre dosya
+  lines_by_date: Tarihe göre satır sayısı
+  comments_by_date: Tarihe göre yorum sayısı
+  files_by_extension: Türüne göre dosyalar
+  lines_by_extension: Türüne göre satırlar
+  hour_of_day: Günlük saate göre 
+  hour: Saat 
+  percentage: Yüzde
+  day: Gün
+  day_of_week: Haftalık günlere göre 
+  hour_of_week: Haftalık saate göre
+  month: Ay
+  month_of_year: Yıllık aya göre
+  year_month: Yıl ve ay
+  commits_by_wday: Hafta günlere göre gönderim
+  commits_by_month: Aya göre gönderim
+  commits_by_year_month: Yıl ve aya göre gönderim
+  commits_by_month_of_year: Yılın aylarına göre gönderim
+  year: Yıl
+  commits_by_year: Yıla göre gönderim
+  activity: Aktivite
+  activity_by_date: Güne göre
+  commits_by_date: Günlük gönderim
+  insertions_by_author: Geliştirici tarafından eklenen satırlar
+  deletions_by_author: Geliştirici tarafından silinen satırlar
+  changed_lines_by_author: Geliştirici tarafından değiştirilen satırlar
+  best_authors_shown: en iyi geliştiriciler 
+  commits_count_by_author: Geliştiriciye göre gönderim sayısı
+  commits_sum_by_author_by_date: Günlük geliştiriciye göre gönderim sayısı
+  insertions_by_author_by_date: Günlük geliştiriciye göre satır sayısı
+  deletions_by_author_by_date: Günlük geliştiriciye göre silinen satır sayısı
+  changed_lines_by_author_by_date: Günlük geliştiriciye göre değişen satır sayısı
+  best_authors: En İyi Geliştiriciler
+  insertions: Eklenen satır
+  deletions: Silinen satırlar
+  first_commit: İlk gönderim
+  last_commit: Son gönderim
+  author: Geliştirici
+  show_more: Fazlası
+  close: Kapat
+  binary: Binary
+  text: Text
+  general: Genel 
+  details: Detaylar
+  insertions_by_date: Güne göre eklenen satırlar
+  deletions_by_date: Güne göre silinen satırlar
+  changed_lines_by_date: Güne göre değişen satırlar

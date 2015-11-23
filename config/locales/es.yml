@@ -1,0 +1,63 @@
+es:
+  project_name: Nombre del proyecto
+  project_version: Versión del proyecto
+  tree_path: Dirección de la rama
+  generated_at: Generado en
+  generator: Generador
+  report_period: Report period
+  total_files: Archivos totales
+  total_lines: Lineas totales
+  total_commits: Commits totales
+  authors: Autores
+  commits: Commits
+  commits_by_hour: Commits por hour
+  files: Archivos
+  lines: Lineas
+  comments: Commentarios
+  files_by_date: Archivos por fecha
+  lines_by_date: Lineas por fecha
+  comments_by_date: Commentarios por fecha
+  files_by_extension: Archivos por extensión
+  lines_by_extension: Lineas por extensión
+  hour_of_day: Hora del día
+  hour: Hora
+  percentage: Porcentaje
+  day: Día
+  day_of_week: Día de la semana
+  hour_of_week: Hora de la semana
+  month: Mes
+  month_of_year: Mes del año
+  year_month: Año y mes
+  commits_by_wday: Commits por día de la semana
+  commits_by_month: Commits por mes
+  commits_by_year_month: Commits por año y mes
+  commits_by_month_of_year: Commits por mes del año
+  year: Año
+  commits_by_year: Commits por año
+  activity: Actividad
+  activity_by_date: Actividad por fecha
+  commits_by_date: Commits por fecha
+  insertions_by_author: Lineas añadidas por autor
+  deletions_by_author: Lineas eliminadas por autor
+  changed_lines_by_author: Lineas cambiadas por author
+  best_authors_shown: Mostrado los mejores autores
+  commits_count_by_author: Cantidad de commits por autor
+  commits_sum_by_author_by_date: Suma de commits por autor por fecha
+  insertions_by_author_by_date: Lineas añadidas por autor por fecha
+  deletions_by_author_by_date: Lineas eliminadas por autor por fecha
+  changed_lines_by_author_by_date: Lineas editadas por autor por fecha
+  best_authors: Mejores autores
+  insertions: Lineas añadidas
+  deletions: Lineas eliminadas
+  first_commit: Primer commit
+  last_commit: Último commit
+  author: Autor
+  show_more: Mostras más
+  close: Cerrar
+  binary: Binario
+  text: Texto
+  general: General
+  details: Detalles
+  insertions_by_date: Lineas añadidas por fecha
+  deletions_by_date: Lineas eliminadas por fecha
+  changed_lines_by_date: Lineas cambiadas por fecha

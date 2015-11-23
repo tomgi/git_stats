@@ -4,21 +4,21 @@ es:
   tree_path: Dirección de la rama
   generated_at: Generado en
   generator: Generador
-  report_period: Report period
+  report_period: Periodo reportado
   total_files: Archivos totales
-  total_lines: Lineas totales
+  total_lines: Líneas totales
   total_commits: Commits totales
   authors: Autores
   commits: Commits
-  commits_by_hour: Commits por hour
+  commits_by_hour: Commits por hora
   files: Archivos
-  lines: Lineas
-  comments: Commentarios
+  lines: Líneas
+  comments: Comentarios
   files_by_date: Archivos por fecha
-  lines_by_date: Lineas por fecha
-  comments_by_date: Commentarios por fecha
+  lines_by_date: Líneas por fecha
+  comments_by_date: Comentarios por fecha
   files_by_extension: Archivos por extensión
-  lines_by_extension: Lineas por extensión
+  lines_by_extension: Líneas por extensión
   hour_of_day: Hora del día
   hour: Hora
   percentage: Porcentaje
@@ -37,27 +37,27 @@ es:
   activity: Actividad
   activity_by_date: Actividad por fecha
   commits_by_date: Commits por fecha
-  insertions_by_author: Lineas añadidas por autor
-  deletions_by_author: Lineas eliminadas por autor
-  changed_lines_by_author: Lineas cambiadas por author
+  insertions_by_author: Líneas añadidas por autor
+  deletions_by_author: Líneas eliminadas por autor
+  changed_lines_by_author: Líneas cambiadas por autor
   best_authors_shown: Mostrado los mejores autores
   commits_count_by_author: Cantidad de commits por autor
   commits_sum_by_author_by_date: Suma de commits por autor por fecha
-  insertions_by_author_by_date: Lineas añadidas por autor por fecha
-  deletions_by_author_by_date: Lineas eliminadas por autor por fecha
-  changed_lines_by_author_by_date: Lineas editadas por autor por fecha
+  insertions_by_author_by_date: Líneas añadidas por autor por fecha
+  deletions_by_author_by_date: Líneas eliminadas por autor por fecha
+  changed_lines_by_author_by_date: Líneas editadas por autor por fecha
   best_authors: Mejores autores
-  insertions: Lineas añadidas
-  deletions: Lineas eliminadas
+  insertions: Líneas añadidas
+  deletions: Líneas eliminadas
   first_commit: Primer commit
   last_commit: Último commit
   author: Autor
-  show_more: Mostras más
+  show_more: Mostrar más
   close: Cerrar
   binary: Binario
   text: Texto
   general: General
   details: Detalles
-  insertions_by_date: Lineas añadidas por fecha
-  deletions_by_date: Lineas eliminadas por fecha
-  changed_lines_by_date: Lineas cambiadas por fecha
+  insertions_by_date: Líneas añadidas por fecha
+  deletions_by_date: Líneas eliminadas por fecha
+  changed_lines_by_date: Líneas cambiadas por fecha

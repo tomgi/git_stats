@@ -1,63 +1,63 @@
 es:
   project_name: Nombre del proyecto
-  project_version: Versión del proyecto
-  tree_path: Dirección de la rama
+  project_version: Versi&oacute;n del proyecto
+  tree_path: Direcci&oacute;n de la rama
   generated_at: Generado en
   generator: Generador
   report_period: Periodo reportado
   total_files: Archivos totales
-  total_lines: Líneas totales
+  total_lines: L&iacute;neas totales
   total_commits: Commits totales
   authors: Autores
   commits: Commits
   commits_by_hour: Commits por hora
   files: Archivos
-  lines: Líneas
+  lines: L&iacute;neas
   comments: Comentarios
   files_by_date: Archivos por fecha
-  lines_by_date: Líneas por fecha
+  lines_by_date: L&iacute;neas por fecha
   comments_by_date: Comentarios por fecha
-  files_by_extension: Archivos por extensión
-  lines_by_extension: Líneas por extensión
-  hour_of_day: Hora del día
+  files_by_extension: Archivos por extensi&oacute;n
+  lines_by_extension: L&iacute;neas por extensi&oacute;n
+  hour_of_day: Hora del d&iacute;a
   hour: Hora
   percentage: Porcentaje
-  day: Día
-  day_of_week: Día de la semana
+  day: D&iacute;a
+  day_of_week: D&iacute;a de la semana
   hour_of_week: Hora de la semana
   month: Mes
-  month_of_year: Mes del año
-  year_month: Año y mes
-  commits_by_wday: Commits por día de la semana
+  month_of_year: Mes del a&ntilde;o
+  year_month: A&ntilde;o y mes
+  commits_by_wday: Commits por d&iacute;a de la semana
   commits_by_month: Commits por mes
-  commits_by_year_month: Commits por año y mes
-  commits_by_month_of_year: Commits por mes del año
-  year: Año
-  commits_by_year: Commits por año
+  commits_by_year_month: Commits por a&ntilde;o y mes
+  commits_by_month_of_year: Commits por mes del a&ntilde;o
+  year: A&ntilde;o
+  commits_by_year: Commits por a&ntilde;o
   activity: Actividad
   activity_by_date: Actividad por fecha
   commits_by_date: Commits por fecha
-  insertions_by_author: Líneas añadidas por autor
-  deletions_by_author: Líneas eliminadas por autor
-  changed_lines_by_author: Líneas cambiadas por autor
+  insertions_by_author: L&iacute;neas a&ntilde;adidas por autor
+  deletions_by_author: L&iacute;neas eliminadas por autor
+  changed_lines_by_author: L&iacute;neas cambiadas por autor
   best_authors_shown: Mostrado los mejores autores
   commits_count_by_author: Cantidad de commits por autor
   commits_sum_by_author_by_date: Suma de commits por autor por fecha
-  insertions_by_author_by_date: Líneas añadidas por autor por fecha
-  deletions_by_author_by_date: Líneas eliminadas por autor por fecha
-  changed_lines_by_author_by_date: Líneas editadas por autor por fecha
+  insertions_by_author_by_date: L&iacute;neas a&ntilde;adidas por autor por fecha
+  deletions_by_author_by_date: L&iacute;neas eliminadas por autor por fecha
+  changed_lines_by_author_by_date: L&iacute;neas editadas por autor por fecha
   best_authors: Mejores autores
-  insertions: Líneas añadidas
-  deletions: Líneas eliminadas
+  insertions: L&iacute;neas a&ntilde;adidas
+  deletions: L&iacute;neas eliminadas
   first_commit: Primer commit
-  last_commit: Último commit
+  last_commit: &Uacute;ltimo commit
   author: Autor
-  show_more: Mostrar más
+  show_more: Mostrar m&aacute;s
   close: Cerrar
   binary: Binario
   text: Texto
   general: General
   details: Detalles
-  insertions_by_date: Líneas añadidas por fecha
-  deletions_by_date: Líneas eliminadas por fecha
-  changed_lines_by_date: Líneas cambiadas por fecha
+  insertions_by_date: L&iacute;neas a&ntilde;adidas por fecha
+  deletions_by_date: L&iacute;neas eliminadas por fecha
+  changed_lines_by_date: L&iacute;neas cambiadas por fecha

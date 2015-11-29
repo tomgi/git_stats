@@ -61,3 +61,5 @@ en:
   insertions_by_date: Lines added by date
   deletions_by_date: Lines deleted by date
   changed_lines_by_date: Changed lines by date
+  lines_by_extension_by_date: Lines per extension by date
+  files_by_extension_by_date: Files per extension by date

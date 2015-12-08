@@ -4,6 +4,8 @@
       %a{:href => 'by_date.html'}= :files_by_date.t
     %li{class: page == :files_by_extension ? "active" : ""}
       %a{:href => 'by_extension.html'}= :files_by_extension.t
+    %li{class: page == :files_by_extension_by_date ? "active" : ""}
+      %a{:href => 'by_extension_by_date.html'}= :files_by_extension_by_date.t
 
   .tab-content
     .tab-pane.active
@@ -13,3 +15,5 @@
         = high_stock("files_by_date", charts.files_by_date)
       - elsif page == :files_by_extension
         = high_chart("files_by_extension", charts.files_by_extension)
+      - elsif page == :files_by_extension_by_date
+        = high_stock("files_by_extension_by_date", charts.files_by_extension_by_date)

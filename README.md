@@ -14,7 +14,14 @@ It browses the repository and outputs html page with statistics.
 
 ## Installation
 
+### Existing ruby/gem environment
+
     $ gem install git_stats
+
+### Ubuntu
+
+    $ sudo apt-get install ruby
+    $ sudo gem install git_stats
 
 ## Usage
 

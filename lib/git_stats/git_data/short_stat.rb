@@ -19,7 +19,7 @@ module GitStats
 
       private
       def calculate_stat
-        stat_line = commit.repo.run("git show --shortstat --oneline #{commit.sha} -- #{commit.repo.tree_path}").lines.to_a[1]
+        stat_line = commit.repo.run("git show --shortstat --oneline --no-renames #{commit.sha} -- #{commit.repo.tree_path}").lines.to_a[1]
         if stat_line.blank?
           @files_changed = @insertions = @deletions = 0
         else

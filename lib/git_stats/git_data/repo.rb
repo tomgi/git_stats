@@ -39,10 +39,6 @@ module GitStats
         @tree ||= Tree.new(repo: self, relative_path: @tree_path)
       end
 
-      def command_memoization
-        @command_memoization_map ||= {}
-      end
-
       def authors
         @authors ||= run_and_parse("git shortlog -se #{commit_range} #{tree_path}").map do |author|
           Author.new(repo: self, name: author[:name], email: author[:email])
@@ -99,44 +95,6 @@ module GitStats
         }].fill_empty_days!(aggregated: true)
       end
 
-      def files_by_extension_by_date
-        file_counts_by_date_by_extension = {}
-        extensions_sums = {}
-        commits.map do |commit|
-          commit.files_by_extension_count.map do |ext, count|
-            extensions_sums[ext] ||= 0;
-            extensions_sums[ext] = count;
-            file_counts_by_date_by_extension[ext] ||= {};
-            file_counts_by_date_by_extension[ext][commit.date.to_date] = extensions_sums[ext]
-          end
-        end
-        @multi_data_file_counts_by_date ||=  file_counts_by_date_by_extension.map { |ext, data|
-          {
-            name: ext || "NO EXTENSION",
-            data: data.fill_empty_days!(aggregated:true)
-            }
-          }
-      end
-
-      def lines_by_extension_by_date
-        lines_by_date_by_extension = {}
-        extensions_sums = {}
-        commits.map do |commit|
-          commit.lines_by_extension.map do |ext, count|
-            extensions_sums[ext] ||= 0;
-            extensions_sums[ext] = count;
-            lines_by_date_by_extension[ext] ||= {};
-            lines_by_date_by_extension[ext][commit.date.to_date] = extensions_sums[ext]
-          end
-        end
-        @multi_data_lines_by_date ||=  lines_by_date_by_extension.map { |ext, data|
-          {
-            name: ext || "NO EXTENSION",
-            data: data.fill_empty_days!(aggregated:true)
-            }
-          }
-      end
-
       def last_commit
         commits.last
       end
@@ -166,14 +124,9 @@ module GitStats
       end
 
       def run(command)
-        if (command_memoization[command])
-          command_memoization[command]
-        else
-          result = command_runner.run(path, command)
-          invoke_command_observers(command, result)
-          command_memoization[command] = result
-          result
-        end
+        result = command_runner.run(path, command)
+        invoke_command_observers(command, result)
+        result
       end
 
       def run_and_parse(command)

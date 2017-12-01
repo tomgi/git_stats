@@ -33,12 +33,12 @@ describe GitStats::GitData::Repo do
       end
 
       it 'should affect commits command' do
-        repo.should_receive(:run).with("git rev-list --pretty=format:'%h|%at|%ai|%aE' abc..def . | grep -v commit").and_return("")
+        repo.should_receive(:run).with("git rev-list --pretty=format:'%H|%at|%ai|%aE' abc..def . | grep -v commit").and_return("")
         repo.commits
       end
 
       it 'should affect project version command' do
-        repo.should_receive(:run).with('git rev-parse --short abc..def').and_return("")
+        repo.should_receive(:run).with('git rev-parse abc..def').and_return("")
         repo.project_version
       end
     end

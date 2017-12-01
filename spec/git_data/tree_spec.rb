@@ -29,7 +29,7 @@ describe GitStats::GitData::Tree do
 
       it 'should parse git revlist output to date sorted commits array' do
         repo_tree.should_receive(:run).
-          with("git rev-list --pretty=format:'%h|%at|%ai|%aE' HEAD ./subdir_with_1_commit | grep -v commit").
+          with("git rev-list --pretty=format:'%H|%at|%ai|%aE' HEAD ./subdir_with_1_commit | grep -v commit").
           and_return("10d1814|1395407506|2014-03-21 14:11:46 +0100|israelrevert@gmail.com")
         repo_tree.commits.should ==
           [ GitStats::GitData::Commit.new( repo: repo, sha: "10d1814", stamp: "1395407506",

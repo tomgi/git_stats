@@ -14,7 +14,11 @@ describe GitStats::GitData::Tree do
   end
 
   it 'should gather all commits sorted by date' do
-    repo.commits.map(&:sha).should =~ %w(10d1814 435e0ef 5fd0f5e)
+    repo.commits.map(&:sha).should =~ %w(
+      10d1814b1c4acf1496ba76d40ee4954a2e3908fb
+      435e0ef41e7c4917e4ba635bb44c7d36c5c7b7ad
+      5fd0f5ea90e0ef34a0214ec9c170728913525ff4
+    )
   end
 
   it 'should return project name from dir' do
@@ -22,7 +26,7 @@ describe GitStats::GitData::Tree do
   end
 
   it 'should return project version as last commit hash' do
-    repo.project_version.should == '5fd0f5e'
+    repo.project_version.should == '5fd0f5ea90e0ef34a0214ec9c170728913525ff4'
   end
 
   it 'should count files in repo' do
@@ -79,7 +83,7 @@ describe GitStats::GitData::Tree do
   end
 
   it 'should gather all commits sorted by date' do
-    repo.commits.map(&:sha).should =~ %w(10d1814)
+    repo.commits.map(&:sha).should =~ %w(10d1814b1c4acf1496ba76d40ee4954a2e3908fb)
   end
 
   it 'should return project name from dir' do
@@ -87,7 +91,7 @@ describe GitStats::GitData::Tree do
   end
 
   it 'should return project version as last commit hash' do
-    repo.project_version.should == '5fd0f5e'
+    repo.project_version.should == '5fd0f5ea90e0ef34a0214ec9c170728913525ff4'
   end
 
   it 'should count files in repo' do
@@ -144,7 +148,10 @@ describe GitStats::GitData::Tree do
   end
 
   it 'should gather all commits sorted by date' do
-    repo.commits.map(&:sha).should =~ %w(435e0ef 5fd0f5e)
+    repo.commits.map(&:sha).should =~ %w(
+      435e0ef41e7c4917e4ba635bb44c7d36c5c7b7ad
+      5fd0f5ea90e0ef34a0214ec9c170728913525ff4
+    )
   end
 
   it 'should return project name from dir' do
@@ -152,7 +159,7 @@ describe GitStats::GitData::Tree do
   end
 
   it 'should return project version as last commit hash' do
-    repo.project_version.should == '5fd0f5e'
+    repo.project_version.should == '5fd0f5ea90e0ef34a0214ec9c170728913525ff4'
   end
 
   it 'should count files in repo' do

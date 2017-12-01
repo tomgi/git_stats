@@ -13,7 +13,18 @@ describe GitStats::GitData::Repo do
   end
 
   it 'should gather all commits sorted by date' do
-    repo.commits.map(&:sha).should =~ %w(b3b4f81 d60b5ec ab47ef8 2c11f5e c87ecf9 b621a5d fd66657 81e8bef 4e7d0e9 872955c)
+    repo.commits.map(&:sha).should =~ %w(
+      2c11f5e5224dd7d2fab27de0fca2a9a1d0ca4038
+      4e7d0e9e58e27e33d47f94faf4079a49a75931da
+      81e8bef75eaa93d772f2ce11d2a266ada1292741
+      872955c3a6a4be4d7ae9b2dd4bea659979f0b457
+      ab47ef832c59837afcb626bfe22f0b8f0dc3717e
+      b3b4f819041eb66922abe79ee2513d5ddfb64691
+      b621a5df78e2953a040128191e47a24be9514b5c
+      c87ecf9c0bbdca29d73def8ed442cebf48178d92
+      d60b5eccf4513621bdbd65f408a0d28ff6fa9f5b
+      fd66657521139b1af6fde2927c4a383ecd6508fa
+    )
   end
 
   it 'should return project name from dir' do
@@ -21,7 +32,7 @@ describe GitStats::GitData::Repo do
   end
 
   it 'should return project version as last commit hash' do
-    repo.project_version.should == '872955c'
+    repo.project_version.should == '872955c3a6a4be4d7ae9b2dd4bea659979f0b457'
   end
 
   it 'should count files in repo' do

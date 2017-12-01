@@ -8,8 +8,17 @@ describe GitStats::GitData::Activity do
   let(:jd) { repo.authors.first! { |a| a.email == 'john.doe@gmail.com' } }
 
   it 'should filter commits to author' do
-    tg.commits.map(&:sha).should =~ %w(b3b4f81 d60b5ec ab47ef8 2c11f5e c87ecf9 b621a5d 4e7d0e9 872955c)
-    jd.commits.map(&:sha).should =~ %w(fd66657 81e8bef)
+    tg.commits.map(&:sha).should =~ %w(
+      2c11f5e5224dd7d2fab27de0fca2a9a1d0ca4038
+      4e7d0e9e58e27e33d47f94faf4079a49a75931da
+      872955c3a6a4be4d7ae9b2dd4bea659979f0b457
+      ab47ef832c59837afcb626bfe22f0b8f0dc3717e
+      b3b4f819041eb66922abe79ee2513d5ddfb64691
+      b621a5df78e2953a040128191e47a24be9514b5c
+      c87ecf9c0bbdca29d73def8ed442cebf48178d92
+      d60b5eccf4513621bdbd65f408a0d28ff6fa9f5b
+    )
+    jd.commits.map(&:sha).should =~ %w(fd66657521139b1af6fde2927c4a383ecd6508fa 81e8bef75eaa93d772f2ce11d2a266ada1292741)
   end
 
   context 'activity' do

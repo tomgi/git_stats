@@ -7,13 +7,13 @@ zh_tw:
   report_period: 報告分析範圍
   total_files: 總檔案數量
   total_lines: 文字總行數
-  total_commits: 總commits數量
+  total_commits: 總 commit 數量
   authors: 作者資訊及數量
   commits: Commits
-  commits_by_hour: Commits數量
+  commits_by_hour: Commit 數量
   files: 檔案數量
   lines: 文字行數
-  comments: 說明、註解
+  comments: 註解
   files_by_date: 檔案數量的日期分佈
   lines_by_date: 行數的日期分佈
   comments_by_date: 說明、註解的日期分佈
@@ -28,34 +28,34 @@ zh_tw:
   month: 月份
   month_of_year: 月份分佈
   year_month: 年/月分佈
-  commits_by_wday: Commits數量
-  commits_by_month: Commits數量
-  commits_by_year_month: Commits數量
-  commits_by_month_of_year: Commits數量
+  commits_by_wday: Commit 數量
+  commits_by_month: Commit 數量
+  commits_by_year_month: Commit 數量
+  commits_by_month_of_year: Commit 數量
   year: 年份分佈
-  commits_by_year: Commits數量
+  commits_by_year: Commit 數量
   activity: 活躍程度
   activity_by_date: 活躍日期
-  commits_by_date: Commits的日期分佈
+  commits_by_date: Commit 日期分佈
   insertions_by_author: 該作者新增的行數
   deletions_by_author: 該作者刪除的行數
   changed_lines_by_author: 該作者變更的行數
   best_authors_shown: 個最活躍的作者
-  commits_count_by_author: 該作者commits數量
-  commits_sum_by_author_by_date: Commits數量的日期分佈
+  commits_count_by_author: 該作者 commit 數量
+  commits_sum_by_author_by_date: Commit 數量的日期分佈
   insertions_by_author_by_date: 增加行數的日期分佈
   deletions_by_author_by_date: 刪除行數的日期分佈
   changed_lines_by_author_by_date: 變更行數的日期分佈
   best_authors: 作者排行
   insertions: 新增行數
   deletions: 刪除行數
-  first_commit: 最早的commit
-  last_commit: 最近一次commit
+  first_commit: 最早的 commit
+  last_commit: 最近一次 commit
   author: 作者
   show_more: 更多
   close: 關閉
   binary: 二進位檔
-  text: 文字檔
+  text: 純文字檔
   general: 一般資訊
   details: 細節
   insertions_by_date: 增加行數的日期分佈

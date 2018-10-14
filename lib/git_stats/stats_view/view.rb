@@ -28,7 +28,7 @@ module GitStats
             output = Template.new(template, @layout).render(@view_data,
                                                             author: author,
                                                             links: links,
-                                                            active_page: "/authors/#{author.dirname}/#{template}")
+                                                            active_page: "authors/#{author.dirname}/#{template}")
             write(output, "#@out_path/authors/#{author.dirname}/#{template}.html")
           end
         end

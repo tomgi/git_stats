@@ -56,7 +56,7 @@ It browses the repository and outputs html page with statistics.
       t, [--last-commit-sha=LAST_COMMIT_SHA]    # Commit where statistics should stop.
                                                 # Default: HEAD
       s, [--silent], [--no-silent]              # Silent mode. Don't output anything.
-      d, [--tree=TREE]                          # Tree where statistics should be generated.
+      d, [--tree_path=TREE]                     # Tree where statistics should be generated.
                                                 # Default: .
       c, [--comment-string=COMMENT_STRING]      # The string which is used for comments.
                                                 # Default: //

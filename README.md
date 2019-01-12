@@ -25,7 +25,7 @@ It browses the repository and outputs html page with statistics.
     
 ### Ubuntu
 
-    $ sudo apt-get install ruby
+    $ sudo apt-get install ruby ruby-dev
     $ sudo gem install git_stats
 
 ## Usage

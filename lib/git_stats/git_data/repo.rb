@@ -27,6 +27,10 @@ module GitStats
         @last_commit_sha ||= 'HEAD'
       end
 
+      def author_emails
+        @author_emails ||= []
+      end
+
       def tree_path
         @tree_path ||= '.'
       end
@@ -40,21 +44,24 @@ module GitStats
       end
 
       def authors
-        @authors ||= run_and_parse("git shortlog -se #{commit_range} #{tree_path}").map do |author|
-          Author.new(repo: self, name: author[:name], email: author[:email])
-        end
+        emails = author_emails.map { |email| email.downcase }
+        @authors ||= run_and_parse("git shortlog -se #{commit_range} #{tree_path}")
+          .select { |author| emails.count == 0 ? true : emails.include?(author[:email].downcase) }
+          .map { |author| Author.new(repo: self, name: author[:name], email: author[:email]) }
       end
 
       def commits
-        @commits ||= run_and_parse("git rev-list --pretty=format:'%H|%at|%ai|%aE' #{commit_range} #{tree_path} | grep -v commit").map do |commit_line|
-          Commit.new(
+        @commits ||= run_and_parse("git rev-list --pretty=format:'%H|%at|%ai|%aE' #{commit_range} #{tree_path} | grep -v commit")
+        .select { |commit_line| authors.select { |a| a.email == commit_line[:author_email] } .count > 0 }
+        .map { |commit_line| Commit.new(
               repo: self,
               sha: commit_line[:sha],
               stamp: commit_line[:stamp],
               date: DateTime.parse(commit_line[:date]),
               author: authors.first! { |a| a.email == commit_line[:author_email] }
           )
-        end.sort_by! { |e| e.date }
+        }
+        .sort_by! { |e| e.date }
       end
 
       def commits_period

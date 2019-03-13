@@ -60,14 +60,16 @@
         %tr
           %th
           - (0..23).each do |h|
-            %th= h
+            %th{width: "30", align: "center"}
+              %div{style: "text-align: center"}= h
         - max = author.activity.by_wday_hour.values.map {|h| h.values.empty? ? 0 : h.values.max }.max
         - (0..6).each do |day|
           %tr
             %th= I18n.t('date.abbr_day_names')[day]
             - (0..23).each do |hour|
               - color = max ? "%02x" % (255 - author.activity.by_wday_hour[day][hour] * 100 / max) : "FF"
-              %td{style: "background-color: ##{color}#{color}#{color};"}= author.activity.by_wday_hour[day][hour]
+              %td{style: "background-color: #ff#{color}#{color};", width: "30", align: "center"}
+                %div{style: "text-align: center"}= author.activity.by_wday_hour[day][hour]
 
     - elsif page == :month_of_year
       %table{:class => "table table-bordered table-condensed"}
@@ -93,9 +95,14 @@
         %tr
           %th
           - I18n.t('date.abbr_month_names')[1..-1].each do |h|
-            %th= h
+            %th{width: "50", align: "center"}
+              %div{style: "text-align: center"}= h
+        - max = author.activity.by_year_month.values.map {|h| h.values.empty? ? 0 : h.values.max }.max
         - author.activity.by_year_month.each do |year, months|
           %tr
-            %th= year
+            %th{align: "right"}
+              %div{style: "text-align: right"}= year
             - (1..12).each do |month|
-              %td= months[month]
+              - color = max ? "%02x" % (255 - months[month] * 100 / max) : "FF"
+              %td{style: "background-color: #ff#{color}#{color};", width: "50", align: "center"}
+                %div{style: "text-align: center"}= months[month]

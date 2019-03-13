@@ -7,13 +7,25 @@
     %link{:rel => "stylesheet", :href => asset_path('bootstrap/css/bootstrap.min.css', active_page), :type => "text/css"}
     %style
       :plain
-        body { padding-top: 60px; }
+        body { padding-top: 60px; font-family: 'Avenir Next', 'Montserrat', sans-serif; }
     %link{:rel => "stylesheet", :href => asset_path('bootstrap/css/bootstrap-responsive.min.css', active_page), :type => "text/css"}
+    %link{:rel => "stylesheet", :href => 'https://fonts.googleapis.com/css?family=Montserrat', :type => "text/css"}
     %script{:src => asset_path('jquery.min.js', active_page), :type => "text/javascript"}
     %script{:src => asset_path('bootstrap/js/bootstrap.min.js', active_page), :type => "text/javascript"}
     %script{:src => asset_path('highstock.js', active_page), :type => "text/javascript"}
     %script{:src => asset_path('exporting.js', active_page), :type => "text/javascript"}
     %script{:src => asset_path('export-csv.js', active_page), :type => "text/javascript"}
+    :javascript
+      Highcharts.theme = {
+        colors: ['#7cb5ec', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+        chart: {
+          style: {
+              fontFamily: '"Avenir Next", Montserrat'
+          }
+        }
+      };
+      Highcharts.setOptions(Highcharts.theme);
+
   %body
     %div.navbar.navbar-fixed-top
       %div.navbar-inner

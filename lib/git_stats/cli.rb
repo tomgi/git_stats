@@ -9,7 +9,7 @@ class GitStats::CLI < Thor
   option :first_commit_sha, :aliases => :f, :desc => 'Commit from where statistics should start.'
   option :last_commit_sha, :aliases => :t, :default => 'HEAD', :desc => 'Commit where statistics should stop.'
   option :silent, :aliases => :s, :type => :boolean, :desc => 'Silent mode. Don\'t output anything.'
-  option :tree, :aliases => :d, :default => '.', :desc => 'Tree where statistics should be generated.'
+  option :tree_path, :aliases => :d, :default => '.', :desc => 'Tree where statistics should be generated.'
   option :comment_string, :aliases => :c, :default => '//', :desc => 'The string which is used for comments.'
   
   desc 'generate', 'Generates the statistics of a repository'

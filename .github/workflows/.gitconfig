@@ -1,0 +1,10 @@
+[user]
+	email = 38172071+alshark18@users.noreply.github.com
+	name = Aleks
+[core]
+	longpaths = false
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

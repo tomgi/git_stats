@@ -79,22 +79,3 @@ It browses the repository and outputs html page with statistics.
       git shortlog -se HEAD
       ...
 
-### API usage example
-
-    > repo = GitStats::GitData::Repo.new(path: '.', first_commit_sha: 'abcd1234', last_commit_sha: 'HEAD')
-    > repo.authors
-    => [...]
-    > repo.commits
-    => [...]
-    > commit.files
-    => [...]
-
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-5. Push to the branch (`git push origin my-new-feature`)
-6. Create new Pull Request

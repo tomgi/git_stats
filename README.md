@@ -10,13 +10,13 @@ GitStats is a git repository statistics generator.
 It browses the repository and outputs html page with statistics.
 
 ## Examples
-* [devise](http://tomgi.github.com/git_stats/examples/devise/index.html)
-* [devise_invitable](http://tomgi.github.com/git_stats/examples/devise_invitable/index.html)
-* [john](http://tomgi.github.com/git_stats/examples/john/index.html)
-* [jquery](http://tomgi.github.com/git_stats/examples/jquery/index.html)
-* [merit](http://tomgi.github.com/git_stats/examples/merit/index.html)
-* [paperclip](http://tomgi.github.com/git_stats/examples/paperclip/index.html)
-* [rails](http://tomgi.github.com/git_stats/examples/rails/index.html)
+* [devise](http://tomgi.github.io/git_stats/examples/devise/index.html)
+* [devise_invitable](http://tomgi.github.io/git_stats/examples/devise_invitable/index.html)
+* [john](http://tomgi.github.io/git_stats/examples/john/index.html)
+* [jquery](http://tomgi.github.io/git_stats/examples/jquery/index.html)
+* [merit](http://tomgi.github.io/git_stats/examples/merit/index.html)
+* [paperclip](http://tomgi.github.io/git_stats/examples/paperclip/index.html)
+* [rails](http://tomgi.github.io/git_stats/examples/rails/index.html)
 
 ## Installation
 
